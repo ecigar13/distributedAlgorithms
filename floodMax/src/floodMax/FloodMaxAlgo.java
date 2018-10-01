@@ -6,8 +6,10 @@ Author: Gunjan Munjal
 */
 
 import java.util.concurrent.BlockingQueue;
-import floodMax.Message;
 import java.util.concurrent.LinkedBlockingQueue;
+
+import message.Message;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -81,7 +83,7 @@ class Master extends Thread {
               for (int i = 1; i <= number_of_slaves; i++) {
                 msm = new Message();
                 msm.setUid(i);
-                msm.set_round(round);
+                msm.setRound(round);
                 try {
                   master_to_slave_bq.put(msm);
                 } catch (Exception e) {

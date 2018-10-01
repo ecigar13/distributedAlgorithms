@@ -1,9 +1,9 @@
-package floodMax;
+package message;
 
 public class Message {
 
   public enum MessageType {
-    NACK, REJECT, IAMLEADER, EXPLORE;
+    ACK, REJECT, IAMLEADER, EXPLORE;
   }
 
   MessageType mType;
@@ -50,10 +50,6 @@ public class Message {
   }
 
   public void setRound(int round) {
-    this.round = round;
-  }
-
-  void set_round(int round) {
     this.round = round;
   }
 
