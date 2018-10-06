@@ -2,18 +2,18 @@ import java.io.*;
 import java.util.IOException;
 import java.util.Exception;
 
-public class Master extends Thread
-{
-    int latest_round;
-    Queue<message>  master_queue; 
-    message temp_msg;
-    int count = 0;
-    Master(int Master_UID, Storage str,int round, int n_o_n)
-    {
-	latest_round = round;
-	master_queue = new Queue<message>();
-    }
-    public run()
+public class Master extends Thread {
+  int latest_round;
+  Queue<message> master_queue;
+  message temp_msg;
+  int count = 0;
+
+  Master(int Master_UID, Storage str, int round, int n_o_n) {
+    latest_round = round;
+    master_queue = new Queue<message>();
+  }
+
+  public run()
     {
        
 	if(latest_round == 0)

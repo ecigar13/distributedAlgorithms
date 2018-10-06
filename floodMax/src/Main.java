@@ -21,6 +21,7 @@ public class Main {
 
     for (int i = 0; i < size; i++) {
       ids[i] = in.nextInt();
+      System.err.println(ids[i]);
     }
 
     for (int i = 0; i < size; i++) {
@@ -32,7 +33,7 @@ public class Main {
     System.out.println("Test print matrix");
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
-        System.out.print(matrix[i][j]);
+        System.out.print(matrix[i][j] + " ");
       }
       System.out.println();
     }

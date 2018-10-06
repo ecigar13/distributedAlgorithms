@@ -3,24 +3,21 @@ import java.util.*;
 import java.lang.*;
 import java.util.HashMap;
 import java.util.Queue;
-
-public class Storage
-{
+import FloodMax.message;
 
 
-    //HashMap for all the nodes in the system holding queue for each node                                                                                                                                   
-    public static Map map = Collections.synchronizedMap(new HashMap<Integer, data> );
+public class Storage {
 
-    class data
-    {
-	//int node;
-	Queue<> queue = new Queue<message>();
+  // HashMap for all the nodes in the system holding queue for each node
+  public static Map<Integer, data> map = Collections.synchronizedMap(new HashMap<Integer, data>());
 
-	data(message)
-	    {
-		//this.node = node;
-		queue.push(message);
-	    }
+  class Data {
+    // int node;
+    Queue<message> q = new Queue<message>();
+
+    public Data(message message) {
+      // this.node = node;
+      q.push(message);
     }
+  }
 }
-    

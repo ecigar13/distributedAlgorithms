@@ -1,40 +1,42 @@
 import java.io.*;
 import java.util.IOException;
+import java.util.Queue;
+
+import FloodMax.message;
+
+import java.util.ArrayList;
 import java.util.Exception;
 
+public class nodes extends Thread {
 
-public class nodes extends Thread
-{
-    
-    int slave_round;
-    Queue<message> slave_queue;
-    message temp_message ;
-    int count = 0;
-    int ack_count = 0;
-    int nack_count = 0;
-    int My_UID;
-    int total_nodes;
-    int parent;
-    ArrayList<Integer> children;
-    ArrayList<Integer> neighbours;
-    int max_id ; 
-    boolean updated_info;
-    ArrayList<String> data_to_be_forwarded;
-    int number_of_neighbours = 0;
-    //int message return count
+  int slave_round;
+  Queue<message> slave_queue;
+  message temp_message;
+  int count = 0;
+  int ack_count = 0;
+  int nack_count = 0;
+  int My_UID;
+  int total_nodes;
+  int parent;
+  ArrayList<Integer> children;
+  ArrayList<Integer> neighbours;
+  int max_id;
+  boolean updated_info;
+  ArrayList<String> data_to_be_forwarded;
+  int number_of_neighbours = 0;
+  // int message return count
 
-    nodes(int uid, Storage str, int[][] adj_matrix, int n_o_n)
-    {
-	My_UID = uid;
-	total_nodes = n_o_n; 
-	slave_queue = new Queue<message>();
-	children = new ArrayList<Integer>();
-	neighbours = new ArrayList<Integer>();
-	max_id = My_UID;
-	data_to_be_forwarded = new ArrayList<>(); 
-    }
+  nodes(int uid, Storage str, int[][] adj_matrix, int n_o_n) {
+    My_UID = uid;
+    total_nodes = n_o_n;
+    slave_queue = new Queue<message>();
+    children = new ArrayList<Integer>();
+    neighbours = new ArrayList<Integer>();
+    max_id = My_UID;
+    data_to_be_forwarded = new ArrayList<>();
+  }
 
-    public run()
+  public run()
     {
 	for (int i = 0; i <= total_nodes; i++)
 	    {
@@ -119,6 +121,5 @@ public class nodes extends Thread
 	    }
 			
     }
-
 
 }

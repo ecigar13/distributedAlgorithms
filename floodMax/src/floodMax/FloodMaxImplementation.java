@@ -14,19 +14,22 @@ public class FloodMaxImplementation implements Runnable {
     this.leader = leader;
   }
 
-  public FloodMaxImplementation(int size, int[] ids2, int[][] matrix) {
+  public FloodMaxImplementation(int size, int[] ids, int[][] matrix) {
     this.size = size;
-    this.ids = ids2;
+    this.ids = ids;
     this.matrix = matrix;
   }
 
   @Override
   public void run() {
-    
-    // TODO Auto-generated method stub
-    
-    //create master
-    //create slaves
+
+    // Master thread create slave threads and run them
+    MasterThread masterNode = new MasterThread(this.size, this.ids, this.matrix);
+    masterNode.run();
+
+    // Output the leaderId
+    System.out.println("Leader is: " + masterNode.getLeaderId());
+
   }
 
 }

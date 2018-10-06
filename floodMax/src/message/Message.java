@@ -3,46 +3,104 @@ package message;
 public class Message {
 
   public enum MessageType {
-    ACK, REJECT, IAMLEADER, EXPLORE;
+    NACK, REJECT, IAMLEADER, EXPLORE, NOTLEADER, ROUNDDONE, DEBUG, DIAMETER;
   }
 
-  MessageType mType;
-  int uid;
-  int max_uid;
-  String status;
-  int round;
+  protected int from;
+  protected int to;
 
-  public Message() {
-    // TODO Auto-generated constructor stub
+  public int getTo() {
+    return to;
   }
-  Message(int uid, int max_uid, String status) {
-    this.uid = uid;
-    this.max_uid = max_uid;
-    this.status = status;
+
+  public void setTo(int to) {
+    this.to = to;
+  }
+
+  protected MessageType mType;
+  protected int senderId;
+  protected int messageUid;
+  protected int round;
+  protected int diam;
+
+  public int getDiam() {
+    return diam;
+  }
+
+  public void setDiam(int diam) {
+    this.diam = diam;
+  }
+
+  /**
+   * Constructor for finding diameter messages.
+   * 
+   * @param senderId
+   * @param from
+   * @param to
+   * @param distanceFromTo
+   * @param mType
+   */
+  public Message(int senderId, int from, int to, int distanceFromTo, MessageType mType) {
+    this.senderId = senderId;
+    this.mType = mType;
+    this.from = from;
+    this.to = to;
+    this.diam = distanceFromTo;
+  }
+
+  public int getTarget() {
+    return to;
+  }
+
+  public void setTarget(int target) {
+    this.to = target;
+  }
+
+  public int getFrom() {
+    return from;
+  }
+
+  public void setFrom(int initiator) {
+    this.from = initiator;
+  }
+
+  /**
+   * Constructor for floodmax messages.
+   * 
+   * @param senderId
+   * @param maxUid
+   * @param mType
+   * @param round
+   */
+  public Message(int senderId, int maxUid, MessageType mType, int round) {
+    this.senderId = senderId;
+    this.messageUid = maxUid;
+    this.mType = mType;
+    this.round = round;
+  }
+
+  public int getSenderId() {
+    return senderId;
+  }
+
+  public void setSenderId(int senderId) {
+    this.senderId = senderId;
+  }
+
+  public int getMessageUid() {
+    return messageUid;
+  }
+
+  public void setMessageUid(int messageUid) {
+    this.messageUid = messageUid;
   }
 
   public int getUid() {
-    return uid;
+    return senderId;
   }
 
   public void setUid(int uid) {
-    this.uid = uid;
-  }
-
-  public int getMax_uid() {
-    return max_uid;
-  }
-
-  public void setMax_uid(int max_uid) {
-    this.max_uid = max_uid;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
+    this.senderId = uid;
   }
 
   public int getRound() {
@@ -51,18 +109,6 @@ public class Message {
 
   public void setRound(int round) {
     this.round = round;
-  }
-
-  int get_uid() {
-    return uid;
-  }
-
-  int get_max_uid() {
-    return max_uid;
-  }
-
-  String get_status() {
-    return status;
   }
 
   public MessageType getmType() {
