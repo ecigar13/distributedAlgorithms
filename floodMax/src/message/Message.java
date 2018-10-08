@@ -9,27 +9,11 @@ public class Message {
   protected int from;
   protected int to;
 
-  public int getTo() {
-    return to;
-  }
-
-  public void setTo(int to) {
-    this.to = to;
-  }
-
   protected MessageType mType;
   protected int senderId;
   protected int messageUid;
   protected int round;
-  protected int diam;
-
-  public int getDiam() {
-    return diam;
-  }
-
-  public void setDiam(int diam) {
-    this.diam = diam;
-  }
+  protected int distanceFromTo;
 
   /**
    * Constructor for finding diameter messages.
@@ -40,28 +24,11 @@ public class Message {
    * @param distanceFromTo
    * @param mType
    */
-  public Message(int senderId, int from, int to, int distanceFromTo, MessageType mType) {
+  public Message(int senderId, int from, int distanceFromTo, MessageType mType) {
     this.senderId = senderId;
     this.mType = mType;
     this.from = from;
-    this.to = to;
-    this.diam = distanceFromTo;
-  }
-
-  public int getTarget() {
-    return to;
-  }
-
-  public void setTarget(int target) {
-    this.to = target;
-  }
-
-  public int getFrom() {
-    return from;
-  }
-
-  public void setFrom(int initiator) {
-    this.from = initiator;
+    this.distanceFromTo = distanceFromTo;
   }
 
   /**
@@ -119,4 +86,35 @@ public class Message {
     this.mType = mType;
   }
 
+  public int getTo() {
+    return to;
+  }
+
+  public void setTo(int to) {
+    this.to = to;
+  }
+
+  public int getTarget() {
+    return to;
+  }
+
+  public void setTarget(int target) {
+    this.to = target;
+  }
+
+  public int getFrom() {
+    return from;
+  }
+
+  public void setFrom(int initiator) {
+    this.from = initiator;
+  }
+
+  public int getDistanceFromTo() {
+    return distanceFromTo;
+  }
+
+  public void setDistanceFromTo(int distanceFromTo) {
+    this.distanceFromTo = distanceFromTo;
+  }
 }

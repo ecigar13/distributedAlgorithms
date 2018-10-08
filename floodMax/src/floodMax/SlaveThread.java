@@ -5,6 +5,8 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import com.sun.prism.PhongMaterial.MapType;
+
 import message.*;
 import message.Message.MessageType;
 
@@ -14,7 +16,7 @@ public class SlaveThread implements Runnable {
   private MasterThread masterNode;
   private SlaveThread parent;
   protected int leaderId = 0;
-  protected int diam;
+  protected int diam = 0;
   protected int round = 0;
   protected boolean newInfo = true;
   protected MessageType status;
@@ -36,7 +38,57 @@ public class SlaveThread implements Runnable {
   protected boolean suspendStatus;
 
   /**
-   * Process messages. Not finished
+   * Implement find diameter function here. Not finished
+   */
+  public void diameter() {
+    // after edge rounds, done.
+
+    // First, broadcast distance to all possible nodes.
+    for (Map.Entry<Integer, SlaveThread> n : neighbors.entrySet()) {
+      if (parent != n.getValue())
+        n.getValue().sendMessage(new Message(id, id, diam, MessageType.DIAMETER));
+    }
+    // then process incoming messages
+    // All processes
+    // upon receiving d from p:
+    // if d+1 < distance:
+    // distance := d+1
+    // parent := p
+    // send distance to all neighbors
+  }
+
+  /**
+   * Create a new Message object for each neighbor and send to all of them. Because the messages can be edited later.
+   * @param m
+   */
+  protected void broadcastToNeighbors(Message m) {
+    for (Map.Entry<Integer, SlaveThread> pair : neighbors.entrySet()) {
+      // broadcast to neighbors. Don't broadcast to parents
+      if (pair.getKey() != parent.getId())
+        pair.getValue().sendMessage(new Message(m.getSenderId(), m.getFrom(), m.getDistanceFromTo(), m.getmType()));
+    }
+  }
+
+  protected void processDiameterMessage(Message message) {
+    // msg is guanrantee to be MessageType.DIAMETER
+
+    // if the distance I get is smaller than my distance to that node
+    // or I've never seen that vertex's id before
+    if (message.getDistanceFromTo() + 1 < distance.get(message.getFrom()) || distance.get(message.getFrom()) == null) {
+      distance.put(message.getFrom(), message.getDistanceFromTo() + 1);
+      parent = neighbors.get(message.getSenderId());
+      // broadcast distance to all neighbords
+      // reuse the incoming message
+      message.setSenderId(id);
+      message.setDistanceFromTo(message.getDistanceFromTo() + 1);
+      broadcastToNeighbors(message);
+    }
+    // else, don't do anything.
+
+  }
+
+  /**
+   * Process different messages in the queue
    */
   protected void processMessage(Message message) {
     if (message.getmType() == MessageType.EXPLORE) {
@@ -51,7 +103,7 @@ public class SlaveThread implements Runnable {
     } else if (message.getmType() == MessageType.REJECT) {
       // implement
     } else if (message.getmType() == MessageType.DIAMETER) { // if this message is for finding diameter
-      // if my id is the target id, if initiator. distance
+      processDiameterMessage(message);
     } else
       System.err.println("This message cannot be processed: " + message.getmType().toString());
 
@@ -84,32 +136,17 @@ public class SlaveThread implements Runnable {
     }
   }
 
-  /**
-   * Implement find diameter function here. Not finished
-   */
-  public void diameter() {
-
-    // First, explore distance to all possible nodes.
-    for (Map.Entry<Integer, SlaveThread> n : neighbors.entrySet()) {
-      if (parent != n.getValue())
-        n.getValue().sendMessage(new Message(id, id, n.getValue().getId(), diam, MessageType.DIAMETER));
-    }
-    // All processes:
-    // upon receiving d from p:
-    // if d+1 < distance:
-    // distance := d+1
-    // parent := p
-    // send distance to all neighbors
-  }
-
   @Override
   public synchronized void run() {
     System.out.println("I RAN!!!");
     System.out.println("Neighbors: " + neighbors.size());
-    // masterNode.sendMessage(new Message(id, leaderId, MessageType.DEBUG, round));
-    // while (suspendStatus == false) {
+    // while status is FIND DIAMETER, do the find diameter part
 
-    // }
+    // set status to FIND FLOODMAX
+    // while status is FIND FLOODMAX, do the find floodmax part
+
+    // set status to DONE
+
     System.err.println("The thread will now die");
 
   }
