@@ -69,6 +69,10 @@ public class SlaveThread implements Runnable {
     }
   }
 
+  /**
+   * not implemented
+   * @param message
+   */
   protected void processDiameterMessage(Message message) {
     // msg is guanrantee to be MessageType.DIAMETER
 
