@@ -1,28 +1,17 @@
 package floodMax;
+
 import message.*;
 import java.util.Set;
 import java.util.Queue;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Iterator;
-import com.apple.eawt.AppEvent.ScreenSleepEvent;
-import com.sun.glass.ui.TouchInputSupport;
-import com.sun.jmx.snmp.SnmpStringFixed;
-import com.sun.org.apache.bcel.internal.generic.GETFIELD;
-import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBaseIterators.ChildrenIterator;
-import com.sun.org.apache.xml.internal.security.keys.keyresolver.implementations.PrivateKeyResolver;
-import com.sun.org.apache.xml.internal.serializer.utils.Messages;
-import com.sun.prism.PhongMaterial.MapType;
 
-import message.*;
 
-public class SlaveThread implements Runnable 
-{
+public class SlaveThread implements Runnable {
 
   protected int id;
   private int sno_in_graph;
@@ -39,31 +28,31 @@ public class SlaveThread implements Runnable
   private int ACK_Count;
   public ConcurrentHashMap<Integer, ArrayList<Integer>> slave_children;
   private LinkedBlockingQueue<Message> temp_priority_queue;
-  private LinkedBlockingQueue<Message> temp_pq ;
-  private ArrayList<Integer>  list_of_children;
+  private LinkedBlockingQueue<Message> temp_pq;
+  private ArrayList<Integer> list_of_children;
   static boolean terminate;
   private LinkedBlockingQueue<Message> temp_msg_pbq;
   protected Map<Integer, Integer> distance = new ConcurrentHashMap<Integer, Integer>();
-  protected Map<Integer, SlaveThread> neighbors; 
-  //protected Queue<Message> nextRoundMsg = new LinkedBlockingQueue<Message>();
-  //protected Queue<Message> thisRoundMsg = new LinkedBlockingQueue<Message>();
+  protected Map<Integer, SlaveThread> neighbors;
+  // protected Queue<Message> nextRoundMsg = new LinkedBlockingQueue<Message>();
+  // protected Queue<Message> thisRoundMsg = new LinkedBlockingQueue<Message>();
   private ArrayList<Messages_in_queue> msgs_in_queues;
   private Messages_in_queue temp_obj;
   private Queue<Integer> final_output;
   // Empty constructor for subclass.
   private int current_node;
   private static ConcurrentHashMap<Integer, Integer> Sno_id_mapping;
-  
-  
-  public SlaveThread()
-  {}
-  
+
+  public SlaveThread() {
+  }
+
   /**
    * Constructor.
    * 
    * @param id
    * @param masterNode
-   * @param sno = row in the matrix
+   * @param sno
+   *          = row in the matrix
    */
   
   public SlaveThread(int id, MasterThread masterNode, int sno, ConcurrentHashMap<Integer, ArrayList<Integer>> children, ConcurrentHashMap<Integer, Integer> Sno_id_mapping) 
@@ -367,212 +356,6 @@ public class SlaveThread implements Runnable
  	}
  	
   };
-	  
- // }
-
- /* public void sendMessage(Message msg) {
-    nextRoundMsg.add(msg);
-  }
-
-  public enum RoundDone {
-    YES, NO;
-  }
-
-  protected RoundDone roundFinishStatus = RoundDone.YES;
-  protected boolean suspendStatus;
-
-  /**
-   * Implement find diameter function here. Not finished
-   
-  public void diameter() {
-    // after edge rounds, done.
-
-    // First, broadcast distance to all possible nodes.
-    for (Map.Entry<Integer, SlaveThread> n : neighbors.entrySet()) {
-      if (parent != n.getValue())
-        n.getValue().sendMessage(new Message(id, id, diam, MessageType.DIAMETER));
-    }
-    // then process incoming messages
-    // All processes
-    // upon receiving d from p:
-    // if d+1 < distance:
-    // distance := d+1
-    // parent := p
-    // send distance to all neighbors
-  }
-
-  /**
-   * Create a new Message object for each neighbor and send to all of them. Because the messages can be edited later.
-   * @param m
-   
-  protected void broadcastToNeighbors(Message m) {
-    for (Map.Entry<Integer, SlaveThread> pair : neighbors.entrySet()) {
-      // broadcast to neighbors. Don't broadcast to parents
-      if (pair.getKey() != parent.getId())
-        pair.getValue().sendMessage(new Message(m.getSenderId(), m.getFrom(), m.getDistanceFromTo(), m.getmType()));
-    }
-  }
-
-  /**
-   * not implemented
-   * @param message
-   
-  protected void processDiameterMessage(Message message) {
-    // msg is guanrantee to be MessageType.DIAMETER
-
-    // if the distance I get is smaller than my distance to that node
-    // or I've never seen that vertex's id before
-    if (message.getDistanceFromTo() + 1 < distance.get(message.getFrom()) || distance.get(message.getFrom()) == null) {
-      distance.put(message.getFrom(), message.getDistanceFromTo() + 1);
-      parent = neighbors.get(message.getSenderId());
-      // broadcast distance to all neighbords
-      // reuse the incoming message
-      message.setSenderId(id);
-      message.setDistanceFromTo(message.getDistanceFromTo() + 1);
-      broadcastToNeighbors(message);
-    }
-    // else, don't do anything.
-
-  }
-
-  /**
-   * Process different messages in the queue
-   
-  protected void processMessage(Message message) {
-    if (message.getmType() == MessageType.EXPLORE) {
-      if (message.getMessageUid() > leaderId) {
-        leaderId = message.getMessageUid();
-        newInfo = true;
-      } else
-        newInfo = false;
-    } else if (message.getmType() == MessageType.NACK) {
-      // implement
-
-    } else if (message.getmType() == MessageType.REJECT) {
-      // implement
-    } else if (message.getmType() == MessageType.DIAMETER) { // if this message is for finding diameter
-      processDiameterMessage(message);
-    } else
-      System.err.println("This message cannot be processed: " + message.getmType().toString());
-
-  }
-
-  /**
-   * Implement Floodmax here. Not finished
-   
-  protected void floodMax() {
-    round += 1;
-    for (Message m : thisRoundMsg) {
-      processMessage(m);
-    }
-
-    if (round == diam) {
-      if (leaderId == id) {
-        masterNode.setLeaderId(leaderId);
-        status = MessageType.IAMLEADER;
-        System.out.println("Leader: " + id + " " + status.toString());
-        // send message to master
-      } else
-        status = MessageType.NOTLEADER;
-
-      if (round < diam && newInfo == true) {
-
-        for (Map.Entry<Integer, SlaveThread> pair : neighbors.entrySet()) {
-          pair.getValue().sendMessage(new Message(id, leaderId, MessageType.EXPLORE, round));
-        }
-      }
-    }
-  }
-
-  @Override
+	 
   
-
-  void suspend() {
-    suspendStatus = true;
-  }
-
-  public boolean resume() {
-    if (roundFinishStatus.equals(RoundDone.YES)) {
-      suspendStatus = false;
-      notify();
-      return true;
-    } else
-      return false;
-  }
-
-  public MasterThread getMasterNode() {
-    return masterNode;
-  }
-
-  public void setMasterNode(MasterThread masterNode) {
-    this.masterNode = masterNode;
-  }
-
-  public SlaveThread getParent() {
-    return parent;
-  }
-
-  public void setParent(SlaveThread parent) {
-    this.parent = parent;
-  }
-
-  public Map<Integer, SlaveThread> getNeighbors() {
-    return neighbors;
-  }
-
-  public void setNeighbors(Map<Integer, SlaveThread> neighbors) {
-    this.neighbors = neighbors;
-  }
-
-  public RoundDone getStatus() {
-    return roundFinishStatus;
-  }
-
-  public void setStatus(RoundDone status) {
-    this.roundFinishStatus = status;
-  }
-
-  public RoundDone isFinished() {
-    return getStatus();
-  }
-
-  public void setFinished(RoundDone finished) {
-    this.roundFinishStatus = finished;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public int getLeaderId() {
-    return leaderId;
-  }
-
-  public void setLeaderId(int leaderId) {
-    this.leaderId = leaderId;
-  }
-
-  public int getRound() {
-    return round;
-  }
-
-  public void setRound(int round) {
-    this.round = round;
-  }
-
-  public void setDiam(int diam) {
-    this.diam = diam;
-  }
-
-  /**
-
-  */
-
-
-
 }
-

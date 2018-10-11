@@ -1,49 +1,43 @@
 package floodMax;
+
 import message.Message;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.BlockingQueue;
-import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.ArrayList;
-import javafx.scene.chart.PieChart.Data;
-import message.Message;
-//import message.Message.MessageType;
-import java.util.PriorityQueue;
-import java.util.concurrent.*;
+
 /**
  * MasterNode is a special case of a SlaveNode.
  * 
  * @author khoa
  *
  */
-public class MasterThread extends SlaveThread 
-{
-	private static final int NULL = 0;
-	protected int master_id = 0;
-	//protected int sno_in_graph = 0;
-	protected int master_round = 0;
-	protected boolean newInfo = true;
-	//protected MessageType status;
-	//max id to be in sync with message class object. Not needed here. Junk value
-	protected int max_uid;
-	int parent;
-	protected String MType;
-	private LinkedBlockingQueue<Message> temp_priority_queue;
-	private LinkedBlockingQueue<Message> temp_pq;
-	private Message temp_Message_obj;
-	protected int size;
-	private int[] ids;
-	protected int[][] matrix;
-	//master will put information about the round in this hash map which is accessible to all
-	public ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> Data_Messages;
-	public ConcurrentHashMap<Integer, Integer> Sno_id_mapping;
-	//hash Map for storing children pointers
-	public ConcurrentHashMap<Integer, ArrayList<Integer>> children = new ConcurrentHashMap<>();
-	private Map<Integer, SlaveThread> slaves = new ConcurrentHashMap<Integer, SlaveThread>();
-	private int Done_Count;
+public class MasterThread extends SlaveThread {
+  private static final int NULL = 0;
+  protected int master_id = 0;
+  // protected int sno_in_graph = 0;
+  protected int master_round = 0;
+  protected boolean newInfo = true;
+  // protected MessageType status;
+  // max id to be in sync with message class object. Not needed here. Junk value
+  protected int max_uid;
+  int parent;
+  protected String MType;
+  private LinkedBlockingQueue<Message> temp_priority_queue;
+  private LinkedBlockingQueue<Message> temp_pq;
+  private Message temp_Message_obj;
+  protected int size;
+  private int[] ids;
+  protected int[][] matrix;
+  // master will put information about the round in this hash map which is
+  // accessible to all
+  public ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> Data_Messages;
+  public ConcurrentHashMap<Integer, Integer> Sno_id_mapping;
+  // hash Map for storing children pointers
+  public ConcurrentHashMap<Integer, ArrayList<Integer>> children = new ConcurrentHashMap<>();
+  private Map<Integer, SlaveThread> slaves = new ConcurrentHashMap<Integer, SlaveThread>();
+  private int Done_Count;
+
   /**
    * Constructor
    * 
@@ -51,21 +45,22 @@ public class MasterThread extends SlaveThread
    * @param ids
    * @param matrix
    */
-  public MasterThread(int size, int[] ids, int[][] matrix, ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> map) 
-  {
+  public MasterThread(int size, int[] ids, int[][] matrix,
+      ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> map) {
     this.size = size;
     this.ids = ids;
     this.matrix = matrix;
     this.Data_Messages = map;
     this.parent = NULL;
-    //put master into concurrent hash map
-   // temp_priority_queue = new LinkedBlockingQueue<>();
+    // put master into concurrent hash map
+    // temp_priority_queue = new LinkedBlockingQueue<>();
+    temp_priority_queue = new LinkedBlockingQueue<>();
     Done_Count = 0;
     Data_Messages = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
     temp_pq = new LinkedBlockingQueue<>();
-    //used for printing the tree at the end
-    Sno_id_mapping = new ConcurrentHashMap<Integer,Integer>();
-    //setNeighbors();
+    // used for printing the tree at the end
+    Sno_id_mapping = new ConcurrentHashMap<Integer, Integer>();
+    // setNeighbors();
   }
 
   @Override
@@ -171,119 +166,3 @@ public class MasterThread extends SlaveThread
   }
 }
 	  
-	  
-
-
-    // while(round < diam) {
-  /*  for (Map.Entry<Integer, SlaveThread> s : slaves.entrySet()) {
-      System.out.println(s.getValue().getId());
-      s.getValue().run();
-    }
-  }
-  
- /* 
-  @Override
-  protected synchronized void processMessage(Message message) {
-    if (message.getmType() == "IAMLEADER") 
-    {
-      if (message.getMessageUid() > leaderId) {
-        leaderId = message.getMessageUid();
-        newInfo = true;
-      } else
-        newInfo = false;
-
-    } else
-      System.err.println("This message cannot be processed: " + message.getmType().toString());
-  }
-
-  /**
-   * Go through the slaves map. For each slave, use the matrix[][] to find its
-   * neighbor, then get it from slaves map and add it to a HashMap. Finally, call
-   * setNeighbor function of slaves.
-   * 
-   * Inefficient in large graph. I might implement Connection instead.
-   
-  private void setNeighbors() {
-    // set neighbors of slaves
-    // I didn't think this through, so check for bidirectional bonds
-    for (int i = 0; i < size; i++) {
-      Map<Integer, SlaveThread> neighbors = new ConcurrentHashMap<Integer, SlaveThread>();
-
-      // add nodes with their neighbors on here.
-      for (int j = 0; j < size; j++) {
-        if (this.matrix[i][j] != 0) {
-          neighbors.put(this.ids[j], slaves.get(this.ids[j]));
-        }
-      }
-
-      // then set all neighbors to SlaveNodes
-      slaves.get(this.ids[i]).setNeighbors(neighbors);
-    }
-    System.err.println(slaves.size());
-  }
-
-  public SlaveThread getSlave(int slaveId) {
-    return slaves.get(slaveId);
-  }
-
-  /**
-   * Go through the hashmap and determine if the round is finished.
-   * 
-   * @return
-  
-  public synchronized boolean roundFinished() {
-    boolean done = false;
-    for (Map.Entry<Integer, SlaveThread> node : slaves.entrySet()) {
-      done &= !node.getValue().getStatus().equals(RoundDone.YES);
-      if (done == false) {
-        return false;
-      }
-    }
-    return done;
-  }
-
-  public synchronized void setStartStatus() {
-    for (Map.Entry<Integer, SlaveThread> node : slaves.entrySet()) {
-      node.getValue().setStatus(RoundDone.YES);
-    }
-  }
-
-  public synchronized void suspendAll() {
-    System.out.println("Suspending all slaves. Round: " + this.round);
-    for (Map.Entry<Integer, SlaveThread> node : slaves.entrySet()) {
-      node.getValue().suspend();
-    }
-  }
-
-  public synchronized void resumeAll() {
-    System.out.println("Resuming all slaves. Round: " + this.round);
-    for (Map.Entry<Integer, SlaveThread> node : slaves.entrySet()) {
-      node.getValue().resume();
-    }
-  }
-
-  /**
-   * Set diameter for all slave nodes
-   
-  @Override
-  public synchronized void setDiam(int diam) {
-    super.setDiam(diam);
-    for (Map.Entry<Integer, SlaveThread> node : slaves.entrySet()) {
-      node.getValue().setDiam(diam);
-    }
-
-  }
-
-  /**
-   * Only test if the threads are created at this point.
-  
-
-    // }
-
-    System.err.println("The master will now die");
-
-    // create master
-    // create slaves
-  }
-*/
-
