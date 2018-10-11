@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Iterator;
 import com.apple.eawt.AppEvent.ScreenSleepEvent;
+import com.sun.glass.ui.TouchInputSupport;
 import com.sun.jmx.snmp.SnmpStringFixed;
 import com.sun.org.apache.bcel.internal.generic.GETFIELD;
 import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBaseIterators.ChildrenIterator;
@@ -27,7 +28,7 @@ public class SlaveThread implements Runnable
   private int sno_in_graph;
   private MasterThread masterNode;
   //private SlaveThread parent;		
-  private int parent = -1;
+  private int parent;
   int max_uid;
   ArrayList<Integer> neighbours;
   protected boolean newInfo;
@@ -87,6 +88,7 @@ public class SlaveThread implements Runnable
 	   this.Sno_id_mapping = Sno_id_mapping;
 	   this.terminate = false;
 	   neighbors = new ConcurrentHashMap<Integer, SlaveThread>();
+	   this.parent = this.sno_in_graph;
   }	
   
   
@@ -196,6 +198,7 @@ public class SlaveThread implements Runnable
 				  		if (temp_message_var.getmType().equals("Explore"))
 						  {
 				  			System.out.println("Inside explore");
+				  			System.out.println("Current thread max uid"+this.max_uid);
 							  if(this.max_uid > temp_message_var.getmaxUID())
 							  {
 								  this.max_uid = temp_message_var.getmaxUID();
@@ -218,6 +221,7 @@ public class SlaveThread implements Runnable
 								  }
 								  else
 								  {
+									  System.out.println("Sending nack message from  "+this.sno_in_graph+" to "+this.parent);
 									  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"N_ACK"); 
 									  temp_obj = new Messages_in_queue(this.parent,temp_msg);
 									  //temp_obj.node_s_no = this.parent;
@@ -263,7 +267,7 @@ public class SlaveThread implements Runnable
 			  			System.out.println("parent is "+this.parent);
 			  			if(neighbour_id != this.parent)
 			  			{
-			  				System.out.println("Sending message to neighbor "+neighbour_id+" from "+this.sno_in_graph);
+			  				System.out.println("Sending explore message to neighbor "+neighbour_id+" from "+this.sno_in_graph);
 			  				Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"Explore"); 
 			  				temp_obj = new Messages_in_queue(neighbour_id,temp_msg);
 			  				//temp_obj.node_s_no = neighbour_id;
@@ -281,6 +285,7 @@ public class SlaveThread implements Runnable
 			  		//for node leaf
 			  		if(NACK_Count == neighbours.size() - 1)
 			  		{
+			  			System.out.println("Sending ack message from  "+this.sno_in_graph+" to "+this.parent);
 			  			  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"ACK"); 
 			  			  temp_obj = new Messages_in_queue(this.parent,temp_msg);
 //						  temp_obj.node_s_no = this.parent;
@@ -290,6 +295,7 @@ public class SlaveThread implements Runnable
 			     	// for leader
 			  		else if(ACK_Count == neighbours.size() )
 			  		{
+			  			System.out.println("Sending Leader message to master by "+this.sno_in_graph);
 			  			Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"Leader"); 
 			  			temp_obj = new Messages_in_queue(0,temp_msg);
 //						  temp_obj.node_s_no = 0;
@@ -300,6 +306,7 @@ public class SlaveThread implements Runnable
 			  		//for internal nodes
 			  		else if(NACK_Count + ACK_Count == neighbours.size() - 1)
 			  		{
+			  			System.out.println("Sending ack message from  "+this.sno_in_graph+" to "+this.parent);
 			  			  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"ACK"); 
 			  			 temp_obj = new Messages_in_queue(this.parent,temp_msg);
 //						  temp_obj.node_s_no = this.parent;
@@ -317,7 +324,7 @@ public class SlaveThread implements Runnable
 			  	} 
 			  	
 			  	//Message to master about Round Completion
-			  	System.out.println("send round done message to master by thread "+this.sno_in_graph);
+			  	System.out.println("send round "+this.round +" done message to master by thread "+this.sno_in_graph);
 			  	Message Master_message = new Message(this.id,0,this.round,"Done");
 			  	temp_msg_pbq = masterNode.Data_Messages.get(0);
 	  			temp_msg_pbq.add(Master_message);

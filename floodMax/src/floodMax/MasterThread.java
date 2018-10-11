@@ -126,12 +126,14 @@ public class MasterThread extends SlaveThread
 		  while(!(temp_priority_queue.isEmpty()))
 		  {
 			  System.out.println("Master checking its queue");
-			  System.out.println("Size of queue is "+ temp_priority_queue.size());
+			  System.out.println("Size of master queue is "+ temp_priority_queue.size());
 			  temp_Message_obj = temp_priority_queue.poll();
+			  System.out.println("Master checking its queue");
+			  System.out.println("Size of master queue is "+ temp_priority_queue.size());
 			  //System.out.println(temp_Message_obj.getmType());
 			  	if(temp_Message_obj.getmType().equals("Leader"))
 			  	{
-			  		
+			  		temp_priority_queue = new LinkedBlockingQueue<>();
 			    	Message msg = new Message(this.master_id,this.master_round, this.max_uid, "Terminate");
 			    	temp_priority_queue.add(msg);
 			    	Data_Messages.put(temp_Message_obj.getSenderId(), temp_priority_queue);
@@ -140,19 +142,27 @@ public class MasterThread extends SlaveThread
 			  	else if ( (temp_Message_obj.getmType().equals("Done")) && (temp_Message_obj.getRound() == this.master_round) )
 			  	{
 			  		Done_Count++;
+			  		System.out.println("Master done count is "+Done_Count);
+			  		System.out.print("size - 1 is ");
+			  		System.out.println(size-1);
 			  		//all slaves completed the round
-			  		if (Done_Count == size)
+			  		if (Done_Count == size-1)
 			  		{
-			  			
+			  			Done_Count = 0;
 			  			this.master_round++;
-				    	Message msg = new Message(this.master_id,this.master_round, this.max_uid, "Round_Number");
-				    	temp_priority_queue.add(msg);
+			  			System.out.println("New round is " +this.master_round);
+				    	
 				    	for (int i = 1; i< size;i++)
 				    	{
+				    		Message msg = new Message(this.master_id,this.master_round, this.max_uid, "Round_Number");
+					    	temp_priority_queue = new LinkedBlockingQueue<>();
+					    	temp_priority_queue.add(msg);
+					    	System.out.println("message for "+i+" is : "+temp_priority_queue);
 				    		Data_Messages.put(i, temp_priority_queue);
+				    		System.out.println("Message in data message is before " + "i is "+i+ Data_Messages.get(i));
 				    	}
 				    	//Reset Done Count for next round messages
-				    	Done_Count= 0;
+				    	
 			  		}
 			  	}
 		  }
