@@ -23,17 +23,20 @@ public class Main {
   public static void main(String args[]) throws IOException {
     // read from file
     Scanner in = new Scanner(new FileReader("graph.txt"));
+    
     //first entry of the graph.txt provides the number of slave nodes
+    //adj matrix's first row and column is the master node.
     int size = in.nextInt() + 1;
     System.out.println("Size is : "+size);
     int[] node_ids = new int[size];
     int[][] matrix = new int[size][size];
     
-    //Hashmap to store message between nodes
+    //Hashmap: integer is assigned sequentially (not node id), queue of message.
     ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> common_map = new ConcurrentHashMap<Integer,LinkedBlockingQueue<Message>>();
     
-    //assigning ids to all the nodes
+    //master node's id is 0
     node_ids[0]=0;
+    // assigning ids to all the nodes
     for (int i = 1; i < size; i++) 
     {
       node_ids[i] = in.nextInt();

@@ -2,19 +2,27 @@ package message;
 
 public class Message {
 
-  /*public enum MessageType {
-    NACK, REJECT, IAMLEADER, EXPLORE, NOTLEADER, ROUNDDONE, DEBUG, DIAMETER;
-  }*/
+  /*
+   * public enum MessageType { NACK, REJECT, IAMLEADER, EXPLORE, NOTLEADER,
+   * ROUNDDONE, DEBUG, DIAMETER; }
+   */
 
   protected int from;
   protected int to;
-  
+
   protected String mType;
-  protected int senderId;		//serial number in the graph
+  protected int senderId; // serial number in the graph
   protected int messageUid;
   protected int round;
   protected int distanceFromTo;
-  //protected boolean newInfo;//slave property not message property
+
+  public String toString() {
+    StringBuffer stringBuffer = new StringBuffer();
+    stringBuffer.append("From: ").append(from).append(" To ").append(to).toString();
+    stringBuffer.append("Sender id: ").append(senderId).append(" messageUid: ").append(messageUid).append(" round ").append(round);
+    return stringBuffer.toString();
+  }
+  // protected boolean newInfo;//slave property not message property
 
   /**
    * Constructor for finding diameter messages.
@@ -25,12 +33,11 @@ public class Message {
    * @param distanceFromTo
    * @param mType
    */
- /* public Message(int senderId, int from, int distanceFromTo, String mType) {
-    this.senderId = senderId;
-    this.mType = mType;
-    this.from = from;
-    this.distanceFromTo = distanceFromTo;
-  }*/
+  /*
+   * public Message(int senderId, int from, int distanceFromTo, String mType) {
+   * this.senderId = senderId; this.mType = mType; this.from = from;
+   * this.distanceFromTo = distanceFromTo; }
+   */
 
   /**
    * Constructor for floodmax messages.
@@ -40,13 +47,12 @@ public class Message {
    * @param mType
    * @param round
    */
-  public Message(int senderId, int round, int maxUid, String mType) 
-  {
+  public Message(int senderId, int round, int maxUid, String mType) {
     this.senderId = senderId;
     this.messageUid = maxUid;
     this.round = round;
     this.mType = mType;
-    //this.newInfo = newInfo;
+    // this.newInfo = newInfo;
   }
 
   public int getSenderId() {
@@ -56,7 +62,6 @@ public class Message {
   public void setSenderId(int senderId) {
     this.senderId = senderId;
   }
-  
 
   public int getmaxUID() {
     return messageUid;
