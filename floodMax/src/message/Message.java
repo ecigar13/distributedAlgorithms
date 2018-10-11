@@ -2,18 +2,19 @@ package message;
 
 public class Message {
 
-  public enum MessageType {
+  /*public enum MessageType {
     NACK, REJECT, IAMLEADER, EXPLORE, NOTLEADER, ROUNDDONE, DEBUG, DIAMETER;
-  }
+  }*/
 
   protected int from;
   protected int to;
-
-  protected MessageType mType;
-  protected int senderId;
+  
+  protected String mType;
+  protected int senderId;		//serial number in the graph
   protected int messageUid;
   protected int round;
   protected int distanceFromTo;
+  //protected boolean newInfo;//slave property not message property
 
   /**
    * Constructor for finding diameter messages.
@@ -24,12 +25,12 @@ public class Message {
    * @param distanceFromTo
    * @param mType
    */
-  public Message(int senderId, int from, int distanceFromTo, MessageType mType) {
+ /* public Message(int senderId, int from, int distanceFromTo, String mType) {
     this.senderId = senderId;
     this.mType = mType;
     this.from = from;
     this.distanceFromTo = distanceFromTo;
-  }
+  }*/
 
   /**
    * Constructor for floodmax messages.
@@ -39,11 +40,13 @@ public class Message {
    * @param mType
    * @param round
    */
-  public Message(int senderId, int maxUid, MessageType mType, int round) {
+  public Message(int senderId, int round, int maxUid, String mType) 
+  {
     this.senderId = senderId;
     this.messageUid = maxUid;
-    this.mType = mType;
     this.round = round;
+    this.mType = mType;
+    //this.newInfo = newInfo;
   }
 
   public int getSenderId() {
@@ -53,12 +56,13 @@ public class Message {
   public void setSenderId(int senderId) {
     this.senderId = senderId;
   }
+  
 
-  public int getMessageUid() {
+  public int getmaxUID() {
     return messageUid;
   }
 
-  public void setMessageUid(int messageUid) {
+  public void setgetmaxUID(int messageUid) {
     this.messageUid = messageUid;
   }
 
@@ -78,11 +82,11 @@ public class Message {
     this.round = round;
   }
 
-  public MessageType getmType() {
+  public String getmType() {
     return mType;
   }
 
-  public void setmType(MessageType mType) {
+  public void setmType(String mType) {
     this.mType = mType;
   }
 
