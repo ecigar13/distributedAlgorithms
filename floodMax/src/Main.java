@@ -17,41 +17,37 @@ import floodMax.FloodMaxImplementation;
 import jdk.internal.dynalink.beans.StaticClass;
 import message.Message;
 
-
 public class Main {
 
   public static void main(String args[]) throws IOException {
     // read from file
     Scanner in = new Scanner(new FileReader("graph.txt"));
-    
-    //first entry of the graph.txt provides the number of slave nodes
-    //adj matrix's first row and column is the master node.
+
+    // first entry of the graph.txt provides the number of slave nodes
+    // adj matrix's first row and column is the master node.
     int size = in.nextInt() + 1;
-    System.out.println("Size is : "+size);
+    System.out.println("Size is : " + size);
     int[] vertexIdArray = new int[size];
     int[][] adjMatrix = new int[size][size];
-    
-    //Hashmap: integer is assigned sequentially (not node id), queue of message.
-    ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> idAndMsgQueueMap = new ConcurrentHashMap<Integer,LinkedBlockingQueue<Message>>();
-    
-    //master node's id is 0
-    vertexIdArray[0]=0;
+
+    // Hashmap: integer is assigned sequentially (not node id), queue of message.
+    ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> idAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
+
+    // master node's id is 0
+    vertexIdArray[0] = 0;
     // assigning ids to all the nodes
-    for (int i = 1; i < size; i++) 
-    {
+    for (int i = 1; i < size; i++) {
       vertexIdArray[i] = in.nextInt();
-      //System.err.println(i+" : "+node_ids[i]);
+      System.out.println(vertexIdArray[i]);
     }
 
     // 0 is master node id; 1 to n is the slave nodes
-    //every slave is connected to the master node
-    
-    for (int i = 0; i < size; i++) 
-    {
-      for (int j = 0; j < size; j++) 
-      {
+    // every slave is connected to the master node
+
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
         adjMatrix[i][j] = in.nextInt();
-        //System.out.println(matrix[i][j]);
+        // System.out.println(matrix[i][j]);
       }
     }
 
@@ -64,14 +60,16 @@ public class Main {
     }
 
     // implement floodmax here.
-    //FloodMaxImplementation algo =new FloodMaxImplementation(size, node_ids, matrix,common_map) ;
-    Thread t1 = new Thread(new FloodMaxImplementation(size, vertexIdArray, adjMatrix,idAndMsgQueueMap));
+    // FloodMaxImplementation algo =new FloodMaxImplementation(size, node_ids,
+    // matrix,common_map) ;
+    Thread t1 = new Thread(new FloodMaxImplementation(size, vertexIdArray, adjMatrix, idAndMsgQueueMap));
     t1.start();
 
-    //prints final output tree
-   /* PrintWriter out = new PrintWriter(new FileWriter("graphOut.txt"));
-    out.print(algo.getLeader());
-    out.close();*/
+    // prints final output tree
+    /*
+     * PrintWriter out = new PrintWriter(new FileWriter("graphOut.txt"));
+     * out.print(algo.getLeader()); out.close();
+     */
     in.close();
   }
 

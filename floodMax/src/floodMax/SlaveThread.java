@@ -7,38 +7,30 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Iterator;
 
-public class SlaveThread implements Runnable {
+public class SlaveThread extends Thread {
+  protected static boolean terminated;
+  protected static ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
 
   protected int id;
-  private int nodeIndex;
+  protected int maxUid;
+  protected int round;
   private MasterThread masterNode;
+
   private int parent = -1;
-  int maxUid;
-  ArrayList<Integer> neighbours;
+  protected Set<Integer> children = new HashSet<Integer>();
+  protected Set<Integer> neighbours = new HashSet<Integer>();
+
+  protected LinkedBlockingQueue<Message> localMessageQueue; // create a new one every round
   protected boolean newInfo;
   protected String messageString;
-  protected int round;
-  protected Message tempMsg;
+
   private int nackCount;
   private int actCount;
-  public ConcurrentHashMap<Integer, ArrayList<Integer>> slave_children;
-  protected LinkedBlockingQueue<Message> localMessageQueue;
-  protected LinkedBlockingQueue<Message> temp_pq;
-  private ArrayList<Integer> indexOfChildren;
-  static boolean terminated;
-  private LinkedBlockingQueue<Message> temp_msg_pbq;
-  protected Map<Integer, SlaveThread> neighbors;
-  // protected Queue<Message> nextRoundMsg = new LinkedBlockingQueue<Message>();
-  // protected Queue<Message> thisRoundMsg = new LinkedBlockingQueue<Message>();
-  private ArrayList<DestinationAndMsgPair> msgPairsToSend;
-  private DestinationAndMsgPair tempMsgPair;
-  private Queue<Integer> finalOutput;
-  // Empty constructor for subclass.
-  private int current_node;
-  private static ConcurrentHashMap<Integer, Integer> indexToIdMapping;
 
   public SlaveThread() {
   }
@@ -48,61 +40,30 @@ public class SlaveThread implements Runnable {
    * 
    * @param id
    * @param masterNode
-   * @param nodeIndex
-   *          = row in the matrix
    */
 
-  public SlaveThread(int id, MasterThread masterNode, int nodeIndex,
-      ConcurrentHashMap<Integer, ArrayList<Integer>> children, ConcurrentHashMap<Integer, Integer> Sno_id_mapping) {
+  public SlaveThread(int id, MasterThread masterNode,
+      ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap) {
     this.id = id;
     this.maxUid = id;
     this.masterNode = masterNode;
-    this.nodeIndex = nodeIndex;
-    temp_pq = new LinkedBlockingQueue<>();
     this.newInfo = true;
-    neighbours = new ArrayList<>();
     this.round = 0;
     this.nackCount = 0;
     this.actCount = 0;
-    this.slave_children = children;
-    slave_children = new ConcurrentHashMap<>();
-    indexOfChildren = new ArrayList<>();
-    temp_msg_pbq = new LinkedBlockingQueue<Message>();
-    msgPairsToSend = new ArrayList<>();
-    finalOutput = new LinkedList<Integer>();
-    SlaveThread.indexToIdMapping = Sno_id_mapping;
+    SlaveThread.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
     SlaveThread.terminated = false;
-    neighbors = new ConcurrentHashMap<Integer, SlaveThread>();
   }
 
   public void processTerminateMessage() {
     System.out.println("Leader id: " + maxUid);
+
+    // Need to implement:
     // Obtaining an iterator for the entry set
-    Iterator<Map.Entry<Integer, Integer>> it = indexToIdMapping.entrySet().iterator();
-
     // output the graph and stop execution
-    current_node = this.id;
-    finalOutput.add(current_node);
-    System.out.print("The tree formed is " + current_node + "-->");
-    while (!(finalOutput.isEmpty())) {
-      current_node = finalOutput.poll();
 
-      // Iterate through HashMap entries(Key-Value pairs)
-      while (it.hasNext()) {
+    SlaveThread.terminated = true;
 
-        Map.Entry<Integer, Integer> m_e = it.next();
-        int val = m_e.getValue();
-        if (val == current_node) {
-          indexOfChildren = slave_children.get(m_e.getKey());
-        }
-      }
-      while (!(indexOfChildren.isEmpty())) {
-        finalOutput.add(indexOfChildren.get(0));
-        indexOfChildren.remove(0);
-      }
-      System.out.print(current_node + "-->");
-    }
-    terminated = true;
   }
 
   public void processRoundNumberMessage() {
@@ -130,7 +91,7 @@ public class SlaveThread implements Runnable {
   }
 
   public synchronized void run() {
-    System.out.println("I RAN!!!" + this.nodeIndex);
+    System.out.println("I RAN!!!" + this.id);
 
     masterNode.globalIdAndMsgQueueMap.put(this.nodeIndex, temp_pq);
     // find neighbors and store in neighbour Array list
@@ -266,31 +227,11 @@ public class SlaveThread implements Runnable {
 
   }// end of run
 
-  /**
-   * Pair of destination thread <index, Message>
-   * 
-   * @author khoa
-   *
-   */
-  class DestinationAndMsgPair {
-    int indexOfThread;
-    Message msg;
+  public void setNeighbours(Set<Integer> neighbours) {
+    this.neighbours = neighbours;
+  }
 
-    public DestinationAndMsgPair() {
-    }
-
-    public DestinationAndMsgPair(int indexOfThread, Message msg) {
-      this.indexOfThread = indexOfThread;
-      this.msg = msg;
-    }
-
-    public int GetId() {
-      return indexOfThread;
-    }
-
-    public Message GetMsg() {
-      return msg;
-    }
-
-  };
+  public void insertNeighbour(int neighborId) {
+    this.neighbours.add(neighborId);
+  }
 }

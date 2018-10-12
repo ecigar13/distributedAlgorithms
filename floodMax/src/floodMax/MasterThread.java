@@ -12,18 +12,19 @@ import java.util.ArrayList;
  *
  */
 public class MasterThread extends SlaveThread {
-  protected int masterId = 0;
+  public static ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
+
   // max id to be in sync with message class object. Not needed here. Junk value
+  protected int masterId = 0;
   protected int size;
-  private int[] ids;
+  protected int[] ids;
   protected int[][] matrix;
+
   // master will put information about the round in this hash map which is
   // accessible to all
-  public ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
-  public static ConcurrentHashMap<Integer, Integer> indexToIdMapping;
   // hash Map for storing children pointers
-  public ConcurrentHashMap<Integer, ArrayList<Integer>> children = new ConcurrentHashMap<>();
   private int numberOfFinishedThreads;
+  private ArrayList<SlaveThread> threadList = new ArrayList<SlaveThread>();
 
   /**
    * Constructor
@@ -39,54 +40,18 @@ public class MasterThread extends SlaveThread {
     this.size = size;
     this.ids = ids;
     this.matrix = matrix;
-    this.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
     // put master into concurrent hash map
-    localMessageQueue = new LinkedBlockingQueue<Message>();
-    globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
-    // used for printing the tree at the end
-    indexToIdMapping = new ConcurrentHashMap<Integer, Integer>();
-  }
-
-  /**
-   * Create all nodes/threads, set their names and start them.
-   */
-  public synchronized void createAndRunThread() {
-    try {
-      for (int nodeIndex = 1; nodeIndex < size; nodeIndex++) {
-        Thread t = new Thread(new SlaveThread(ids[nodeIndex], this, nodeIndex, children, indexToIdMapping));
-        t.setName("Thread_" + nodeIndex);
-        t.start();
-        System.err.println("Created threads. ");
-      }
-    } catch (Exception err) {
-      err.printStackTrace();
-    }
+    MasterThread.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
   }
 
   @Override
   public void run() {
     System.err.println("The Master has started.");
 
-    for (int i = 1; i < size; i++) {
-      indexToIdMapping.put(i, ids[i]);
-    }
-
-    createAndRunThread();
-
-    globalIdAndMsgQueueMap.put(0, new LinkedBlockingQueue<Message>());
-    synchronized (this) {
-      // put message generate by the leader into the rows of all the slaves
-      // first create a new queue, then add a msg to the queue, then send queue to
-      // global blocking queue
-      for (int i = 1; i < size; i++) {
-        localMessageQueue = new LinkedBlockingQueue<Message>();
-        localMessageQueue.add(new Message(this.masterId, this.round, this.maxUid, "Round_Number"));
-        System.out.println("Sending Round number message to " + i);
-        System.out.println("message for " + i + " is : " + localMessageQueue);
-        globalIdAndMsgQueueMap.put(i, localMessageQueue);
-      }
-
-    }
+    createThreads();
+    setNeighbors();
+    fillGlobalQueue();
+    startAllThreads();
 
     while (true) {
       // master gets it's own queue from the outside hashmap, with id 0.
@@ -97,13 +62,13 @@ public class MasterThread extends SlaveThread {
         System.out.println("Size of queue is " + localMessageQueue.size());
         System.out.println();
 
-        tempMsg = localMessageQueue.poll();
+        Message tempMsg = localMessageQueue.poll();
         if (tempMsg.getmType().equals("Leader")) {
 
           // if a node says it's Leader to master, master tells the node to terminate.
           // terminate is a static variable, so all threads will receive the signal.
           Message msg = new Message(this.masterId, this.round, this.maxUid, "Terminate");
-          localMessageQueue.add(msg);                                                                       //error might be here
+          localMessageQueue.add(msg); // error might be here
           globalIdAndMsgQueueMap.put(tempMsg.getSenderId(), localMessageQueue);
         }
 
@@ -127,6 +92,59 @@ public class MasterThread extends SlaveThread {
           }
         }
       }
+
+    }
+  }
+
+  /**
+   * Create all nodes/threads, set their names and start them.
+   */
+  public synchronized void createThreads() {
+    try {
+      for (int nodeIndex = 1; nodeIndex < size; nodeIndex++) {
+        SlaveThread t = new SlaveThread(ids[nodeIndex], this, globalIdAndMsgQueueMap);
+        threadList.add(t);
+        t.setName("Thread_" + nodeIndex);
+
+        System.err.println("Created threads. ");
+      }
+    } catch (Exception err) {
+      err.printStackTrace();
+    }
+  }
+
+  public synchronized void startAllThreads() {
+    for (Thread t : threadList) {
+      t.start();
+    }
+  }
+
+  /**
+   * Implement. Set an array of neighbor id -> use it to find queue in global
+   * queue.
+   */
+  public synchronized void setNeighbors() {
+    for (SlaveThread t : threadList) {
+      for (int i = 1; i < size; i++) {
+        if (ids[i] != 0) {
+          t.insertNeighbour(ids[i]);
+          System.out.println(ids[i]);
+        }
+      }
+    }
+  }
+
+  /**
+   * First step of master thread: send round 0 start signal.
+   */
+  public void fillGlobalQueue() {
+    globalIdAndMsgQueueMap.put(0, new LinkedBlockingQueue<Message>());
+    for (int i = 1; i < size; i++) {
+      System.out.println("Sending Round_Number message to " + ids[i]);
+      // add signal to start
+      localMessageQueue = new LinkedBlockingQueue<Message>();
+      localMessageQueue.add(new Message(this.masterId, this.round, this.maxUid, "Round_Number"));
+      globalIdAndMsgQueueMap.put(ids[i], localMessageQueue);
 
     }
   }
