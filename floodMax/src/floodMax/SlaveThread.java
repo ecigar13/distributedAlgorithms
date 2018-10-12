@@ -20,6 +20,7 @@ import com.sun.org.apache.xml.internal.serializer.utils.Messages;
 import com.sun.prism.PhongMaterial.MapType;
 
 import message.*;
+import java.lang.Exception;
 
 public class SlaveThread implements Runnable 
 {
@@ -82,31 +83,52 @@ public class SlaveThread implements Runnable
 	   this.slave_children = children;
 	   slave_children = new ConcurrentHashMap<>();
 	   list_of_children = new ArrayList<>();
-	   temp_msg_pbq = new LinkedBlockingQueue<Message>();
+	   //temp_msg_pbq = new LinkedBlockingQueue<Message>();
 	   msgs_in_queues = new ArrayList<>();
 	   final_output = new LinkedList<Integer>();
 	   this.Sno_id_mapping = Sno_id_mapping;
 	   this.terminate = false;
 	   neighbors = new ConcurrentHashMap<Integer, SlaveThread>();
 	   this.parent = this.sno_in_graph;
+	   
+	   //find neighbours
+	   for(int temp = 1; temp < masterNode.size; temp++)
+		  {
+			  
+			  //if edge exist in the graph provided
+			  if(masterNode.matrix[this.sno_in_graph][temp] == 1)
+			  {
+				  neighbours.add(temp);
+			  }
+		  }
+	   
   }	
   
   
   public synchronized void run() 
   {
-	  System.out.println("I RAN!!!"+this.sno_in_graph);
+	  //System.out.println("I RAN!!!"+this.sno_in_graph);
 	  
 	  masterNode.Data_Messages.put(this.sno_in_graph, temp_pq);
 	  // find neighbors and store in neighbour Array list
-	  for(int temp = 1; temp < masterNode.size; temp++)
-	  {
-		  //if edge exist in the graph provided
-		  if(masterNode.matrix[this.sno_in_graph][temp] == 1)
-		  {
-			  neighbours.add(temp);
-		  }
-	  }
-	  System.out.println("Neighbors for " + this.sno_in_graph+" : "+ neighbours.size());
+//	  for(int temp = 1; temp < masterNode.size; temp++)
+//	  {
+//		  System.out.println("temp: "+temp+"this.sno_in_graph: "+this.sno_in_graph+"vallue: "+masterNode.matrix[this.sno_in_graph][temp]);
+//		  System.out.println();
+//		  
+//		  //if edge exist in the graph provided
+//		  if(masterNode.matrix[this.sno_in_graph][temp] == 1)
+//		  {
+//			  neighbours.add(temp);
+//		  }
+//	  }
+//	  System.out.println("Neighbors for " + this.sno_in_graph+" : "+ neighbours.size());
+//	  
+//	  for(int temp = 0; temp < neighbours.size(); temp++)
+//	  {
+//		  //if edge exist in the graph provided
+//		  System.out.println("Sno is "+this.sno_in_graph+" "+ neighbours.get(temp));
+//	  }
 	  //check for message in hashmap queue
 	  
 	  //get hashmap priority queue in a temp queue
@@ -124,9 +146,9 @@ public class SlaveThread implements Runnable
 			  {
 				  System.out.println("Size of queue is "+ temp_priority_queue.size()+"Sno thread is "+this.sno_in_graph);
 				  temp_message_var = temp_priority_queue.poll();
-				  System.out.println("Size of queue is "+ temp_priority_queue.size()+"Sno thread is "+this.sno_in_graph);
+				  //System.out.println("Size of queue is "+ temp_priority_queue.size()+"Sno thread is "+this.sno_in_graph);
 				  System.out.println("Message type is "+temp_message_var.getmType()+"Sno thread is "+this.sno_in_graph);
-				  	
+				  System.out.println();
 				  if(temp_message_var.getmType().equals("Terminate"))
 				  	{
 				  		System.out.println("Inside terminate for slave thread");
@@ -142,12 +164,10 @@ public class SlaveThread implements Runnable
 				  		{
 				  			current_node = final_output.poll();
 				  			
-				  		
-				  		 
 				  		    // Iterate through HashMap entries(Key-Value pairs)
 				  		    while(it.hasNext())
 				  		    {
-				  		    	
+				  		    
 				  		       Map.Entry<Integer, Integer> m_e = it.next();
 				  		       int val = m_e.getValue();
 				  		       if(val == current_node)
@@ -179,28 +199,46 @@ public class SlaveThread implements Runnable
 			  			else 
 			  				{
 					  			//send messages intended for this round
+			  				System.out.println("else of round in slave: checking local queue for message sending;sno"+ this.sno_in_graph);
+			  				System.out.println("Message ques size is"+msgs_in_queues.size());
+			  				
 					  			for (int i = 0 ; i < msgs_in_queues.size(); i++)
 						  		{
 					  				Messages_in_queue transit_message = new Messages_in_queue();
 					  				transit_message = msgs_in_queues.get(i);
+					  				temp_msg_pbq = new LinkedBlockingQueue<Message>();
 						  			temp_msg_pbq = masterNode.Data_Messages.get(transit_message.GetId());
 						  			temp_msg_pbq.add(transit_message.GetMsg());
 						  			masterNode.Data_Messages.put(transit_message.GetId(), temp_msg_pbq);
 						  		}
-			  				}
+			  			
+					  			//check for messages in the queue
+					  			
+					  			
+			  				//}
 			  			//make thread sleep for 2 seconds; local queue should be empty here
 			  			for(int i = 0; i < 200000; i++);
-				  	}
-				  	else if(temp_message_var.getRound()== this.round)
-				  	{
-				  		System.out.println("If message recieved in this round;inside 3 else");
+				  	//}
+				  	//else 
+			  			System.out.println("After 20000 loop");
+			  			temp_priority_queue = masterNode.Data_Messages.get(this.sno_in_graph);
+			  			System.out.println(" messages from neighbors if any "+temp_priority_queue.size());
+			  			while(!temp_priority_queue.isEmpty())
+			  			{
+			  				
+			  			temp_message_var = temp_priority_queue.poll();
+				  		if(temp_message_var.getRound()== this.round)
+				  		{
+				  		System.out.println("$$$$$$$$$ Messages recieved in this round;inside 3 else$$$$$$");
 				  		//increments the round number
 				  		if (temp_message_var.getmType().equals("Explore"))
 						  {
-				  			System.out.println("Inside explore");
+				  			System.out.println("******Inside explore*********");
 				  			System.out.println("Current thread max uid"+this.max_uid);
+				  			System.out.println("Incoming thread max uid"+temp_message_var.getmaxUID());
 							  if(this.max_uid > temp_message_var.getmaxUID())
 							  {
+								  
 								  this.max_uid = temp_message_var.getmaxUID();
 								  this.parent = temp_message_var.getSenderId();
 								  newInfo = true;
@@ -216,8 +254,6 @@ public class SlaveThread implements Runnable
 									  //temp_obj.msg_to_be_sent = temp_msg;
 									  msgs_in_queues.add(temp_obj);
 									  
-									  
-									  //msg_to_be_sent.append(temp_message_var.getSenderId()+":"+temp_msg+";");
 								  }
 								  else
 								  {
@@ -241,16 +277,20 @@ public class SlaveThread implements Runnable
 						  {
 							  System.out.println("Inside Nack");
 							  this.NACK_Count++;
+							  System.out.println("N_Ack count is :::::::::: "+this.NACK_Count);
 						  }
 						  else if (temp_message_var.getmType().equals("ACK"))
 						  {
 							  System.out.println("Inside ack");
 							  this.ACK_Count++;
+							  System.out.println("Ack count is :::::::::: "+this.ACK_Count);
 							  list_of_children.add(temp_message_var.getSenderId());
 							  //add children names to the hash map
 							  slave_children.put(this.sno_in_graph, list_of_children);
 						  }
 					  }
+			  				}
+				  	}}
 			
 			  	// after done processing all the messages, send messages for next round
 			  	//send explore messages to all neighbors except parent
@@ -262,9 +302,9 @@ public class SlaveThread implements Runnable
 			  		System.out.println("Size of neighbour list is "+neighbours.size()+"Sno thread is "+this.sno_in_graph);
 			  		for(int i = 0; i < neighbours.size(); i++)
 			  		{
-			  			System.out.println("neighbour id is "+neighbours.get(i));
 			  			neighbour_id = neighbours.get(i);
-			  			System.out.println("parent is "+this.parent);
+			  			System.out.println(this.sno_in_graph +" sno "+"neighbour id is "+neighbour_id+" parent is "+this.parent);
+			  			System.out.println();
 			  			if(neighbour_id != this.parent)
 			  			{
 			  				System.out.println("Sending explore message to neighbor "+neighbour_id+" from "+this.sno_in_graph);
@@ -276,14 +316,14 @@ public class SlaveThread implements Runnable
 			  				//msg_to_be_sent.append(neighbour_id+":"+temp_msg+";");
 			  				
 			  			}
+			  		 }
 			  		}
-			  	}
 			  	//else divide message from the string into arraylist and send msgs to corresponding nodes
 			  	else 
 			  	{
-			  		System.out.println("Inside else of new info");
+			  		System.out.println("Inside else of new info :::: "+this.sno_in_graph);
 			  		//for node leaf
-			  		if(NACK_Count == neighbours.size() - 1)
+			  		if((NACK_Count == neighbours.size() - 1)&&(this.parent != this.sno_in_graph))
 			  		{
 			  			System.out.println("Sending ack message from  "+this.sno_in_graph+" to "+this.parent);
 			  			  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"ACK"); 
@@ -304,7 +344,7 @@ public class SlaveThread implements Runnable
 			  			
 			  		}
 			  		//for internal nodes
-			  		else if(NACK_Count + ACK_Count == neighbours.size() - 1)
+			  		else if((NACK_Count + ACK_Count == neighbours.size() - 1)&&(this.parent != this.sno_in_graph))
 			  		{
 			  			System.out.println("Sending ack message from  "+this.sno_in_graph+" to "+this.parent);
 			  			  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"ACK"); 
@@ -322,10 +362,15 @@ public class SlaveThread implements Runnable
 			  			masterNode.Data_Messages.put(msgs_in_queues.get(i).GetId(), temp_msg_pbq);
 			  		}*/	    	
 			  	} 
+			  	for(int i = 0; i <msgs_in_queues.size(); i++)
+			  	{
+			  		System.out.println(msgs_in_queues.get(i).GetId());
+			  	}
 			  	
 			  	//Message to master about Round Completion
 			  	System.out.println("send round "+this.round +" done message to master by thread "+this.sno_in_graph);
 			  	Message Master_message = new Message(this.id,0,this.round,"Done");
+			  	temp_msg_pbq = new LinkedBlockingQueue<Message>();
 			  	temp_msg_pbq = masterNode.Data_Messages.get(0);
 	  			temp_msg_pbq.add(Master_message);
 			  	masterNode.Data_Messages.put(0, temp_msg_pbq);

@@ -37,7 +37,7 @@ public class Main {
     for (int i = 1; i < size; i++) 
     {
       node_ids[i] = in.nextInt();
-      //System.err.println(i+" : "+node_ids[i]);
+      System.out.println(i+" : "+node_ids[i]);
     }
 
     // 0 is master node id; 1 to n is the slave nodes
