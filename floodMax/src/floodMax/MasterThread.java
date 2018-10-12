@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.Queue;
+import java.util.PrimitiveIterator.OfDouble;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class MasterThread extends SlaveThread
 	int parent;
 	protected String MType;
 	private LinkedBlockingQueue<Message> temp_priority_queue;
+	private LinkedBlockingQueue<Message> t_priority_queue;
 	private LinkedBlockingQueue<Message> temp_pq;
 	private Message temp_Message_obj;
 	protected int size;
@@ -122,14 +124,14 @@ public class MasterThread extends SlaveThread
 	  {
 		
 		  temp_priority_queue= Data_Messages.get(0);
-		  while(!(temp_priority_queue.isEmpty()))
+		  while(temp_priority_queue.size()>0)
 		  {
-			  System.out.println("Master checking its queue");
-			  //System.out.println("Size of master queue is "+ temp_priority_queue.size());
-			  temp_Message_obj = temp_priority_queue.poll();
+			  System.out.println("Master checking its queue: Size of master queue is "+ temp_priority_queue.size());
+			  
+			  this.temp_Message_obj = temp_priority_queue.poll();
 //			  System.out.println("Master checking its queue");
 			  System.out.println("Size of master queue is "+ temp_priority_queue.size());
-			  System.out.println("message type to master "+temp_Message_obj.getmType());
+			  System.out.println("message type to master "+this.temp_Message_obj.getmType()+"Master round number"+this.master_round+"incoming msg round"+this.temp_Message_obj.getRound());
 			  	if(temp_Message_obj.getmType().equals("Leader"))
 			  	{
 			  		temp_priority_queue = new LinkedBlockingQueue<>();
@@ -147,43 +149,34 @@ public class MasterThread extends SlaveThread
 			  		//all slaves completed the round
 			  		if (Done_Count == size-1)
 			  		{
+			  			
 			  			Done_Count = 0;
 			  			this.master_round++;
 			  			System.out.println("New round is************************************************* " +this.master_round);
-			  			 MasterThread that = this;
-			  			Thread thread = new Thread()
-				    			{
-				    		public void run()
-				    		{
-				    			for (int i = 1; i< size;i++)
+			  			 
+				    			for (int i = 1; i < size;i++)
 						    	{
-						    		Message msg = new Message(that.master_id,that.master_round, that.max_uid, "Round_Number");
-							    	temp_priority_queue = new LinkedBlockingQueue<>();
-							    	temp_priority_queue.add(msg);
+						    		Message msg = new Message(this.master_id,this.master_round, this.max_uid, "Round_Number");
+							    	this.t_priority_queue = new LinkedBlockingQueue<>();
+							    	this.t_priority_queue = Data_Messages.get(i);
+							    	System.out.println("Master Before addition Of round message "+i+" : "+t_priority_queue.size());
+							    	this.t_priority_queue.add(msg);
 							    	
-						    		Data_Messages.put(i, temp_priority_queue);
+						    		Data_Messages.put(i, this.t_priority_queue);
 						    		System.out.println("Master: updated hashmap for "+i);
-						    		//System.out.println("Message in data message is before " + "i is "+i+ Data_Messages.get(i));
-						    		
+						    		System.out.println("Master: after addition :Size of common hash map for element : "+i+ " : "+Data_Messages.get(i).size());
+	  		
 						    	}
-				    		}
-				    };
-				    thread.start();
-				    try {
-				    thread.join();
-				    }catch(Exception e) {e.printStackTrace();}
+				    				
 				    			
-				    	
-				    			
-				    	//Reset Done Count for next round messages
-				    	
 			  		}
+		
 			  	}
 		  }
-		
-	  }
+}
   }
 }
+
 	  
 	  
 
