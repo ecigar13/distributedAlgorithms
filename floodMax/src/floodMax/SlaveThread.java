@@ -6,13 +6,17 @@ import java.util.Queue;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
+
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Iterator;
 
-public class SlaveThread extends Thread {
+public class SlaveThread implements Runnable {
+  protected String name;
   protected static boolean terminated;
   protected static ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
 
@@ -30,7 +34,7 @@ public class SlaveThread extends Thread {
   protected String messageString;
 
   private int nackCount;
-  private int actCount;
+  private int ackCount;
 
   public SlaveThread() {
   }
@@ -50,20 +54,12 @@ public class SlaveThread extends Thread {
     this.newInfo = true;
     this.round = 0;
     this.nackCount = 0;
-    this.actCount = 0;
+    this.ackCount = 0;
+
+    name = "Thread_" + id;
+
     SlaveThread.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
     SlaveThread.terminated = false;
-  }
-
-  public void processTerminateMessage() {
-    System.out.println("Leader id: " + maxUid);
-
-    // Need to implement:
-    // Obtaining an iterator for the entry set
-    // output the graph and stop execution
-
-    SlaveThread.terminated = true;
-
   }
 
   public void processRoundNumberMessage() {
@@ -90,7 +86,7 @@ public class SlaveThread extends Thread {
       ;
   }
 
-  public synchronized void run() {
+  public synchronized void ran() {
     System.out.println("I RAN!!!" + this.id);
 
     masterNode.globalIdAndMsgQueueMap.put(this.nodeIndex, temp_pq);
@@ -158,7 +154,7 @@ public class SlaveThread extends Thread {
             System.out.println(this.id + " got N_ACK");
             this.nackCount++;
           } else if (tempMsg.getmType().equals("ACK")) {
-            this.actCount++;
+            this.ackCount++;
             System.out.println(this.id + "got ACK");
             indexOfChildren.add(tempMsg.getSenderId());
             slave_children.put(this.nodeIndex, indexOfChildren);
@@ -197,7 +193,7 @@ public class SlaveThread extends Thread {
             msgPairsToSend.add(tempMsgPair);
           }
           // leader receives only ACT, and has no parent.
-          else if (actCount == neighbours.size()) {
+          else if (ackCount == neighbours.size()) {
             Message temp_msg = new Message(this.nodeIndex, this.round + 1, this.maxUid, "Leader");
             tempMsgPair = new DestinationAndMsgPair(0, temp_msg);
             // send msg to my local queue, then to master
@@ -205,7 +201,7 @@ public class SlaveThread extends Thread {
 
           }
           // for internal nodes, NACK + ACT = neighbor size -1
-          else if (nackCount + actCount == neighbours.size() - 1) {
+          else if (nackCount + ackCount == neighbours.size() - 1) {
             Message temp_msg = new Message(this.nodeIndex, this.round + 1, this.maxUid, "ACK");
             // send message to my local queue, then to master
             tempMsgPair = new DestinationAndMsgPair(this.parent, temp_msg);
@@ -226,6 +222,58 @@ public class SlaveThread extends Thread {
     } // end of terminate
 
   }// end of run
+
+  /**
+   * Check nackCount and ackCount and come up with a message.
+   * 
+   * @return a message based on the count
+   */
+  public Message processNackAck() {
+    if (nackCount == neighbours.size() - 1) {
+      // leaf node
+      return new Message(id, round + 1, maxUid, "ACK");
+    } else if (ackCount == neighbours.size()) {
+      // leader node. Send leader message to master.
+      return new Message(id, round + 1, maxUid, "Leader");
+    } else if (nackCount + ackCount == neighbours.size() - 1) {
+      // internal node
+      return new Message(id, round + 1, maxUid, "ACK");
+    } else
+      return null;
+  }
+
+  public void run() {
+    System.out.println("I RAN!!!" + id + " round " + round);
+    LinkedBlockingQueue<Message> temporaryLocalMessageQueue = new LinkedBlockingQueue<Message>();
+
+    // base case
+    Message temp = processNackAck();
+    if (temp != null) {
+      temporaryLocalMessageQueue.add(temp);
+    }
+
+    // refer to the global queue.
+    localMessageQueue = masterNode.globalIdAndMsgQueueMap.get(id);
+
+    // process messages and sending messages.
+
+    // set the queue to global queue
+  }
+
+  /**
+   * Set status of terminated to stop all threads. Need to implement "print out
+   * the tree"
+   */
+  public void processTerminateMessage() {
+    System.out.println("Leader id: " + maxUid);
+
+    // Need to implement:
+    // Obtaining an iterator for the entry set
+    // output the graph and stop execution
+
+    SlaveThread.terminated = true;
+
+  }
 
   public void setNeighbours(Set<Integer> neighbours) {
     this.neighbours = neighbours;

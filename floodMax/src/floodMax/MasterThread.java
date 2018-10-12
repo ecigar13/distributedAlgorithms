@@ -104,7 +104,6 @@ public class MasterThread extends SlaveThread {
       for (int nodeIndex = 1; nodeIndex < size; nodeIndex++) {
         SlaveThread t = new SlaveThread(ids[nodeIndex], this, globalIdAndMsgQueueMap);
         threadList.add(t);
-        t.setName("Thread_" + nodeIndex);
 
         System.err.println("Created threads. ");
       }
@@ -114,8 +113,8 @@ public class MasterThread extends SlaveThread {
   }
 
   public synchronized void startAllThreads() {
-    for (Thread t : threadList) {
-      t.start();
+    for (SlaveThread t : threadList) {
+      t.run();
     }
   }
 
