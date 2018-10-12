@@ -25,6 +25,7 @@ public class MasterThread extends SlaveThread {
   // hash Map for storing children pointers
   private int numberOfFinishedThreads;
   private ArrayList<SlaveThread> threadList = new ArrayList<SlaveThread>();
+  LinkedBlockingQueue<Message> localMessageQueue;
 
   /**
    * Constructor
@@ -67,7 +68,7 @@ public class MasterThread extends SlaveThread {
 
           // if a node says it's Leader to master, master tells the node to terminate.
           // terminate is a static variable, so all threads will receive the signal.
-          Message msg = new Message(this.masterId, this.round, this.maxUid, "Terminate");
+          Message msg = new Message(this.masterId, this.round, this.myMaxUid, "Terminate");
           localMessageQueue.add(msg); // error might be here
           globalIdAndMsgQueueMap.put(tempMsg.getSenderId(), localMessageQueue);
         }
@@ -79,7 +80,7 @@ public class MasterThread extends SlaveThread {
           if (numberOfFinishedThreads == size) {
 
             this.round++;
-            Message msg = new Message(this.masterId, this.round, this.maxUid, "Round_Number");
+            Message msg = new Message(this.masterId, this.round, this.myMaxUid, "Round_Number");
             localMessageQueue.add(msg);
 
             // if all slaves completed the round, master send messages to all nodes to start
@@ -142,7 +143,7 @@ public class MasterThread extends SlaveThread {
       System.out.println("Sending Round_Number message to " + ids[i]);
       // add signal to start
       localMessageQueue = new LinkedBlockingQueue<Message>();
-      localMessageQueue.add(new Message(this.masterId, this.round, this.maxUid, "Round_Number"));
+      localMessageQueue.add(new Message(this.masterId, this.round, this.myMaxUid, "Round_Number"));
       globalIdAndMsgQueueMap.put(ids[i], localMessageQueue);
 
     }

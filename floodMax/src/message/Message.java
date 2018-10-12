@@ -48,11 +48,11 @@ public class Message {
     this.senderId = senderId;
   }
 
-  public int getmaxUID() {
+  public int getMaxUid() {
     return messageUid;
   }
 
-  public void setgetmaxUID(int messageUid) {
+  public void setMaxUID(int messageUid) {
     this.messageUid = messageUid;
   }
 
