@@ -49,7 +49,7 @@ public class SlaveThread implements Runnable
   protected Map<Integer, SlaveThread> neighbors; 
   //protected Queue<Message> nextRoundMsg = new LinkedBlockingQueue<Message>();
   //protected Queue<Message> thisRoundMsg = new LinkedBlockingQueue<Message>();
-  private ArrayList<Messages_in_queue> msgs_in_queues;
+  private LinkedBlockingQueue<Messages_in_queue> msgs_in_queues;
   private Messages_in_queue temp_obj;
   private Queue<Integer> final_output;
   // Empty constructor for subclass.
@@ -86,7 +86,7 @@ public class SlaveThread implements Runnable
 	   slave_children = new ConcurrentHashMap<>();
 	   list_of_children = new ArrayList<>();
 	   //temp_msg_pbq = new LinkedBlockingQueue<Message>();
-	   msgs_in_queues = new ArrayList<>();
+	   msgs_in_queues = new LinkedBlockingQueue<>();
 	   final_output = new LinkedList<Integer>();
 	   this.Sno_id_mapping = Sno_id_mapping;
 	   this.terminate = false;
@@ -128,38 +128,39 @@ public class SlaveThread implements Runnable
 				  
 				  if(this.temp_message_var.getmType().equals("Terminate"))
 				  	{
-				  		System.out.println("Inside terminate for slave thread");
-				  		Set entrySet = Sno_id_mapping.entrySet();
-			  		    // Obtaining an iterator for the entry set
-			  		    Iterator<Map.Entry<Integer, Integer>> it = Sno_id_mapping.entrySet().iterator();
-			  		    
-				  		//output the graph and stop execution
-				  		current_node = this.id;
-				  		final_output.add(current_node);
-				  		System.out.print("The tree formed is " + current_node +"-->");
-				  		while(!(final_output.isEmpty()))
-				  		{
-				  			current_node = final_output.poll();
-				  			
-				  		    // Iterate through HashMap entries(Key-Value pairs)
-				  		    while(it.hasNext())
-				  		    {
-				  		    
-				  		       Map.Entry<Integer, Integer> m_e = it.next();
-				  		       int val = m_e.getValue();
-				  		       if(val == current_node)
-				  		       {
-				  		    	 this.list_of_children = this.slave_children.get(m_e.getKey()); 
-				  		       }
-				  		   }
-				  			while(!(this.list_of_children.isEmpty()))
-				  			{
-				  				final_output.add(this.list_of_children.get(0));
-				  				this.list_of_children.remove(0);
-				  			}
-				  			System.out.print(current_node +"-->");
-				  		}
-				  		terminate = true;
+//				  		System.out.println("Inside terminate for slave thread");
+//				  		Set entrySet = Sno_id_mapping.entrySet();
+//			  		    // Obtaining an iterator for the entry set
+//			  		    Iterator<Map.Entry<Integer, Integer>> it = Sno_id_mapping.entrySet().iterator();
+//			  		    
+//				  		//output the graph and stop execution
+//				  		current_node = this.id;
+//				  		final_output.add(current_node);
+//				  		System.out.print("The tree formed is " + current_node +"-->");
+//				  		while(!(final_output.isEmpty()))
+//				  		{
+//				  			current_node = final_output.poll();
+//				  			
+//				  		    // Iterate through HashMap entries(Key-Value pairs)
+//				  		    while(it.hasNext())
+//				  		    {
+//				  		    
+//				  		       Map.Entry<Integer, Integer> m_e = it.next();
+//				  		       int val = m_e.getValue();
+//				  		       if(val == current_node)
+//				  		       {
+//				  		    	 this.list_of_children = this.slave_children.get(m_e.getKey()); 
+//				  		       }
+//				  		   }
+//				  			while(!(this.list_of_children.isEmpty()))
+//				  			{
+//				  				final_output.add(this.list_of_children.get(0));
+//				  				this.list_of_children.remove(0);
+//				  			}
+//				  			System.out.print(current_node +"-->");
+//				  		}
+//				  		terminate = true;
+					  System.out.println("Stopping execution");
 				  		break;
 				  	}
 				  
@@ -170,6 +171,7 @@ public class SlaveThread implements Runnable
 				  		this.Processed_Messages = 0;
 			  			this.round = temp_message_var.getRound();
 			  			System.out.println("Inside else if: Round Number is "+this.round +" Sno thread is "+this.sno_in_graph);
+			  			
 			  			if(this.round == 0)
 			  			{
 			  				//send explore message to all the neighbors
@@ -209,23 +211,20 @@ public class SlaveThread implements Runnable
 			  			
 			  			else 
 			  			{
-			 
-					  			//send messages intended for this round
+			  				//send messages intended for this round
 			  				this.flag = 0;
 			  				System.out.println("Round > 0: checking local queue for message sending ;sno"+ this.sno_in_graph+"Message ques size is"+this.msgs_in_queues.size());
 			  				System.out.println(this.sno_in_graph+" --------->>>>flag value is "+this.flag);
 			  				System.out.println(this.sno_in_graph+" data message queue size is"+masterNode.Data_Messages.get(this.sno_in_graph).size());
-			  						System.out.println("Put data in the common hashmap");
-			  						for (int i = 0 ; i < this.msgs_in_queues.size(); i++)
+			  				System.out.println("Put data in the common hashmap");
+			  				Messages_in_queue transit_message = new Messages_in_queue();
+			  						while(!this.msgs_in_queues.isEmpty())
 							  		{
-						  				Messages_in_queue transit_message = new Messages_in_queue();
-						  				transit_message = this.msgs_in_queues.get(i);
-						  				
+			  					
+						  				transit_message = this.msgs_in_queues.poll();
+						  				//System.out.println("before:::sender Sno"+ this.sno_in_graph+"Get id : "+transit_message.GetId()+"Get msg: "+transit_message.GetMsg());
 						  				System.out.println("before:::sender Sno"+ this.sno_in_graph+"Get id : "+transit_message.GetId()+"Get msg: "+transit_message.GetMsg());
-						  				System.out.println("before:::sender Sno"+this.msgs_in_queues.size());
-						  				//this.msgs_in_queues.remove(i);
 						  				
-						  				System.out.println("after:::::sender Sno"+this.msgs_in_queues.size());
 						  				
 						  				temp_msg_pbq = new LinkedBlockingQueue<Message>();
 							  			temp_msg_pbq = this.masterNode.Data_Messages.get(transit_message.GetId());
@@ -233,7 +232,7 @@ public class SlaveThread implements Runnable
 							  			this.masterNode.Data_Messages.put(transit_message.GetId(), temp_msg_pbq);
 							  		}	
 			  						try {
-						  				Thread.sleep(9000);
+						  				Thread.sleep(5000);
 						  			}catch(Exception e) {}
 			  			
 //			  						for (int i = 0 ; i < this.msgs_in_queues.size(); i++)
@@ -277,31 +276,32 @@ public class SlaveThread implements Runnable
 									   System.out.println();
 									   System.out.println("Current thread max uid"+this.max_uid+"Incoming thread max uid"+temp_message_var.getmaxUID());
 									  //check which parent node has bigger id and choose a parent
-									  if(this.max_uid > temp_message_var.getmaxUID())//take form uid hash map and not parent
-									  {
+//									  if(this.id > temp_message_var.getSenderId())//take form uid hash map and not parent
+//									  {
 										  System.out.println("this.max_uid "+ this.max_uid+" temp_message_var.getmaxUID()"+temp_message_var.getmaxUID());
+										  System.out.println("Sending Nack message from  "+this.sno_in_graph+" to "+temp_message_var.getSenderId());
 										  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"N_ACK"); 
 										  temp_obj = new Messages_in_queue(temp_message_var.getSenderId(),temp_msg);
 										  //temp_obj.node_s_no = temp_message_var.getSenderId();
 										  //temp_obj.msg_to_be_sent = temp_msg;
 										  msgs_in_queues.add(temp_obj);  
 										  System.out.println("$$$$$$$$$ Sno is "+this.sno_in_graph+" max id is " +this.max_uid+"Parent is "+this.parent);
-									  }
-									  else
-									
-									  {
-										  System.out.println();
-										  System.out.println("this.max_uid "+ this.max_uid+" temp_message_var.getmaxUID()"+temp_message_var.getmaxUID());
-										  System.out.println("Sending nack message from  "+this.sno_in_graph+" to "+this.parent);
-										  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"N_ACK"); 
-										  temp_obj = new Messages_in_queue(this.parent,temp_msg);
-										  //temp_obj.node_s_no = this.parent;
-										  //temp_obj.msg_to_be_sent = temp_msg;
-										  msgs_in_queues.add(temp_obj);
-										
-										  this.parent = temp_message_var.getSenderId();  
-										  System.out.println("$$$$$$$$$ Sno is "+this.sno_in_graph+" max id is " +this.max_uid+"Parent is "+this.parent);
-									  }
+//									  }
+//									  else
+//									
+//									  {
+//										  System.out.println();
+//										  System.out.println("this.max_uid "+ this.max_uid+" temp_message_var.getmaxUID()"+temp_message_var.getmaxUID());
+//										  System.out.println("Sending nack message from  "+this.sno_in_graph+" to "+this.parent);
+//										  Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"N_ACK"); 
+//										  temp_obj = new Messages_in_queue(this.parent,temp_msg);
+//										  //temp_obj.node_s_no = this.parent;
+//										  //temp_obj.msg_to_be_sent = temp_msg;
+//										  msgs_in_queues.add(temp_obj);
+//										
+//										  this.parent = temp_message_var.getSenderId();  
+//										  System.out.println("$$$$$$$$$ Sno is "+this.sno_in_graph+" max id is " +this.max_uid+"Parent is "+this.parent);
+//									  }
 									  
 									  this.flag = 0;
 								  }	
@@ -390,11 +390,21 @@ public class SlaveThread implements Runnable
 							  		{
 							  			System.out.println();
 							  			System.out.println("Sending Leader message to master by "+this.sno_in_graph);
-							  			Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"Leader"); 
-							  			temp_obj = new Messages_in_queue(0,temp_msg);
+							  			//Message temp_msg= new Message(this.sno_in_graph,this.round+1,this.max_uid,"Leader"); 
+							  			//temp_obj = new Messages_in_queue(0,temp_msg);
 	//									  temp_obj.node_s_no = 0;
 	//									  temp_obj.msg_to_be_sent = temp_msg;
-										  msgs_in_queues.add(temp_obj);
+										 // msgs_in_queues.add(temp_obj);
+										  
+										  System.out.println();
+										  	//System.out.println("send round "+this.round +" done message to master by thread "+this.sno_in_graph);
+										  	Message Master_message = new Message(this.sno_in_graph,this.round+1,this.max_uid,"Leader");
+										  	temp_msg_pbq = new LinkedBlockingQueue<Message>();
+										  	//temp_msg_pbq = masterNode.Data_Messages.get(0);
+								  			temp_msg_pbq.add(Master_message);
+										  	masterNode.Data_Messages.put(0, temp_msg_pbq);
+										  
+										  
 							  			
 							  		}
 							  		//for internal nodes
@@ -420,7 +430,7 @@ public class SlaveThread implements Runnable
 					  		
 					  		if(flag == 1)
 					  		{
-					  			msgs_in_queues = new ArrayList<>();
+					  			msgs_in_queues = new LinkedBlockingQueue<>();
 								  for(int i = 0; i < this.neighbours.size(); i++)
 							  		{
 									  int neighbour_id;

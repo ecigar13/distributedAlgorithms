@@ -46,6 +46,8 @@ public class MasterThread extends SlaveThread
 	public ConcurrentHashMap<Integer, ArrayList<Integer>> children = new ConcurrentHashMap<>();
 	private Map<Integer, SlaveThread> slaves = new ConcurrentHashMap<Integer, SlaveThread>();
 	private int Done_Count;
+	private boolean not_found_leader;
+	private int m_flag;
   /**
    * Constructor
    * 
@@ -67,6 +69,8 @@ public class MasterThread extends SlaveThread
     temp_pq = new LinkedBlockingQueue<>();
     //used for printing the tree at the end
     Sno_id_mapping = new ConcurrentHashMap<Integer,Integer>();
+    this.not_found_leader = true;
+    this.m_flag=0;
     //setNeighbors();
   }
 
@@ -120,7 +124,7 @@ public class MasterThread extends SlaveThread
 //		  System.out.println("Master: Size of threads is "+Data_Messages.get(i).size()+" Sno is "+ i);
 //	  }
   
-	  while(true)
+	  while(not_found_leader)
 	  {
 		
 		  temp_priority_queue= Data_Messages.get(0);
@@ -132,12 +136,17 @@ public class MasterThread extends SlaveThread
 //			  System.out.println("Master checking its queue");
 			  System.out.println("Size of master queue is "+ temp_priority_queue.size());
 			  System.out.println("message type to master "+this.temp_Message_obj.getmType()+"Master round number"+this.master_round+"incoming msg round"+this.temp_Message_obj.getRound());
-			  	if(temp_Message_obj.getmType().equals("Leader"))
+			  	
+			  if(temp_Message_obj.getmType().equals("Leader"))
 			  	{
+				  System.out.println("@@@@@@@@@@@@@@@@    Leader Message Arrived,leader is "+temp_Message_obj.getUid()+" : "+temp_Message_obj.getmaxUID());
 			  		temp_priority_queue = new LinkedBlockingQueue<>();
 			    	Message msg = new Message(this.master_id,this.master_round, this.max_uid, "Terminate");
 			    	temp_priority_queue.add(msg);
 			    	Data_Messages.put(temp_Message_obj.getSenderId(), temp_priority_queue);
+			    	not_found_leader = false;
+			    	m_flag = 1;
+			    	break;
 			  	}
 			  	
 			  	else if ( (temp_Message_obj.getmType().equals("Done")) && (temp_Message_obj.getRound() == this.master_round) )
@@ -172,6 +181,8 @@ public class MasterThread extends SlaveThread
 			  		}
 		
 			  	}
+			  if(m_flag == 1)
+				  break;
 		  }
 }
   }
