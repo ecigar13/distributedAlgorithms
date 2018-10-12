@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 public class MasterThread extends SlaveThread {
   protected int masterId = 0;
-  // max id to be in sync with message class object. Not needed here. Junk value
   protected int size;
   private int[] ids;
   protected int[][] matrix;
@@ -24,6 +23,7 @@ public class MasterThread extends SlaveThread {
   // hash Map for storing children pointers
   public ConcurrentHashMap<Integer, ArrayList<Integer>> children = new ConcurrentHashMap<>();
   private int numberOfFinishedThreads;
+  protected ArrayList<Thread> threadList = new ArrayList<Thread>();
 
   /**
    * Constructor
@@ -50,16 +50,23 @@ public class MasterThread extends SlaveThread {
   /**
    * Create all nodes/threads, set their names and start them.
    */
-  public synchronized void createAndRunThread() {
+  public synchronized void createThreads() {
     try {
       for (int nodeIndex = 1; nodeIndex < size; nodeIndex++) {
         Thread t = new Thread(new SlaveThread(ids[nodeIndex], this, nodeIndex, children, indexToIdMapping));
+        threadList.add(t);
         t.setName("Thread_" + nodeIndex);
-        t.start();
+
         System.err.println("Created threads. ");
       }
     } catch (Exception err) {
       err.printStackTrace();
+    }
+  }
+
+  public synchronized void startAllThreads() {
+    for (Thread t : threadList) {
+      t.start();
     }
   }
 
@@ -71,7 +78,8 @@ public class MasterThread extends SlaveThread {
       indexToIdMapping.put(i, ids[i]);
     }
 
-    createAndRunThread();
+    createThreads();
+    startAllThreads();
 
     globalIdAndMsgQueueMap.put(0, new LinkedBlockingQueue<Message>());
     synchronized (this) {
@@ -103,7 +111,7 @@ public class MasterThread extends SlaveThread {
           // if a node says it's Leader to master, master tells the node to terminate.
           // terminate is a static variable, so all threads will receive the signal.
           Message msg = new Message(this.masterId, this.round, this.maxUid, "Terminate");
-          localMessageQueue.add(msg);                                                                       //error might be here
+          localMessageQueue.add(msg); // error might be here
           globalIdAndMsgQueueMap.put(tempMsg.getSenderId(), localMessageQueue);
         }
 

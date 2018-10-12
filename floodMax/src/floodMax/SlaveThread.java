@@ -1,7 +1,6 @@
 package floodMax;
 
 import message.*;
-import java.util.Set;
 import java.util.Queue;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,8 +30,6 @@ public class SlaveThread implements Runnable {
   static boolean terminated;
   private LinkedBlockingQueue<Message> temp_msg_pbq;
   protected Map<Integer, SlaveThread> neighbors;
-  // protected Queue<Message> nextRoundMsg = new LinkedBlockingQueue<Message>();
-  // protected Queue<Message> thisRoundMsg = new LinkedBlockingQueue<Message>();
   private ArrayList<DestinationAndMsgPair> msgPairsToSend;
   private DestinationAndMsgPair tempMsgPair;
   private Queue<Integer> finalOutput;
@@ -212,6 +209,7 @@ public class SlaveThread implements Runnable {
           int neighbour_id;
           System.out.println(
               "Size of neighbour list is " + neighbours.size() + "index of thread is " + this.nodeIndex + "\n");
+          
           for (int i = 0; i < neighbours.size(); i++) {
             System.out.println("neighbour id is " + neighbours.get(i));
             neighbour_id = neighbours.get(i);
