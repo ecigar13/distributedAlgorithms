@@ -5,6 +5,7 @@ import sun.util.locale.provider.LocaleProviderAdapter;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.Queue;
@@ -30,7 +31,7 @@ import java.util.concurrent.*;
  *
  */
 public class MasterThread extends SlaveThread {
-  public ConcurrentHashMap<Integer, ArrayList<Integer>> finalChildren;
+ ConcurrentHashMap<Integer, HashSet<Integer>> finalChildren;
   private static final int NULL = 0;
   protected int master_id = 0;
   // protected int sno_in_graph = 0;
@@ -86,7 +87,7 @@ public class MasterThread extends SlaveThread {
     this.not_found_leader = true;
     this.m_flag = 0;
 
-    finalChildren = new ConcurrentHashMap<Integer, ArrayList<Integer>>();
+    finalChildren = new ConcurrentHashMap<Integer, HashSet<Integer>>();
 
     // setNeighbors();
   }
@@ -167,7 +168,7 @@ public class MasterThread extends SlaveThread {
 
             Done_Count = 0;
             this.master_round++;
-            System.out.println("New round is************************************************* " + this.master_round);
+            System.out.println("New round is***************************************************** " + this.master_round);
 
             for (int i = 1; i < size; i++) {
               Message msg = new Message(this.master_id, this.master_round, this.max_uid, "Round_Number");
@@ -203,13 +204,13 @@ public class MasterThread extends SlaveThread {
     }
 
     // recursion
-    //System.out.println(key);
+   // System.out.println(key+" : ");
     for (Integer children : finalChildren.get(key)) {
       System.out.print(children + "  ");
     }
     System.out.println();
     
-    ArrayList<Integer> temp = finalChildren.get(key);
+    HashSet<Integer> temp = finalChildren.get(key);
     finalChildren.remove(key);
     for (Integer j : temp) {
       printHashMapRecursive(j);

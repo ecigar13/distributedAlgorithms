@@ -9,6 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import org.omg.CORBA.PUBLIC_MEMBER;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Iterator;
 import com.apple.eawt.AppEvent.ScreenSleepEvent;
@@ -109,7 +110,7 @@ public class SlaveThread implements Runnable {
 			}
 		}
 		masterNode.Data_Messages.put(this.sno_in_graph, temp_pq);
-		masterNode.finalChildren.put(this.sno_in_graph, new ArrayList<Integer>());
+		masterNode.finalChildren.put(this.sno_in_graph, new HashSet<Integer>());
 
 	}
 
@@ -383,7 +384,7 @@ public class SlaveThread implements Runnable {
 									}
 
 								} else if (temp_message_var.getmType().equals("ACK")) {
-								  ArrayList<Integer> children=new ArrayList<>();
+								  HashSet<Integer> children=new HashSet<>();
 								  children=masterNode.finalChildren.get(this.sno_in_graph);
 								  children.add(temp_message_var.getSenderId());
 								  masterNode.finalChildren.put(this.sno_in_graph, children);
@@ -391,9 +392,10 @@ public class SlaveThread implements Runnable {
 									System.out.println();
 									System.out.println("Inside ack");
 									this.ACK_Count++;
-									System.out.println(
-											this.sno_in_graph + "-->Ack count is :::::::::: " + this.ACK_Count);
-									list_of_children.add(temp_message_var.getSenderId());
+									System.out.println(this.sno_in_graph + "-->Ack count is :::::::::: " + this.ACK_Count+"Child is "+this.temp_message_var.getSenderId());
+									
+									    list_of_children.add(temp_message_var.getSenderId());
+									
 									// add children names to the hash map
 									slave_children.put(this.sno_in_graph, list_of_children);
 
@@ -477,10 +479,9 @@ public class SlaveThread implements Runnable {
 								if (this.msgs_in_queues.isEmpty()) {
 									System.out.println();
 									System.out.println("No one to send message to ");
-									System.out.println(
-											"Sending ack message from  " + this.sno_in_graph + " to " + this.parent);
-									Message temp_msg = new Message(this.sno_in_graph, this.round + 1, this.max_uid,
-											"ACK");
+									this.NACK_Count = this.neighbours.size();
+									System.out.println("Sending ack message from  " + this.sno_in_graph + " to " + this.parent);
+									Message temp_msg = new Message(this.sno_in_graph, this.round + 1, this.max_uid,"ACK");
 									temp_obj = new Messages_in_queue(this.parent, temp_msg);
 									this.msgs_in_queues.add(temp_obj);
 								}
@@ -491,10 +492,8 @@ public class SlaveThread implements Runnable {
 								+ " After ::::::::number of messgaes in temp_priority_queue:::Number of messgaes to process "
 								+ this.no_of_msg_to_process);
 
-						System.out.println(
-								"Sno is " + this.sno_in_graph + "Processed Message is " + this.Processed_Messages);
-						if ((this.Processed_Messages == this.neighbours.size())
-								|| (this.Processed_Messages == this.no_of_msg_to_process)) {
+						System.out.println("Sno is " + this.sno_in_graph + "Processed Message is " + this.Processed_Messages);
+						if ((this.Processed_Messages == this.neighbours.size()) || (this.Processed_Messages == this.no_of_msg_to_process)) {
 							System.out.println();
 							System.out.println("send round " + this.round + " done message to master by thread "
 									+ this.sno_in_graph);
