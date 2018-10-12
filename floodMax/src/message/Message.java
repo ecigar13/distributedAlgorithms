@@ -18,26 +18,11 @@ public class Message {
 
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
-    stringBuffer.append("From: ").append(from).append(" To ").append(to).toString();
-    stringBuffer.append("Sender id: ").append(senderId).append(" messageUid: ").append(messageUid).append(" round ").append(round);
+    stringBuffer.append("Sender id: ").append(senderId).append(" messageUid: ").append(messageUid).append(" round ")
+        .append(round);
     return stringBuffer.toString();
   }
   // protected boolean newInfo;//slave property not message property
-
-  /**
-   * Constructor for finding diameter messages.
-   * 
-   * @param senderId
-   * @param from
-   * @param to
-   * @param distanceFromTo
-   * @param mType
-   */
-  /*
-   * public Message(int senderId, int from, int distanceFromTo, String mType) {
-   * this.senderId = senderId; this.mType = mType; this.from = from;
-   * this.distanceFromTo = distanceFromTo; }
-   */
 
   /**
    * Constructor for floodmax messages.

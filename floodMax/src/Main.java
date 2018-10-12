@@ -28,18 +28,18 @@ public class Main {
     //adj matrix's first row and column is the master node.
     int size = in.nextInt() + 1;
     System.out.println("Size is : "+size);
-    int[] node_ids = new int[size];
-    int[][] matrix = new int[size][size];
+    int[] vertexIdArray = new int[size];
+    int[][] adjMatrix = new int[size][size];
     
     //Hashmap: integer is assigned sequentially (not node id), queue of message.
-    ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> common_map = new ConcurrentHashMap<Integer,LinkedBlockingQueue<Message>>();
+    ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> idAndMsgQueueMap = new ConcurrentHashMap<Integer,LinkedBlockingQueue<Message>>();
     
     //master node's id is 0
-    node_ids[0]=0;
+    vertexIdArray[0]=0;
     // assigning ids to all the nodes
     for (int i = 1; i < size; i++) 
     {
-      node_ids[i] = in.nextInt();
+      vertexIdArray[i] = in.nextInt();
       //System.err.println(i+" : "+node_ids[i]);
     }
 
@@ -50,7 +50,7 @@ public class Main {
     {
       for (int j = 0; j < size; j++) 
       {
-        matrix[i][j] = in.nextInt();
+        adjMatrix[i][j] = in.nextInt();
         //System.out.println(matrix[i][j]);
       }
     }
@@ -58,14 +58,14 @@ public class Main {
     System.out.println("Test print matrix");
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
-        System.out.print(matrix[i][j] + " ");
+        System.out.print(adjMatrix[i][j] + " ");
       }
       System.out.println();
     }
 
     // implement floodmax here.
     //FloodMaxImplementation algo =new FloodMaxImplementation(size, node_ids, matrix,common_map) ;
-    Thread t1 = new Thread(new FloodMaxImplementation(size, node_ids, matrix,common_map));
+    Thread t1 = new Thread(new FloodMaxImplementation(size, vertexIdArray, adjMatrix,idAndMsgQueueMap));
     t1.start();
 
     //prints final output tree
