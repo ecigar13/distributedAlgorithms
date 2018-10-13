@@ -2,11 +2,6 @@ package message;
 
 public class Message {
 
-  /*
-   * public enum MessageType { NACK, REJECT, IAMLEADER, EXPLORE, NOTLEADER,
-   * ROUNDDONE, DEBUG, DIAMETER; }
-   */
-
   protected int from;
   protected int to;
 
@@ -22,7 +17,6 @@ public class Message {
         .append(round);
     return stringBuffer.toString();
   }
-  // protected boolean newInfo;//slave property not message property
 
   /**
    * Constructor for floodmax messages.

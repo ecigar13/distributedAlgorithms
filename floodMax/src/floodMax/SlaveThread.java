@@ -2,19 +2,11 @@ package floodMax;
 
 import message.*;
 import java.util.Set;
-import java.util.Queue;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
-
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Iterator;
 
 public class SlaveThread implements Runnable {
   protected String name;
@@ -28,9 +20,10 @@ public class SlaveThread implements Runnable {
 
   private int myParent = -1;
   protected Set<Integer> children = new HashSet<Integer>();
-  protected Set<Integer> neighbours = new HashSet<Integer>();
+  private Set<Integer> neighborSet = new HashSet<Integer>();
 
   protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> localMessagesToSend = new ConcurrentHashMap<>();
+  protected LinkedBlockingQueue<Message> localMessageQueue = new LinkedBlockingQueue<>();
   protected boolean newInfo;
   protected String messageString;
 
@@ -61,81 +54,19 @@ public class SlaveThread implements Runnable {
 
     SlaveThread.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
     SlaveThread.terminated = false;
+
+    fillLocalMessagesToSend();
   }
 
-  public void processRoundNumberMessage(Message msg) {
-    this.round = msg.getRound();
-    if (this.round == 0) {
-      // send explore message to all the neighbors
-      newInfo = true;
-    }
-
-    else {
-      // send messages intended for this round
-      // Just swallow this msg. Because Runnable can be re-run multiple times.
-      // unless the vertex is a thread and can't be started twice.
+  public void fillLocalMessagesToSend() {
+    System.err.println("Filling localMessagesToSend.");
+    localMessagesToSend.put(0, new LinkedBlockingQueue<Message>());
+    for (int i : neighborSet) {
+      // add signal to start
+      localMessageQueue = new LinkedBlockingQueue<Message>();
+      localMessagesToSend.put(i, localMessageQueue);
     }
   }
-
-  public synchronized void ran() {
-
-    // check for message in hashmap queue
-    // get hashmap priority queue in a temp queue
-    // run until termination condition is encountered
-
-    while (!terminated) {
-
-      // drain messages from global queue.
-      LinkedBlockingQueue<Message> temporaryLocalMessageQueue = fetchFromGlobalQueue();
-
-      // process messages and sending messages.
-      // newInfo = false;
-      while (!temporaryLocalMessageQueue.isEmpty()) {
-        Message msg = temporaryLocalMessageQueue.poll();
-
-        if (msg.getmType().equals("Terminate")) {
-          processTerminateMessage();
-          break;
-        } else if (msg.getmType().equals("Round_Number")) {
-          processRoundNumberMessage(msg);
-
-        } else if (msg.getRound() == this.round) {
-
-          // process Explore msg (increment round number inside)
-          if (msg.getmType().equals("Explore")) {
-            processExploreMsg(msg);
-          }
-
-        }
-      }
-      // after done processing incoming messages, send messages for next round
-      // send explore messages to all neighbors except parent
-      if (newInfo) {
-        int neighbour_id;
-        for (int n : neighbours) {
-          if (n != myParent) {
-            try {
-              localMessagesToSend.get(n).put(new Message(id, round + 1, myMaxUid, "Explore"));
-            } catch (Exception e) {
-              e.printStackTrace();
-            }
-          }
-        }
-
-      }
-      // else divide message from the string into arraylist and send msgs to
-      // corresponding nodes
-      else {
-
-      }
-
-      // Message to master about Round Completion
-      sendRoundDoneToMaster();
-      newInfo = false;
-    }
-
-  } // end of terminate
-  // end of run
 
   /**
    * Put round done message to local queue.
@@ -149,8 +80,35 @@ public class SlaveThread implements Runnable {
     }
   }
 
+  /**
+   * Process message types: Terminate, Round_Number, Explore.
+   */
+  public void processMessageTypes() {
+    while (!localMessageQueue.isEmpty()) {
+      Message msg = localMessageQueue.poll();
+
+      if (msg.getmType().equalsIgnoreCase("Terminate")) {
+        processTerminateMessage();
+        break;
+
+      } else if (msg.getmType().equalsIgnoreCase("Round_Number")) {
+        processRoundNumberMessage(msg);
+
+      } else if (msg.getmType().equalsIgnoreCase("Explore")) {
+
+        // process Explore msg (increment round number inside)
+        try {
+          processExploreMsg(msg);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+
   public void run() {
-    System.out.println("I RAN!!!" + id + " round " + round);
+    sleep();
+    System.out.println(name + " round " + round + " leader " + myMaxUid);
 
     // base case, check Nack and Ack count first.
     Message temp = countNackAck();
@@ -174,37 +132,54 @@ public class SlaveThread implements Runnable {
       e.printStackTrace();
     }
 
-    // drain messages from global queue.
-    LinkedBlockingQueue<Message> temporaryLocalMessageQueue = fetchFromGlobalQueue();
+    fetchFromGlobalQueue(localMessageQueue);
 
     // process messages and sending messages.
-    while (!temporaryLocalMessageQueue.isEmpty()) {
-      Message msg = temporaryLocalMessageQueue.poll();
+    processMessageTypes();
 
-      if (msg.getmType().equals("Terminate")) {
-        processTerminateMessage();
-        break;
-      } else if (msg.getmType().equals("Round_Number")) {
-        processRoundNumberMessage(msg);
+    // after done processing incoming messages, send messages for next round
+    // send explore messages to all neighbors except parent
+    sendExploreMsgToAllNeighbors();
 
-      } else if (msg.getRound() == this.round) {
-
-        // process Explore msg (increment round number inside)
-        if (msg.getmType().equals("Explore")) {
-          try {
-            processExploreMsg(msg);
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
-        }
-
-      }
-    }
-
-    // send round completion message to master
-
+    // Message to master about Round Completion
+    sendRoundDoneToMaster();
+    newInfo = false;
     // set the queue to global queue
     pushToGlobalQueue();
+
+    System.out.println("The thread stops. " + id);
+
+  }
+
+  public void sendExploreMsgToAllNeighbors() {
+    for (int n : neighborSet) {
+      if (n != myParent) {
+        try {
+          localMessagesToSend.get(n).put(new Message(id, round + 1, myMaxUid, "Explore"));
+        } catch (Exception e) {
+          e.getMessage();
+        }
+      }
+    }
+  }
+
+  /**
+   * Only works with round 0.
+   * 
+   * @param msg
+   */
+  public void processRoundNumberMessage(Message msg) {
+    round = msg.getRound();
+    if (round == 0) {
+      sendExploreMsgToAllNeighbors();
+      newInfo = false;
+    }
+
+    else {
+      // send messages intended for this round
+      // Just swallow this msg. Because Runnable can be re-run multiple times.
+      // unless the vertex is a thread and can't be started twice.
+    }
   }
 
   /**
@@ -245,13 +220,13 @@ public class SlaveThread implements Runnable {
    * @return a message based on the count
    */
   public Message countNackAck() {
-    if (nackCount == neighbours.size() - 1) {
+    if (nackCount == neighborSet.size() - 1) {
       // leaf node, send to parent.
       return new Message(id, round + 1, myMaxUid, "ACK");
-    } else if (ackCount == neighbours.size()) {
+    } else if (ackCount == neighborSet.size()) {
       // leader node. Send leader message to master.
       return new Message(id, round + 1, myMaxUid, "Leader");
-    } else if (nackCount + ackCount == neighbours.size() - 1) {
+    } else if (nackCount + ackCount == neighborSet.size() - 1) {
       // internal node, send to parent.
       return new Message(id, round + 1, myMaxUid, "ACK");
     } else
@@ -279,16 +254,15 @@ public class SlaveThread implements Runnable {
    * 
    * @return
    */
-  public synchronized LinkedBlockingQueue<Message> fetchFromGlobalQueue() {
-    LinkedBlockingQueue<Message> localQ = new LinkedBlockingQueue<>();
+  public synchronized void fetchFromGlobalQueue(LinkedBlockingQueue<Message> localQ) {
     if (!globalIdAndMsgQueueMap.get(id).isEmpty()) {
       globalIdAndMsgQueueMap.get(id).drainTo(localQ);
     }
 
+    System.err.println("Fetching from global queue. " + globalIdAndMsgQueueMap.get(id).size() + " " + localQ.size());
     if (!globalIdAndMsgQueueMap.get(id).isEmpty()) {
       System.err.println("Global queue is not empty. We have a prolem.");
     }
-    return localQ;
   }
 
   /**
@@ -299,6 +273,7 @@ public class SlaveThread implements Runnable {
    * ConcurrentHashMap.
    */
   public synchronized void pushToGlobalQueue() {
+    System.err.println("Pushing to global queue.");
     for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMessagesToSend.entrySet()) {
       e.getValue().drainTo(globalIdAndMsgQueueMap.get(e.getKey()));
       if (!e.getValue().isEmpty()) {
@@ -308,14 +283,23 @@ public class SlaveThread implements Runnable {
   }
 
   public void setNeighbours(Set<Integer> neighbours) {
-    this.neighbours = neighbours;
+    this.neighborSet = neighbours;
   }
 
   public void insertNeighbour(int neighborId) {
-    this.neighbours.add(neighborId);
+    this.neighborSet.add(neighborId);
   }
 
   public int getId() {
     return id;
+  }
+
+  public void sleep() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
   }
 }
