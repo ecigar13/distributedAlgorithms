@@ -72,13 +72,8 @@ public class SlaveThread implements Runnable {
 
     else {
       // send messages intended for this round
-      for (int i = 0; i < msgPairsToSend.size(); i++) {
-        DestinationAndMsgPair messagePair = new DestinationAndMsgPair();
-        messagePair = msgPairsToSend.get(i);
-        temp_msg_pbq = masterNode.globalIdAndMsgQueueMap.get(messagePair.GetId());
-        temp_msg_pbq.add(messagePair.GetMsg());
-        masterNode.globalIdAndMsgQueueMap.put(messagePair.GetId(), temp_msg_pbq);
-      }
+      // Just swallow this msg. Because Runnable can be re-run multiple times.
+      // unless the vertex is a thread and can't be started twice.
     }
   }
 
@@ -116,16 +111,12 @@ public class SlaveThread implements Runnable {
       // after done processing incoming messages, send messages for next round
       // send explore messages to all neighbors except parent
       if (newInfo) {
-        msgPairsToSend.removeAll(msgPairsToSend);
         int neighbour_id;
-        System.out
-            .println("Size of neighbour list is " + neighbours.size() + "index of thread is " + this.nodeIndex + "\n");
         for (int i = 0; i < neighbours.size(); i++) {
-          System.out.println("neighbour id is " + neighbours.get(i));
           neighbour_id = neighbours.get(i);
-          System.out.println("parent is " + this.myParent);
+          
+          //avoid parent
           if (neighbour_id != this.myParent) {
-            System.out.println("Sending message to neighbor " + neighbour_id + " from " + this.nodeIndex + "\n");
             Message temp_msg = new Message(this.nodeIndex, this.round + 1, this.myMaxUid, "Explore");
             tempMsgPair = new DestinationAndMsgPair(neighbour_id, temp_msg);
             msgPairsToSend.add(tempMsgPair);
@@ -150,13 +141,13 @@ public class SlaveThread implements Runnable {
 
   } // end of terminate
 
-  }// end of run
+  // end of run
 
   public void run() {
     System.out.println("I RAN!!!" + id + " round " + round);
 
     // base case, check Nack and Ack count first.
-    Message temp = processNackAck();
+    Message temp = countNackAck();
 
     // if the message is "Leader", put message in queue for leader and stop thread
     // immediately.
@@ -194,7 +185,11 @@ public class SlaveThread implements Runnable {
 
         // process Explore msg (increment round number inside)
         if (msg.getmType().equals("Explore")) {
-          processExploreMsg(msg);
+          try {
+            processExploreMsg(msg);
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
         }
 
       }
@@ -243,7 +238,7 @@ public class SlaveThread implements Runnable {
    * 
    * @return a message based on the count
    */
-  public Message processNackAck() {
+  public Message countNackAck() {
     if (nackCount == neighbours.size() - 1) {
       // leaf node, send to parent.
       return new Message(id, round + 1, myMaxUid, "ACK");

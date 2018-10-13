@@ -52,7 +52,7 @@ public class Message {
     return messageUid;
   }
 
-  public void setMaxUID(int messageUid) {
+  public void setMaxUid(int messageUid) {
     this.messageUid = messageUid;
   }
 
