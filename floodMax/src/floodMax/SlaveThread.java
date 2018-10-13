@@ -112,17 +112,16 @@ public class SlaveThread implements Runnable {
       // send explore messages to all neighbors except parent
       if (newInfo) {
         int neighbour_id;
-        for (int i = 0; i < neighbours.size(); i++) {
-          neighbour_id = neighbours.get(i);
-          
-          //avoid parent
-          if (neighbour_id != this.myParent) {
-            Message temp_msg = new Message(this.nodeIndex, this.round + 1, this.myMaxUid, "Explore");
-            tempMsgPair = new DestinationAndMsgPair(neighbour_id, temp_msg);
-            msgPairsToSend.add(tempMsgPair);
-
+        for (int n : neighbours) {
+          if (n != myParent) {
+            try {
+              localMessagesToSend.get(n).put(new Message(id, round + 1, myMaxUid, "Explore"));
+            } catch (Exception e) {
+              e.printStackTrace();
+            }
           }
         }
+
       }
       // else divide message from the string into arraylist and send msgs to
       // corresponding nodes
@@ -131,17 +130,24 @@ public class SlaveThread implements Runnable {
       }
 
       // Message to master about Round Completion
-      System.out.println("send round done message to master by thread " + this.nodeIndex);
-      Message messageToMaster = new Message(this.id, 0, this.round, "Done");
-      temp_msg_pbq = masterNode.globalIdAndMsgQueueMap.get(0);
-      temp_msg_pbq.add(messageToMaster);
-      masterNode.globalIdAndMsgQueueMap.put(0, temp_msg_pbq);
+      sendRoundDoneToMaster();
       newInfo = false;
     }
 
   } // end of terminate
-
   // end of run
+
+  /**
+   * Put round done message to local queue.
+   */
+  public void sendRoundDoneToMaster() {
+    try {
+      localMessagesToSend.get(masterNode.getId()).put(new Message(id, this.round + 1, this.myMaxUid, "Explore"));
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 
   public void run() {
     System.out.println("I RAN!!!" + id + " round " + round);
@@ -307,5 +313,9 @@ public class SlaveThread implements Runnable {
 
   public void insertNeighbour(int neighborId) {
     this.neighbours.add(neighborId);
+  }
+
+  public int getId() {
+    return id;
   }
 }
