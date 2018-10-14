@@ -7,14 +7,14 @@ public class Message {
 
   protected String mType;
   protected int senderId; // serial number in the graph
-  protected int messageUid;
+  protected int maxUid;
   protected int round;
   protected int distanceFromTo;
 
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
-    stringBuffer.append("Sender id: ").append(senderId).append(" messageUid: ").append(messageUid).append(" round ")
-        .append(round);
+    stringBuffer.append("mType ").append(mType).append(" Sender id: ").append(senderId).append(" maxUid: ")
+        .append(maxUid).append(" round ").append(round);
     return stringBuffer.toString();
   }
 
@@ -28,7 +28,7 @@ public class Message {
    */
   public Message(int senderId, int round, int maxUid, String mType) {
     this.senderId = senderId;
-    this.messageUid = maxUid;
+    this.maxUid = maxUid;
     this.round = round;
     this.mType = mType;
     // this.newInfo = newInfo;
@@ -43,11 +43,11 @@ public class Message {
   }
 
   public int getMaxUid() {
-    return messageUid;
+    return maxUid;
   }
 
   public void setMaxUid(int messageUid) {
-    this.messageUid = messageUid;
+    this.maxUid = messageUid;
   }
 
   public int getUid() {

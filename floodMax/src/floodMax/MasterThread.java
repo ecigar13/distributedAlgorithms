@@ -45,6 +45,7 @@ public class MasterThread extends SlaveThread {
     this.size = size;
     this.neighborArray = neighbors;
     this.matrix = matrix;
+    this.name = "Master";
 
     // put master into concurrent hash map
     MasterThread.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
@@ -58,8 +59,7 @@ public class MasterThread extends SlaveThread {
     localMessagesToSend.put(0, new LinkedBlockingQueue<Message>());
     for (int i : neighborArray) {
       // add signal to start
-      localMessageQueue = new LinkedBlockingQueue<Message>();
-      localMessagesToSend.put(i, localMessageQueue);
+      localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
     }
   }
 
@@ -68,83 +68,94 @@ public class MasterThread extends SlaveThread {
     System.err.println("The Master has started. Size: " + size);
 
     createThreads();
-    setNeighbors();
     fillGlobalQueue();
+    sendRoundStartMsg();
     checkGlobalQueueNotEmpty();
 
-    while (!masterMustDie) {
+    do {
+      printMessagesToSendMap(globalIdAndMsgQueueMap);
       sleep();
       // master gets it's own queue from the outside hashmap, with id 0.
       globalIdAndMsgQueueMap.get(0).drainTo(localMessageQueue);
 
+      System.out.println("Master checking its queue. Size of queue is: " + localMessageQueue.size());
       while (!(localMessageQueue.isEmpty())) {
-        System.out.println("Master checking its queue. Size of queue is: " + localMessageQueue.size());
+        try {
+          Message tempMsg = localMessageQueue.take();
+          System.out.println(tempMsg);
 
-        Message tempMsg = localMessageQueue.poll();
+          if (tempMsg.getmType().equalsIgnoreCase("Leader")) {
 
-        if (tempMsg.getmType().equalsIgnoreCase("Leader")) {
+            // if a node says it's Leader to master, master tells the node to terminate.
+            // terminate is a static variable, so all threads will receive the signal.
 
-          // if a node says it's Leader to master, master tells the node to terminate.
-          // terminate is a static variable, so all threads will receive the signal.
+            // empty the remaining msg in master's q.
+            localMessageQueue.clear();
 
-          // empty the remaining msg in master's q.
-          while (!localMessageQueue.isEmpty()) {
-            localMessageQueue.poll();
+            // send terminate msg back to the sender.
+            try {
+              globalIdAndMsgQueueMap.get(tempMsg.getSenderId())
+                  .put(new Message(myId, this.round, this.myMaxUid, "Terminate"));
+              System.out.println("Telling the master to die.");
+              masterMustDie = true;
+              return;
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
           }
 
-          // send terminate msg back to the sender.
-          try {
-            globalIdAndMsgQueueMap.get(tempMsg.getSenderId())
-                .put(new Message(id, this.round, this.myMaxUid, "Terminate"));
-            System.out.println("Telling the master to die.");
-            masterMustDie = true;
-            break;
-          } catch (InterruptedException e) {
-            e.printStackTrace();
+          // if a thread says it's done, then master increase the Done count.
+          else if ((tempMsg.getmType().equals("Done"))) {
+            numberOfFinishedThreads++;
           }
-        }
-
-        // if a thread says it's done, then master increase the Done count.
-        else if ((tempMsg.getmType().equals("Done"))) {
-          numberOfFinishedThreads++;
           // all slaves completed the round
-          if (numberOfFinishedThreads == size - 1) {
+          if (numberOfFinishedThreads == size) {
 
             round++;
 
             // if all slaves completed the round, master send messages to all nodes to start
             // next round.
-            for (int i = 1; i < size; i++) {
-              Message msg = new Message(id, round + 1, myMaxUid, "Round_Number");
-              try {
-                localMessagesToSend.get(i).put(msg);
-              } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-              }
-            }
+            sendRoundStartMsg();
             // Reset Done Count for next round messages
             numberOfFinishedThreads = 0;
           }
+        } catch (Exception e) {
+          // TODO: handle exception
+          e.printStackTrace();
         }
+
       }
-      sendRoundStartMsg();
-      pushToGlobalQueue();
+      // sendRoundStartMsg();
+      drainToGlobalQueue();
       // run threads
       startAllThreads();
-    }
+    } while (!masterMustDie);
 
+    System.out.println("Master will now die. ");
   }
 
   /**
-   * Create all nodes/threads, set their names and start them.
+   * Create all nodes/threads, set their names, neighbors, fill the local copy of
+   * the global queue.
    */
   public synchronized void createThreads() {
     try {
-      for (int nodeIndex = 1; nodeIndex < size; nodeIndex++) {
-        SlaveThread t = new SlaveThread(neighborArray[nodeIndex], this, globalIdAndMsgQueueMap);
+      for (int row = 0; row < size; row++) {
+        SlaveThread t = new SlaveThread(neighborArray[row], this, globalIdAndMsgQueueMap);
         threadList.add(t);
+
+        for (int col = 0; col < size; col++)
+          if (matrix[row][col] != 0) {
+            t.insertNeighbour(neighborArray[col]);
+            // System.out.println(ids[i]);
+          }
+        // find index
+
+        // create a similar structure to the master's global queue. Used to store msg
+        // before draining all to global q.
+        t.fillLocalMessagesToSend();
       }
+
       System.err.println("Created threads. ");
     } catch (Exception err) {
       err.printStackTrace();
@@ -154,21 +165,6 @@ public class MasterThread extends SlaveThread {
   public synchronized void startAllThreads() {
     for (SlaveThread t : threadList) {
       t.run();
-    }
-  }
-
-  /**
-   * Implement. Set an array of neighbor id -> use it to find queue in global
-   * queue.
-   */
-  public synchronized void setNeighbors() {
-    for (SlaveThread t : threadList) {
-      for (int i = 1; i < size; i++) {
-        if (neighborArray[i] != 0) {
-          t.insertNeighbour(neighborArray[i]);
-          // System.out.println(ids[i]);
-        }
-      }
     }
   }
 
@@ -187,9 +183,16 @@ public class MasterThread extends SlaveThread {
 
   public void sendRoundStartMsg() {
     for (int i : neighborArray) {
+
+      // don't send msg to itself
+      if (i == myId) {
+        continue;
+      }
+
       System.out.println("Send Round_Number msg to " + i);
       try {
-        localMessagesToSend.get(i).put(new Message(id, round, id, "Round_Number"));
+        Message temp = new Message(myId, round, myId, "Round_Number");
+        localMessagesToSend.get(i).put(temp);
 
       } catch (Exception e) {
         e.printStackTrace();
@@ -200,6 +203,25 @@ public class MasterThread extends SlaveThread {
   public void checkGlobalQueueNotEmpty() {
     for (Entry<Integer, LinkedBlockingQueue<Message>> p : globalIdAndMsgQueueMap.entrySet()) {
       System.out.println(p.getKey() + " " + p.getValue());
+    }
+  }
+
+  public void killAll() {
+    for (int i : neighborArray) {
+
+      // don't send msg to itself
+      if (i == myId) {
+        continue;
+      }
+
+      System.out.println("Send Terminate msg to " + i);
+      try {
+        Message temp = new Message(myId, round, myId, "Terminate");
+        localMessagesToSend.get(i).put(temp);
+
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 }

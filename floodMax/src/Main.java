@@ -15,7 +15,7 @@ public class Main {
 
     // first entry of the graph.txt provides the number of slave nodes
     // adj matrix's first row and column is the master node.
-    int size = in.nextInt() + 1;
+    int size = in.nextInt();
     System.out.println("Size is : " + size);
     int[] vertexIdArray = new int[size];
     int[][] adjMatrix = new int[size][size];
@@ -26,9 +26,9 @@ public class Main {
     // master node's id is 0
     vertexIdArray[0] = 0;
     // assigning ids to all the nodes
-    for (int i = 1; i < size; i++) {
+    for (int i = 0; i < size; i++) {
       vertexIdArray[i] = in.nextInt();
-      System.out.println(vertexIdArray[i]);
+      System.out.print(vertexIdArray[i]+ " ");
     }
 
     // 0 is master node id; 1 to n is the slave nodes
