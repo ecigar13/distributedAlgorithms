@@ -1,1 +1,1845 @@
-0
+Size is : 35
+3732 537 6149 4768 8235 1582 5254 8631 941 3217 7804 179 6271 9899 1098 2157 276 9681 9918 5888 5589 7610 8300 8299 6556 4595 1920 4994 9516 1198 8977 4997 4604 7934 6915 
+Test print matrix
+0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+1 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 1 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 
+0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
+0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 
+The Master has started. Size: 35
+Created threads. 
+Filling global queue.
+Send Round_Number msg to 3732
+Send Round_Number msg to 537
+Send Round_Number msg to 6149
+Send Round_Number msg to 4768
+Send Round_Number msg to 8235
+Send Round_Number msg to 1582
+Send Round_Number msg to 5254
+Master checking its queue. Size of queue is: 0 round 1
+Send Round_Number msg to 8631
+Send Round_Number msg to 941
+Send Round_Number msg to 3217
+Send Round_Number msg to 7804
+Send Round_Number msg to 179
+Send Round_Number msg to 6271
+Send Round_Number msg to 9899
+Send Round_Number msg to 1098
+Send Round_Number msg to 2157
+Send Round_Number msg to 276
+Send Round_Number msg to 9681
+Send Round_Number msg to 9918
+Send Round_Number msg to 5888
+Send Round_Number msg to 5589
+Send Round_Number msg to 7610
+Send Round_Number msg to 8300
+Send Round_Number msg to 8299
+Send Round_Number msg to 6556
+Send Round_Number msg to 4595
+Send Round_Number msg to 1920
+Send Round_Number msg to 4994
+Send Round_Number msg to 9516
+Send Round_Number msg to 1198
+Send Round_Number msg to 8977
+Send Round_Number msg to 4997
+Send Round_Number msg to 4604
+Send Round_Number msg to 7934
+Send Round_Number msg to 6915
+Starting threads. 
+Thread_3732 start. round 0 leader 3732 parent -1 0 0 5
+Thread_3732 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 4768
+Send explore to 6149
+Send explore to 537
+Send explore to 8235
+Send explore to 6556
+Thread_3732 stop. round 1 leader 3732 parent -1
+
+Thread_537 start. round 0 leader 537 parent -1 0 0 4
+Thread_537 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_537 processing mType Explore Sender id: 3732 maxUid: 3732 round 1
+Send explore to 4768
+Send explore to 3732
+Send explore to 6149
+Send explore to 8235
+Thread_537 stop. round 1 leader 3732 parent 3732
+
+Thread_6149 start. round 0 leader 6149 parent -1 0 0 5
+Thread_6149 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_6149 processing mType Explore Sender id: 3732 maxUid: 3732 round 1
+Send N_ACK to 3732
+Thread_6149 processing mType Explore Sender id: 537 maxUid: 3732 round 1
+Send N_ACK to 537
+Send explore to 4768
+Send explore to 3217
+Send explore to 3732
+Send explore to 537
+Send explore to 8235
+Thread_6149 stop. round 1 leader 6149 parent -1
+
+Thread_4768 start. round 0 leader 4768 parent -1 0 0 6
+Thread_4768 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_4768 processing mType Explore Sender id: 3732 maxUid: 3732 round 1
+Send N_ACK to 3732
+Thread_4768 processing mType Explore Sender id: 537 maxUid: 3732 round 1
+Send N_ACK to 537
+Thread_4768 processing mType Explore Sender id: 6149 maxUid: 6149 round 1
+Send explore to 3732
+Send explore to 6149
+Send explore to 537
+Send explore to 8235
+Send explore to 941
+Send explore to 9918
+Thread_4768 stop. round 1 leader 6149 parent 6149
+
+Thread_8235 start. round 0 leader 8235 parent -1 0 0 6
+Thread_8235 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_8235 processing mType Explore Sender id: 3732 maxUid: 3732 round 1
+Send N_ACK to 3732
+Thread_8235 processing mType Explore Sender id: 537 maxUid: 3732 round 1
+Send N_ACK to 537
+Thread_8235 processing mType Explore Sender id: 6149 maxUid: 6149 round 1
+Send N_ACK to 6149
+Thread_8235 processing mType Explore Sender id: 4768 maxUid: 6149 round 1
+Send N_ACK to 4768
+Send explore to 4768
+Send explore to 3732
+Send explore to 6149
+Send explore to 537
+Send explore to 1198
+Send explore to 6271
+Thread_8235 stop. round 1 leader 8235 parent -1
+
+Thread_1582 start. round 0 leader 1582 parent -1 0 0 2
+Thread_1582 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 9899
+Send explore to 6271
+Thread_1582 stop. round 1 leader 1582 parent -1
+
+Thread_5254 start. round 0 leader 5254 parent -1 0 0 2
+Thread_5254 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 4595
+Send explore to 9516
+Thread_5254 stop. round 1 leader 5254 parent -1
+
+Thread_8631 start. round 0 leader 8631 parent -1 0 0 2
+Thread_8631 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 2157
+Send explore to 1198
+Thread_8631 stop. round 1 leader 8631 parent -1
+
+Thread_941 start. round 0 leader 941 parent -1 0 0 2
+Thread_941 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_941 processing mType Explore Sender id: 4768 maxUid: 6149 round 1
+Send explore to 4768
+Send explore to 5589
+Thread_941 stop. round 1 leader 6149 parent 4768
+
+Thread_3217 start. round 0 leader 3217 parent -1 0 0 2
+Thread_3217 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_3217 processing mType Explore Sender id: 6149 maxUid: 6149 round 1
+Send explore to 6149
+Send explore to 9899
+Thread_3217 stop. round 1 leader 6149 parent 6149
+
+Thread_7804 start. round 0 leader 7804 parent -1 0 0 3
+Thread_7804 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 5888
+Send explore to 179
+Send explore to 4604
+Thread_7804 stop. round 1 leader 7804 parent -1
+
+Thread_179 start. round 0 leader 179 parent -1 0 0 2
+Thread_179 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_179 processing mType Explore Sender id: 7804 maxUid: 7804 round 1
+Send explore to 4994
+Send explore to 7804
+Thread_179 stop. round 1 leader 7804 parent 7804
+
+Thread_6271 start. round 0 leader 6271 parent -1 0 0 2
+Thread_6271 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_6271 processing mType Explore Sender id: 8235 maxUid: 8235 round 1
+Thread_6271 processing mType Explore Sender id: 1582 maxUid: 1582 round 1
+Send N_ACK to 1582
+Send explore to 8235
+Send explore to 1582
+Thread_6271 stop. round 1 leader 8235 parent 8235
+
+Thread_9899 start. round 0 leader 9899 parent -1 0 0 2
+Thread_9899 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_9899 processing mType Explore Sender id: 1582 maxUid: 1582 round 1
+Send N_ACK to 1582
+Thread_9899 processing mType Explore Sender id: 3217 maxUid: 6149 round 1
+Send N_ACK to 3217
+Send explore to 3217
+Send explore to 1582
+Thread_9899 stop. round 1 leader 9899 parent -1
+
+Thread_1098 start. round 0 leader 1098 parent -1 0 0 2
+Thread_1098 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 276
+Send explore to 2157
+Thread_1098 stop. round 1 leader 1098 parent -1
+
+Thread_2157 start. round 0 leader 2157 parent -1 0 0 5
+Thread_2157 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_2157 processing mType Explore Sender id: 8631 maxUid: 8631 round 1
+Thread_2157 processing mType Explore Sender id: 1098 maxUid: 1098 round 1
+Send N_ACK to 1098
+Send explore to 1920
+Send explore to 5589
+Send explore to 8631
+Send explore to 1098
+Send explore to 6556
+Thread_2157 stop. round 1 leader 8631 parent 8631
+
+Thread_276 start. round 0 leader 276 parent -1 0 0 1
+Thread_276 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_276 processing mType Explore Sender id: 1098 maxUid: 1098 round 1
+Send explore to 1098
+Thread_276 stop. round 1 leader 1098 parent 1098
+
+Thread_9681 start. round 0 leader 9681 parent -1 0 0 1
+Thread_9681 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 9516
+Thread_9681 stop. round 1 leader 9681 parent -1
+
+Thread_9918 start. round 0 leader 9918 parent -1 0 0 3
+Thread_9918 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_9918 processing mType Explore Sender id: 4768 maxUid: 6149 round 1
+Send N_ACK to 4768
+Send explore to 4768
+Send explore to 5888
+Send explore to 7934
+Thread_9918 stop. round 1 leader 9918 parent -1
+
+Thread_5888 start. round 0 leader 5888 parent -1 0 0 3
+Thread_5888 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_5888 processing mType Explore Sender id: 7804 maxUid: 7804 round 1
+Thread_5888 processing mType Explore Sender id: 9918 maxUid: 9918 round 1
+Send explore to 7610
+Send explore to 7804
+Send explore to 9918
+Thread_5888 stop. round 1 leader 9918 parent 9918
+
+Thread_5589 start. round 0 leader 5589 parent -1 0 0 2
+Thread_5589 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_5589 processing mType Explore Sender id: 941 maxUid: 6149 round 1
+Thread_5589 processing mType Explore Sender id: 2157 maxUid: 8631 round 1
+Send explore to 941
+Send explore to 2157
+Thread_5589 stop. round 1 leader 8631 parent 2157
+
+Thread_7610 start. round 0 leader 7610 parent -1 0 0 2
+Thread_7610 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_7610 processing mType Explore Sender id: 5888 maxUid: 9918 round 1
+Send explore to 5888
+Send explore to 6915
+Thread_7610 stop. round 1 leader 9918 parent 5888
+
+Thread_8300 start. round 0 leader 8300 parent -1 0 0 1
+Thread_8300 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 6915
+Thread_8300 stop. round 1 leader 8300 parent -1
+
+Thread_8299 start. round 0 leader 8299 parent -1 0 0 1
+Thread_8299 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 4595
+Thread_8299 stop. round 1 leader 8299 parent -1
+
+Thread_6556 start. round 0 leader 6556 parent -1 0 0 2
+Thread_6556 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_6556 processing mType Explore Sender id: 3732 maxUid: 3732 round 1
+Send N_ACK to 3732
+Thread_6556 processing mType Explore Sender id: 2157 maxUid: 8631 round 1
+Send explore to 3732
+Send explore to 2157
+Thread_6556 stop. round 1 leader 8631 parent 2157
+
+Thread_4595 start. round 0 leader 4595 parent -1 0 0 3
+Thread_4595 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_4595 processing mType Explore Sender id: 5254 maxUid: 5254 round 1
+Thread_4595 processing mType Explore Sender id: 8299 maxUid: 8299 round 1
+Send explore to 6915
+Send explore to 5254
+Send explore to 8299
+Thread_4595 stop. round 1 leader 8299 parent 8299
+
+Thread_1920 start. round 0 leader 1920 parent -1 0 0 2
+Thread_1920 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_1920 processing mType Explore Sender id: 2157 maxUid: 8631 round 1
+Send explore to 4994
+Send explore to 2157
+Thread_1920 stop. round 1 leader 8631 parent 2157
+
+Thread_4994 start. round 0 leader 4994 parent -1 0 0 2
+Thread_4994 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_4994 processing mType Explore Sender id: 179 maxUid: 7804 round 1
+Thread_4994 processing mType Explore Sender id: 1920 maxUid: 8631 round 1
+Send explore to 1920
+Send explore to 179
+Thread_4994 stop. round 1 leader 8631 parent 1920
+
+Thread_9516 start. round 0 leader 9516 parent -1 0 0 3
+Thread_9516 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_9516 processing mType Explore Sender id: 5254 maxUid: 5254 round 1
+Send N_ACK to 5254
+Thread_9516 processing mType Explore Sender id: 9681 maxUid: 9681 round 1
+Send explore to 9681
+Send explore to 5254
+Send explore to 7934
+Thread_9516 stop. round 1 leader 9681 parent 9681
+
+Thread_1198 start. round 0 leader 1198 parent -1 0 0 3
+Thread_1198 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_1198 processing mType Explore Sender id: 8235 maxUid: 8235 round 1
+Thread_1198 processing mType Explore Sender id: 8631 maxUid: 8631 round 1
+Send explore to 8977
+Send explore to 8631
+Send explore to 8235
+Thread_1198 stop. round 1 leader 8631 parent 8631
+
+Thread_8977 start. round 0 leader 8977 parent -1 0 0 2
+Thread_8977 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_8977 processing mType Explore Sender id: 1198 maxUid: 8631 round 1
+Send N_ACK to 1198
+Send explore to 4997
+Send explore to 1198
+Thread_8977 stop. round 1 leader 8977 parent -1
+
+Thread_4997 start. round 0 leader 4997 parent -1 0 0 1
+Thread_4997 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_4997 processing mType Explore Sender id: 8977 maxUid: 8977 round 1
+Send explore to 8977
+Thread_4997 stop. round 1 leader 8977 parent 8977
+
+Thread_4604 start. round 0 leader 4604 parent -1 0 0 1
+Thread_4604 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_4604 processing mType Explore Sender id: 7804 maxUid: 7804 round 1
+Send explore to 7804
+Thread_4604 stop. round 1 leader 7804 parent 7804
+
+Thread_7934 start. round 0 leader 7934 parent -1 0 0 2
+Thread_7934 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_7934 processing mType Explore Sender id: 9918 maxUid: 9918 round 1
+Thread_7934 processing mType Explore Sender id: 9516 maxUid: 9681 round 1
+Send N_ACK to 9516
+Send explore to 9516
+Send explore to 9918
+Thread_7934 stop. round 1 leader 9918 parent 9918
+
+Thread_6915 start. round 0 leader 6915 parent -1 0 0 3
+Thread_6915 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Thread_6915 processing mType Explore Sender id: 7610 maxUid: 9918 round 1
+Thread_6915 processing mType Explore Sender id: 8300 maxUid: 8300 round 1
+Send N_ACK to 8300
+Thread_6915 processing mType Explore Sender id: 4595 maxUid: 8299 round 1
+Send N_ACK to 4595
+Send explore to 4595
+Send explore to 7610
+Send explore to 8300
+Thread_6915 stop. round 1 leader 9918 parent 7610
+
+Master checking its queue. Size of queue is: 0 round 1
+mType Done Sender id: 3732 maxUid: 3732 round 1
+mType Done Sender id: 537 maxUid: 3732 round 1
+mType Done Sender id: 6149 maxUid: 6149 round 1
+mType Done Sender id: 4768 maxUid: 6149 round 1
+mType Done Sender id: 8235 maxUid: 8235 round 1
+mType Done Sender id: 1582 maxUid: 1582 round 1
+mType Done Sender id: 5254 maxUid: 5254 round 1
+mType Done Sender id: 8631 maxUid: 8631 round 1
+mType Done Sender id: 941 maxUid: 6149 round 1
+mType Done Sender id: 3217 maxUid: 6149 round 1
+mType Done Sender id: 7804 maxUid: 7804 round 1
+mType Done Sender id: 179 maxUid: 7804 round 1
+mType Done Sender id: 6271 maxUid: 8235 round 1
+mType Done Sender id: 9899 maxUid: 9899 round 1
+mType Done Sender id: 1098 maxUid: 1098 round 1
+mType Done Sender id: 2157 maxUid: 8631 round 1
+mType Done Sender id: 276 maxUid: 1098 round 1
+mType Done Sender id: 9681 maxUid: 9681 round 1
+mType Done Sender id: 9918 maxUid: 9918 round 1
+mType Done Sender id: 5888 maxUid: 9918 round 1
+mType Done Sender id: 5589 maxUid: 8631 round 1
+mType Done Sender id: 7610 maxUid: 9918 round 1
+mType Done Sender id: 8300 maxUid: 8300 round 1
+mType Done Sender id: 8299 maxUid: 8299 round 1
+mType Done Sender id: 6556 maxUid: 8631 round 1
+mType Done Sender id: 4595 maxUid: 8299 round 1
+mType Done Sender id: 1920 maxUid: 8631 round 1
+mType Done Sender id: 4994 maxUid: 8631 round 1
+mType Done Sender id: 9516 maxUid: 9681 round 1
+mType Done Sender id: 1198 maxUid: 8631 round 1
+mType Done Sender id: 8977 maxUid: 8977 round 1
+mType Done Sender id: 4997 maxUid: 8977 round 1
+mType Done Sender id: 4604 maxUid: 7804 round 1
+mType Done Sender id: 7934 maxUid: 9918 round 1
+mType Done Sender id: 6915 maxUid: 9918 round 1
+Send Round_Number msg to 3732
+Send Round_Number msg to 537
+Send Round_Number msg to 6149
+Send Round_Number msg to 4768
+Send Round_Number msg to 8235
+Send Round_Number msg to 1582
+Send Round_Number msg to 5254
+Send Round_Number msg to 8631
+Send Round_Number msg to 941
+Send Round_Number msg to 3217
+Send Round_Number msg to 7804
+Send Round_Number msg to 179
+Send Round_Number msg to 6271
+Send Round_Number msg to 9899
+Send Round_Number msg to 1098
+Send Round_Number msg to 2157
+Send Round_Number msg to 276
+Send Round_Number msg to 9681
+Send Round_Number msg to 9918
+Send Round_Number msg to 5888
+Send Round_Number msg to 5589
+Send Round_Number msg to 7610
+Send Round_Number msg to 8300
+Send Round_Number msg to 8299
+Send Round_Number msg to 6556
+Send Round_Number msg to 4595
+Send Round_Number msg to 1920
+Send Round_Number msg to 4994
+Send Round_Number msg to 9516
+Send Round_Number msg to 1198
+Send Round_Number msg to 8977
+Send Round_Number msg to 4997
+Send Round_Number msg to 4604
+Send Round_Number msg to 7934
+Send Round_Number msg to 6915
+Starting threads. 
+Thread_3732 start. round 1 leader 3732 parent -1 0 0 5
+Thread_3732 processing mType Explore Sender id: 537 maxUid: 3732 round 1
+Thread_3732 processing mType N_ACK Sender id: 6149 maxUid: 6149 round 1
+Thread_3732 processing mType Explore Sender id: 6149 maxUid: 6149 round 1
+Thread_3732 processing mType N_ACK Sender id: 4768 maxUid: 4768 round 1
+Thread_3732 processing mType Explore Sender id: 4768 maxUid: 6149 round 1
+Send N_ACK to 4768
+Thread_3732 processing mType N_ACK Sender id: 8235 maxUid: 8235 round 1
+Thread_3732 processing mType Explore Sender id: 8235 maxUid: 8235 round 1
+Thread_3732 processing mType N_ACK Sender id: 6556 maxUid: 6556 round 1
+Thread_3732 processing mType Explore Sender id: 6556 maxUid: 8631 round 1
+Thread_3732 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Send explore to 4768
+Send explore to 6149
+Send explore to 537
+Send explore to 8235
+Send explore to 6556
+Thread_3732 stop. round 2 leader 8631 parent 6556
+
+Thread_537 start. round 1 leader 3732 parent 3732 0 0 4
+Thread_537 processing mType N_ACK Sender id: 6149 maxUid: 6149 round 1
+Thread_537 processing mType Explore Sender id: 6149 maxUid: 6149 round 1
+Thread_537 processing mType N_ACK Sender id: 4768 maxUid: 4768 round 1
+Thread_537 processing mType Explore Sender id: 4768 maxUid: 6149 round 1
+Send N_ACK to 4768
+Thread_537 processing mType N_ACK Sender id: 8235 maxUid: 8235 round 1
+Thread_537 processing mType Explore Sender id: 8235 maxUid: 8235 round 1
+Thread_537 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_537 processing mType Explore Sender id: 3732 maxUid: 8631 round 2
+Send explore to 4768
+Send explore to 3732
+Send explore to 6149
+Send explore to 8235
+Thread_537 stop. round 2 leader 8631 parent 3732
+
+Thread_6149 start. round 1 leader 6149 parent -1 0 0 5
+Thread_6149 processing mType Explore Sender id: 4768 maxUid: 6149 round 1
+Thread_6149 processing mType N_ACK Sender id: 8235 maxUid: 8235 round 1
+Thread_6149 processing mType Explore Sender id: 8235 maxUid: 8235 round 1
+Thread_6149 processing mType Explore Sender id: 3217 maxUid: 6149 round 1
+Send N_ACK to 3217
+Thread_6149 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_6149 processing mType Explore Sender id: 3732 maxUid: 8631 round 2
+Thread_6149 processing mType Explore Sender id: 537 maxUid: 8631 round 2
+Send N_ACK to 537
+Send explore to 4768
+Send explore to 3217
+Send explore to 3732
+Send explore to 537
+Send explore to 8235
+Thread_6149 stop. round 2 leader 8631 parent 3732
+
+Thread_4768 start. round 1 leader 6149 parent 6149 0 0 6
+Thread_4768 processing mType N_ACK Sender id: 8235 maxUid: 8235 round 1
+Thread_4768 processing mType Explore Sender id: 8235 maxUid: 8235 round 1
+Thread_4768 processing mType Explore Sender id: 941 maxUid: 6149 round 1
+Send N_ACK to 941
+Thread_4768 processing mType N_ACK Sender id: 9918 maxUid: 9918 round 1
+Thread_4768 processing mType Explore Sender id: 9918 maxUid: 9918 round 1
+Thread_4768 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_4768 processing mType N_ACK Sender id: 3732 maxUid: 6149 round 1
+Thread_4768 processing mType Explore Sender id: 3732 maxUid: 8631 round 2
+Send N_ACK to 3732
+Thread_4768 processing mType N_ACK Sender id: 537 maxUid: 6149 round 1
+Thread_4768 processing mType Explore Sender id: 537 maxUid: 8631 round 2
+Send N_ACK to 537
+Thread_4768 processing mType Explore Sender id: 6149 maxUid: 8631 round 2
+Send N_ACK to 6149
+Send explore to 3732
+Send explore to 6149
+Send explore to 537
+Send explore to 8235
+Send explore to 941
+Send explore to 9918
+Thread_4768 stop. round 2 leader 9918 parent 9918
+
+Thread_8235 start. round 1 leader 8235 parent -1 0 0 6
+Thread_8235 processing mType Explore Sender id: 6271 maxUid: 8235 round 1
+Thread_8235 processing mType Explore Sender id: 1198 maxUid: 8631 round 1
+Thread_8235 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_8235 processing mType Explore Sender id: 3732 maxUid: 8631 round 2
+Send N_ACK to 1198
+Thread_8235 processing mType Explore Sender id: 537 maxUid: 8631 round 2
+Send N_ACK to 537
+Thread_8235 processing mType Explore Sender id: 6149 maxUid: 8631 round 2
+Send N_ACK to 3732
+Thread_8235 processing mType Explore Sender id: 4768 maxUid: 9918 round 2
+Send explore to 4768
+Send explore to 3732
+Send explore to 6149
+Send explore to 537
+Send explore to 1198
+Send explore to 6271
+Thread_8235 stop. round 2 leader 9918 parent 4768
+
+Thread_1582 start. round 1 leader 1582 parent -1 0 0 2
+Thread_1582 processing mType N_ACK Sender id: 6271 maxUid: 8235 round 1
+Thread_1582 processing mType Explore Sender id: 6271 maxUid: 8235 round 1
+Thread_1582 processing mType N_ACK Sender id: 9899 maxUid: 9899 round 1
+Thread_1582 processing mType Explore Sender id: 9899 maxUid: 9899 round 1
+Thread_1582 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Send explore to 9899
+Send explore to 6271
+Thread_1582 stop. round 2 leader 9899 parent 9899
+
+Thread_5254 start. round 1 leader 5254 parent -1 0 0 2
+Thread_5254 processing mType Explore Sender id: 4595 maxUid: 8299 round 1
+Thread_5254 processing mType N_ACK Sender id: 9516 maxUid: 9516 round 1
+Thread_5254 processing mType Explore Sender id: 9516 maxUid: 9681 round 1
+Thread_5254 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Send explore to 4595
+Send explore to 9516
+Thread_5254 stop. round 2 leader 9681 parent 9516
+
+Thread_8631 start. round 1 leader 8631 parent -1 0 0 2
+Thread_8631 processing mType Explore Sender id: 2157 maxUid: 8631 round 1
+Thread_8631 processing mType Explore Sender id: 1198 maxUid: 8631 round 1
+Thread_8631 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_8631 stop. round 2 leader 8631 parent -1
+
+Thread_941 start. round 1 leader 6149 parent 4768 0 0 2
+Thread_941 processing mType Explore Sender id: 5589 maxUid: 8631 round 1
+Thread_941 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_941 processing mType N_ACK Sender id: 4768 maxUid: 8235 round 1
+Thread_941 processing mType Explore Sender id: 4768 maxUid: 9918 round 2
+Send explore to 4768
+Send explore to 5589
+Thread_941 stop. round 2 leader 9918 parent 4768
+
+Thread_3217 start. round 1 leader 6149 parent 6149 0 0 2
+Thread_3217 processing mType N_ACK Sender id: 9899 maxUid: 9899 round 1
+Thread_3217 processing mType Explore Sender id: 9899 maxUid: 9899 round 1
+Thread_3217 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_3217 processing mType N_ACK Sender id: 6149 maxUid: 8235 round 1
+Thread_3217 processing mType Explore Sender id: 6149 maxUid: 8631 round 2
+Send N_ACK to 6149
+Send explore to 6149
+Send explore to 9899
+Thread_3217 stop. round 2 leader 9899 parent 9899
+
+Thread_7804 start. round 1 leader 7804 parent -1 0 0 3
+Thread_7804 processing mType Explore Sender id: 179 maxUid: 7804 round 1
+Thread_7804 processing mType Explore Sender id: 5888 maxUid: 9918 round 1
+Thread_7804 processing mType Explore Sender id: 4604 maxUid: 7804 round 1
+Send N_ACK to 4604
+Thread_7804 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Send explore to 5888
+Send explore to 179
+Send explore to 4604
+Thread_7804 stop. round 2 leader 9918 parent 5888
+
+Thread_179 start. round 1 leader 7804 parent 7804 0 0 2
+Thread_179 processing mType Explore Sender id: 4994 maxUid: 8631 round 1
+Thread_179 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_179 processing mType Explore Sender id: 7804 maxUid: 9918 round 2
+Send explore to 4994
+Send explore to 7804
+Thread_179 stop. round 2 leader 9918 parent 7804
+
+Thread_6271 start. round 1 leader 8235 parent 8235 0 0 2
+Thread_6271 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_6271 processing mType Explore Sender id: 8235 maxUid: 9918 round 2
+Thread_6271 processing mType Explore Sender id: 1582 maxUid: 9899 round 2
+Send N_ACK to 1582
+Send explore to 8235
+Send explore to 1582
+Thread_6271 stop. round 2 leader 9918 parent 8235
+
+Thread_9899 start. round 1 leader 9899 parent -1 0 0 2
+Thread_9899 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_9899 processing mType Explore Sender id: 1582 maxUid: 9899 round 2
+Thread_9899 processing mType Explore Sender id: 3217 maxUid: 9899 round 2
+Thread_9899 stop. round 2 leader 9899 parent -1
+
+Thread_1098 start. round 1 leader 1098 parent -1 0 0 2
+Thread_1098 processing mType N_ACK Sender id: 2157 maxUid: 8631 round 1
+Thread_1098 processing mType Explore Sender id: 2157 maxUid: 8631 round 1
+Thread_1098 processing mType Explore Sender id: 276 maxUid: 1098 round 1
+Send N_ACK to 276
+Thread_1098 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Send explore to 276
+Send explore to 2157
+Thread_1098 stop. round 2 leader 8631 parent 2157
+
+Thread_2157 start. round 1 leader 8631 parent 8631 0 0 5
+Thread_2157 processing mType Explore Sender id: 5589 maxUid: 8631 round 1
+Send N_ACK to 5589
+Thread_2157 processing mType Explore Sender id: 6556 maxUid: 8631 round 1
+Send N_ACK to 6556
+Thread_2157 processing mType Explore Sender id: 1920 maxUid: 8631 round 1
+Send N_ACK to 1920
+Thread_2157 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_2157 processing mType Explore Sender id: 1098 maxUid: 8631 round 2
+Send N_ACK to 1098
+Thread_2157 stop. round 2 leader 8631 parent 8631
+
+Thread_276 start. round 1 leader 1098 parent 1098 0 0 1
+Sending ACK to parent 1098
+Thread_276 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_276 processing mType N_ACK Sender id: 1098 maxUid: 8631 round 1
+Thread_276 processing mType Explore Sender id: 1098 maxUid: 8631 round 2
+Send explore to 1098
+Thread_276 stop. round 2 leader 8631 parent 1098
+
+Thread_9681 start. round 1 leader 9681 parent -1 0 0 1
+Thread_9681 processing mType Explore Sender id: 9516 maxUid: 9681 round 1
+Thread_9681 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_9681 stop. round 2 leader 9681 parent -1
+
+Thread_9918 start. round 1 leader 9918 parent -1 0 0 3
+Thread_9918 processing mType Explore Sender id: 5888 maxUid: 9918 round 1
+Thread_9918 processing mType Explore Sender id: 7934 maxUid: 9918 round 1
+Thread_9918 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_9918 processing mType Explore Sender id: 4768 maxUid: 9918 round 2
+Thread_9918 stop. round 2 leader 9918 parent -1
+
+Thread_5888 start. round 1 leader 9918 parent 9918 0 0 3
+Thread_5888 processing mType Explore Sender id: 7610 maxUid: 9918 round 1
+Send N_ACK to 7610
+Thread_5888 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_5888 processing mType Explore Sender id: 7804 maxUid: 9918 round 2
+Send N_ACK to 7804
+Thread_5888 stop. round 2 leader 9918 parent 9918
+
+Thread_5589 start. round 1 leader 8631 parent 2157 0 0 2
+Thread_5589 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_5589 processing mType Explore Sender id: 941 maxUid: 9918 round 2
+Thread_5589 processing mType N_ACK Sender id: 2157 maxUid: 8631 round 1
+Send explore to 941
+Send explore to 2157
+Thread_5589 stop. round 1 leader 9918 parent 941
+
+Thread_7610 start. round 1 leader 9918 parent 5888 0 0 2
+Thread_7610 processing mType Explore Sender id: 6915 maxUid: 9918 round 1
+Send N_ACK to 5888
+Thread_7610 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_7610 processing mType N_ACK Sender id: 5888 maxUid: 9918 round 1
+Thread_7610 stop. round 1 leader 9918 parent 6915
+
+Thread_8300 start. round 1 leader 8300 parent -1 0 0 1
+Thread_8300 processing mType N_ACK Sender id: 6915 maxUid: 9918 round 1
+Thread_8300 processing mType Explore Sender id: 6915 maxUid: 9918 round 1
+Thread_8300 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Send explore to 6915
+Thread_8300 stop. round 2 leader 9918 parent 6915
+
+Thread_8299 start. round 1 leader 8299 parent -1 0 0 1
+Thread_8299 processing mType Explore Sender id: 4595 maxUid: 8299 round 1
+Thread_8299 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_8299 stop. round 2 leader 8299 parent -1
+
+Thread_6556 start. round 1 leader 8631 parent 2157 0 0 2
+Thread_6556 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_6556 processing mType Explore Sender id: 3732 maxUid: 8631 round 2
+Send N_ACK to 2157
+Thread_6556 processing mType N_ACK Sender id: 2157 maxUid: 8631 round 1
+Thread_6556 stop. round 1 leader 8631 parent 3732
+
+Thread_4595 start. round 1 leader 8299 parent 8299 0 0 3
+Thread_4595 processing mType N_ACK Sender id: 6915 maxUid: 9918 round 1
+Thread_4595 processing mType Explore Sender id: 6915 maxUid: 9918 round 1
+Thread_4595 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_4595 processing mType Explore Sender id: 5254 maxUid: 9681 round 2
+Send N_ACK to 5254
+Send explore to 6915
+Send explore to 5254
+Send explore to 8299
+Thread_4595 stop. round 2 leader 9918 parent 6915
+
+Thread_1920 start. round 1 leader 8631 parent 2157 0 0 2
+Thread_1920 processing mType Explore Sender id: 4994 maxUid: 8631 round 1
+Send N_ACK to 2157
+Thread_1920 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_1920 processing mType N_ACK Sender id: 2157 maxUid: 8631 round 1
+Thread_1920 stop. round 1 leader 8631 parent 4994
+
+Thread_4994 start. round 1 leader 8631 parent 1920 0 0 2
+Thread_4994 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_4994 processing mType Explore Sender id: 179 maxUid: 9918 round 2
+Send explore to 1920
+Send explore to 179
+Thread_4994 stop. round 2 leader 9918 parent 179
+
+Thread_9516 start. round 1 leader 9681 parent 9681 0 0 3
+Thread_9516 processing mType N_ACK Sender id: 7934 maxUid: 9918 round 1
+Thread_9516 processing mType Explore Sender id: 7934 maxUid: 9918 round 1
+Thread_9516 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_9516 processing mType Explore Sender id: 5254 maxUid: 9681 round 2
+Send N_ACK to 5254
+Send explore to 9681
+Send explore to 5254
+Send explore to 7934
+Thread_9516 stop. round 2 leader 9918 parent 7934
+
+Thread_1198 start. round 1 leader 8631 parent 8631 0 0 3
+Thread_1198 processing mType N_ACK Sender id: 8977 maxUid: 8977 round 1
+Thread_1198 processing mType Explore Sender id: 8977 maxUid: 8977 round 1
+Thread_1198 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_1198 processing mType N_ACK Sender id: 8235 maxUid: 8631 round 2
+Thread_1198 processing mType Explore Sender id: 8235 maxUid: 9918 round 2
+Send explore to 8977
+Send explore to 8631
+Send explore to 8235
+Thread_1198 stop. round 2 leader 9918 parent 8235
+
+Thread_8977 start. round 1 leader 8977 parent -1 0 0 2
+Thread_8977 processing mType Explore Sender id: 4997 maxUid: 8977 round 1
+Thread_8977 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_8977 processing mType Explore Sender id: 1198 maxUid: 9918 round 2
+Send explore to 4997
+Send explore to 1198
+Thread_8977 stop. round 2 leader 9918 parent 1198
+
+Thread_4997 start. round 1 leader 8977 parent 8977 0 0 1
+Sending ACK to parent 8977
+Thread_4997 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_4997 processing mType Explore Sender id: 8977 maxUid: 9918 round 2
+Send explore to 8977
+Thread_4997 stop. round 2 leader 9918 parent 8977
+
+Thread_4604 start. round 1 leader 7804 parent 7804 0 0 1
+Sending ACK to parent 7804
+Thread_4604 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_4604 processing mType N_ACK Sender id: 7804 maxUid: 9918 round 1
+Thread_4604 processing mType Explore Sender id: 7804 maxUid: 9918 round 2
+Send explore to 7804
+Thread_4604 stop. round 2 leader 9918 parent 7804
+
+Thread_7934 start. round 1 leader 9918 parent 9918 0 0 2
+Thread_7934 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_7934 processing mType Explore Sender id: 9516 maxUid: 9918 round 2
+Send N_ACK to 9516
+Thread_7934 stop. round 2 leader 9918 parent 9918
+
+Thread_6915 start. round 1 leader 9918 parent 7610 0 0 3
+Thread_6915 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
+Thread_6915 processing mType Explore Sender id: 8300 maxUid: 9918 round 2
+Send N_ACK to 7610
+Thread_6915 processing mType Explore Sender id: 4595 maxUid: 9918 round 2
+Send N_ACK to 4595
+Thread_6915 stop. round 2 leader 9918 parent 8300
+
+Master checking its queue. Size of queue is: 0 round 2
+mType Done Sender id: 3732 maxUid: 8631 round 2
+mType Done Sender id: 537 maxUid: 8631 round 2
+mType Done Sender id: 6149 maxUid: 8631 round 2
+mType Done Sender id: 4768 maxUid: 9918 round 2
+mType Done Sender id: 8235 maxUid: 9918 round 2
+mType Done Sender id: 1582 maxUid: 9899 round 2
+mType Done Sender id: 5254 maxUid: 9681 round 2
+mType Done Sender id: 8631 maxUid: 8631 round 2
+mType Done Sender id: 941 maxUid: 9918 round 2
+mType Done Sender id: 3217 maxUid: 9899 round 2
+mType Done Sender id: 7804 maxUid: 9918 round 2
+mType Done Sender id: 179 maxUid: 9918 round 2
+mType Done Sender id: 6271 maxUid: 9918 round 2
+mType Done Sender id: 9899 maxUid: 9899 round 2
+mType Done Sender id: 1098 maxUid: 8631 round 2
+mType Done Sender id: 2157 maxUid: 8631 round 2
+mType Done Sender id: 276 maxUid: 8631 round 2
+mType Done Sender id: 9681 maxUid: 9681 round 2
+mType Done Sender id: 9918 maxUid: 9918 round 2
+mType Done Sender id: 5888 maxUid: 9918 round 2
+mType Done Sender id: 5589 maxUid: 9918 round 1
+mType Done Sender id: 7610 maxUid: 9918 round 1
+mType Done Sender id: 8300 maxUid: 9918 round 2
+mType Done Sender id: 8299 maxUid: 8299 round 2
+mType Done Sender id: 6556 maxUid: 8631 round 1
+mType Done Sender id: 4595 maxUid: 9918 round 2
+mType Done Sender id: 1920 maxUid: 8631 round 1
+mType Done Sender id: 4994 maxUid: 9918 round 2
+mType Done Sender id: 9516 maxUid: 9918 round 2
+mType Done Sender id: 1198 maxUid: 9918 round 2
+mType Done Sender id: 8977 maxUid: 9918 round 2
+mType Done Sender id: 4997 maxUid: 9918 round 2
+mType Done Sender id: 4604 maxUid: 9918 round 2
+mType Done Sender id: 7934 maxUid: 9918 round 2
+mType Done Sender id: 6915 maxUid: 9918 round 2
+Send Round_Number msg to 3732
+Send Round_Number msg to 537
+Send Round_Number msg to 6149
+Send Round_Number msg to 4768
+Send Round_Number msg to 8235
+Send Round_Number msg to 1582
+Send Round_Number msg to 5254
+Send Round_Number msg to 8631
+Send Round_Number msg to 941
+Send Round_Number msg to 3217
+Send Round_Number msg to 7804
+Send Round_Number msg to 179
+Send Round_Number msg to 6271
+Send Round_Number msg to 9899
+Send Round_Number msg to 1098
+Send Round_Number msg to 2157
+Send Round_Number msg to 276
+Send Round_Number msg to 9681
+Send Round_Number msg to 9918
+Send Round_Number msg to 5888
+Send Round_Number msg to 5589
+Send Round_Number msg to 7610
+Send Round_Number msg to 8300
+Send Round_Number msg to 8299
+Send Round_Number msg to 6556
+Send Round_Number msg to 4595
+Send Round_Number msg to 1920
+Send Round_Number msg to 4994
+Send Round_Number msg to 9516
+Send Round_Number msg to 1198
+Send Round_Number msg to 8977
+Send Round_Number msg to 4997
+Send Round_Number msg to 4604
+Send Round_Number msg to 7934
+Send Round_Number msg to 6915
+Starting threads. 
+Thread_3732 start. round 2 leader 8631 parent 6556 4 0 5
+Sending ACK to parent 6556
+Thread_3732 processing mType Explore Sender id: 537 maxUid: 8631 round 2
+Send N_ACK to 537
+Thread_3732 processing mType Explore Sender id: 6149 maxUid: 8631 round 2
+Send N_ACK to 6149
+Thread_3732 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 2
+Thread_3732 processing mType Explore Sender id: 4768 maxUid: 9918 round 2
+Thread_3732 processing mType N_ACK Sender id: 8235 maxUid: 8631 round 2
+Thread_3732 processing mType Explore Sender id: 8235 maxUid: 9918 round 2
+Send N_ACK to 4768
+Thread_3732 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Send explore to 4768
+Send explore to 6149
+Send explore to 537
+Send explore to 8235
+Send explore to 6556
+Thread_3732 stop. round 3 leader 9918 parent 8235
+
+Thread_537 start. round 2 leader 8631 parent 3732 3 0 4
+Sending ACK to parent 3732
+Thread_537 processing mType N_ACK Sender id: 6149 maxUid: 8631 round 2
+Thread_537 processing mType Explore Sender id: 6149 maxUid: 8631 round 2
+Send N_ACK to 3732
+Thread_537 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 2
+Thread_537 processing mType Explore Sender id: 4768 maxUid: 9918 round 2
+Thread_537 processing mType N_ACK Sender id: 8235 maxUid: 8631 round 2
+Thread_537 processing mType Explore Sender id: 8235 maxUid: 9918 round 2
+Send N_ACK to 4768
+Thread_537 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_537 processing mType N_ACK Sender id: 3732 maxUid: 8631 round 2
+Thread_537 processing mType Explore Sender id: 3732 maxUid: 9918 round 3
+Send N_ACK to 3732
+Send explore to 4768
+Send explore to 3732
+Send explore to 6149
+Send explore to 8235
+Thread_537 stop. round 3 leader 9918 parent 8235
+
+Thread_6149 start. round 2 leader 8631 parent 3732 1 0 5
+Thread_6149 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 2
+Thread_6149 processing mType Explore Sender id: 4768 maxUid: 9918 round 2
+Thread_6149 processing mType Explore Sender id: 8235 maxUid: 9918 round 2
+Send N_ACK to 4768
+Thread_6149 processing mType N_ACK Sender id: 3217 maxUid: 9899 round 2
+Thread_6149 processing mType Explore Sender id: 3217 maxUid: 9899 round 2
+Send N_ACK to 3217
+Thread_6149 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_6149 processing mType N_ACK Sender id: 3732 maxUid: 8631 round 2
+Thread_6149 processing mType Explore Sender id: 3732 maxUid: 9918 round 3
+Send N_ACK to 3732
+Thread_6149 processing mType Explore Sender id: 537 maxUid: 9918 round 3
+Send N_ACK to 537
+Send explore to 4768
+Send explore to 3217
+Send explore to 3732
+Send explore to 537
+Send explore to 8235
+Thread_6149 stop. round 3 leader 9918 parent 8235
+
+Thread_4768 start. round 2 leader 9918 parent 9918 4 0 6
+Thread_4768 processing mType Explore Sender id: 8235 maxUid: 9918 round 2
+Send N_ACK to 8235
+Thread_4768 processing mType Explore Sender id: 941 maxUid: 9918 round 2
+Send N_ACK to 941
+Thread_4768 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_4768 processing mType N_ACK Sender id: 3732 maxUid: 9918 round 2
+Thread_4768 processing mType Explore Sender id: 3732 maxUid: 9918 round 3
+Send N_ACK to 3732
+Thread_4768 processing mType N_ACK Sender id: 537 maxUid: 9918 round 2
+Thread_4768 processing mType Explore Sender id: 537 maxUid: 9918 round 3
+Send N_ACK to 537
+Thread_4768 processing mType N_ACK Sender id: 6149 maxUid: 9918 round 2
+Thread_4768 processing mType Explore Sender id: 6149 maxUid: 9918 round 3
+Send N_ACK to 6149
+Thread_4768 stop. round 3 leader 9918 parent 9918
+
+Thread_8235 start. round 2 leader 9918 parent 4768 0 0 6
+Thread_8235 processing mType Explore Sender id: 6271 maxUid: 9918 round 2
+Send N_ACK to 4768
+Thread_8235 processing mType Explore Sender id: 1198 maxUid: 9918 round 2
+Send N_ACK to 1198
+Thread_8235 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_8235 processing mType Explore Sender id: 3732 maxUid: 9918 round 3
+Send N_ACK to 3732
+Thread_8235 processing mType Explore Sender id: 537 maxUid: 9918 round 3
+Send N_ACK to 537
+Thread_8235 processing mType Explore Sender id: 6149 maxUid: 9918 round 3
+Send N_ACK to 6149
+Thread_8235 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 2
+Thread_8235 stop. round 2 leader 9918 parent 6271
+
+Thread_1582 start. round 2 leader 9899 parent 9899 2 0 2
+Sending ACK to parent 9899
+Thread_1582 processing mType N_ACK Sender id: 6271 maxUid: 9918 round 2
+Thread_1582 processing mType Explore Sender id: 6271 maxUid: 9918 round 2
+Thread_1582 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Send explore to 9899
+Send explore to 6271
+Thread_1582 stop. round 3 leader 9918 parent 6271
+
+Thread_5254 start. round 2 leader 9681 parent 9516 1 0 2
+Sending ACK to parent 9516
+Thread_5254 processing mType N_ACK Sender id: 4595 maxUid: 9918 round 2
+Thread_5254 processing mType Explore Sender id: 4595 maxUid: 9918 round 2
+Thread_5254 processing mType N_ACK Sender id: 9516 maxUid: 9918 round 2
+Thread_5254 processing mType Explore Sender id: 9516 maxUid: 9918 round 2
+Send N_ACK to 4595
+Thread_5254 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Send explore to 4595
+Send explore to 9516
+Thread_5254 stop. round 3 leader 9918 parent 9516
+
+Thread_8631 start. round 2 leader 8631 parent -1 0 0 2
+Thread_8631 processing mType Explore Sender id: 1198 maxUid: 9918 round 2
+Thread_8631 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Send explore to 2157
+Send explore to 1198
+Thread_8631 stop. round 3 leader 9918 parent 1198
+
+Thread_941 start. round 2 leader 9918 parent 4768 1 0 2
+Sending ACK to parent 4768
+Thread_941 processing mType Explore Sender id: 5589 maxUid: 9918 round 1
+Send N_ACK to 4768
+Thread_941 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_941 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 2
+Thread_941 stop. round 2 leader 9918 parent 5589
+
+Thread_3217 start. round 2 leader 9899 parent 9899 2 0 2
+Sending ACK to parent 9899
+Thread_3217 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_3217 processing mType N_ACK Sender id: 6149 maxUid: 9918 round 2
+Thread_3217 processing mType Explore Sender id: 6149 maxUid: 9918 round 3
+Send explore to 6149
+Send explore to 9899
+Thread_3217 stop. round 3 leader 9918 parent 6149
+
+Thread_7804 start. round 2 leader 9918 parent 5888 0 0 3
+Thread_7804 processing mType Explore Sender id: 179 maxUid: 9918 round 2
+Send N_ACK to 179
+Thread_7804 processing mType N_ACK Sender id: 5888 maxUid: 9918 round 2
+Thread_7804 processing mType ACK Sender id: 4604 maxUid: 7804 round 1
+Thread_7804 processing mType Explore Sender id: 4604 maxUid: 9918 round 2
+Send N_ACK to 4604
+Thread_7804 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_7804 stop. round 3 leader 9918 parent 5888
+
+Thread_179 start. round 2 leader 9918 parent 7804 0 0 2
+Thread_179 processing mType Explore Sender id: 4994 maxUid: 9918 round 2
+Send N_ACK to 4994
+Thread_179 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_179 processing mType N_ACK Sender id: 7804 maxUid: 9918 round 2
+Thread_179 stop. round 2 leader 9918 parent 7804
+
+Thread_6271 start. round 2 leader 9918 parent 8235 0 0 2
+Thread_6271 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_6271 processing mType Explore Sender id: 1582 maxUid: 9918 round 3
+Send N_ACK to 1582
+Thread_6271 stop. round 3 leader 9918 parent 8235
+
+Thread_9899 start. round 2 leader 9899 parent -1 0 0 2
+Thread_9899 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_9899 processing mType ACK Sender id: 1582 maxUid: 9899 round 2
+Thread_9899 processing mType Explore Sender id: 1582 maxUid: 9918 round 3
+Thread_9899 processing mType ACK Sender id: 3217 maxUid: 9899 round 2
+Thread_9899 processing mType Explore Sender id: 3217 maxUid: 9918 round 3
+Send N_ACK to 1582
+Send explore to 3217
+Send explore to 1582
+Thread_9899 stop. round 3 leader 9918 parent 3217
+
+Thread_1098 start. round 2 leader 8631 parent 2157 1 0 2
+Sending ACK to parent 2157
+Thread_1098 processing mType N_ACK Sender id: 2157 maxUid: 8631 round 2
+Thread_1098 processing mType ACK Sender id: 276 maxUid: 1098 round 1
+Thread_1098 processing mType Explore Sender id: 276 maxUid: 8631 round 2
+Send N_ACK to 276
+Thread_1098 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_1098 stop. round 3 leader 8631 parent 2157
+
+Thread_2157 start. round 2 leader 8631 parent 8631 0 0 5
+Thread_2157 processing mType Explore Sender id: 5589 maxUid: 9918 round 1
+Thread_2157 processing mType N_ACK Sender id: 6556 maxUid: 8631 round 2
+Thread_2157 processing mType N_ACK Sender id: 1920 maxUid: 8631 round 1
+Thread_2157 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_2157 processing mType Explore Sender id: 8631 maxUid: 9918 round 3
+Send N_ACK to 5589
+Thread_2157 processing mType ACK Sender id: 1098 maxUid: 8631 round 2
+Thread_2157 processing mType ACK Sender id: 1098 maxUid: 8631 round 1
+Send explore to 1920
+Send explore to 5589
+Send explore to 8631
+Send explore to 1098
+Send explore to 6556
+Thread_2157 stop. round 1 leader 9918 parent 8631
+
+Thread_276 start. round 2 leader 8631 parent 1098 1 0 1
+Sending ACK to parent 1098
+Thread_276 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_276 processing mType N_ACK Sender id: 1098 maxUid: 8631 round 2
+Thread_276 stop. round 2 leader 8631 parent 1098
+
+Thread_9681 start. round 2 leader 9681 parent -1 0 0 1
+Thread_9681 processing mType Explore Sender id: 9516 maxUid: 9918 round 2
+Thread_9681 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Send explore to 9516
+Thread_9681 stop. round 3 leader 9918 parent 9516
+
+Thread_9918 start. round 2 leader 9918 parent -1 0 0 3
+Thread_9918 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_9918 stop. round 3 leader 9918 parent -1
+
+Thread_5888 start. round 2 leader 9918 parent 9918 0 0 3
+Thread_5888 processing mType N_ACK Sender id: 7610 maxUid: 9918 round 1
+Thread_5888 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_5888 processing mType ACK Sender id: 7804 maxUid: 9918 round 1
+Thread_5888 stop. round 1 leader 9918 parent 9918
+
+Thread_5589 start. round 1 leader 9918 parent 941 1 0 2
+Sending ACK to parent 941
+Thread_5589 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_5589 processing mType N_ACK Sender id: 2157 maxUid: 9918 round 3
+Thread_5589 processing mType Explore Sender id: 2157 maxUid: 9918 round 1
+Send N_ACK to 941
+Thread_5589 stop. round 1 leader 9918 parent 2157
+
+Thread_7610 start. round 1 leader 9918 parent 6915 1 0 2
+Sending ACK to parent 6915
+Thread_7610 processing mType N_ACK Sender id: 6915 maxUid: 9918 round 2
+Thread_7610 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_7610 stop. round 3 leader 9918 parent 6915
+
+Thread_8300 start. round 2 leader 9918 parent 6915 1 0 1
+Sending ACK to parent 6915
+Thread_8300 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_8300 stop. round 3 leader 9918 parent 6915
+
+Thread_8299 start. round 2 leader 8299 parent -1 0 0 1
+Thread_8299 processing mType Explore Sender id: 4595 maxUid: 9918 round 2
+Thread_8299 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Send explore to 4595
+Thread_8299 stop. round 3 leader 9918 parent 4595
+
+Thread_6556 start. round 1 leader 8631 parent 3732 1 0 2
+Sending ACK to parent 3732
+Thread_6556 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_6556 processing mType ACK Sender id: 3732 maxUid: 8631 round 2
+Thread_6556 processing mType Explore Sender id: 3732 maxUid: 9918 round 3
+Thread_6556 processing mType Explore Sender id: 2157 maxUid: 9918 round 1
+Send N_ACK to 2157
+Send explore to 3732
+Send explore to 2157
+Thread_6556 stop. round 1 leader 9918 parent 3732
+
+Thread_4595 start. round 2 leader 9918 parent 6915 1 0 3
+Thread_4595 processing mType N_ACK Sender id: 6915 maxUid: 9918 round 2
+Thread_4595 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_4595 processing mType N_ACK Sender id: 5254 maxUid: 9918 round 2
+Thread_4595 processing mType Explore Sender id: 5254 maxUid: 9918 round 3
+Send N_ACK to 5254
+Thread_4595 processing mType Explore Sender id: 8299 maxUid: 9918 round 3
+Send N_ACK to 6915
+Thread_4595 stop. round 3 leader 9918 parent 8299
+
+Thread_1920 start. round 1 leader 8631 parent 4994 1 0 2
+Sending ACK to parent 4994
+Thread_1920 processing mType Explore Sender id: 4994 maxUid: 9918 round 2
+Thread_1920 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_1920 processing mType Explore Sender id: 2157 maxUid: 9918 round 1
+Send N_ACK to 2157
+Send explore to 4994
+Send explore to 2157
+Thread_1920 stop. round 1 leader 9918 parent 4994
+
+Thread_4994 start. round 2 leader 9918 parent 179 0 0 2
+Thread_4994 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_4994 processing mType N_ACK Sender id: 179 maxUid: 9918 round 2
+Thread_4994 processing mType ACK Sender id: 1920 maxUid: 8631 round 1
+Thread_4994 processing mType Explore Sender id: 1920 maxUid: 9918 round 1
+Send N_ACK to 179
+Thread_4994 stop. round 1 leader 9918 parent 1920
+
+Thread_9516 start. round 2 leader 9918 parent 7934 1 0 3
+Thread_9516 processing mType N_ACK Sender id: 7934 maxUid: 9918 round 2
+Thread_9516 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_9516 processing mType ACK Sender id: 5254 maxUid: 9681 round 2
+Thread_9516 processing mType Explore Sender id: 5254 maxUid: 9918 round 3
+Send N_ACK to 5254
+Thread_9516 processing mType Explore Sender id: 9681 maxUid: 9918 round 3
+Send N_ACK to 7934
+Thread_9516 stop. round 3 leader 9918 parent 9681
+
+Thread_1198 start. round 2 leader 9918 parent 8235 2 0 3
+Sending ACK to parent 8235
+Thread_1198 processing mType Explore Sender id: 8977 maxUid: 9918 round 2
+Send N_ACK to 8235
+Thread_1198 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_1198 processing mType N_ACK Sender id: 8235 maxUid: 9918 round 2
+Thread_1198 processing mType Explore Sender id: 8631 maxUid: 9918 round 3
+Send N_ACK to 8631
+Thread_1198 stop. round 3 leader 9918 parent 8977
+
+Thread_8977 start. round 2 leader 9918 parent 1198 0 0 2
+Thread_8977 processing mType ACK Sender id: 4997 maxUid: 8977 round 1
+Thread_8977 processing mType Explore Sender id: 4997 maxUid: 9918 round 2
+Send N_ACK to 1198
+Thread_8977 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_8977 stop. round 3 leader 9918 parent 4997
+
+Thread_4997 start. round 2 leader 9918 parent 8977 0 0 1
+Sending ACK to parent 8977
+Thread_4997 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_4997 stop. round 3 leader 9918 parent 8977
+
+Thread_4604 start. round 2 leader 9918 parent 7804 1 0 1
+Sending ACK to parent 7804
+Thread_4604 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_4604 processing mType N_ACK Sender id: 7804 maxUid: 9918 round 2
+Thread_4604 stop. round 2 leader 9918 parent 7804
+
+Thread_7934 start. round 2 leader 9918 parent 9918 0 0 2
+Thread_7934 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_7934 processing mType ACK Sender id: 9516 maxUid: 9918 round 2
+Thread_7934 processing mType N_ACK Sender id: 9516 maxUid: 9918 round 3
+Thread_7934 stop. round 3 leader 9918 parent 9918
+
+Thread_6915 start. round 2 leader 9918 parent 8300 0 0 3
+Thread_6915 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
+Thread_6915 processing mType ACK Sender id: 7610 maxUid: 9918 round 1
+Thread_6915 processing mType ACK Sender id: 8300 maxUid: 9918 round 2
+Thread_6915 processing mType N_ACK Sender id: 4595 maxUid: 9918 round 3
+Thread_6915 stop. round 3 leader 9918 parent 8300
+
+Master checking its queue. Size of queue is: 0 round 3
+mType Done Sender id: 3732 maxUid: 9918 round 3
+mType Done Sender id: 537 maxUid: 9918 round 3
+mType Done Sender id: 6149 maxUid: 9918 round 3
+mType Done Sender id: 4768 maxUid: 9918 round 3
+mType Done Sender id: 8235 maxUid: 9918 round 2
+mType Done Sender id: 1582 maxUid: 9918 round 3
+mType Done Sender id: 5254 maxUid: 9918 round 3
+mType Done Sender id: 8631 maxUid: 9918 round 3
+mType Done Sender id: 941 maxUid: 9918 round 2
+mType Done Sender id: 3217 maxUid: 9918 round 3
+mType Done Sender id: 7804 maxUid: 9918 round 3
+mType Done Sender id: 179 maxUid: 9918 round 2
+mType Done Sender id: 6271 maxUid: 9918 round 3
+mType Done Sender id: 9899 maxUid: 9918 round 3
+mType Done Sender id: 1098 maxUid: 8631 round 3
+mType Done Sender id: 2157 maxUid: 9918 round 1
+mType Done Sender id: 276 maxUid: 8631 round 2
+mType Done Sender id: 9681 maxUid: 9918 round 3
+mType Done Sender id: 9918 maxUid: 9918 round 3
+mType Done Sender id: 5888 maxUid: 9918 round 1
+mType Done Sender id: 5589 maxUid: 9918 round 1
+mType Done Sender id: 7610 maxUid: 9918 round 3
+mType Done Sender id: 8300 maxUid: 9918 round 3
+mType Done Sender id: 8299 maxUid: 9918 round 3
+mType Done Sender id: 6556 maxUid: 9918 round 1
+mType Done Sender id: 4595 maxUid: 9918 round 3
+mType Done Sender id: 1920 maxUid: 9918 round 1
+mType Done Sender id: 4994 maxUid: 9918 round 1
+mType Done Sender id: 9516 maxUid: 9918 round 3
+mType Done Sender id: 1198 maxUid: 9918 round 3
+mType Done Sender id: 8977 maxUid: 9918 round 3
+mType Done Sender id: 4997 maxUid: 9918 round 3
+mType Done Sender id: 4604 maxUid: 9918 round 2
+mType Done Sender id: 7934 maxUid: 9918 round 3
+mType Done Sender id: 6915 maxUid: 9918 round 3
+Send Round_Number msg to 3732
+Send Round_Number msg to 537
+Send Round_Number msg to 6149
+Send Round_Number msg to 4768
+Send Round_Number msg to 8235
+Send Round_Number msg to 1582
+Send Round_Number msg to 5254
+Send Round_Number msg to 8631
+Send Round_Number msg to 941
+Send Round_Number msg to 3217
+Send Round_Number msg to 7804
+Send Round_Number msg to 179
+Send Round_Number msg to 6271
+Send Round_Number msg to 9899
+Send Round_Number msg to 1098
+Send Round_Number msg to 2157
+Send Round_Number msg to 276
+Send Round_Number msg to 9681
+Send Round_Number msg to 9918
+Send Round_Number msg to 5888
+Send Round_Number msg to 5589
+Send Round_Number msg to 7610
+Send Round_Number msg to 8300
+Send Round_Number msg to 8299
+Send Round_Number msg to 6556
+Send Round_Number msg to 4595
+Send Round_Number msg to 1920
+Send Round_Number msg to 4994
+Send Round_Number msg to 9516
+Send Round_Number msg to 1198
+Send Round_Number msg to 8977
+Send Round_Number msg to 4997
+Send Round_Number msg to 4604
+Send Round_Number msg to 7934
+Send Round_Number msg to 6915
+Starting threads. 
+Thread_3732 start. round 3 leader 9918 parent 8235 4 0 5
+Sending ACK to parent 8235
+Thread_3732 processing mType ACK Sender id: 537 maxUid: 8631 round 2
+Thread_3732 processing mType N_ACK Sender id: 537 maxUid: 8631 round 2
+Thread_3732 processing mType N_ACK Sender id: 537 maxUid: 9918 round 3
+Thread_3732 processing mType Explore Sender id: 537 maxUid: 9918 round 3
+Send N_ACK to 537
+Thread_3732 processing mType N_ACK Sender id: 6149 maxUid: 9918 round 3
+Thread_3732 processing mType Explore Sender id: 6149 maxUid: 9918 round 3
+Send N_ACK to 6149
+Thread_3732 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 3
+Thread_3732 processing mType N_ACK Sender id: 8235 maxUid: 9918 round 3
+Thread_3732 processing mType ACK Sender id: 6556 maxUid: 8631 round 1
+Thread_3732 processing mType ACK Sender id: 6556 maxUid: 8631 round 2
+Thread_3732 processing mType Explore Sender id: 6556 maxUid: 9918 round 1
+Send N_ACK to 6556
+Thread_3732 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_3732 stop. round 4 leader 9918 parent 8235
+
+Thread_537 start. round 3 leader 9918 parent 8235 4 0 4
+Sending ACK to parent 8235
+Thread_537 processing mType N_ACK Sender id: 6149 maxUid: 9918 round 3
+Thread_537 processing mType Explore Sender id: 6149 maxUid: 9918 round 3
+Send N_ACK to 6149
+Thread_537 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 3
+Thread_537 processing mType N_ACK Sender id: 8235 maxUid: 9918 round 3
+Thread_537 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_537 processing mType N_ACK Sender id: 3732 maxUid: 9918 round 3
+Thread_537 stop. round 3 leader 9918 parent 8235
+
+Thread_6149 start. round 3 leader 9918 parent 8235 4 0 5
+Sending ACK to parent 8235
+Thread_6149 processing mType N_ACK Sender id: 4768 maxUid: 9918 round 3
+Thread_6149 processing mType N_ACK Sender id: 8235 maxUid: 9918 round 3
+Thread_6149 processing mType Explore Sender id: 3217 maxUid: 9918 round 3
+Send N_ACK to 3217
+Thread_6149 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_6149 processing mType N_ACK Sender id: 3732 maxUid: 9918 round 3
+Thread_6149 processing mType N_ACK Sender id: 537 maxUid: 9918 round 3
+Thread_6149 stop. round 3 leader 9918 parent 8235
+
+Thread_4768 start. round 3 leader 9918 parent 9918 5 0 6
+Sending ACK to parent 9918
+Thread_4768 processing mType N_ACK Sender id: 8235 maxUid: 9918 round 2
+Thread_4768 processing mType ACK Sender id: 941 maxUid: 9918 round 2
+Thread_4768 processing mType N_ACK Sender id: 941 maxUid: 9918 round 1
+Thread_4768 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_4768 stop. round 4 leader 9918 parent 9918
+
+Thread_8235 start. round 2 leader 9918 parent 6271 1 0 6
+Thread_8235 processing mType ACK Sender id: 1198 maxUid: 9918 round 2
+Thread_8235 processing mType N_ACK Sender id: 1198 maxUid: 9918 round 2
+Thread_8235 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_8235 processing mType ACK Sender id: 3732 maxUid: 9918 round 3
+Thread_8235 processing mType ACK Sender id: 3732 maxUid: 9918 round 2
+Thread_8235 processing mType ACK Sender id: 3732 maxUid: 9918 round 1
+Thread_8235 processing mType ACK Sender id: 537 maxUid: 9918 round 3
+Thread_8235 processing mType ACK Sender id: 6149 maxUid: 9918 round 3
+Thread_8235 stop. round 3 leader 9918 parent 6271
+
+Thread_1582 start. round 3 leader 9918 parent 6271 2 0 2
+Sending ACK to parent 6271
+Thread_1582 processing mType N_ACK Sender id: 6271 maxUid: 9918 round 3
+Thread_1582 processing mType ACK Sender id: 9899 maxUid: 9918 round 2
+Thread_1582 processing mType N_ACK Sender id: 9899 maxUid: 9918 round 3
+Thread_1582 processing mType Explore Sender id: 9899 maxUid: 9918 round 3
+Send N_ACK to 6271
+Thread_1582 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_1582 stop. round 4 leader 9918 parent 9899
+
+Thread_5254 start. round 3 leader 9918 parent 9516 2 0 2
+Sending ACK to parent 9516
+Thread_5254 processing mType N_ACK Sender id: 4595 maxUid: 9918 round 3
+Thread_5254 processing mType N_ACK Sender id: 9516 maxUid: 9918 round 3
+Thread_5254 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_5254 stop. round 4 leader 9918 parent 9516
+
+Thread_8631 start. round 3 leader 9918 parent 1198 0 0 2
+Thread_8631 processing mType ACK Sender id: 2157 maxUid: 9918 round 2
+Thread_8631 processing mType Explore Sender id: 2157 maxUid: 9918 round 1
+Send N_ACK to 1198
+Thread_8631 processing mType N_ACK Sender id: 1198 maxUid: 9918 round 3
+Thread_8631 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_8631 stop. round 4 leader 9918 parent 2157
+
+Thread_941 start. round 2 leader 9918 parent 5589 1 0 2
+Sending ACK to parent 5589
+Thread_941 processing mType ACK Sender id: 5589 maxUid: 9918 round 1
+Thread_941 processing mType N_ACK Sender id: 5589 maxUid: 9918 round 1
+Thread_941 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_941 stop. round 4 leader 9918 parent 5589
+
+Thread_3217 start. round 3 leader 9918 parent 6149 2 0 2
+Sending ACK to parent 6149
+Thread_3217 processing mType Explore Sender id: 9899 maxUid: 9918 round 3
+Send N_ACK to 6149
+Thread_3217 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_3217 processing mType N_ACK Sender id: 6149 maxUid: 9918 round 3
+Thread_3217 stop. round 3 leader 9918 parent 9899
+
+Thread_7804 start. round 3 leader 9918 parent 5888 1 1 3
+Sending ACK to parent 5888
+Thread_7804 processing mType ACK Sender id: 4604 maxUid: 9918 round 2
+Thread_7804 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_7804 stop. round 4 leader 9918 parent 5888
+
+Thread_179 start. round 2 leader 9918 parent 7804 1 0 2
+Sending ACK to parent 7804
+Thread_179 processing mType ACK Sender id: 4994 maxUid: 9918 round 1
+Thread_179 processing mType N_ACK Sender id: 4994 maxUid: 9918 round 1
+Thread_179 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_179 stop. round 4 leader 9918 parent 7804
+
+Thread_6271 start. round 3 leader 9918 parent 8235 0 0 2
+Thread_6271 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_6271 processing mType ACK Sender id: 8235 maxUid: 9918 round 2
+Thread_6271 processing mType ACK Sender id: 8235 maxUid: 9918 round 3
+Thread_6271 processing mType ACK Sender id: 8235 maxUid: 9918 round 3
+Thread_6271 processing mType ACK Sender id: 8235 maxUid: 9918 round 3
+Thread_6271 processing mType ACK Sender id: 1582 maxUid: 9918 round 3
+Thread_6271 processing mType ACK Sender id: 1582 maxUid: 9918 round 2
+Thread_6271 processing mType N_ACK Sender id: 1582 maxUid: 9918 round 3
+Thread_6271 stop. round 3 leader 9918 parent 8235
+
+Thread_9899 start. round 3 leader 9918 parent 3217 0 2 2
+Sending Leader to master.
+Thread_9899 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_9899 stop. round 4 leader 9918 parent 3217
+
+Thread_1098 start. round 3 leader 8631 parent 2157 1 1 2
+Thread_1098 processing mType Explore Sender id: 2157 maxUid: 9918 round 1
+Thread_1098 processing mType ACK Sender id: 276 maxUid: 8631 round 2
+Thread_1098 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Send explore to 276
+Send explore to 2157
+Thread_1098 stop. round 4 leader 9918 parent 2157
+
+Thread_2157 start. round 1 leader 9918 parent 8631 2 1 5
+Thread_2157 processing mType N_ACK Sender id: 6556 maxUid: 9918 round 1
+Thread_2157 processing mType Explore Sender id: 6556 maxUid: 9918 round 1
+Send N_ACK to 6556
+Thread_2157 processing mType N_ACK Sender id: 1920 maxUid: 9918 round 1
+Thread_2157 processing mType Explore Sender id: 1920 maxUid: 9918 round 1
+Send N_ACK to 1920
+Thread_2157 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_2157 processing mType Explore Sender id: 1098 maxUid: 9918 round 4
+Send N_ACK to 1098
+Thread_2157 stop. round 4 leader 9918 parent 8631
+
+Thread_276 start. round 2 leader 8631 parent 1098 1 0 1
+Sending ACK to parent 1098
+Thread_276 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_276 processing mType Explore Sender id: 1098 maxUid: 9918 round 4
+Send explore to 1098
+Thread_276 stop. round 4 leader 9918 parent 1098
+
+Thread_9681 start. round 3 leader 9918 parent 9516 0 0 1
+Sending ACK to parent 9516
+Thread_9681 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_9681 stop. round 4 leader 9918 parent 9516
+
+Thread_9918 start. round 3 leader 9918 parent -1 0 0 3
+Thread_9918 processing mType ACK Sender id: 5888 maxUid: 9918 round 1
+Thread_9918 processing mType ACK Sender id: 7934 maxUid: 9918 round 2
+Thread_9918 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_9918 processing mType ACK Sender id: 4768 maxUid: 9918 round 3
+Thread_9918 processing mType ACK Sender id: 4768 maxUid: 9918 round 2
+Thread_9918 stop. round 2 leader 9918 parent -1
+
+Thread_5888 start. round 1 leader 9918 parent 9918 1 1 3
+Sending ACK to parent 9918
+Thread_5888 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_5888 processing mType ACK Sender id: 7804 maxUid: 9918 round 3
+Thread_5888 stop. round 3 leader 9918 parent 9918
+
+Thread_5589 start. round 1 leader 9918 parent 2157 1 0 2
+Sending ACK to parent 2157
+Thread_5589 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_5589 processing mType ACK Sender id: 941 maxUid: 9918 round 2
+Thread_5589 processing mType ACK Sender id: 941 maxUid: 9918 round 1
+Thread_5589 stop. round 1 leader 9918 parent 2157
+
+Thread_7610 start. round 3 leader 9918 parent 6915 2 0 2
+Sending ACK to parent 6915
+Thread_7610 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_7610 stop. round 4 leader 9918 parent 6915
+
+Thread_8300 start. round 3 leader 9918 parent 6915 1 0 1
+Sending ACK to parent 6915
+Thread_8300 processing mType ACK Sender id: 6915 maxUid: 9918 round 1
+Thread_8300 processing mType ACK Sender id: 6915 maxUid: 9918 round 2
+Thread_8300 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_8300 stop. round 4 leader 9918 parent 6915
+
+Thread_8299 start. round 3 leader 9918 parent 4595 0 0 1
+Sending ACK to parent 4595
+Thread_8299 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_8299 stop. round 4 leader 9918 parent 4595
+
+Thread_6556 start. round 1 leader 9918 parent 3732 1 1 2
+Thread_6556 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_6556 processing mType N_ACK Sender id: 3732 maxUid: 9918 round 1
+Thread_6556 processing mType N_ACK Sender id: 2157 maxUid: 9918 round 1
+Thread_6556 stop. round 1 leader 9918 parent 3732
+
+Thread_4595 start. round 3 leader 9918 parent 8299 2 0 3
+Sending ACK to parent 8299
+Thread_4595 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_4595 processing mType ACK Sender id: 8299 maxUid: 9918 round 3
+Thread_4595 stop. round 3 leader 9918 parent 8299
+
+Thread_1920 start. round 1 leader 9918 parent 4994 1 0 2
+Sending ACK to parent 4994
+Thread_1920 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_1920 processing mType N_ACK Sender id: 2157 maxUid: 9918 round 1
+Thread_1920 stop. round 1 leader 9918 parent 4994
+
+Thread_4994 start. round 1 leader 9918 parent 1920 1 1 2
+Thread_4994 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_4994 processing mType ACK Sender id: 1920 maxUid: 9918 round 1
+Thread_4994 stop. round 1 leader 9918 parent 1920
+
+Thread_9516 start. round 3 leader 9918 parent 9681 1 1 3
+Sending ACK to parent 9681
+Thread_9516 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_9516 processing mType ACK Sender id: 5254 maxUid: 9918 round 3
+Thread_9516 processing mType ACK Sender id: 9681 maxUid: 9918 round 3
+Thread_9516 stop. round 3 leader 9918 parent 9681
+
+Thread_1198 start. round 3 leader 9918 parent 8977 2 0 3
+Sending ACK to parent 8977
+Thread_1198 processing mType ACK Sender id: 8977 maxUid: 9918 round 1
+Thread_1198 processing mType N_ACK Sender id: 8977 maxUid: 9918 round 2
+Thread_1198 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_1198 processing mType ACK Sender id: 8631 maxUid: 9918 round 2
+Thread_1198 processing mType N_ACK Sender id: 8631 maxUid: 9918 round 1
+Thread_1198 stop. round 1 leader 9918 parent 8977
+
+Thread_8977 start. round 3 leader 9918 parent 4997 0 1 2
+Sending ACK to parent 4997
+Thread_8977 processing mType ACK Sender id: 4997 maxUid: 9918 round 2
+Thread_8977 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_8977 processing mType ACK Sender id: 1198 maxUid: 9918 round 3
+Thread_8977 processing mType ACK Sender id: 1198 maxUid: 9918 round 1
+Thread_8977 processing mType ACK Sender id: 1198 maxUid: 9918 round 2
+Thread_8977 stop. round 2 leader 9918 parent 4997
+
+Thread_4997 start. round 3 leader 9918 parent 8977 0 0 1
+Sending ACK to parent 8977
+Thread_4997 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_4997 processing mType ACK Sender id: 8977 maxUid: 9918 round 3
+Thread_4997 processing mType ACK Sender id: 8977 maxUid: 9918 round 3
+Thread_4997 stop. round 3 leader 9918 parent 8977
+
+Thread_4604 start. round 2 leader 9918 parent 7804 1 0 1
+Sending ACK to parent 7804
+Thread_4604 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_4604 stop. round 4 leader 9918 parent 7804
+
+Thread_7934 start. round 3 leader 9918 parent 9918 1 1 2
+Thread_7934 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_7934 stop. round 4 leader 9918 parent 9918
+
+Thread_6915 start. round 3 leader 9918 parent 8300 1 2 3
+Thread_6915 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
+Thread_6915 processing mType ACK Sender id: 7610 maxUid: 9918 round 3
+Thread_6915 processing mType ACK Sender id: 8300 maxUid: 9918 round 3
+Thread_6915 processing mType ACK Sender id: 8300 maxUid: 9918 round 1
+Thread_6915 stop. round 1 leader 9918 parent 8300
+
+Master checking its queue. Size of queue is: 0 round 4
+mType Done Sender id: 3732 maxUid: 9918 round 4
+mType Done Sender id: 537 maxUid: 9918 round 3
+mType Done Sender id: 6149 maxUid: 9918 round 3
+mType Done Sender id: 4768 maxUid: 9918 round 4
+mType Done Sender id: 8235 maxUid: 9918 round 3
+mType Done Sender id: 1582 maxUid: 9918 round 4
+mType Done Sender id: 5254 maxUid: 9918 round 4
+mType Done Sender id: 8631 maxUid: 9918 round 4
+mType Done Sender id: 941 maxUid: 9918 round 4
+mType Done Sender id: 3217 maxUid: 9918 round 3
+mType Done Sender id: 7804 maxUid: 9918 round 4
+mType Done Sender id: 179 maxUid: 9918 round 4
+mType Done Sender id: 6271 maxUid: 9918 round 3
+mType Leader Sender id: 9899 maxUid: 9918 round 3
+-------Telling the master to die. Leader is: 9899 round 4
+Send Terminate msg to 3732
+Send Terminate msg to 537
+Send Terminate msg to 6149
+Send Terminate msg to 4768
+Send Terminate msg to 8235
+Send Terminate msg to 1582
+Send Terminate msg to 5254
+Send Terminate msg to 8631
+Send Terminate msg to 941
+Send Terminate msg to 3217
+Send Terminate msg to 7804
+Send Terminate msg to 179
+Send Terminate msg to 6271
+Send Terminate msg to 9899
+Send Terminate msg to 1098
+Send Terminate msg to 2157
+Send Terminate msg to 276
+Send Terminate msg to 9681
+Send Terminate msg to 9918
+Send Terminate msg to 5888
+Send Terminate msg to 5589
+Send Terminate msg to 7610
+Send Terminate msg to 8300
+Send Terminate msg to 8299
+Send Terminate msg to 6556
+Send Terminate msg to 4595
+Send Terminate msg to 1920
+Send Terminate msg to 4994
+Send Terminate msg to 9516
+Send Terminate msg to 1198
+Send Terminate msg to 8977
+Send Terminate msg to 4997
+Send Terminate msg to 4604
+Send Terminate msg to 7934
+Send Terminate msg to 6915
+Starting threads. 
+Thread_3732 start. round 4 leader 9918 parent 8235 5 2 5
+Sending ACK to parent 8235
+Thread_3732 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_3732 stop. round 4 leader 9918 parent 8235
+
+Thread_537 start. round 3 leader 9918 parent 8235 4 0 4
+Sending ACK to parent 8235
+Thread_537 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_537 stop. round 4 leader 9918 parent 8235
+
+Thread_6149 start. round 3 leader 9918 parent 8235 5 0 5
+Sending ACK to parent 8235
+Thread_6149 processing mType ACK Sender id: 3217 maxUid: 9918 round 3
+Thread_6149 processing mType N_ACK Sender id: 3217 maxUid: 9918 round 3
+Thread_6149 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_6149 stop. round 4 leader 9918 parent 8235
+
+Thread_4768 start. round 4 leader 9918 parent 9918 6 1 6
+Sending ACK to parent 9918
+Thread_4768 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_4768 stop. round 4 leader 9918 parent 9918
+
+Thread_8235 start. round 3 leader 9918 parent 6271 2 4 6
+Thread_8235 processing mType ACK Sender id: 6271 maxUid: 9918 round 2
+Thread_8235 processing mType ACK Sender id: 6271 maxUid: 9918 round 3
+Thread_8235 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_8235 stop. round 4 leader 9918 parent 6271
+
+Thread_1582 start. round 4 leader 9918 parent 9899 2 1 2
+Sending ACK to parent 9899
+Thread_1582 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_1582 stop. round 4 leader 9918 parent 9899
+
+Thread_5254 start. round 4 leader 9918 parent 9516 2 0 2
+Sending ACK to parent 9516
+Thread_5254 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_5254 stop. round 4 leader 9918 parent 9516
+
+Thread_8631 start. round 4 leader 9918 parent 2157 1 1 2
+Thread_8631 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_8631 stop. round 4 leader 9918 parent 2157
+
+Thread_941 start. round 4 leader 9918 parent 5589 2 1 2
+Sending ACK to parent 5589
+Thread_941 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_941 stop. round 4 leader 9918 parent 5589
+
+Thread_3217 start. round 3 leader 9918 parent 9899 2 0 2
+Sending ACK to parent 9899
+Thread_3217 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_3217 stop. round 4 leader 9918 parent 9899
+
+Thread_7804 start. round 4 leader 9918 parent 5888 1 1 3
+Sending ACK to parent 5888
+Thread_7804 processing mType ACK Sender id: 179 maxUid: 9918 round 2
+Thread_7804 processing mType ACK Sender id: 179 maxUid: 9918 round 1
+Thread_7804 processing mType ACK Sender id: 4604 maxUid: 9918 round 2
+Thread_7804 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_7804 stop. round 4 leader 9918 parent 5888
+
+Thread_179 start. round 4 leader 9918 parent 7804 2 1 2
+Sending ACK to parent 7804
+Thread_179 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_179 stop. round 4 leader 9918 parent 7804
+
+Thread_6271 start. round 3 leader 9918 parent 8235 1 2 2
+Sending Leader to master.
+Thread_6271 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_6271 stop. round 4 leader 9918 parent 8235
+
+Thread_9899 start. round 4 leader 9918 parent 3217 0 2 2
+Sending Leader to master.
+Thread_9899 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_9899 stop. round 4 leader 9918 parent 3217
+
+Thread_1098 start. round 4 leader 9918 parent 2157 1 1 2
+Thread_1098 processing mType N_ACK Sender id: 2157 maxUid: 9918 round 4
+Thread_1098 processing mType ACK Sender id: 276 maxUid: 8631 round 2
+Thread_1098 processing mType Explore Sender id: 276 maxUid: 9918 round 4
+Send N_ACK to 276
+Thread_1098 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_1098 stop. round 4 leader 9918 parent 2157
+
+Thread_2157 start. round 4 leader 9918 parent 8631 2 1 5
+Thread_2157 processing mType ACK Sender id: 5589 maxUid: 9918 round 1
+Thread_2157 processing mType ACK Sender id: 5589 maxUid: 9918 round 2
+Thread_2157 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_2157 stop. round 4 leader 9918 parent 8631
+
+Thread_276 start. round 4 leader 9918 parent 1098 1 0 1
+Sending ACK to parent 1098
+Thread_276 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_276 stop. round 4 leader 9918 parent 1098
+
+Thread_9681 start. round 4 leader 9918 parent 9516 0 0 1
+Sending ACK to parent 9516
+Thread_9681 processing mType ACK Sender id: 9516 maxUid: 9918 round 3
+Thread_9681 processing mType ACK Sender id: 9516 maxUid: 9918 round 3
+Thread_9681 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_9681 stop. round 4 leader 9918 parent 9516
+
+Thread_9918 start. round 2 leader 9918 parent -1 0 3 3
+Sending Leader to master.
+Thread_9918 processing mType ACK Sender id: 5888 maxUid: 9918 round 1
+Thread_9918 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_9918 stop. round 4 leader 9918 parent -1
+
+Thread_5888 start. round 3 leader 9918 parent 9918 1 1 3
+Sending ACK to parent 9918
+Thread_5888 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_5888 stop. round 4 leader 9918 parent 9918
+
+Thread_5589 start. round 1 leader 9918 parent 2157 1 1 2
+Thread_5589 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_5589 stop. round 4 leader 9918 parent 2157
+
+Thread_7610 start. round 4 leader 9918 parent 6915 2 0 2
+Sending ACK to parent 6915
+Thread_7610 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_7610 stop. round 4 leader 9918 parent 6915
+
+Thread_8300 start. round 4 leader 9918 parent 6915 1 1 1
+Sending ACK to parent 6915
+Thread_8300 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_8300 stop. round 4 leader 9918 parent 6915
+
+Thread_8299 start. round 4 leader 9918 parent 4595 0 0 1
+Sending ACK to parent 4595
+Thread_8299 processing mType ACK Sender id: 4595 maxUid: 9918 round 3
+Thread_8299 processing mType ACK Sender id: 4595 maxUid: 9918 round 3
+Thread_8299 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_8299 stop. round 4 leader 9918 parent 4595
+
+Thread_6556 start. round 1 leader 9918 parent 3732 2 1 2
+Sending ACK to parent 3732
+Thread_6556 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_6556 stop. round 4 leader 9918 parent 3732
+
+Thread_4595 start. round 3 leader 9918 parent 8299 2 1 3
+Thread_4595 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_4595 stop. round 4 leader 9918 parent 8299
+
+Thread_1920 start. round 1 leader 9918 parent 4994 1 0 2
+Sending ACK to parent 4994
+Thread_1920 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_1920 stop. round 4 leader 9918 parent 4994
+
+Thread_4994 start. round 1 leader 9918 parent 1920 1 1 2
+Thread_4994 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_4994 stop. round 4 leader 9918 parent 1920
+
+Thread_9516 start. round 3 leader 9918 parent 9681 1 2 3
+Thread_9516 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_9516 stop. round 4 leader 9918 parent 9681
+
+Thread_1198 start. round 1 leader 9918 parent 8977 3 2 3
+Sending ACK to parent 8977
+Thread_1198 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_1198 stop. round 4 leader 9918 parent 8977
+
+Thread_8977 start. round 2 leader 9918 parent 4997 0 2 2
+Sending Leader to master.
+Thread_8977 processing mType ACK Sender id: 4997 maxUid: 9918 round 3
+Thread_8977 processing mType ACK Sender id: 4997 maxUid: 9918 round 3
+Thread_8977 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_8977 stop. round 4 leader 9918 parent 4997
+
+Thread_4997 start. round 3 leader 9918 parent 8977 0 1 1
+Sending Leader to master.
+Thread_4997 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_4997 stop. round 4 leader 9918 parent 8977
+
+Thread_4604 start. round 4 leader 9918 parent 7804 1 0 1
+Sending ACK to parent 7804
+Thread_4604 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_4604 stop. round 4 leader 9918 parent 7804
+
+Thread_7934 start. round 4 leader 9918 parent 9918 1 1 2
+Thread_7934 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_7934 stop. round 4 leader 9918 parent 9918
+
+Thread_6915 start. round 1 leader 9918 parent 8300 1 2 3
+Thread_6915 processing mType Terminate Sender id: 0 maxUid: 0 round 4
+Thread terminated. Leader id: 9918
+Thread_6915 stop. round 4 leader 9918 parent 8300
+
+
+
+Printing the tree.
+Parent <--- myId ---> myChildren (can overlap)
+8235<------3732------>4768 6149 537 6556 537 6556 
+8235<------537------>4768 3732 6149 
+8235<------6149------>4768 3217 3732 537 3217 
+9918<------4768------>3732 6149 537 8235 941 941 
+6271<------8235------>4768 1198 3732 6149 537 1198 
+9899<------1582------>6271 
+9516<------5254------>4595 
+2157<------8631------>1198 
+5589<------941------>4768 
+9899<------3217------>6149 
+5888<------7804------>179 4604 
+7804<------179------>4994 4994 
+8235<------6271------>1582 1582 
+3217<------9899------>1582 
+2157<------1098------>276 
+8631<------2157------>1920 6556 5589 1098 
+1098<------276------>
+9516<------9681------>
+-1<------9918------>5888 4768 7934 
+9918<------5888------>7610 7804 
+2157<------5589------>941 
+6915<------7610------>5888 
+6915<------8300------>
+4595<------8299------>
+3732<------6556------>2157 
+8299<------4595------>6915 5254 
+4994<------1920------>2157 
+1920<------4994------>179 
+9681<------9516------>7934 5254 
+8977<------1198------>8631 8235 8631 
+4997<------8977------>1198 
+8977<------4997------>
+7804<------4604------>
+9918<------7934------>9516 9516 
+8300<------6915------>4595 7610 
+Master will now die. MaxUid 9899 round 4

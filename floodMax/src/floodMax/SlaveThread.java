@@ -5,29 +5,34 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import javax.sound.midi.SysexMessage;
+
+import com.sun.corba.se.spi.servicecontext.SendingContextServiceContext;
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+
+import javafx.scene.Parent;
 import message.Message;
 
 public class SlaveThread implements Runnable {
   protected String name;
 
-  protected static boolean terminated;
+  protected boolean terminated;
   protected static ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
 
   protected int myId;
   protected int myMaxUid;
   protected int round;
+  private int myParent = -1;
   private MasterThread masterNode;
 
-  private int myParent = -1;
-  protected HashSet<Integer> children = new HashSet<Integer>();
+  protected HashSet<Integer> ackReceived = new HashSet<Integer>();
+  protected HashSet<Integer> nackReceived = new HashSet<Integer>();
   private HashSet<Integer> neighborSet = new HashSet<Integer>();
+  private boolean sentAck;
 
   protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> localMessagesToSend = new ConcurrentHashMap<>();
   protected LinkedBlockingQueue<Message> localMessageQueue = new LinkedBlockingQueue<>();
   protected boolean newInfo;
-
-  private int nackCount;
-  private int ackCount;
 
   public SlaveThread() {
   }
@@ -46,143 +51,13 @@ public class SlaveThread implements Runnable {
     this.masterNode = masterNode;
     this.newInfo = true;
     this.round = 0;
-    this.nackCount = 0;
-    this.ackCount = 0;
+    this.sentAck = false;
 
     name = "Thread_" + id;
 
     SlaveThread.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
-    SlaveThread.terminated = false;
+    this.terminated = false;
 
-  }
-
-  public void fillLocalMessagesToSend() {
-    System.err.println("Filling localMessagesToSend.");
-    localMessagesToSend.put(0, new LinkedBlockingQueue<Message>());
-    for (int i : neighborSet) {
-      localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
-    }
-  }
-
-  /**
-   * Put round done message to local queue.
-   */
-  public void sendRoundDoneToMaster() {
-    try {
-      localMessagesToSend.get(masterNode.getId()).put(new Message(myId, this.round + 1, this.myMaxUid, "Done"));
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-
-  /**
-   * Process message types: Terminate, Round_Number, Explore, N_ACK, ACK
-   * 
-   * @throws InterruptedException
-   */
-  public synchronized void processMessageTypes() throws InterruptedException {
-
-    while (!localMessageQueue.isEmpty()) {
-      Message msg = localMessageQueue.take();
-      // System.err.println(name + " " + msg);
-      round = msg.getRound();
-
-      // first round means there's no message to process (except Round_Number, which
-      // only updates rounds)
-      if (msg.getmType().equals("Terminate")) {
-        processTerminateMessage();
-        break;
-
-      } else if (msg.getmType().equals("Round_Number")) {
-        round = msg.getRound();
-      } else if (msg.getmType().equals("Explore")) {
-
-        // process Explore msg (increment round number inside)
-        try {
-          processExploreMsg(msg);
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      } else if (msg.getmType().equals("N_ACK")) {
-        nackCount++;
-        myMaxUid = msg.getMaxUid();
-        newInfo = true;
-      } else if (msg.getmType().equals("ACK")) {
-        ackCount++;
-      }
-    }
-  }
-
-  public void run() {
-    System.out.println("Thread start: " + name + " round " + round + " leader " + myMaxUid + " parent " + myParent);
-
-    // base case, check Nack and Ack count first.
-    Message temp = countNackAck();
-
-    try {
-      if (temp == null) {
-      } else if (temp.getmType() == "Leader") {
-        // if the message is "Leader", send Leader message to masterNode
-        localMessagesToSend.get(masterNode.getId()).put(temp);
-        drainToGlobalQueue();
-        return;
-      } else {
-        // if message is anything but leader, send ACK message to parent queue
-        localMessagesToSend.get(myParent).put(temp);
-      }
-      // if Nack, Ack is not full yet, return null. Therefore, do nothing.
-
-    } catch (Exception e) {
-      System.err.println("Parent doesn't exist. Suppressing message.");
-    }
-
-    fetchFromGlobalQueue(localMessageQueue);
-
-    // process messages
-    try {
-      processMessageTypes();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    // after done processing incoming messages, send msg for next round
-    // send explore messages to all neighbors except parent
-    if (newInfo) {
-      sendExploreMsgToAllNeighbors();
-      newInfo = false;
-    }
-
-    // Message to master about Round Completion
-    sendRoundDoneToMaster();
-    // printMessagesToSendMap(localMessagesToSend);
-    // set the queue to global queue
-
-    drainToGlobalQueue();
-    localMessageQueue.clear();
-    for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMessagesToSend.entrySet()) {
-      e.getValue().clear();
-    }
-    System.out.println("Thread stop: " + name + " round " + round + " leader " + myMaxUid + " parent " + myParent);
-    System.out.println();
-  }
-
-  /**
-   * Problem: why are there so many things in neighborSet?
-   */
-  public void sendExploreMsgToAllNeighbors() {
-    for (int targetNodeId : neighborSet) {
-      if (targetNodeId == myParent || targetNodeId == myId) {
-        continue;
-      }
-
-      try {
-        System.out.println("Send explore to " + targetNodeId);
-        localMessagesToSend.get(targetNodeId).put(new Message(myId, round, myMaxUid, "Explore"));
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
   }
 
   /**
@@ -208,7 +83,7 @@ public class SlaveThread implements Runnable {
         System.out.println("Send N_ACK to " + msg.getSenderId());
         localMessagesToSend.get(msg.getSenderId()).put(new Message(myId, round, myMaxUid, "N_ACK"));
 
-      } else if (myParent < msg.getSenderId() && myParent > 0) {
+      } else if (myParent > 0 && myParent < msg.getSenderId()) {
         // pick a new parent: send nack to parent, set the msg sender as parent.
         System.out.println("Send N_ACK to " + myParent);
         localMessagesToSend.get(myParent).put(new Message(myId, round, myMaxUid, "N_ACK"));
@@ -217,10 +92,62 @@ public class SlaveThread implements Runnable {
 
       // else it's the same parent. Do nothing.
     } else {
+      // My maxUid is bigger. I'll send rejection.
       System.out.println("Send N_ACK to " + msg.getSenderId());
       localMessagesToSend.get(msg.getSenderId()).put(new Message(myId, round, myMaxUid, "N_ACK"));
-      // if my maxUid is
-      // bigger, send N_NACK
+    }
+
+  }
+
+  /**
+   * Process message types: Terminate, Round_Number, Explore, N_ACK, ACK
+   * 
+   * @throws InterruptedException
+   */
+  public synchronized void processMessageTypes() throws InterruptedException {
+
+    while (!localMessageQueue.isEmpty()) {
+      Message msg = localMessageQueue.take();
+      System.out.println(name + " processing " + msg);
+      round = msg.getRound();
+
+      // first round means there's no message to process (except Round_Number, which
+      // only updates rounds)
+      if (msg.getmType().equals("Terminate")) {
+        processTerminateMessage();
+        break;
+
+      } else if (msg.getmType().equals("Round_Number")) {
+        round = msg.getRound();
+      } else if (msg.getmType().equals("Explore")) {
+
+        // process Explore msg (increment round number inside)
+        try {
+          processExploreMsg(msg);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      } else if (msg.getmType().equals("N_ACK")) {
+        nackReceived.add(msg.getSenderId());
+        if (myMaxUid < msg.getMaxUid()) {
+          myMaxUid = msg.getMaxUid();
+          myParent = msg.getSenderId();
+          newInfo = true;
+        }
+      } else if (msg.getmType().equals("ACK")) {
+        if (!ackReceived.contains(msg.getSenderId())) {
+          ackReceived.add(msg.getSenderId());
+          if (myParent != -1) {
+            msg.setSenderId(myId);
+            if (myMaxUid > msg.getMaxUid()) {
+              msg.setMaxUid(myMaxUid);
+            }
+            localMessagesToSend.get(myParent).put(msg);
+          }
+        }
+
+      }
+
     }
   }
 
@@ -228,18 +155,102 @@ public class SlaveThread implements Runnable {
    * Check nackCount and ackCount and come up with a message.
    * 
    * @return a message based on the count
+   * @throws InterruptedException
    */
-  public Message countNackAck() {
-    if (nackCount == neighborSet.size() - 1 || nackCount + ackCount == neighborSet.size() - 1) {
+  public void countNackAck() throws InterruptedException {
+
+    if (myParent != -1 && (nackReceived.size() == neighborSet.size()
+        || nackReceived.size() + ackReceived.size() == neighborSet.size() - 1)) {
       // leaf node, send to parent.
       // internal node, send to parent.
+      System.out.println("Sending ACK to parent " + myParent);
+      localMessagesToSend.get(myParent).put(new Message(myId, round, myMaxUid, "ACK"));
 
-      return new Message(myId, round, myMaxUid, "ACK");
-    } else if (ackCount == neighborSet.size()) {
+    } else if (ackReceived.size() == neighborSet.size()) {
       // leader node. Send leader message to master.
-      return new Message(myId, round, myMaxUid, "Leader");
+      System.out.println("Sending Leader to master.");
+      localMessagesToSend.get(masterNode.getId()).put(new Message(myId, round, myMaxUid, "Leader"));
     } else
-      return null;
+      return;
+  }
+
+  public void run() {
+    System.out.println(name + " start. round " + round + " leader " + myMaxUid + " parent " + myParent + " "
+        + nackReceived.size() + " " + ackReceived.size() + " " + neighborSet.size());
+
+    if (!terminated) {
+      try {
+        fetchFromGlobalQueue(localMessageQueue);
+        // base case, check Nack and Ack count first.
+        countNackAck();
+        // process messages
+        processMessageTypes();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+      // after done processing incoming messages, send msg for next round
+      if (newInfo) {
+        sendExploreMsgToAllNeighbors();
+        newInfo = false;
+      }
+
+      // Message to master about Round Completion
+      sendRoundDoneToMaster();
+      // set the queue to global queue
+
+      // printMessagesToSendMap(localMessagesToSend);
+      drainToGlobalQueue();
+      localMessageQueue.clear();
+      for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMessagesToSend.entrySet()) {
+        e.getValue().clear();
+      }
+
+    }
+    System.out.println(name + " stop. round " + round + " leader " + myMaxUid + " parent " + myParent);
+    System.out.println();
+  }
+
+  /**
+   * Drain the local msg queue and put all in the global queue. The local queue
+   * should be empty after this. This should be done at the end of each round.
+   * e.g. each thread has a ConcurrentHashMap similar to the global one, but
+   * should be empty. At end of each round, it unloads the queues to the global
+   * ConcurrentHashMap.
+   */
+  public synchronized void drainToGlobalQueue() {
+
+    for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMessagesToSend.entrySet()) {
+      // System.err.println("Before: ");
+      // System.err.println(e.getKey() + " " +
+      // globalIdAndMsgQueueMap.get(e.getKey()));
+      e.getValue().drainTo(globalIdAndMsgQueueMap.get(e.getKey()));
+
+      // System.err.println("After: ");
+      // System.err.println(e.getKey() + " " +
+      // globalIdAndMsgQueueMap.get(e.getKey()));
+      if (!e.getValue().isEmpty()) {
+        System.err.println("Queue is not empty at end of round");
+      }
+
+    }
+  }
+
+  /**
+   * Problem: why are there so many things in neighborSet?
+   */
+  public void sendExploreMsgToAllNeighbors() {
+    for (int targetNodeId : neighborSet) {
+      if (targetNodeId == myId) {
+        continue;
+      }
+
+      try {
+        System.out.println("Send explore to " + targetNodeId);
+        localMessagesToSend.get(targetNodeId).put(new Message(myId, round, myMaxUid, "Explore"));
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   /**
@@ -247,13 +258,8 @@ public class SlaveThread implements Runnable {
    * the tree"
    */
   public void processTerminateMessage() {
-    System.out.println("Leader id: " + myMaxUid);
-
-    // Need to implement:
-    // Obtaining an iterator for the entry set
-    // output the graph and stop execution
-
-    SlaveThread.terminated = true;
+    System.out.println("Thread terminated. Leader id: " + myMaxUid);
+    this.terminated = true;
 
   }
 
@@ -282,38 +288,9 @@ public class SlaveThread implements Runnable {
    */
   public synchronized void printMessagesToSendMap(ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> hm) {
     for (Entry<Integer, LinkedBlockingQueue<Message>> e : hm.entrySet()) {
-      for (Message m : e.getValue()) {
-        System.err.println(e.getValue().size() + " " + e.getKey() + "   " + m);
-      }
-    }
-  }
-
-  /**
-   * Drain the local msg queue and put all in the global queue. The local queue
-   * should be empty after this. This should be done at the end of each round.
-   * e.g. each thread has a ConcurrentHashMap similar to the global one, but
-   * should be empty. At end of each round, it unloads the queues to the global
-   * ConcurrentHashMap.
-   */
-  public synchronized void drainToGlobalQueue() {
-
-    for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMessagesToSend.entrySet()) {
-
-      // can't send message to itself
-      if (e.getKey() == myId) {
-        continue;
-      }
-
-      e.getValue().drainTo(globalIdAndMsgQueueMap.get(e.getKey()));
-      // System.err.println(
-      // name + " After draining to global queue: " + e.getKey() + " " +
-      // localMessagesToSend.get(e.getKey()).size());
-      if (!e.getValue().isEmpty()) {
-        System.err.println("Queue is not empty at end of round");
-      }
-
-      // System.err.println(name + " After draining to global queue: " +
-      // localMessagesToSend.get(e.getKey()).size());
+      sleep();
+      System.err.println(e.getValue().size() + " " + e.getKey() + " " + e.getValue());
+      sleep();
     }
   }
 
@@ -331,9 +308,8 @@ public class SlaveThread implements Runnable {
 
   public void sleep() {
     try {
-      Thread.sleep(1500);
+      Thread.sleep(1000);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
@@ -341,4 +317,41 @@ public class SlaveThread implements Runnable {
   public void setName(String name) {
     this.name = name;
   }
+
+  public void fillLocalMessagesToSend() {
+    // System.err.println("Filling localMessagesToSend.");
+    localMessagesToSend.put(masterNode.getId(), new LinkedBlockingQueue<Message>());
+    for (int i : neighborSet) {
+      localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
+    }
+  }
+
+  /**
+   * Put round done message to local queue.
+   */
+  public void sendRoundDoneToMaster() {
+    try {
+      localMessagesToSend.get(masterNode.getId()).put(new Message(myId, round, myMaxUid, "Done"));
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public int getMyParent() {
+    return myParent;
+  }
+
+  public HashSet<Integer> getNeighborSet() {
+    return neighborSet;
+  }
+
+  public HashSet<Integer> getNackReceived() {
+    return nackReceived;
+  }
+
+  public HashSet<Integer> getAckReceived() {
+    return ackReceived;
+  }
+
 }

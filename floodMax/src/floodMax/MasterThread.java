@@ -16,10 +16,9 @@ import message.Message;
 public class MasterThread extends SlaveThread {
   public static ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
 
-  // max id to be in sync with message class object. Not needed here. Junk value
   protected int masterId = 0;
   protected int size;
-  protected int[] neighborArray;
+  protected int[] slaveArray;
   protected int[][] matrix;
 
   protected boolean masterMustDie = false;
@@ -35,17 +34,18 @@ public class MasterThread extends SlaveThread {
    * Constructor
    * 
    * @param size
-   * @param neighbors
+   * @param slaveArray
    * @param matrix
    */
-  public MasterThread(int size, int[] neighbors, int[][] matrix) {
-    this.round = 0;
+  public MasterThread(int size, int[] slaveArray, int[][] matrix) {
+    this.round = 1;
     this.numberOfFinishedThreads = 0;
     this.newInfo = true;
     this.size = size;
-    this.neighborArray = neighbors;
+    this.slaveArray = slaveArray;
     this.matrix = matrix;
     this.name = "Master";
+    this.myId = 0;
 
     // put master into concurrent hash map
     MasterThread.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
@@ -56,8 +56,8 @@ public class MasterThread extends SlaveThread {
   @Override
   public void fillLocalMessagesToSend() {
     // System.err.println("Filling localMessagesToSend.");
-    localMessagesToSend.put(0, new LinkedBlockingQueue<Message>());
-    for (int i : neighborArray) {
+    localMessagesToSend.put(myId, new LinkedBlockingQueue<Message>());
+    for (int i : slaveArray) {
       // add signal to start
       localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
     }
@@ -70,15 +70,15 @@ public class MasterThread extends SlaveThread {
     createThreads();
     fillGlobalQueue();
     sendRoundStartMsg();
-    checkGlobalQueueNotEmpty();
+    // checkGlobalQueueNotEmpty();
 
     do {
       // master gets it's own queue from the outside hashmap, with id 0.
+      // sleep();
       System.out
           .println("Master checking its queue. Size of queue is: " + localMessageQueue.size() + " round " + round);
       globalIdAndMsgQueueMap.get(0).drainTo(localMessageQueue);
       // printMessagesToSendMap(globalIdAndMsgQueueMap);
-      // sleep();
 
       while (!(localMessageQueue.isEmpty())) {
         try {
@@ -94,15 +94,12 @@ public class MasterThread extends SlaveThread {
             localMessageQueue.clear();
 
             // send terminate msg back to the sender.
-            try {
-              globalIdAndMsgQueueMap.get(tempMsg.getSenderId())
-                  .put(new Message(myId, this.round, this.myMaxUid, "Terminate"));
-              System.out.println("Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
-              masterMustDie = true;
-              return;
-            } catch (InterruptedException e) {
-              e.printStackTrace();
-            }
+            globalIdAndMsgQueueMap.get(tempMsg.getSenderId()).put(new Message(myId, round, myMaxUid, "Terminate"));
+            System.err
+                .println("-------Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
+            masterMustDie = true;
+            myMaxUid = tempMsg.getSenderId();
+            killAll();
           }
 
           // if a thread says it's done, then master increase the Done count.
@@ -126,24 +123,73 @@ public class MasterThread extends SlaveThread {
       drainToGlobalQueue();
       System.out.println("Starting threads. ");
       startAllThreads();
+
+      // wait for threads to finish
+      while (globalIdAndMsgQueueMap.get(myId).size() < slaveArray.length) {
+        System.out.println(globalIdAndMsgQueueMap.get(myId).size());
+        sleep();
+      }
     } while (!masterMustDie);
 
-    System.out.println("Master will now die. ");
+    // printTree();
+    printNackAckTree();
+    System.out.println("Master will now die. MaxUid " + myMaxUid + " round " + round);
+
+  }
+
+  /**
+   * Print the nackAck set after the algorithm is done.
+   */
+  public void printTree() {
+    System.out.println("\n\nPrinting the tree.");
+    System.out.println("Parent <--- myId ---> myChildren (can overlap)");
+    for (SlaveThread t : threadList) {
+      System.out.print(t.getMyParent() + "<------" + t.getId() + "------>");
+      for (int i : t.getNeighborSet()) {
+        if (i != t.getMyParent()) {
+          System.out.print(i + " ");
+        }
+      }
+      System.out.println();
+    }
+  }
+
+  /**
+   * Print the neighbor set after the algorithm is done.
+   */
+  public void printNackAckTree() {
+    System.out.println("\n\nPrinting the tree.");
+    System.out.println("Parent <--- myId ---> myChildren (can overlap)");
+    for (SlaveThread t : threadList) {
+      System.out.print(t.getMyParent() + "<------" + t.getId() + "------>");
+      for (int i : t.getNackReceived()) {
+        if (i != t.getMyParent()) {
+          System.out.print(i + " ");
+        }
+      }
+
+      for (int i : t.getAckReceived()) {
+        if (i != t.getMyParent()) {
+          System.out.print(i + " ");
+        }
+      }
+      System.out.println();
+    }
   }
 
   /**
    * Create all nodes/threads, set their names, neighbors, fill the local copy of
    * the global queue.
    */
-  public synchronized void createThreads() {
+  public void createThreads() {
     try {
       for (int row = 0; row < size; row++) {
-        SlaveThread t = new SlaveThread(neighborArray[row], this, globalIdAndMsgQueueMap);
+        SlaveThread t = new SlaveThread(slaveArray[row], this, globalIdAndMsgQueueMap);
         threadList.add(t);
 
         for (int col = 0; col < size; col++)
           if (matrix[row][col] != 0) {
-            t.insertNeighbour(neighborArray[col]);
+            t.insertNeighbour(slaveArray[col]);
             // System.out.println(ids[i]);
           }
         // find index
@@ -171,7 +217,7 @@ public class MasterThread extends SlaveThread {
   public void fillGlobalQueue() {
     System.err.println("Filling global queue.");
     globalIdAndMsgQueueMap.put(0, new LinkedBlockingQueue<Message>());
-    for (int i : neighborArray) {
+    for (int i : slaveArray) {
       // add signal to start
       localMessageQueue = new LinkedBlockingQueue<Message>();
       globalIdAndMsgQueueMap.put(i, localMessageQueue);
@@ -179,7 +225,7 @@ public class MasterThread extends SlaveThread {
   }
 
   public void sendRoundStartMsg() {
-    for (int i : neighborArray) {
+    for (int i : slaveArray) {
 
       // don't send msg to itself
       if (i == myId) {
@@ -204,7 +250,7 @@ public class MasterThread extends SlaveThread {
   }
 
   public void killAll() {
-    for (int i : neighborArray) {
+    for (int i : slaveArray) {
 
       // don't send msg to itself
       if (i == myId) {
