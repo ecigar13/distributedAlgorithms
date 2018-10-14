@@ -28,11 +28,9 @@ public class FloodMaxImplementation implements Runnable {
   public void run() {
 
     // Master thread create slave threads and run them
-    // MasterThread masterNode = new MasterThread(this.size, this.ids,
-    // this.matrix,this.common_map);
-    Thread thread = new Thread(new MasterThread(this.size, ids, this.matrix));
+    MasterThread thread = new MasterThread(this.size, ids, this.matrix);
     thread.setName("thread_0");
-    thread.start();
+    thread.run();
 
     // Output the leaderId
     // System.out.println("Leader is: " + masterNode.getLeaderId());
