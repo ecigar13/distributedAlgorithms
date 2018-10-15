@@ -1,0 +1,19 @@
+Size is : 8
+Test print matrix
+1 1 1 1 1 1 1 1 
+1 0 1 1 1 0 0 0 
+1 1 0 1 1 0 1 1 
+1 1 1 0 1 0 0 0 
+1 1 1 1 0 0 0 1 
+1 0 0 0 0 0 0 1 
+1 0 1 0 0 0 0 0 
+1 0 1 0 1 1 0 0 
+Leader Selected 20
+Tree formed is 
+20
+11  13  2  
+
+
+
+Stopping execution
+

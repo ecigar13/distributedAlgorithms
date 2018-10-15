@@ -31,11 +31,13 @@ public class FloodMaxImplementation implements Runnable {
   }
 
   @Override
-  public void run() {
+  public void run() 
+  {
 
     // Master thread create slave threads and run them
-    MasterThread masterNode = new MasterThread(this.size, this.ids, this.matrix,this.common_map);
+    //MasterThread masterNode = new MasterThread(this.size, this.ids, this.matrix,this.common_map);
     Thread thread = new Thread(new MasterThread(this.size, this.ids, this.matrix,this.common_map));
+    thread.setName("thread_0");
     thread.start();
 
     // Output the leaderId
