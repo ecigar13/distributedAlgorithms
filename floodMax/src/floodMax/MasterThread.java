@@ -73,10 +73,13 @@ public class MasterThread extends SlaveThread {
     // checkGlobalQueueNotEmpty();
 
     do {
+      for (SlaveThread t : threadList) {
+        t.drainToGlobalQueue();
+      }
       // master gets it's own queue from the outside hashmap, with id 0.
       // sleep();
-      System.out
-          .println("Master checking its queue. Size of queue is: " + localMessageQueue.size() + " round " + round);
+      System.out.println("Master checking its queue. Size of queue is: " + globalIdAndMsgQueueMap.get(myId).size()
+          + " round " + round);
       globalIdAndMsgQueueMap.get(0).drainTo(localMessageQueue);
       // printMessagesToSendMap(globalIdAndMsgQueueMap);
 
@@ -125,10 +128,10 @@ public class MasterThread extends SlaveThread {
       startAllThreads();
 
       // wait for threads to finish
-      while (globalIdAndMsgQueueMap.get(myId).size() < slaveArray.length) {
-        System.out.println(globalIdAndMsgQueueMap.get(myId).size());
-        sleep();
-      }
+      // while (globalIdAndMsgQueueMap.get(myId).size() < slaveArray.length) {
+      // System.out.println(globalIdAndMsgQueueMap.get(myId).size());
+      // sleep();
+      // }
     } while (!masterMustDie);
 
     // printTree();
@@ -142,7 +145,7 @@ public class MasterThread extends SlaveThread {
    */
   public void printTree() {
     System.out.println("\n\nPrinting the tree.");
-    System.out.println("Parent <--- myId ---> myChildren (can overlap)");
+    System.out.println("MaxId----Parent <--- myId ---> myChildren (can overlap)");
     for (SlaveThread t : threadList) {
       System.out.print(t.getMyParent() + "<------" + t.getId() + "------>");
       for (int i : t.getNeighborSet()) {
@@ -159,9 +162,9 @@ public class MasterThread extends SlaveThread {
    */
   public void printNackAckTree() {
     System.out.println("\n\nPrinting the tree.");
-    System.out.println("Parent <--- myId ---> myChildren (can overlap)");
+    System.out.println("MaxId----Parent <--- myId ---> myChildren (can overlap)");
     for (SlaveThread t : threadList) {
-      System.out.print(t.getMyParent() + "<------" + t.getId() + "------>");
+      System.out.print(t.myMaxUid + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (int i : t.getNackReceived()) {
         if (i != t.getMyParent()) {
           System.out.print(i + " ");
@@ -215,7 +218,7 @@ public class MasterThread extends SlaveThread {
    * First step of master thread: fill the global queue.
    */
   public void fillGlobalQueue() {
-    System.err.println("Filling global queue.");
+    // System.err.println("Filling global queue.");
     globalIdAndMsgQueueMap.put(0, new LinkedBlockingQueue<Message>());
     for (int i : slaveArray) {
       // add signal to start
@@ -232,7 +235,7 @@ public class MasterThread extends SlaveThread {
         continue;
       }
 
-      System.err.println("Send Round_Number msg to " + i);
+      // System.err.println("Send Round_Number msg to " + i);
       try {
         Message temp = new Message(myId, round, myId, "Round_Number");
         localMessagesToSend.get(i).put(temp);
