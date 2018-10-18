@@ -14,7 +14,6 @@ import message.Message;
  *
  */
 public class MasterThread extends SlaveThread {
-  public static ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
 
   protected int masterId = 0;
   protected int size;
@@ -23,12 +22,9 @@ public class MasterThread extends SlaveThread {
 
   protected boolean masterMustDie = false;
 
-  // master will put information about the round in this hash map which is
-  // accessible to all
-  // hash Map for storing children pointers
   private int numberOfFinishedThreads;
+  protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
   private ArrayList<SlaveThread> threadList = new ArrayList<SlaveThread>();
-  protected LinkedBlockingQueue<Message> localMessageQueue = new LinkedBlockingQueue<>();
 
   /**
    * Constructor
@@ -47,41 +43,43 @@ public class MasterThread extends SlaveThread {
     this.name = "Master";
     this.myId = 0;
 
-    // put master into concurrent hash map
-    MasterThread.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
-
-    fillLocalMessagesToSend();
+    this.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
+    this.localMessagesToSend = new ConcurrentHashMap<>();
+    initGlobalIdAndMsgQueueMap();
   }
 
   @Override
-  public void fillLocalMessagesToSend() {
-    // System.err.println("Filling localMessagesToSend.");
+  public void initLocalMessagesToSend() {
     localMessagesToSend.put(myId, new LinkedBlockingQueue<Message>());
     for (int i : slaveArray) {
-      // add signal to start
       localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
+    }
+  }
+
+  /**
+   * First step of master thread: fill the global queue.
+   */
+  public void initGlobalIdAndMsgQueueMap() {
+    globalIdAndMsgQueueMap.put(0, new LinkedBlockingQueue<Message>());
+    for (int i : slaveArray) {
+      globalIdAndMsgQueueMap.put(i, new LinkedBlockingQueue<Message>());
     }
   }
 
   @Override
   public void run() {
     System.out.println("The Master has started. Size: " + size);
-
     createThreads();
-    fillGlobalQueue();
     sendRoundStartMsg();
-    // checkGlobalQueueNotEmpty();
 
     do {
       for (SlaveThread t : threadList) {
         t.drainToGlobalQueue();
       }
-      // master gets it's own queue from the outside hashmap, with id 0.
-      // sleep();
-      System.out.println("Master checking its queue. Size of queue is: " + globalIdAndMsgQueueMap.get(myId).size()
-          + " round " + round);
-      globalIdAndMsgQueueMap.get(0).drainTo(localMessageQueue);
-      // printMessagesToSendMap(globalIdAndMsgQueueMap);
+
+      globalIdAndMsgQueueMap.get(myId).drainTo(localMessageQueue);
+      System.out
+          .println("Master checking its queue. Size of queue is: " + localMessageQueue.size() + " round " + round);
 
       while (!(localMessageQueue.isEmpty())) {
         try {
@@ -89,24 +87,16 @@ public class MasterThread extends SlaveThread {
           System.out.println(tempMsg);
 
           if (tempMsg.getmType().equalsIgnoreCase("Leader")) {
-
             // if a node says it's Leader to master, master tells the node to terminate.
-            // terminate is a static variable, so all threads will receive the signal.
-
-            // empty the remaining msg in master's q.
             localMessageQueue.clear();
 
-            // send terminate msg back to the sender.
             globalIdAndMsgQueueMap.get(tempMsg.getSenderId()).put(new Message(myId, round, myMaxUid, "Terminate"));
-            System.err
-                .println("-------Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
+            System.err.println("---Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
             masterMustDie = true;
+
             myMaxUid = tempMsg.getSenderId();
             killAll();
-          }
-
-          // if a thread says it's done, then master increase the Done count.
-          else if ((tempMsg.getmType().equals("Done"))) {
+          } else if ((tempMsg.getmType().equals("Done"))) {
             numberOfFinishedThreads++;
           }
           // all slaves completed the round
@@ -123,15 +113,8 @@ public class MasterThread extends SlaveThread {
         }
 
       }
-      drainToGlobalQueue();
       System.out.println("Starting threads. ");
       startAllThreads();
-
-      // wait for threads to finish
-      // while (globalIdAndMsgQueueMap.get(myId).size() < slaveArray.length) {
-      // System.out.println(globalIdAndMsgQueueMap.get(myId).size());
-      // sleep();
-      // }
     } while (!masterMustDie);
 
     // printTree();
@@ -193,13 +176,8 @@ public class MasterThread extends SlaveThread {
         for (int col = 0; col < size; col++)
           if (matrix[row][col] != 0) {
             t.insertNeighbour(slaveArray[col]);
-            // System.out.println(ids[i]);
           }
-        // find index
-
-        // create a similar structure to the master's global queue. Used to store msg
-        // before draining all to global q.
-        t.fillLocalMessagesToSend();
+        t.initLocalMessagesToSend();
       }
 
       System.err.println("Created threads. ");
@@ -214,19 +192,6 @@ public class MasterThread extends SlaveThread {
     }
   }
 
-  /**
-   * First step of master thread: fill the global queue.
-   */
-  public void fillGlobalQueue() {
-    // System.err.println("Filling global queue.");
-    globalIdAndMsgQueueMap.put(0, new LinkedBlockingQueue<Message>());
-    for (int i : slaveArray) {
-      // add signal to start
-      localMessageQueue = new LinkedBlockingQueue<Message>();
-      globalIdAndMsgQueueMap.put(i, localMessageQueue);
-    }
-  }
-
   public void sendRoundStartMsg() {
     for (int i : slaveArray) {
 
@@ -238,7 +203,7 @@ public class MasterThread extends SlaveThread {
       // System.err.println("Send Round_Number msg to " + i);
       try {
         Message temp = new Message(myId, round, myId, "Round_Number");
-        localMessagesToSend.get(i).put(temp);
+        globalIdAndMsgQueueMap.get(i).put(temp);
 
       } catch (Exception e) {
         e.printStackTrace();
@@ -263,7 +228,7 @@ public class MasterThread extends SlaveThread {
       System.out.println("Send Terminate msg to " + i);
       try {
         Message temp = new Message(myId, round, myId, "Terminate");
-        localMessagesToSend.get(i).put(temp);
+        globalIdAndMsgQueueMap.get(i).put(temp);
 
       } catch (Exception e) {
         e.printStackTrace();

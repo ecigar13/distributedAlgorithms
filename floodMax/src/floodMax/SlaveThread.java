@@ -9,6 +9,8 @@ import javax.sound.midi.SysexMessage;
 
 import com.sun.corba.se.spi.servicecontext.SendingContextServiceContext;
 import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+import com.sun.tracing.dtrace.ProviderAttributes;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javafx.scene.Parent;
 import message.Message;
@@ -17,19 +19,20 @@ public class SlaveThread implements Runnable {
   protected String name;
 
   protected boolean terminated;
-  protected static ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
 
   protected int myId;
   protected int myMaxUid;
   protected int round;
   private int myParent = -1;
-  private MasterThread masterNode;
+  protected MasterThread masterNode;
+  private boolean sentAck = false;
 
   protected HashSet<Integer> ackReceived = new HashSet<Integer>();
   protected HashSet<Integer> nackReceived = new HashSet<Integer>();
   private HashSet<Integer> neighborSet = new HashSet<Integer>();
 
-  protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> localMessagesToSend = new ConcurrentHashMap<>();
+  protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
+  protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> localMessagesToSend;
   protected LinkedBlockingQueue<Message> localMessageQueue = new LinkedBlockingQueue<>();
   protected boolean newInfo;
 
@@ -50,12 +53,14 @@ public class SlaveThread implements Runnable {
     this.masterNode = masterNode;
     this.newInfo = true;
     this.round = 0;
+    this.terminated = false;
 
     name = "Thread_" + id;
 
-    SlaveThread.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
-    this.terminated = false;
-
+    this.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
+    this.localMessagesToSend = new ConcurrentHashMap<>();
+    // init local messages to send will be done after construction. It's messy for
+    // now.
   }
 
   /**
@@ -68,7 +73,6 @@ public class SlaveThread implements Runnable {
    * @throws InterruptedException
    */
   public void processExploreMsg(Message msg) throws InterruptedException {
-
     if (myMaxUid < msg.getMaxUid()) {
       myMaxUid = msg.getMaxUid();
       myParent = msg.getSenderId();
@@ -94,7 +98,6 @@ public class SlaveThread implements Runnable {
       System.out.println("Send N_ACK to " + msg.getSenderId());
       localMessagesToSend.get(msg.getSenderId()).put(new Message(myId, round, myMaxUid, "N_ACK"));
     }
-
   }
 
   /**
@@ -108,19 +111,17 @@ public class SlaveThread implements Runnable {
 
     if (myParent != -1) {
 
-      if (nackReceived.size() == neighborSet.size()) {
-        // internal node
+      boolean leafNode = nackReceived.size() == neighborSet.size(); // leaf node
+      boolean internalNode = myMaxUid != myId && (nackReceived.size() + ackReceived.size() == neighborSet.size() - 1);
+      if ((leafNode || internalNode) && !sentAck) {
         System.out.println("Sending ACK to parent " + myParent);
         localMessagesToSend.get(myParent).put(new Message(myId, round, myMaxUid, "ACK"));
+        sentAck = true;
       }
-      if (myMaxUid != myId && (nackReceived.size() + ackReceived.size() == neighborSet.size() - 1)) {
-        // leaf node, send to parent.
-        System.out.println("Sending ACK to parent " + myParent);
-        localMessagesToSend.get(myParent).put(new Message(myId, round, myMaxUid, "ACK"));
-      }
-
     } else if (nackReceived.size() == 0 && ackReceived.size() == neighborSet.size() && myMaxUid == myId
-        && myParent == -1) {
+        && myParent == -1)
+
+    {
       // leader node. Send leader message to master.
       System.out.println("Sending Leader to master.");
       localMessagesToSend.get(masterNode.getId()).put(new Message(myId, round, myMaxUid, "Leader"));
@@ -160,23 +161,15 @@ public class SlaveThread implements Runnable {
         if (myMaxUid < msg.getMaxUid()) {
           myMaxUid = msg.getMaxUid();
           myParent = msg.getSenderId();
-          newInfo = true;
+        } else if (myMaxUid == msg.getMaxUid()) {
+          myParent = myParent < msg.getSenderId() ? msg.getSenderId() : myParent;
         }
+        newInfo = true;
       } else if (msg.getmType().equals("ACK")) {
-        if (!ackReceived.contains(msg.getSenderId())) {
-          ackReceived.add(msg.getSenderId());
-          if (myParent != -1) {
-            msg.setSenderId(myId);
-            if (myMaxUid > msg.getMaxUid()) {
-              msg.setMaxUid(myMaxUid);
-            }
-            localMessagesToSend.get(myParent).put(msg);
-          }
-        }
-
+        ackReceived.add(msg.getSenderId());
       }
-
     }
+
   }
 
   public void run() {
@@ -186,8 +179,6 @@ public class SlaveThread implements Runnable {
     try {
       if (!terminated) {
         fetchFromGlobalQueue(localMessageQueue);
-        // base case, check Nack and Ack count first.
-        // process messages
         processMessageTypes();
         if (round != 0)
           countNackAck();
@@ -197,25 +188,17 @@ public class SlaveThread implements Runnable {
           sendExploreMsgToAllNeighbors();
           newInfo = false;
         }
-
-        // Message to master about Round Completion
         sendRoundDoneToMaster();
-        // set the queue to global queue
-
-        // printMessagesToSendMap(localMessagesToSend);
-        // drainToGlobalQueue();
-        // localMessageQueue.clear();
-        // for (Entry<Integer, LinkedBlockingQueue<Message>> e :
-        // localMessagesToSend.entrySet()) {
-        // e.getValue().clear();
-        // }
+        // then master will drain to its own queue.
 
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
-    System.out.println(name + " stop. round " + round + " leader " + myMaxUid + " parent " + myParent);
+    System.out.println(name + " stop. round " + round + " leader " + myMaxUid + " parent " + myParent + " "
+        + nackReceived.size() + " " + ackReceived.size() + " " + neighborSet.size());
     System.out.println();
+
   }
 
   /**
@@ -276,8 +259,6 @@ public class SlaveThread implements Runnable {
       globalIdAndMsgQueueMap.get(myId).drainTo(localQ);
     }
 
-    // System.err.println("Fetching from global queue. " +
-    // globalIdAndMsgQueueMap.get(id).size() + " " + localQ.size());
     if (!globalIdAndMsgQueueMap.get(myId).isEmpty()) {
       System.err.println("Global queue is not empty. We have a prolem.");
     }
@@ -290,10 +271,9 @@ public class SlaveThread implements Runnable {
    */
   public synchronized void printMessagesToSendMap(ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> hm) {
     for (Entry<Integer, LinkedBlockingQueue<Message>> e : hm.entrySet()) {
-      sleep();
       System.err.println(e.getValue().size() + " " + e.getKey() + " " + e.getValue());
-      sleep();
     }
+    sleep();
   }
 
   public void setNeighbours(HashSet<Integer> neighbours) {
@@ -320,8 +300,7 @@ public class SlaveThread implements Runnable {
     this.name = name;
   }
 
-  public void fillLocalMessagesToSend() {
-    // System.err.println("Filling localMessagesToSend.");
+  public void initLocalMessagesToSend() {
     localMessagesToSend.put(masterNode.getId(), new LinkedBlockingQueue<Message>());
     for (int i : neighborSet) {
       localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
