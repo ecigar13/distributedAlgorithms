@@ -11,7 +11,7 @@ public class Main {
 
   public static void main(String args[]) throws IOException {
     // read from file
-    Scanner in = new Scanner(new FileReader("graph5.txt"));
+    Scanner in = new Scanner(new FileReader("graph4.txt"));
 
     // first entry of the graph.txt provides the number of slave nodes
     // adj matrix's first row and column is the master node.
@@ -28,7 +28,7 @@ public class Main {
     // assigning ids to all the nodes
     for (int i = 0; i < size; i++) {
       vertexIdArray[i] = in.nextInt();
-      System.out.print(vertexIdArray[i]+ " ");
+      System.out.print(vertexIdArray[i] + " ");
     }
 
     // 0 is master node id; 1 to n is the slave nodes
@@ -37,7 +37,6 @@ public class Main {
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
         adjMatrix[i][j] = in.nextInt();
-        // System.out.println(matrix[i][j]);
       }
     }
 
@@ -50,16 +49,9 @@ public class Main {
     }
 
     // implement floodmax here.
-    // FloodMaxImplementation algo =new FloodMaxImplementation(size, node_ids,
-    // matrix,common_map) ;
     Thread t1 = new Thread(new FloodMaxImplementation(size, vertexIdArray, adjMatrix, idAndMsgQueueMap));
     t1.start();
 
-    // prints final output tree
-    /*
-     * PrintWriter out = new PrintWriter(new FileWriter("graphOut.txt"));
-     * out.print(algo.getLeader()); out.close();
-     */
     in.close();
   }
 

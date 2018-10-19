@@ -117,7 +117,7 @@ public class MasterThread extends SlaveThread {
       startAllThreads();
     } while (!masterMustDie);
 
-    // printTree();
+    printTree();
     printNackAckTree();
     System.out.println("Master will now die. MaxUid " + myMaxUid + " round " + round);
 
@@ -130,7 +130,7 @@ public class MasterThread extends SlaveThread {
     System.out.println("\n\nPrinting the tree.");
     System.out.println("MaxId----Parent <--- myId ---> myChildren (can overlap)");
     for (SlaveThread t : threadList) {
-      System.out.print(t.getMyParent() + "<------" + t.getId() + "------>");
+      System.out.print(t.myMaxUid + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (int i : t.getNeighborSet()) {
         if (i != t.getMyParent()) {
           System.out.print(i + " ");

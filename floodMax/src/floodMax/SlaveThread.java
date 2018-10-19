@@ -4,15 +4,8 @@ import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.Collections;
 
-import javax.sound.midi.SysexMessage;
-
-import com.sun.corba.se.spi.servicecontext.SendingContextServiceContext;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-import com.sun.tracing.dtrace.ProviderAttributes;
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
-import javafx.scene.Parent;
 import message.Message;
 
 public class SlaveThread implements Runnable {
@@ -29,6 +22,7 @@ public class SlaveThread implements Runnable {
 
   protected HashSet<Integer> ackReceived = new HashSet<Integer>();
   protected HashSet<Integer> nackReceived = new HashSet<Integer>();
+  protected HashSet<Integer> heardBack = new HashSet<>();
   private HashSet<Integer> neighborSet = new HashSet<Integer>();
 
   protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
@@ -108,13 +102,13 @@ public class SlaveThread implements Runnable {
    * @throws InterruptedException
    */
   public void countNackAck() throws InterruptedException {
+    boolean leafNode = nackReceived.size() == neighborSet.size(); // leaf node
+    boolean internalNode = myMaxUid != myId && (nackReceived.size() + ackReceived.size() == neighborSet.size());
 
     if (myParent != -1) {
 
-      boolean leafNode = nackReceived.size() == neighborSet.size(); // leaf node
-      boolean internalNode = myMaxUid != myId && (nackReceived.size() + ackReceived.size() == neighborSet.size() - 1);
       if ((leafNode || internalNode) && !sentAck) {
-        System.out.println("Sending ACK to parent " + myParent);
+        System.out.println("Send ACK to parent " + myParent);
         localMessagesToSend.get(myParent).put(new Message(myId, round, myMaxUid, "ACK"));
         sentAck = true;
       }
@@ -123,7 +117,7 @@ public class SlaveThread implements Runnable {
 
     {
       // leader node. Send leader message to master.
-      System.out.println("Sending Leader to master.");
+      System.out.println("Send Leader to master.");
       localMessagesToSend.get(masterNode.getId()).put(new Message(myId, round, myMaxUid, "Leader"));
     }
   }
@@ -157,18 +151,28 @@ public class SlaveThread implements Runnable {
           e.printStackTrace();
         }
       } else if (msg.getmType().equals("N_ACK")) {
-        nackReceived.add(msg.getSenderId());
         if (myMaxUid < msg.getMaxUid()) {
+          nackReceived.add(msg.getSenderId());
+          if (!Collections.disjoint(nackReceived, ackReceived)) {
+            ackReceived.remove(msg.getSenderId());
+          }
           myMaxUid = msg.getMaxUid();
           myParent = msg.getSenderId();
-        } else if (myMaxUid == msg.getMaxUid()) {
-          myParent = myParent < msg.getSenderId() ? msg.getSenderId() : myParent;
+        } else if (myMaxUid > msg.getMaxUid()) {
+          nackReceived.remove(msg.getSenderId());
+          // myParent = myParent < msg.getSenderId() ? msg.getSenderId() : myParent;
+        } else {
+          nackReceived.add(msg.getSenderId());
         }
         newInfo = true;
       } else if (msg.getmType().equals("ACK")) {
         ackReceived.add(msg.getSenderId());
+
       }
     }
+    HashSet<Integer> temp = new HashSet<>(ackReceived);
+    temp.retainAll(nackReceived);
+    nackReceived.removeAll(temp);
 
   }
 
@@ -180,14 +184,14 @@ public class SlaveThread implements Runnable {
       if (!terminated) {
         fetchFromGlobalQueue(localMessageQueue);
         processMessageTypes();
-        if (round != 0)
-          countNackAck();
 
         // after done processing incoming messages, send msg for next round
         if (newInfo) {
           sendExploreMsgToAllNeighbors();
           newInfo = false;
         }
+        if (round != 0)
+          countNackAck();
         sendRoundDoneToMaster();
         // then master will drain to its own queue.
 
@@ -197,6 +201,8 @@ public class SlaveThread implements Runnable {
     }
     System.out.println(name + " stop. round " + round + " leader " + myMaxUid + " parent " + myParent + " "
         + nackReceived.size() + " " + ackReceived.size() + " " + neighborSet.size());
+    System.out.println(nackReceived.toString());
+    System.out.println(ackReceived.toString());
     System.out.println();
 
   }
@@ -225,7 +231,7 @@ public class SlaveThread implements Runnable {
    */
   public void sendExploreMsgToAllNeighbors() {
     for (int targetNodeId : neighborSet) {
-      if (targetNodeId == myId || targetNodeId == myParent) {
+      if (targetNodeId == myId) {
         continue;
       }
 
