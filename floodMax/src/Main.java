@@ -11,7 +11,7 @@ public class Main {
 
   public static void main(String args[]) throws IOException {
     // read from file
-    Scanner in = new Scanner(new FileReader("graph4.txt"));
+    Scanner in = new Scanner(new FileReader("graph7.txt"));
 
     // first entry of the graph.txt provides the number of slave nodes
     // adj matrix's first row and column is the master node.

@@ -1,2777 +1,1514 @@
-Size is : 19
-3 29 61 65 66 68 223 239 261 263 354 357 381 402 409 440 504 571 663 
+Size is : 61
+592 379 114 540 13 971 831 977 535 378 189 391 376 207 435 102 513 119 105 781 585 116 405 380 705 242 331 344 261 330 940 444 918 860 308 328 15 813 348 253 353 181 755 852 682 664 599 584 446 817 607 168 715 548 398 523 573 239 981 795 471 
 Test print matrix
-0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 
-0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
-The Master has started. Size: 19
+0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 0 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 
+The Master has started. Size: 61
 Created threads. 
 Master checking its queue. Size of queue is: 0 round 1
 Starting threads. 
-Thread_3 start. round 0 leader 3 parent -1 0 0 1
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 29
-Thread_3 stop. round 1 leader 3 parent -1 0 0 1
+Thread_592 start. round 0 leader 592 parent -1 0 0 4
+Thread_592 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 114
+Send explore to 379
+Send explore to 540
+Send explore to 13
+Thread_592 stop. round 1 leader 592 parent -1 0 0 4
 []
 []
 
-Thread_29 start. round 0 leader 29 parent -1 0 0 2
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 1 leader 29 parent -1 0 0 2
+Thread_379 start. round 0 leader 379 parent -1 0 0 7
+Thread_379 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 592
+Send explore to 977
+Send explore to 114
+Send explore to 328
+Send explore to 540
+Send explore to 13
+Send explore to 813
+Thread_379 stop. round 1 leader 379 parent -1 0 0 7
 []
 []
 
-Thread_61 start. round 0 leader 61 parent -1 0 0 2
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 1 leader 61 parent -1 0 0 2
+Thread_114 start. round 0 leader 114 parent -1 0 0 4
+Thread_114 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 592
+Send explore to 379
+Send explore to 540
+Send explore to 13
+Thread_114 stop. round 1 leader 114 parent -1 0 0 4
 []
 []
 
-Thread_65 start. round 0 leader 65 parent -1 0 0 2
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 1 leader 65 parent -1 0 0 2
+Thread_540 start. round 0 leader 540 parent -1 0 0 5
+Thread_540 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 592
+Send explore to 114
+Send explore to 105
+Send explore to 379
+Send explore to 13
+Thread_540 stop. round 1 leader 540 parent -1 0 0 5
 []
 []
 
-Thread_66 start. round 0 leader 66 parent -1 0 0 2
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 1 leader 66 parent -1 0 0 2
+Thread_13 start. round 0 leader 13 parent -1 0 0 6
+Thread_13 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 592
+Send explore to 114
+Send explore to 344
+Send explore to 379
+Send explore to 540
+Send explore to 831
+Thread_13 stop. round 1 leader 13 parent -1 0 0 6
 []
 []
 
-Thread_68 start. round 0 leader 68 parent -1 0 0 2
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 1 leader 68 parent -1 0 0 2
+Thread_971 start. round 0 leader 971 parent -1 0 0 1
+Thread_971 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 242
+Thread_971 stop. round 1 leader 971 parent -1 0 0 1
 []
 []
 
-Thread_223 start. round 0 leader 223 parent -1 0 0 2
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 68
+Thread_831 start. round 0 leader 831 parent -1 0 0 2
+Thread_831 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 13
+Send explore to 15
+Thread_831 stop. round 1 leader 831 parent -1 0 0 2
+[]
+[]
+
+Thread_977 start. round 0 leader 977 parent -1 0 0 2
+Thread_977 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 535
+Send explore to 379
+Thread_977 stop. round 1 leader 977 parent -1 0 0 2
+[]
+[]
+
+Thread_535 start. round 0 leader 535 parent -1 0 0 3
+Thread_535 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 977
+Send explore to 378
+Send explore to 330
+Thread_535 stop. round 1 leader 535 parent -1 0 0 3
+[]
+[]
+
+Thread_378 start. round 0 leader 378 parent -1 0 0 2
+Thread_378 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 535
+Send explore to 189
+Thread_378 stop. round 1 leader 378 parent -1 0 0 2
+[]
+[]
+
+Thread_189 start. round 0 leader 189 parent -1 0 0 2
+Thread_189 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 391
+Send explore to 378
+Thread_189 stop. round 1 leader 189 parent -1 0 0 2
+[]
+[]
+
+Thread_391 start. round 0 leader 391 parent -1 0 0 3
+Thread_391 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 376
+Send explore to 940
+Send explore to 189
+Thread_391 stop. round 1 leader 391 parent -1 0 0 3
+[]
+[]
+
+Thread_376 start. round 0 leader 376 parent -1 0 0 4
+Thread_376 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 391
+Send explore to 330
+Send explore to 207
 Send explore to 239
-Thread_223 stop. round 1 leader 223 parent -1 0 0 2
+Thread_376 stop. round 1 leader 376 parent -1 0 0 4
+[]
+[]
+
+Thread_207 start. round 0 leader 207 parent -1 0 0 3
+Thread_207 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 435
+Send explore to 918
+Send explore to 376
+Thread_207 stop. round 1 leader 207 parent -1 0 0 3
+[]
+[]
+
+Thread_435 start. round 0 leader 435 parent -1 0 0 3
+Thread_435 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 755
+Send explore to 102
+Send explore to 207
+Thread_435 stop. round 1 leader 435 parent -1 0 0 3
+[]
+[]
+
+Thread_102 start. round 0 leader 102 parent -1 0 0 4
+Thread_102 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 513
+Send explore to 435
+Send explore to 331
+Send explore to 860
+Thread_102 stop. round 1 leader 102 parent -1 0 0 4
+[]
+[]
+
+Thread_513 start. round 0 leader 513 parent -1 0 0 2
+Thread_513 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 102
+Send explore to 119
+Thread_513 stop. round 1 leader 513 parent -1 0 0 2
+[]
+[]
+
+Thread_119 start. round 0 leader 119 parent -1 0 0 3
+Thread_119 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 513
+Send explore to 105
+Send explore to 253
+Thread_119 stop. round 1 leader 119 parent -1 0 0 3
+[]
+[]
+
+Thread_105 start. round 0 leader 105 parent -1 0 0 3
+Thread_105 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 119
+Send explore to 540
+Send explore to 781
+Thread_105 stop. round 1 leader 105 parent -1 0 0 3
+[]
+[]
+
+Thread_781 start. round 0 leader 781 parent -1 0 0 2
+Thread_781 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 105
+Send explore to 585
+Thread_781 stop. round 1 leader 781 parent -1 0 0 2
+[]
+[]
+
+Thread_585 start. round 0 leader 585 parent -1 0 0 2
+Thread_585 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 116
+Send explore to 781
+Thread_585 stop. round 1 leader 585 parent -1 0 0 2
+[]
+[]
+
+Thread_116 start. round 0 leader 116 parent -1 0 0 2
+Thread_116 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 405
+Send explore to 585
+Thread_116 stop. round 1 leader 116 parent -1 0 0 2
+[]
+[]
+
+Thread_405 start. round 0 leader 405 parent -1 0 0 2
+Thread_405 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 116
+Send explore to 380
+Thread_405 stop. round 1 leader 405 parent -1 0 0 2
+[]
+[]
+
+Thread_380 start. round 0 leader 380 parent -1 0 0 2
+Thread_380 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 705
+Send explore to 405
+Thread_380 stop. round 1 leader 380 parent -1 0 0 2
+[]
+[]
+
+Thread_705 start. round 0 leader 705 parent -1 0 0 3
+Thread_705 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 242
+Send explore to 261
+Send explore to 380
+Thread_705 stop. round 1 leader 705 parent -1 0 0 3
+[]
+[]
+
+Thread_242 start. round 0 leader 242 parent -1 0 0 3
+Thread_242 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 705
+Send explore to 971
+Send explore to 940
+Thread_242 stop. round 1 leader 242 parent -1 0 0 3
+[]
+[]
+
+Thread_331 start. round 0 leader 331 parent -1 0 0 2
+Thread_331 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 102
+Send explore to 444
+Thread_331 stop. round 1 leader 331 parent -1 0 0 2
+[]
+[]
+
+Thread_344 start. round 0 leader 344 parent -1 0 0 1
+Thread_344 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 13
+Thread_344 stop. round 1 leader 344 parent -1 0 0 1
+[]
+[]
+
+Thread_261 start. round 0 leader 261 parent -1 0 0 1
+Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 705
+Thread_261 stop. round 1 leader 261 parent -1 0 0 1
+[]
+[]
+
+Thread_330 start. round 0 leader 330 parent -1 0 0 3
+Thread_330 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 535
+Send explore to 376
+Send explore to 348
+Thread_330 stop. round 1 leader 330 parent -1 0 0 3
+[]
+[]
+
+Thread_940 start. round 0 leader 940 parent -1 0 0 2
+Thread_940 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 242
+Send explore to 391
+Thread_940 stop. round 1 leader 940 parent -1 0 0 2
+[]
+[]
+
+Thread_444 start. round 0 leader 444 parent -1 0 0 2
+Thread_444 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 308
+Send explore to 331
+Thread_444 stop. round 1 leader 444 parent -1 0 0 2
+[]
+[]
+
+Thread_918 start. round 0 leader 918 parent -1 0 0 2
+Thread_918 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 446
+Send explore to 207
+Thread_918 stop. round 1 leader 918 parent -1 0 0 2
+[]
+[]
+
+Thread_860 start. round 0 leader 860 parent -1 0 0 1
+Thread_860 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 102
+Thread_860 stop. round 1 leader 860 parent -1 0 0 1
+[]
+[]
+
+Thread_308 start. round 0 leader 308 parent -1 0 0 1
+Thread_308 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 444
+Thread_308 stop. round 1 leader 308 parent -1 0 0 1
+[]
+[]
+
+Thread_328 start. round 0 leader 328 parent -1 0 0 1
+Thread_328 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 379
+Thread_328 stop. round 1 leader 328 parent -1 0 0 1
+[]
+[]
+
+Thread_15 start. round 0 leader 15 parent -1 0 0 2
+Thread_15 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 348
+Send explore to 831
+Thread_15 stop. round 1 leader 15 parent -1 0 0 2
+[]
+[]
+
+Thread_813 start. round 0 leader 813 parent -1 0 0 1
+Thread_813 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 379
+Thread_813 stop. round 1 leader 813 parent -1 0 0 1
+[]
+[]
+
+Thread_348 start. round 0 leader 348 parent -1 0 0 2
+Thread_348 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 330
+Send explore to 15
+Thread_348 stop. round 1 leader 348 parent -1 0 0 2
+[]
+[]
+
+Thread_253 start. round 0 leader 253 parent -1 0 0 2
+Thread_253 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 981
+Send explore to 119
+Thread_253 stop. round 1 leader 253 parent -1 0 0 2
+[]
+[]
+
+Thread_353 start. round 0 leader 353 parent -1 0 0 2
+Thread_353 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 817
+Send explore to 181
+Thread_353 stop. round 1 leader 353 parent -1 0 0 2
+[]
+[]
+
+Thread_181 start. round 0 leader 181 parent -1 0 0 1
+Thread_181 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 353
+Thread_181 stop. round 1 leader 181 parent -1 0 0 1
+[]
+[]
+
+Thread_755 start. round 0 leader 755 parent -1 0 0 1
+Thread_755 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 435
+Thread_755 stop. round 1 leader 755 parent -1 0 0 1
+[]
+[]
+
+Thread_852 start. round 0 leader 852 parent -1 0 0 1
+Thread_852 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 239
+Thread_852 stop. round 1 leader 852 parent -1 0 0 1
+[]
+[]
+
+Thread_682 start. round 0 leader 682 parent -1 0 0 2
+Thread_682 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 584
+Send explore to 795
+Thread_682 stop. round 1 leader 682 parent -1 0 0 2
+[]
+[]
+
+Thread_664 start. round 0 leader 664 parent -1 0 0 2
+Thread_664 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 795
+Send explore to 398
+Thread_664 stop. round 1 leader 664 parent -1 0 0 2
+[]
+[]
+
+Thread_599 start. round 0 leader 599 parent -1 0 0 2
+Thread_599 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 548
+Send explore to 398
+Thread_599 stop. round 1 leader 599 parent -1 0 0 2
+[]
+[]
+
+Thread_584 start. round 0 leader 584 parent -1 0 0 2
+Thread_584 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 471
+Send explore to 682
+Thread_584 stop. round 1 leader 584 parent -1 0 0 2
+[]
+[]
+
+Thread_446 start. round 0 leader 446 parent -1 0 0 2
+Thread_446 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 918
+Send explore to 715
+Thread_446 stop. round 1 leader 446 parent -1 0 0 2
+[]
+[]
+
+Thread_817 start. round 0 leader 817 parent -1 0 0 2
+Thread_817 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 353
+Send explore to 715
+Thread_817 stop. round 1 leader 817 parent -1 0 0 2
+[]
+[]
+
+Thread_607 start. round 0 leader 607 parent -1 0 0 2
+Thread_607 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 548
+Send explore to 168
+Thread_607 stop. round 1 leader 607 parent -1 0 0 2
+[]
+[]
+
+Thread_168 start. round 0 leader 168 parent -1 0 0 2
+Thread_168 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 981
+Send explore to 607
+Thread_168 stop. round 1 leader 168 parent -1 0 0 2
+[]
+[]
+
+Thread_715 start. round 0 leader 715 parent -1 0 0 2
+Thread_715 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 817
+Send explore to 446
+Thread_715 stop. round 1 leader 715 parent -1 0 0 2
+[]
+[]
+
+Thread_548 start. round 0 leader 548 parent -1 0 0 2
+Thread_548 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 599
+Send explore to 607
+Thread_548 stop. round 1 leader 548 parent -1 0 0 2
+[]
+[]
+
+Thread_398 start. round 0 leader 398 parent -1 0 0 2
+Thread_398 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 599
+Send explore to 664
+Thread_398 stop. round 1 leader 398 parent -1 0 0 2
+[]
+[]
+
+Thread_523 start. round 0 leader 523 parent -1 0 0 0
+Thread_523 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send Leader to master.
+Thread_523 stop. round 1 leader 523 parent -1 0 0 0
+[]
+[]
+
+Thread_573 start. round 0 leader 573 parent -1 0 0 0
+Thread_573 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send Leader to master.
+Thread_573 stop. round 1 leader 573 parent -1 0 0 0
 []
 []
 
 Thread_239 start. round 0 leader 239 parent -1 0 0 2
 Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 261
-Send explore to 223
+Send explore to 852
+Send explore to 376
 Thread_239 stop. round 1 leader 239 parent -1 0 0 2
 []
 []
 
-Thread_261 start. round 0 leader 261 parent -1 0 0 2
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 1 leader 261 parent -1 0 0 2
+Thread_981 start. round 0 leader 981 parent -1 0 0 2
+Thread_981 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 168
+Send explore to 253
+Thread_981 stop. round 1 leader 981 parent -1 0 0 2
 []
 []
 
-Thread_263 start. round 0 leader 263 parent -1 0 0 2
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 1 leader 263 parent -1 0 0 2
+Thread_795 start. round 0 leader 795 parent -1 0 0 2
+Thread_795 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 664
+Send explore to 682
+Thread_795 stop. round 1 leader 795 parent -1 0 0 2
 []
 []
 
-Thread_354 start. round 0 leader 354 parent -1 0 0 2
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 1 leader 354 parent -1 0 0 2
+Thread_471 start. round 0 leader 471 parent -1 0 0 1
+Thread_471 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
+Send explore to 584
+Thread_471 stop. round 1 leader 471 parent -1 0 0 1
 []
 []
 
-Thread_357 start. round 0 leader 357 parent -1 0 0 2
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 1 leader 357 parent -1 0 0 2
-[]
-[]
-
-Thread_381 start. round 0 leader 381 parent -1 0 0 2
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 1 leader 381 parent -1 0 0 2
-[]
-[]
-
-Thread_402 start. round 0 leader 402 parent -1 0 0 2
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 354
-Send explore to 263
-Thread_402 stop. round 1 leader 402 parent -1 0 0 2
-[]
-[]
-
-Thread_409 start. round 0 leader 409 parent -1 0 0 2
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 1 leader 409 parent -1 0 0 2
-[]
-[]
-
-Thread_440 start. round 0 leader 440 parent -1 0 0 2
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 1 leader 440 parent -1 0 0 2
-[]
-[]
-
-Thread_504 start. round 0 leader 504 parent -1 0 0 2
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 663
-Send explore to 440
-Thread_504 stop. round 1 leader 504 parent -1 0 0 2
-[]
-[]
-
-Thread_571 start. round 0 leader 571 parent -1 0 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 663
-Thread_571 stop. round 1 leader 571 parent -1 0 0 1
-[]
-[]
-
-Thread_663 start. round 0 leader 663 parent -1 0 0 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 1
-Send explore to 504
-Send explore to 571
-Thread_663 stop. round 1 leader 663 parent -1 0 0 2
-[]
-[]
-
-Master checking its queue. Size of queue is: 19 round 1
-mType Done Sender id: 3 maxUid: 3 round 1
-mType Done Sender id: 29 maxUid: 29 round 1
-mType Done Sender id: 61 maxUid: 61 round 1
-mType Done Sender id: 65 maxUid: 65 round 1
-mType Done Sender id: 66 maxUid: 66 round 1
-mType Done Sender id: 68 maxUid: 68 round 1
-mType Done Sender id: 223 maxUid: 223 round 1
-mType Done Sender id: 239 maxUid: 239 round 1
-mType Done Sender id: 261 maxUid: 261 round 1
-mType Done Sender id: 263 maxUid: 263 round 1
-mType Done Sender id: 354 maxUid: 354 round 1
-mType Done Sender id: 357 maxUid: 357 round 1
-mType Done Sender id: 381 maxUid: 381 round 1
-mType Done Sender id: 402 maxUid: 402 round 1
-mType Done Sender id: 409 maxUid: 409 round 1
-mType Done Sender id: 440 maxUid: 440 round 1
-mType Done Sender id: 504 maxUid: 504 round 1
-mType Done Sender id: 571 maxUid: 571 round 1
-mType Done Sender id: 663 maxUid: 663 round 1
+Master checking its queue. Size of queue is: 63 round 1
+---Telling the master to die. Leader is: 523 round 1
+Send Terminate msg to 592
+Send Terminate msg to 379
+Send Terminate msg to 114
+Send Terminate msg to 540
+Send Terminate msg to 13
+Send Terminate msg to 971
+Send Terminate msg to 831
+Send Terminate msg to 977
+Send Terminate msg to 535
+Send Terminate msg to 378
+Send Terminate msg to 189
+Send Terminate msg to 391
+Send Terminate msg to 376
+Send Terminate msg to 207
+Send Terminate msg to 435
+Send Terminate msg to 102
+Send Terminate msg to 513
+Send Terminate msg to 119
+Send Terminate msg to 105
+Send Terminate msg to 781
+Send Terminate msg to 585
+Send Terminate msg to 116
+Send Terminate msg to 405
+Send Terminate msg to 380
+Send Terminate msg to 705
+Send Terminate msg to 242
+Send Terminate msg to 331
+Send Terminate msg to 344
+Send Terminate msg to 261
+Send Terminate msg to 330
+Send Terminate msg to 940
+Send Terminate msg to 444
+Send Terminate msg to 918
+Send Terminate msg to 860
+Send Terminate msg to 308
+Send Terminate msg to 328
+Send Terminate msg to 15
+Send Terminate msg to 813
+Send Terminate msg to 348
+Send Terminate msg to 253
+Send Terminate msg to 353
+Send Terminate msg to 181
+Send Terminate msg to 755
+Send Terminate msg to 852
+Send Terminate msg to 682
+Send Terminate msg to 664
+Send Terminate msg to 599
+Send Terminate msg to 584
+Send Terminate msg to 446
+Send Terminate msg to 817
+Send Terminate msg to 607
+Send Terminate msg to 168
+Send Terminate msg to 715
+Send Terminate msg to 548
+Send Terminate msg to 398
+Send Terminate msg to 523
+Send Terminate msg to 573
+Send Terminate msg to 239
+Send Terminate msg to 981
+Send Terminate msg to 795
+Send Terminate msg to 471
 Starting threads. 
-Thread_3 start. round 1 leader 3 parent -1 0 0 1
-Thread_3 processing mType Explore Sender id: 29 maxUid: 29 round 1
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 29
-Thread_3 stop. round 2 leader 29 parent 29 0 0 1
+Thread_592 start. round 1 leader 592 parent -1 0 0 4
+Thread_592 processing mType Explore Sender id: 379 maxUid: 379 round 1
+Send N_ACK to 379
+Thread_592 processing mType Explore Sender id: 114 maxUid: 114 round 1
+Send N_ACK to 114
+Thread_592 processing mType Explore Sender id: 540 maxUid: 540 round 1
+Send N_ACK to 540
+Thread_592 processing mType Explore Sender id: 13 maxUid: 13 round 1
+Send N_ACK to 13
+Thread_592 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 592
+Thread_592 stop. round 1 leader 592 parent -1 0 0 4
 []
 []
 
-Thread_29 start. round 1 leader 29 parent -1 0 0 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 3 round 1
-Send N_ACK to 3
-Thread_29 processing mType Explore Sender id: 61 maxUid: 61 round 1
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 2 leader 61 parent 61 0 0 2
+Thread_379 start. round 1 leader 379 parent -1 0 0 7
+Thread_379 processing mType Explore Sender id: 592 maxUid: 592 round 1
+Thread_379 processing mType Explore Sender id: 114 maxUid: 114 round 1
+Send N_ACK to 114
+Thread_379 processing mType Explore Sender id: 540 maxUid: 540 round 1
+Send N_ACK to 540
+Thread_379 processing mType Explore Sender id: 13 maxUid: 13 round 1
+Send N_ACK to 13
+Thread_379 processing mType Explore Sender id: 977 maxUid: 977 round 1
+Thread_379 processing mType Explore Sender id: 328 maxUid: 328 round 1
+Send N_ACK to 328
+Thread_379 processing mType Explore Sender id: 813 maxUid: 813 round 1
+Send N_ACK to 813
+Thread_379 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 977
+Send explore to 592
+Send explore to 977
+Send explore to 114
+Send explore to 328
+Send explore to 540
+Send explore to 13
+Send explore to 813
+Thread_379 stop. round 1 leader 977 parent 977 0 0 7
 []
 []
 
-Thread_61 start. round 1 leader 61 parent -1 0 0 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 29 round 1
-Send N_ACK to 29
-Thread_61 processing mType Explore Sender id: 65 maxUid: 65 round 1
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 2 leader 65 parent 65 0 0 2
+Thread_114 start. round 1 leader 114 parent -1 0 0 4
+Thread_114 processing mType Explore Sender id: 592 maxUid: 592 round 1
+Thread_114 processing mType Explore Sender id: 379 maxUid: 379 round 1
+Send N_ACK to 379
+Thread_114 processing mType Explore Sender id: 540 maxUid: 540 round 1
+Send N_ACK to 540
+Thread_114 processing mType Explore Sender id: 13 maxUid: 13 round 1
+Send N_ACK to 13
+Thread_114 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 592
+Send explore to 592
+Send explore to 379
+Send explore to 540
+Send explore to 13
+Thread_114 stop. round 1 leader 592 parent 592 0 0 4
 []
 []
 
-Thread_65 start. round 1 leader 65 parent -1 0 0 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 61 round 1
-Send N_ACK to 61
-Thread_65 processing mType Explore Sender id: 66 maxUid: 66 round 1
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 2 leader 66 parent 66 0 0 2
+Thread_540 start. round 1 leader 540 parent -1 0 0 5
+Thread_540 processing mType Explore Sender id: 592 maxUid: 592 round 1
+Thread_540 processing mType Explore Sender id: 379 maxUid: 379 round 1
+Send N_ACK to 379
+Thread_540 processing mType Explore Sender id: 114 maxUid: 114 round 1
+Send N_ACK to 114
+Thread_540 processing mType Explore Sender id: 13 maxUid: 13 round 1
+Send N_ACK to 13
+Thread_540 processing mType Explore Sender id: 105 maxUid: 105 round 1
+Send N_ACK to 105
+Thread_540 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 592
+Send explore to 592
+Send explore to 114
+Send explore to 105
+Send explore to 379
+Send explore to 13
+Thread_540 stop. round 1 leader 592 parent 592 0 0 5
 []
 []
 
-Thread_66 start. round 1 leader 66 parent -1 0 0 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 65 round 1
-Send N_ACK to 65
-Thread_66 processing mType Explore Sender id: 68 maxUid: 68 round 1
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 2 leader 68 parent 68 0 0 2
+Thread_13 start. round 1 leader 13 parent -1 0 0 6
+Thread_13 processing mType Explore Sender id: 592 maxUid: 592 round 1
+Thread_13 processing mType Explore Sender id: 379 maxUid: 379 round 1
+Send N_ACK to 379
+Thread_13 processing mType Explore Sender id: 114 maxUid: 114 round 1
+Send N_ACK to 114
+Thread_13 processing mType Explore Sender id: 540 maxUid: 540 round 1
+Send N_ACK to 540
+Thread_13 processing mType Explore Sender id: 831 maxUid: 831 round 1
+Thread_13 processing mType Explore Sender id: 344 maxUid: 344 round 1
+Send N_ACK to 344
+Thread_13 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 831
+Send explore to 592
+Send explore to 114
+Send explore to 344
+Send explore to 379
+Send explore to 540
+Send explore to 831
+Thread_13 stop. round 1 leader 831 parent 831 0 0 6
 []
 []
 
-Thread_68 start. round 1 leader 68 parent -1 0 0 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 66 round 1
-Send N_ACK to 66
-Thread_68 processing mType Explore Sender id: 223 maxUid: 223 round 1
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 2 leader 223 parent 223 0 0 2
+Thread_971 start. round 1 leader 971 parent -1 0 0 1
+Thread_971 processing mType Explore Sender id: 242 maxUid: 242 round 1
+Send N_ACK to 242
+Thread_971 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 971
+Thread_971 stop. round 1 leader 971 parent -1 0 0 1
 []
 []
 
-Thread_223 start. round 1 leader 223 parent -1 0 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 68 round 1
-Send N_ACK to 68
-Thread_223 processing mType Explore Sender id: 239 maxUid: 239 round 1
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 68
+Thread_831 start. round 1 leader 831 parent -1 0 0 2
+Thread_831 processing mType Explore Sender id: 13 maxUid: 13 round 1
+Send N_ACK to 13
+Thread_831 processing mType Explore Sender id: 15 maxUid: 15 round 1
+Send N_ACK to 15
+Thread_831 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 831
+Thread_831 stop. round 1 leader 831 parent -1 0 0 2
+[]
+[]
+
+Thread_977 start. round 1 leader 977 parent -1 0 0 2
+Thread_977 processing mType Explore Sender id: 379 maxUid: 379 round 1
+Send N_ACK to 379
+Thread_977 processing mType Explore Sender id: 535 maxUid: 535 round 1
+Send N_ACK to 535
+Thread_977 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 977
+Thread_977 stop. round 1 leader 977 parent -1 0 0 2
+[]
+[]
+
+Thread_535 start. round 1 leader 535 parent -1 0 0 3
+Thread_535 processing mType Explore Sender id: 977 maxUid: 977 round 1
+Thread_535 processing mType Explore Sender id: 378 maxUid: 378 round 1
+Send N_ACK to 378
+Thread_535 processing mType Explore Sender id: 330 maxUid: 330 round 1
+Send N_ACK to 330
+Thread_535 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 977
+Send explore to 977
+Send explore to 378
+Send explore to 330
+Thread_535 stop. round 1 leader 977 parent 977 0 0 3
+[]
+[]
+
+Thread_378 start. round 1 leader 378 parent -1 0 0 2
+Thread_378 processing mType Explore Sender id: 535 maxUid: 535 round 1
+Thread_378 processing mType Explore Sender id: 189 maxUid: 189 round 1
+Send N_ACK to 189
+Thread_378 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 535
+Send explore to 535
+Send explore to 189
+Thread_378 stop. round 1 leader 535 parent 535 0 0 2
+[]
+[]
+
+Thread_189 start. round 1 leader 189 parent -1 0 0 2
+Thread_189 processing mType Explore Sender id: 378 maxUid: 378 round 1
+Thread_189 processing mType Explore Sender id: 391 maxUid: 391 round 1
+Thread_189 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 391
+Send explore to 391
+Send explore to 378
+Thread_189 stop. round 1 leader 391 parent 391 0 0 2
+[]
+[]
+
+Thread_391 start. round 1 leader 391 parent -1 0 0 3
+Thread_391 processing mType Explore Sender id: 189 maxUid: 189 round 1
+Send N_ACK to 189
+Thread_391 processing mType Explore Sender id: 376 maxUid: 376 round 1
+Send N_ACK to 376
+Thread_391 processing mType Explore Sender id: 940 maxUid: 940 round 1
+Thread_391 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 940
+Send explore to 376
+Send explore to 940
+Send explore to 189
+Thread_391 stop. round 1 leader 940 parent 940 0 0 3
+[]
+[]
+
+Thread_376 start. round 1 leader 376 parent -1 0 0 4
+Thread_376 processing mType Explore Sender id: 391 maxUid: 391 round 1
+Thread_376 processing mType Explore Sender id: 207 maxUid: 207 round 1
+Send N_ACK to 207
+Thread_376 processing mType Explore Sender id: 330 maxUid: 330 round 1
+Send N_ACK to 330
+Thread_376 processing mType Explore Sender id: 239 maxUid: 239 round 1
+Send N_ACK to 239
+Thread_376 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 391
+Send explore to 391
+Send explore to 330
+Send explore to 207
 Send explore to 239
-Thread_223 stop. round 2 leader 239 parent 239 0 0 2
+Thread_376 stop. round 1 leader 391 parent 391 0 0 4
+[]
+[]
+
+Thread_207 start. round 1 leader 207 parent -1 0 0 3
+Thread_207 processing mType Explore Sender id: 376 maxUid: 376 round 1
+Thread_207 processing mType Explore Sender id: 435 maxUid: 435 round 1
+Thread_207 processing mType Explore Sender id: 918 maxUid: 918 round 1
+Thread_207 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 918
+Send explore to 435
+Send explore to 918
+Send explore to 376
+Thread_207 stop. round 1 leader 918 parent 918 0 0 3
+[]
+[]
+
+Thread_435 start. round 1 leader 435 parent -1 0 0 3
+Thread_435 processing mType Explore Sender id: 207 maxUid: 207 round 1
+Send N_ACK to 207
+Thread_435 processing mType Explore Sender id: 102 maxUid: 102 round 1
+Send N_ACK to 102
+Thread_435 processing mType Explore Sender id: 755 maxUid: 755 round 1
+Thread_435 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 755
+Send explore to 755
+Send explore to 102
+Send explore to 207
+Thread_435 stop. round 1 leader 755 parent 755 0 0 3
+[]
+[]
+
+Thread_102 start. round 1 leader 102 parent -1 0 0 4
+Thread_102 processing mType Explore Sender id: 435 maxUid: 435 round 1
+Thread_102 processing mType Explore Sender id: 513 maxUid: 513 round 1
+Thread_102 processing mType Explore Sender id: 331 maxUid: 331 round 1
+Send N_ACK to 331
+Thread_102 processing mType Explore Sender id: 860 maxUid: 860 round 1
+Thread_102 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 860
+Send explore to 513
+Send explore to 435
+Send explore to 331
+Send explore to 860
+Thread_102 stop. round 1 leader 860 parent 860 0 0 4
+[]
+[]
+
+Thread_513 start. round 1 leader 513 parent -1 0 0 2
+Thread_513 processing mType Explore Sender id: 102 maxUid: 102 round 1
+Send N_ACK to 102
+Thread_513 processing mType Explore Sender id: 119 maxUid: 119 round 1
+Send N_ACK to 119
+Thread_513 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 513
+Thread_513 stop. round 1 leader 513 parent -1 0 0 2
+[]
+[]
+
+Thread_119 start. round 1 leader 119 parent -1 0 0 3
+Thread_119 processing mType Explore Sender id: 513 maxUid: 513 round 1
+Thread_119 processing mType Explore Sender id: 105 maxUid: 105 round 1
+Send N_ACK to 105
+Thread_119 processing mType Explore Sender id: 253 maxUid: 253 round 1
+Send N_ACK to 253
+Thread_119 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 513
+Send explore to 513
+Send explore to 105
+Send explore to 253
+Thread_119 stop. round 1 leader 513 parent 513 0 0 3
+[]
+[]
+
+Thread_105 start. round 1 leader 105 parent -1 0 0 3
+Thread_105 processing mType Explore Sender id: 540 maxUid: 540 round 1
+Thread_105 processing mType Explore Sender id: 119 maxUid: 119 round 1
+Send N_ACK to 119
+Thread_105 processing mType Explore Sender id: 781 maxUid: 781 round 1
+Thread_105 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 781
+Send explore to 119
+Send explore to 540
+Send explore to 781
+Thread_105 stop. round 1 leader 781 parent 781 0 0 3
+[]
+[]
+
+Thread_781 start. round 1 leader 781 parent -1 0 0 2
+Thread_781 processing mType Explore Sender id: 105 maxUid: 105 round 1
+Send N_ACK to 105
+Thread_781 processing mType Explore Sender id: 585 maxUid: 585 round 1
+Send N_ACK to 585
+Thread_781 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 781
+Thread_781 stop. round 1 leader 781 parent -1 0 0 2
+[]
+[]
+
+Thread_585 start. round 1 leader 585 parent -1 0 0 2
+Thread_585 processing mType Explore Sender id: 781 maxUid: 781 round 1
+Thread_585 processing mType Explore Sender id: 116 maxUid: 116 round 1
+Send N_ACK to 116
+Thread_585 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 781
+Send explore to 116
+Send explore to 781
+Thread_585 stop. round 1 leader 781 parent 781 0 0 2
+[]
+[]
+
+Thread_116 start. round 1 leader 116 parent -1 0 0 2
+Thread_116 processing mType Explore Sender id: 585 maxUid: 585 round 1
+Thread_116 processing mType Explore Sender id: 405 maxUid: 405 round 1
+Send N_ACK to 405
+Thread_116 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 585
+Send explore to 405
+Send explore to 585
+Thread_116 stop. round 1 leader 585 parent 585 0 0 2
+[]
+[]
+
+Thread_405 start. round 1 leader 405 parent -1 0 0 2
+Thread_405 processing mType Explore Sender id: 116 maxUid: 116 round 1
+Send N_ACK to 116
+Thread_405 processing mType Explore Sender id: 380 maxUid: 380 round 1
+Send N_ACK to 380
+Thread_405 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 405
+Thread_405 stop. round 1 leader 405 parent -1 0 0 2
+[]
+[]
+
+Thread_380 start. round 1 leader 380 parent -1 0 0 2
+Thread_380 processing mType Explore Sender id: 405 maxUid: 405 round 1
+Thread_380 processing mType Explore Sender id: 705 maxUid: 705 round 1
+Thread_380 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 705
+Send explore to 705
+Send explore to 405
+Thread_380 stop. round 1 leader 705 parent 705 0 0 2
+[]
+[]
+
+Thread_705 start. round 1 leader 705 parent -1 0 0 3
+Thread_705 processing mType Explore Sender id: 380 maxUid: 380 round 1
+Send N_ACK to 380
+Thread_705 processing mType Explore Sender id: 242 maxUid: 242 round 1
+Send N_ACK to 242
+Thread_705 processing mType Explore Sender id: 261 maxUid: 261 round 1
+Send N_ACK to 261
+Thread_705 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 705
+Thread_705 stop. round 1 leader 705 parent -1 0 0 3
+[]
+[]
+
+Thread_242 start. round 1 leader 242 parent -1 0 0 3
+Thread_242 processing mType Explore Sender id: 971 maxUid: 971 round 1
+Thread_242 processing mType Explore Sender id: 705 maxUid: 705 round 1
+Send N_ACK to 705
+Thread_242 processing mType Explore Sender id: 940 maxUid: 940 round 1
+Send N_ACK to 940
+Thread_242 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 971
+Send explore to 705
+Send explore to 971
+Send explore to 940
+Thread_242 stop. round 1 leader 971 parent 971 0 0 3
+[]
+[]
+
+Thread_331 start. round 1 leader 331 parent -1 0 0 2
+Thread_331 processing mType Explore Sender id: 102 maxUid: 102 round 1
+Send N_ACK to 102
+Thread_331 processing mType Explore Sender id: 444 maxUid: 444 round 1
+Thread_331 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 444
+Send explore to 102
+Send explore to 444
+Thread_331 stop. round 1 leader 444 parent 444 0 0 2
+[]
+[]
+
+Thread_344 start. round 1 leader 344 parent -1 0 0 1
+Thread_344 processing mType Explore Sender id: 13 maxUid: 13 round 1
+Send N_ACK to 13
+Thread_344 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 344
+Thread_344 stop. round 1 leader 344 parent -1 0 0 1
+[]
+[]
+
+Thread_261 start. round 1 leader 261 parent -1 0 0 1
+Thread_261 processing mType Explore Sender id: 705 maxUid: 705 round 1
+Thread_261 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 705
+Send explore to 705
+Thread_261 stop. round 1 leader 705 parent 705 0 0 1
+[]
+[]
+
+Thread_330 start. round 1 leader 330 parent -1 0 0 3
+Thread_330 processing mType Explore Sender id: 535 maxUid: 535 round 1
+Thread_330 processing mType Explore Sender id: 376 maxUid: 376 round 1
+Send N_ACK to 376
+Thread_330 processing mType Explore Sender id: 348 maxUid: 348 round 1
+Send N_ACK to 348
+Thread_330 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 535
+Send explore to 535
+Send explore to 376
+Send explore to 348
+Thread_330 stop. round 1 leader 535 parent 535 0 0 3
+[]
+[]
+
+Thread_940 start. round 1 leader 940 parent -1 0 0 2
+Thread_940 processing mType Explore Sender id: 391 maxUid: 391 round 1
+Send N_ACK to 391
+Thread_940 processing mType Explore Sender id: 242 maxUid: 242 round 1
+Send N_ACK to 242
+Thread_940 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 940
+Thread_940 stop. round 1 leader 940 parent -1 0 0 2
+[]
+[]
+
+Thread_444 start. round 1 leader 444 parent -1 0 0 2
+Thread_444 processing mType Explore Sender id: 331 maxUid: 331 round 1
+Send N_ACK to 331
+Thread_444 processing mType Explore Sender id: 308 maxUid: 308 round 1
+Send N_ACK to 308
+Thread_444 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 444
+Thread_444 stop. round 1 leader 444 parent -1 0 0 2
+[]
+[]
+
+Thread_918 start. round 1 leader 918 parent -1 0 0 2
+Thread_918 processing mType Explore Sender id: 207 maxUid: 207 round 1
+Send N_ACK to 207
+Thread_918 processing mType Explore Sender id: 446 maxUid: 446 round 1
+Send N_ACK to 446
+Thread_918 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 918
+Thread_918 stop. round 1 leader 918 parent -1 0 0 2
+[]
+[]
+
+Thread_860 start. round 1 leader 860 parent -1 0 0 1
+Thread_860 processing mType Explore Sender id: 102 maxUid: 102 round 1
+Send N_ACK to 102
+Thread_860 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 860
+Thread_860 stop. round 1 leader 860 parent -1 0 0 1
+[]
+[]
+
+Thread_308 start. round 1 leader 308 parent -1 0 0 1
+Thread_308 processing mType Explore Sender id: 444 maxUid: 444 round 1
+Thread_308 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 444
+Send explore to 444
+Thread_308 stop. round 1 leader 444 parent 444 0 0 1
+[]
+[]
+
+Thread_328 start. round 1 leader 328 parent -1 0 0 1
+Thread_328 processing mType Explore Sender id: 379 maxUid: 379 round 1
+Thread_328 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 379
+Send explore to 379
+Thread_328 stop. round 1 leader 379 parent 379 0 0 1
+[]
+[]
+
+Thread_15 start. round 1 leader 15 parent -1 0 0 2
+Thread_15 processing mType Explore Sender id: 831 maxUid: 831 round 1
+Thread_15 processing mType Explore Sender id: 348 maxUid: 348 round 1
+Send N_ACK to 348
+Thread_15 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 831
+Send explore to 348
+Send explore to 831
+Thread_15 stop. round 1 leader 831 parent 831 0 0 2
+[]
+[]
+
+Thread_813 start. round 1 leader 813 parent -1 0 0 1
+Thread_813 processing mType Explore Sender id: 379 maxUid: 379 round 1
+Send N_ACK to 379
+Thread_813 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 813
+Thread_813 stop. round 1 leader 813 parent -1 0 0 1
+[]
+[]
+
+Thread_348 start. round 1 leader 348 parent -1 0 0 2
+Thread_348 processing mType Explore Sender id: 330 maxUid: 330 round 1
+Send N_ACK to 330
+Thread_348 processing mType Explore Sender id: 15 maxUid: 15 round 1
+Send N_ACK to 15
+Thread_348 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 348
+Thread_348 stop. round 1 leader 348 parent -1 0 0 2
+[]
+[]
+
+Thread_253 start. round 1 leader 253 parent -1 0 0 2
+Thread_253 processing mType Explore Sender id: 119 maxUid: 119 round 1
+Send N_ACK to 119
+Thread_253 processing mType Explore Sender id: 981 maxUid: 981 round 1
+Thread_253 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 981
+Send explore to 981
+Send explore to 119
+Thread_253 stop. round 1 leader 981 parent 981 0 0 2
+[]
+[]
+
+Thread_353 start. round 1 leader 353 parent -1 0 0 2
+Thread_353 processing mType Explore Sender id: 181 maxUid: 181 round 1
+Send N_ACK to 181
+Thread_353 processing mType Explore Sender id: 817 maxUid: 817 round 1
+Thread_353 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 817
+Send explore to 817
+Send explore to 181
+Thread_353 stop. round 1 leader 817 parent 817 0 0 2
+[]
+[]
+
+Thread_181 start. round 1 leader 181 parent -1 0 0 1
+Thread_181 processing mType Explore Sender id: 353 maxUid: 353 round 1
+Thread_181 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 353
+Send explore to 353
+Thread_181 stop. round 1 leader 353 parent 353 0 0 1
+[]
+[]
+
+Thread_755 start. round 1 leader 755 parent -1 0 0 1
+Thread_755 processing mType Explore Sender id: 435 maxUid: 435 round 1
+Send N_ACK to 435
+Thread_755 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 755
+Thread_755 stop. round 1 leader 755 parent -1 0 0 1
+[]
+[]
+
+Thread_852 start. round 1 leader 852 parent -1 0 0 1
+Thread_852 processing mType Explore Sender id: 239 maxUid: 239 round 1
+Send N_ACK to 239
+Thread_852 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 852
+Thread_852 stop. round 1 leader 852 parent -1 0 0 1
+[]
+[]
+
+Thread_682 start. round 1 leader 682 parent -1 0 0 2
+Thread_682 processing mType Explore Sender id: 584 maxUid: 584 round 1
+Send N_ACK to 584
+Thread_682 processing mType Explore Sender id: 795 maxUid: 795 round 1
+Thread_682 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 795
+Send explore to 584
+Send explore to 795
+Thread_682 stop. round 1 leader 795 parent 795 0 0 2
+[]
+[]
+
+Thread_664 start. round 1 leader 664 parent -1 0 0 2
+Thread_664 processing mType Explore Sender id: 398 maxUid: 398 round 1
+Send N_ACK to 398
+Thread_664 processing mType Explore Sender id: 795 maxUid: 795 round 1
+Thread_664 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 795
+Send explore to 795
+Send explore to 398
+Thread_664 stop. round 1 leader 795 parent 795 0 0 2
+[]
+[]
+
+Thread_599 start. round 1 leader 599 parent -1 0 0 2
+Thread_599 processing mType Explore Sender id: 548 maxUid: 548 round 1
+Send N_ACK to 548
+Thread_599 processing mType Explore Sender id: 398 maxUid: 398 round 1
+Send N_ACK to 398
+Thread_599 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 599
+Thread_599 stop. round 1 leader 599 parent -1 0 0 2
+[]
+[]
+
+Thread_584 start. round 1 leader 584 parent -1 0 0 2
+Thread_584 processing mType Explore Sender id: 682 maxUid: 682 round 1
+Thread_584 processing mType Explore Sender id: 471 maxUid: 471 round 1
+Send N_ACK to 471
+Thread_584 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 682
+Send explore to 471
+Send explore to 682
+Thread_584 stop. round 1 leader 682 parent 682 0 0 2
+[]
+[]
+
+Thread_446 start. round 1 leader 446 parent -1 0 0 2
+Thread_446 processing mType Explore Sender id: 918 maxUid: 918 round 1
+Thread_446 processing mType Explore Sender id: 715 maxUid: 715 round 1
+Send N_ACK to 715
+Thread_446 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 918
+Send explore to 918
+Send explore to 715
+Thread_446 stop. round 1 leader 918 parent 918 0 0 2
+[]
+[]
+
+Thread_817 start. round 1 leader 817 parent -1 0 0 2
+Thread_817 processing mType Explore Sender id: 353 maxUid: 353 round 1
+Send N_ACK to 353
+Thread_817 processing mType Explore Sender id: 715 maxUid: 715 round 1
+Send N_ACK to 715
+Thread_817 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 817
+Thread_817 stop. round 1 leader 817 parent -1 0 0 2
+[]
+[]
+
+Thread_607 start. round 1 leader 607 parent -1 0 0 2
+Thread_607 processing mType Explore Sender id: 168 maxUid: 168 round 1
+Send N_ACK to 168
+Thread_607 processing mType Explore Sender id: 548 maxUid: 548 round 1
+Send N_ACK to 548
+Thread_607 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 607
+Thread_607 stop. round 1 leader 607 parent -1 0 0 2
+[]
+[]
+
+Thread_168 start. round 1 leader 168 parent -1 0 0 2
+Thread_168 processing mType Explore Sender id: 607 maxUid: 607 round 1
+Thread_168 processing mType Explore Sender id: 981 maxUid: 981 round 1
+Thread_168 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 981
+Send explore to 981
+Send explore to 607
+Thread_168 stop. round 1 leader 981 parent 981 0 0 2
+[]
+[]
+
+Thread_715 start. round 1 leader 715 parent -1 0 0 2
+Thread_715 processing mType Explore Sender id: 446 maxUid: 446 round 1
+Send N_ACK to 446
+Thread_715 processing mType Explore Sender id: 817 maxUid: 817 round 1
+Thread_715 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 817
+Send explore to 817
+Send explore to 446
+Thread_715 stop. round 1 leader 817 parent 817 0 0 2
+[]
+[]
+
+Thread_548 start. round 1 leader 548 parent -1 0 0 2
+Thread_548 processing mType Explore Sender id: 599 maxUid: 599 round 1
+Thread_548 processing mType Explore Sender id: 607 maxUid: 607 round 1
+Thread_548 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 607
+Send explore to 599
+Send explore to 607
+Thread_548 stop. round 1 leader 607 parent 607 0 0 2
+[]
+[]
+
+Thread_398 start. round 1 leader 398 parent -1 0 0 2
+Thread_398 processing mType Explore Sender id: 664 maxUid: 664 round 1
+Thread_398 processing mType Explore Sender id: 599 maxUid: 599 round 1
+Send N_ACK to 599
+Thread_398 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 664
+Send explore to 599
+Send explore to 664
+Thread_398 stop. round 1 leader 664 parent 664 0 0 2
+[]
+[]
+
+Thread_523 start. round 1 leader 523 parent -1 0 0 0
+Thread_523 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 523
+Send Leader to master.
+Thread_523 stop. round 1 leader 523 parent -1 0 0 0
+[]
+[]
+
+Thread_573 start. round 1 leader 573 parent -1 0 0 0
+Thread_573 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 573
+Send Leader to master.
+Thread_573 stop. round 1 leader 573 parent -1 0 0 0
 []
 []
 
 Thread_239 start. round 1 leader 239 parent -1 0 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 223 round 1
-Send N_ACK to 223
-Thread_239 processing mType Explore Sender id: 261 maxUid: 261 round 1
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 2 leader 261 parent 261 0 0 2
+Thread_239 processing mType Explore Sender id: 376 maxUid: 376 round 1
+Thread_239 processing mType Explore Sender id: 852 maxUid: 852 round 1
+Thread_239 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 852
+Send explore to 852
+Send explore to 376
+Thread_239 stop. round 1 leader 852 parent 852 0 0 2
 []
 []
 
-Thread_261 start. round 1 leader 261 parent -1 0 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 239 round 1
-Send N_ACK to 239
-Thread_261 processing mType Explore Sender id: 263 maxUid: 263 round 1
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 2 leader 263 parent 263 0 0 2
+Thread_981 start. round 1 leader 981 parent -1 0 0 2
+Thread_981 processing mType Explore Sender id: 253 maxUid: 253 round 1
+Send N_ACK to 253
+Thread_981 processing mType Explore Sender id: 168 maxUid: 168 round 1
+Send N_ACK to 168
+Thread_981 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 981
+Thread_981 stop. round 1 leader 981 parent -1 0 0 2
 []
 []
 
-Thread_263 start. round 1 leader 263 parent -1 0 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 261 round 1
-Send N_ACK to 261
-Thread_263 processing mType Explore Sender id: 402 maxUid: 402 round 1
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 2 leader 402 parent 402 0 0 2
+Thread_795 start. round 1 leader 795 parent -1 0 0 2
+Thread_795 processing mType Explore Sender id: 682 maxUid: 682 round 1
+Send N_ACK to 682
+Thread_795 processing mType Explore Sender id: 664 maxUid: 664 round 1
+Send N_ACK to 664
+Thread_795 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 795
+Thread_795 stop. round 1 leader 795 parent -1 0 0 2
 []
 []
 
-Thread_354 start. round 1 leader 354 parent -1 0 0 2
-Thread_354 processing mType Explore Sender id: 357 maxUid: 357 round 1
-Thread_354 processing mType Explore Sender id: 402 maxUid: 402 round 1
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 2 leader 402 parent 402 0 0 2
+Thread_471 start. round 1 leader 471 parent -1 0 0 1
+Thread_471 processing mType Explore Sender id: 584 maxUid: 584 round 1
+Thread_471 processing mType Terminate Sender id: 0 maxUid: 0 round 1
+Thread terminated. Leader id: 584
+Send explore to 584
+Thread_471 stop. round 1 leader 584 parent 584 0 0 1
 []
 []
-
-Thread_357 start. round 1 leader 357 parent -1 0 0 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 354 round 1
-Send N_ACK to 354
-Thread_357 processing mType Explore Sender id: 381 maxUid: 381 round 1
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 2 leader 381 parent 381 0 0 2
-[]
-[]
-
-Thread_381 start. round 1 leader 381 parent -1 0 0 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 357 round 1
-Send N_ACK to 357
-Thread_381 processing mType Explore Sender id: 409 maxUid: 409 round 1
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 2 leader 409 parent 409 0 0 2
-[]
-[]
-
-Thread_402 start. round 1 leader 402 parent -1 0 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 263 round 1
-Send N_ACK to 263
-Thread_402 processing mType Explore Sender id: 354 maxUid: 354 round 1
-Send N_ACK to 354
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Thread_402 stop. round 2 leader 402 parent -1 0 0 2
-[]
-[]
-
-Thread_409 start. round 1 leader 409 parent -1 0 0 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 381 round 1
-Send N_ACK to 381
-Thread_409 processing mType Explore Sender id: 440 maxUid: 440 round 1
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 2 leader 440 parent 440 0 0 2
-[]
-[]
-
-Thread_440 start. round 1 leader 440 parent -1 0 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 409 round 1
-Send N_ACK to 409
-Thread_440 processing mType Explore Sender id: 504 maxUid: 504 round 1
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 2 leader 504 parent 504 0 0 2
-[]
-[]
-
-Thread_504 start. round 1 leader 504 parent -1 0 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 440 round 1
-Send N_ACK to 440
-Thread_504 processing mType Explore Sender id: 663 maxUid: 663 round 1
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 663
-Send explore to 440
-Thread_504 stop. round 2 leader 663 parent 663 0 0 2
-[]
-[]
-
-Thread_571 start. round 1 leader 571 parent -1 0 0 1
-Thread_571 processing mType Explore Sender id: 663 maxUid: 663 round 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Send explore to 663
-Thread_571 stop. round 2 leader 663 parent 663 0 0 1
-[]
-[]
-
-Thread_663 start. round 1 leader 663 parent -1 0 0 2
-Thread_663 processing mType Explore Sender id: 504 maxUid: 504 round 1
-Send N_ACK to 504
-Thread_663 processing mType Explore Sender id: 571 maxUid: 571 round 1
-Send N_ACK to 571
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 2
-Thread_663 stop. round 2 leader 663 parent -1 0 0 2
-[]
-[]
-
-Master checking its queue. Size of queue is: 19 round 2
-mType Done Sender id: 3 maxUid: 29 round 2
-mType Done Sender id: 29 maxUid: 61 round 2
-mType Done Sender id: 61 maxUid: 65 round 2
-mType Done Sender id: 65 maxUid: 66 round 2
-mType Done Sender id: 66 maxUid: 68 round 2
-mType Done Sender id: 68 maxUid: 223 round 2
-mType Done Sender id: 223 maxUid: 239 round 2
-mType Done Sender id: 239 maxUid: 261 round 2
-mType Done Sender id: 261 maxUid: 263 round 2
-mType Done Sender id: 263 maxUid: 402 round 2
-mType Done Sender id: 354 maxUid: 402 round 2
-mType Done Sender id: 357 maxUid: 381 round 2
-mType Done Sender id: 381 maxUid: 409 round 2
-mType Done Sender id: 402 maxUid: 402 round 2
-mType Done Sender id: 409 maxUid: 440 round 2
-mType Done Sender id: 440 maxUid: 504 round 2
-mType Done Sender id: 504 maxUid: 663 round 2
-mType Done Sender id: 571 maxUid: 663 round 2
-mType Done Sender id: 663 maxUid: 663 round 2
-Starting threads. 
-Thread_3 start. round 2 leader 29 parent 29 0 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 29 round 1
-Thread_3 processing mType Explore Sender id: 29 maxUid: 61 round 2
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 29
-Send ACK to parent 29
-Thread_3 stop. round 3 leader 61 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 2 leader 61 parent 61 0 0 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 29 round 2
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 61 round 1
-Thread_29 processing mType Explore Sender id: 61 maxUid: 65 round 2
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 3 leader 65 parent 61 1 0 2
-[61]
-[]
-
-Thread_61 start. round 2 leader 65 parent 65 0 0 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 61 round 2
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 65 round 1
-Thread_61 processing mType Explore Sender id: 65 maxUid: 66 round 2
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 3 leader 66 parent 65 1 0 2
-[65]
-[]
-
-Thread_65 start. round 2 leader 66 parent 66 0 0 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 65 round 2
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 66 round 1
-Thread_65 processing mType Explore Sender id: 66 maxUid: 68 round 2
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 3 leader 68 parent 66 1 0 2
-[66]
-[]
-
-Thread_66 start. round 2 leader 68 parent 68 0 0 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 66 round 2
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 68 round 1
-Thread_66 processing mType Explore Sender id: 68 maxUid: 223 round 2
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 3 leader 223 parent 68 1 0 2
-[68]
-[]
-
-Thread_68 start. round 2 leader 223 parent 223 0 0 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 68 round 2
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 223 round 1
-Thread_68 processing mType Explore Sender id: 223 maxUid: 239 round 2
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 3 leader 239 parent 223 1 0 2
-[223]
-[]
-
-Thread_223 start. round 2 leader 239 parent 239 0 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 223 round 2
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 239 round 1
-Thread_223 processing mType Explore Sender id: 239 maxUid: 261 round 2
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 3 leader 261 parent 239 1 0 2
-[239]
-[]
-
-Thread_239 start. round 2 leader 261 parent 261 0 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 239 round 2
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 261 round 1
-Thread_239 processing mType Explore Sender id: 261 maxUid: 263 round 2
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 3 leader 263 parent 261 1 0 2
-[261]
-[]
-
-Thread_261 start. round 2 leader 263 parent 263 0 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 261 round 2
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 263 round 1
-Thread_261 processing mType Explore Sender id: 263 maxUid: 402 round 2
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 3 leader 402 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 2 leader 402 parent 402 0 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 263 round 2
-Send N_ACK to 261
-Thread_263 processing mType N_ACK Sender id: 402 maxUid: 402 round 1
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 3 leader 402 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 2 leader 402 parent 402 0 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 357 round 1
-Thread_354 processing mType Explore Sender id: 357 maxUid: 381 round 2
-Send N_ACK to 357
-Thread_354 processing mType N_ACK Sender id: 402 maxUid: 402 round 1
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 3 leader 402 parent 402 1 0 2
-[402]
-[]
-
-Thread_357 start. round 2 leader 381 parent 381 0 0 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 402 round 2
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 381 round 1
-Thread_357 processing mType Explore Sender id: 381 maxUid: 409 round 2
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 3 leader 409 parent 381 0 0 2
-[]
-[]
-
-Thread_381 start. round 2 leader 409 parent 409 0 0 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 381 round 2
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 409 round 1
-Thread_381 processing mType Explore Sender id: 409 maxUid: 440 round 2
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 3 leader 440 parent 409 1 0 2
-[409]
-[]
-
-Thread_402 start. round 2 leader 402 parent -1 0 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 402 round 2
-Thread_402 processing mType Explore Sender id: 354 maxUid: 402 round 2
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Thread_402 stop. round 3 leader 402 parent -1 0 0 2
-[]
-[]
-
-Thread_409 start. round 2 leader 440 parent 440 0 0 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 409 round 2
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 440 round 1
-Thread_409 processing mType Explore Sender id: 440 maxUid: 504 round 2
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 3 leader 504 parent 440 1 0 2
-[440]
-[]
-
-Thread_440 start. round 2 leader 504 parent 504 0 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 440 round 2
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 504 round 1
-Thread_440 processing mType Explore Sender id: 504 maxUid: 663 round 2
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 3 leader 663 parent 504 1 0 2
-[504]
-[]
-
-Thread_504 start. round 2 leader 663 parent 663 0 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 504 round 2
-Send N_ACK to 440
-Thread_504 processing mType N_ACK Sender id: 663 maxUid: 663 round 1
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 663
-Send explore to 440
-Thread_504 stop. round 3 leader 663 parent 663 1 0 2
-[663]
-[]
-
-Thread_571 start. round 2 leader 663 parent 663 0 0 1
-Thread_571 processing mType N_ACK Sender id: 663 maxUid: 663 round 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Send explore to 663
-Send ACK to parent 663
-Thread_571 stop. round 3 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 2 leader 663 parent -1 0 0 2
-Thread_663 processing mType Explore Sender id: 504 maxUid: 663 round 2
-Thread_663 processing mType Explore Sender id: 571 maxUid: 663 round 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 3
-Thread_663 stop. round 3 leader 663 parent -1 0 0 2
-[]
-[]
-
-Master checking its queue. Size of queue is: 19 round 3
-mType Done Sender id: 3 maxUid: 61 round 3
-mType Done Sender id: 29 maxUid: 65 round 3
-mType Done Sender id: 61 maxUid: 66 round 3
-mType Done Sender id: 65 maxUid: 68 round 3
-mType Done Sender id: 66 maxUid: 223 round 3
-mType Done Sender id: 68 maxUid: 239 round 3
-mType Done Sender id: 223 maxUid: 261 round 3
-mType Done Sender id: 239 maxUid: 263 round 3
-mType Done Sender id: 261 maxUid: 402 round 3
-mType Done Sender id: 263 maxUid: 402 round 3
-mType Done Sender id: 354 maxUid: 402 round 3
-mType Done Sender id: 357 maxUid: 409 round 3
-mType Done Sender id: 381 maxUid: 440 round 3
-mType Done Sender id: 402 maxUid: 402 round 3
-mType Done Sender id: 409 maxUid: 504 round 3
-mType Done Sender id: 440 maxUid: 663 round 3
-mType Done Sender id: 504 maxUid: 663 round 3
-mType Done Sender id: 571 maxUid: 663 round 3
-mType Done Sender id: 663 maxUid: 663 round 3
-Starting threads. 
-Thread_3 start. round 3 leader 61 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 61 round 2
-Thread_3 processing mType Explore Sender id: 29 maxUid: 65 round 3
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 29
-Thread_3 stop. round 4 leader 65 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 3 leader 65 parent 61 1 0 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 61 round 3
-Send N_ACK to 3
-Thread_29 processing mType ACK Sender id: 3 maxUid: 61 round 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 65 round 2
-Thread_29 processing mType Explore Sender id: 61 maxUid: 66 round 3
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 3
-Send explore to 61
-Send ACK to parent 61
-Thread_29 stop. round 4 leader 66 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 3 leader 66 parent 65 1 0 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 65 round 3
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 66 round 2
-Thread_61 processing mType Explore Sender id: 65 maxUid: 68 round 3
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 4 leader 68 parent 65 1 0 2
-[65]
-[]
-
-Thread_65 start. round 3 leader 68 parent 66 1 0 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 66 round 3
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 68 round 2
-Thread_65 processing mType Explore Sender id: 66 maxUid: 223 round 3
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 4 leader 223 parent 66 1 0 2
-[66]
-[]
-
-Thread_66 start. round 3 leader 223 parent 68 1 0 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 68 round 3
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 223 round 2
-Thread_66 processing mType Explore Sender id: 68 maxUid: 239 round 3
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 4 leader 239 parent 68 1 0 2
-[68]
-[]
-
-Thread_68 start. round 3 leader 239 parent 223 1 0 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 223 round 3
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 239 round 2
-Thread_68 processing mType Explore Sender id: 223 maxUid: 261 round 3
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 4 leader 261 parent 223 1 0 2
-[223]
-[]
-
-Thread_223 start. round 3 leader 261 parent 239 1 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 239 round 3
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 261 round 2
-Thread_223 processing mType Explore Sender id: 239 maxUid: 263 round 3
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 4 leader 263 parent 239 1 0 2
-[239]
-[]
-
-Thread_239 start. round 3 leader 263 parent 261 1 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 261 round 3
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 263 round 2
-Thread_239 processing mType Explore Sender id: 261 maxUid: 402 round 3
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 4 leader 402 parent 261 1 0 2
-[261]
-[]
-
-Thread_261 start. round 3 leader 402 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 263 round 3
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 402 round 2
-Thread_261 processing mType Explore Sender id: 263 maxUid: 402 round 3
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 4 leader 402 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 3 leader 402 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 402 round 3
-Send N_ACK to 261
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Thread_263 stop. round 4 leader 402 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 3 leader 402 parent 402 1 0 2
-Thread_354 processing mType Explore Sender id: 357 maxUid: 409 round 3
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 4 leader 409 parent 357 1 0 2
-[402]
-[]
-
-Thread_357 start. round 3 leader 409 parent 381 0 0 2
-Thread_357 processing mType N_ACK Sender id: 354 maxUid: 402 round 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 402 round 3
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 409 round 2
-Thread_357 processing mType Explore Sender id: 381 maxUid: 440 round 3
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 4 leader 440 parent 381 1 0 2
-[381]
-[]
-
-Thread_381 start. round 3 leader 440 parent 409 1 0 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 409 round 3
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 440 round 2
-Thread_381 processing mType Explore Sender id: 409 maxUid: 504 round 3
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 4 leader 504 parent 409 1 0 2
-[409]
-[]
-
-Thread_402 start. round 3 leader 402 parent -1 0 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 402 round 3
-Thread_402 processing mType Explore Sender id: 354 maxUid: 402 round 3
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Thread_402 stop. round 4 leader 402 parent -1 0 0 2
-[]
-[]
-
-Thread_409 start. round 3 leader 504 parent 440 1 0 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 440 round 3
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 504 round 2
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 3
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 4 leader 663 parent 440 1 0 2
-[440]
-[]
-
-Thread_440 start. round 3 leader 663 parent 504 1 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 504 round 3
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 2
-Thread_440 processing mType Explore Sender id: 504 maxUid: 663 round 3
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 4 leader 663 parent 504 1 0 2
-[504]
-[]
-
-Thread_504 start. round 3 leader 663 parent 663 1 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 3
-Send N_ACK to 440
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Thread_504 stop. round 4 leader 663 parent 663 1 0 2
-[663]
-[]
-
-Thread_571 start. round 3 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Thread_571 stop. round 4 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 3 leader 663 parent -1 0 0 2
-Thread_663 processing mType Explore Sender id: 504 maxUid: 663 round 3
-Thread_663 processing mType Explore Sender id: 571 maxUid: 663 round 3
-Thread_663 processing mType ACK Sender id: 571 maxUid: 663 round 3
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 4
-Thread_663 stop. round 4 leader 663 parent -1 0 1 2
-[]
-[571]
-
-Master checking its queue. Size of queue is: 19 round 4
-mType Done Sender id: 3 maxUid: 65 round 4
-mType Done Sender id: 29 maxUid: 66 round 4
-mType Done Sender id: 61 maxUid: 68 round 4
-mType Done Sender id: 65 maxUid: 223 round 4
-mType Done Sender id: 66 maxUid: 239 round 4
-mType Done Sender id: 68 maxUid: 261 round 4
-mType Done Sender id: 223 maxUid: 263 round 4
-mType Done Sender id: 239 maxUid: 402 round 4
-mType Done Sender id: 261 maxUid: 402 round 4
-mType Done Sender id: 263 maxUid: 402 round 4
-mType Done Sender id: 354 maxUid: 409 round 4
-mType Done Sender id: 357 maxUid: 440 round 4
-mType Done Sender id: 381 maxUid: 504 round 4
-mType Done Sender id: 402 maxUid: 402 round 4
-mType Done Sender id: 409 maxUid: 663 round 4
-mType Done Sender id: 440 maxUid: 663 round 4
-mType Done Sender id: 504 maxUid: 663 round 4
-mType Done Sender id: 571 maxUid: 663 round 4
-mType Done Sender id: 663 maxUid: 663 round 4
-Starting threads. 
-Thread_3 start. round 4 leader 65 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 65 round 3
-Thread_3 processing mType Explore Sender id: 29 maxUid: 66 round 4
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 29
-Thread_3 stop. round 5 leader 66 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 4 leader 66 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 65 round 4
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 66 round 3
-Thread_29 processing mType Explore Sender id: 61 maxUid: 68 round 4
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 5 leader 68 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 4 leader 68 parent 65 1 0 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 66 round 4
-Send N_ACK to 29
-Thread_61 processing mType ACK Sender id: 29 maxUid: 66 round 4
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 68 round 3
-Thread_61 processing mType Explore Sender id: 65 maxUid: 223 round 4
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 65
-Send explore to 29
-Send ACK to parent 65
-Thread_61 stop. round 5 leader 223 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 4 leader 223 parent 66 1 0 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 68 round 4
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 223 round 3
-Thread_65 processing mType Explore Sender id: 66 maxUid: 239 round 4
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 5 leader 239 parent 66 1 0 2
-[66]
-[]
-
-Thread_66 start. round 4 leader 239 parent 68 1 0 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 223 round 4
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 239 round 3
-Thread_66 processing mType Explore Sender id: 68 maxUid: 261 round 4
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 5 leader 261 parent 68 1 0 2
-[68]
-[]
-
-Thread_68 start. round 4 leader 261 parent 223 1 0 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 239 round 4
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 261 round 3
-Thread_68 processing mType Explore Sender id: 223 maxUid: 263 round 4
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 5 leader 263 parent 223 1 0 2
-[223]
-[]
-
-Thread_223 start. round 4 leader 263 parent 239 1 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 261 round 4
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 263 round 3
-Thread_223 processing mType Explore Sender id: 239 maxUid: 402 round 4
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 5 leader 402 parent 239 1 0 2
-[239]
-[]
-
-Thread_239 start. round 4 leader 402 parent 261 1 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 263 round 4
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 402 round 3
-Thread_239 processing mType Explore Sender id: 261 maxUid: 402 round 4
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 5 leader 402 parent 261 1 0 2
-[261]
-[]
-
-Thread_261 start. round 4 leader 402 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 402 round 4
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 402 round 3
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 5 leader 402 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 4 leader 402 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 402 round 4
-Send N_ACK to 261
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Thread_263 stop. round 5 leader 402 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 4 leader 409 parent 357 1 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 409 round 3
-Thread_354 processing mType Explore Sender id: 357 maxUid: 440 round 4
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 402
-Send explore to 357
-Send ACK to parent 357
-Thread_354 stop. round 5 leader 440 parent 357 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 4 leader 440 parent 381 1 0 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 409 round 4
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 440 round 3
-Thread_357 processing mType Explore Sender id: 381 maxUid: 504 round 4
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 5 leader 504 parent 381 1 0 2
-[381]
-[]
-
-Thread_381 start. round 4 leader 504 parent 409 1 0 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 440 round 4
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 504 round 3
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 4
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 5 leader 663 parent 409 1 0 2
-[409]
-[]
-
-Thread_402 start. round 4 leader 402 parent -1 0 0 2
-Thread_402 processing mType Explore Sender id: 354 maxUid: 409 round 4
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 354
-Send explore to 263
-Thread_402 stop. round 5 leader 409 parent 354 0 0 2
-[]
-[]
-
-Thread_409 start. round 4 leader 663 parent 440 1 0 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 504 round 4
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 3
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 4
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 5 leader 663 parent 440 1 0 2
-[440]
-[]
-
-Thread_440 start. round 4 leader 663 parent 504 1 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 4
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 3
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 5 leader 663 parent 504 1 0 2
-[504]
-[]
-
-Thread_504 start. round 4 leader 663 parent 663 1 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 4
-Send N_ACK to 440
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Thread_504 stop. round 5 leader 663 parent 663 1 0 2
-[663]
-[]
-
-Thread_571 start. round 4 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Thread_571 stop. round 5 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 4 leader 663 parent -1 0 1 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 5
-Thread_663 stop. round 5 leader 663 parent -1 0 1 2
-[]
-[571]
-
-Master checking its queue. Size of queue is: 19 round 5
-mType Done Sender id: 3 maxUid: 66 round 5
-mType Done Sender id: 29 maxUid: 68 round 5
-mType Done Sender id: 61 maxUid: 223 round 5
-mType Done Sender id: 65 maxUid: 239 round 5
-mType Done Sender id: 66 maxUid: 261 round 5
-mType Done Sender id: 68 maxUid: 263 round 5
-mType Done Sender id: 223 maxUid: 402 round 5
-mType Done Sender id: 239 maxUid: 402 round 5
-mType Done Sender id: 261 maxUid: 402 round 5
-mType Done Sender id: 263 maxUid: 402 round 5
-mType Done Sender id: 354 maxUid: 440 round 5
-mType Done Sender id: 357 maxUid: 504 round 5
-mType Done Sender id: 381 maxUid: 663 round 5
-mType Done Sender id: 402 maxUid: 409 round 5
-mType Done Sender id: 409 maxUid: 663 round 5
-mType Done Sender id: 440 maxUid: 663 round 5
-mType Done Sender id: 504 maxUid: 663 round 5
-mType Done Sender id: 571 maxUid: 663 round 5
-mType Done Sender id: 663 maxUid: 663 round 5
-Starting threads. 
-Thread_3 start. round 5 leader 66 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 66 round 4
-Thread_3 processing mType Explore Sender id: 29 maxUid: 68 round 5
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 29
-Thread_3 stop. round 6 leader 68 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 5 leader 68 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 66 round 5
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 68 round 4
-Thread_29 processing mType Explore Sender id: 61 maxUid: 223 round 5
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 6 leader 223 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 5 leader 223 parent 65 1 1 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 68 round 5
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 223 round 4
-Thread_61 processing mType Explore Sender id: 65 maxUid: 239 round 5
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 6 leader 239 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 5 leader 239 parent 66 1 0 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 223 round 5
-Send N_ACK to 61
-Thread_65 processing mType ACK Sender id: 61 maxUid: 223 round 5
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 239 round 4
-Thread_65 processing mType Explore Sender id: 66 maxUid: 261 round 5
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 66
-Send explore to 61
-Send ACK to parent 66
-Thread_65 stop. round 6 leader 261 parent 66 1 1 2
-[66]
-[61]
-
-Thread_66 start. round 5 leader 261 parent 68 1 0 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 239 round 5
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 261 round 4
-Thread_66 processing mType Explore Sender id: 68 maxUid: 263 round 5
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 6 leader 263 parent 68 1 0 2
-[68]
-[]
-
-Thread_68 start. round 5 leader 263 parent 223 1 0 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 261 round 5
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 263 round 4
-Thread_68 processing mType Explore Sender id: 223 maxUid: 402 round 5
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 6 leader 402 parent 223 1 0 2
-[223]
-[]
-
-Thread_223 start. round 5 leader 402 parent 239 1 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 263 round 5
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 402 round 4
-Thread_223 processing mType Explore Sender id: 239 maxUid: 402 round 5
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 6 leader 402 parent 239 1 0 2
-[239]
-[]
-
-Thread_239 start. round 5 leader 402 parent 261 1 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 402 round 5
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 402 round 4
-Thread_239 processing mType Explore Sender id: 261 maxUid: 402 round 5
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 6 leader 402 parent 261 1 0 2
-[261]
-[]
-
-Thread_261 start. round 5 leader 402 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 402 round 5
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 402 round 4
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 6 leader 402 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 5 leader 402 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 402 round 5
-Send N_ACK to 261
-Thread_263 processing mType Explore Sender id: 402 maxUid: 409 round 5
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 6 leader 409 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 5 leader 440 parent 357 2 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 440 round 4
-Thread_354 processing mType Explore Sender id: 357 maxUid: 504 round 5
-Thread_354 processing mType Explore Sender id: 402 maxUid: 409 round 5
-Send N_ACK to 402
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 6 leader 504 parent 357 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 5 leader 504 parent 381 1 0 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 440 round 5
-Send N_ACK to 354
-Thread_357 processing mType ACK Sender id: 354 maxUid: 440 round 5
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 504 round 4
-Thread_357 processing mType Explore Sender id: 381 maxUid: 663 round 5
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 354
-Send explore to 381
-Send ACK to parent 381
-Thread_357 stop. round 6 leader 663 parent 381 1 1 2
-[381]
-[354]
-
-Thread_381 start. round 5 leader 663 parent 409 1 0 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 504 round 5
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 663 round 4
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 5
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 6 leader 663 parent 409 1 0 2
-[409]
-[]
-
-Thread_402 start. round 5 leader 409 parent 354 0 0 2
-Thread_402 processing mType Explore Sender id: 354 maxUid: 440 round 5
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 354
-Send explore to 263
-Thread_402 stop. round 6 leader 440 parent 354 0 0 2
-[]
-[]
-
-Thread_409 start. round 5 leader 663 parent 440 1 0 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 663 round 5
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 4
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 5
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 6 leader 663 parent 440 1 0 2
-[440]
-[]
-
-Thread_440 start. round 5 leader 663 parent 504 1 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 5
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 4
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 6 leader 663 parent 504 1 0 2
-[504]
-[]
-
-Thread_504 start. round 5 leader 663 parent 663 1 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 5
-Send N_ACK to 440
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Thread_504 stop. round 6 leader 663 parent 663 1 0 2
-[663]
-[]
-
-Thread_571 start. round 5 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Thread_571 stop. round 6 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 5 leader 663 parent -1 0 1 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 6
-Thread_663 stop. round 6 leader 663 parent -1 0 1 2
-[]
-[571]
-
-Master checking its queue. Size of queue is: 19 round 6
-mType Done Sender id: 3 maxUid: 68 round 6
-mType Done Sender id: 29 maxUid: 223 round 6
-mType Done Sender id: 61 maxUid: 239 round 6
-mType Done Sender id: 65 maxUid: 261 round 6
-mType Done Sender id: 66 maxUid: 263 round 6
-mType Done Sender id: 68 maxUid: 402 round 6
-mType Done Sender id: 223 maxUid: 402 round 6
-mType Done Sender id: 239 maxUid: 402 round 6
-mType Done Sender id: 261 maxUid: 402 round 6
-mType Done Sender id: 263 maxUid: 409 round 6
-mType Done Sender id: 354 maxUid: 504 round 6
-mType Done Sender id: 357 maxUid: 663 round 6
-mType Done Sender id: 381 maxUid: 663 round 6
-mType Done Sender id: 402 maxUid: 440 round 6
-mType Done Sender id: 409 maxUid: 663 round 6
-mType Done Sender id: 440 maxUid: 663 round 6
-mType Done Sender id: 504 maxUid: 663 round 6
-mType Done Sender id: 571 maxUid: 663 round 6
-mType Done Sender id: 663 maxUid: 663 round 6
-Starting threads. 
-Thread_3 start. round 6 leader 68 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 68 round 5
-Thread_3 processing mType Explore Sender id: 29 maxUid: 223 round 6
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 29
-Thread_3 stop. round 7 leader 223 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 6 leader 223 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 68 round 6
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 223 round 5
-Thread_29 processing mType Explore Sender id: 61 maxUid: 239 round 6
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 7 leader 239 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 6 leader 239 parent 65 1 1 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 223 round 6
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 239 round 5
-Thread_61 processing mType Explore Sender id: 65 maxUid: 261 round 6
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 7 leader 261 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 6 leader 261 parent 66 1 1 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 239 round 6
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 261 round 5
-Thread_65 processing mType Explore Sender id: 66 maxUid: 263 round 6
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 7 leader 263 parent 66 1 1 2
-[66]
-[61]
-
-Thread_66 start. round 6 leader 263 parent 68 1 0 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 261 round 6
-Send N_ACK to 65
-Thread_66 processing mType ACK Sender id: 65 maxUid: 261 round 6
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 263 round 5
-Thread_66 processing mType Explore Sender id: 68 maxUid: 402 round 6
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 65
-Send explore to 68
-Send ACK to parent 68
-Thread_66 stop. round 7 leader 402 parent 68 1 1 2
-[68]
-[65]
-
-Thread_68 start. round 6 leader 402 parent 223 1 0 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 263 round 6
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 402 round 5
-Thread_68 processing mType Explore Sender id: 223 maxUid: 402 round 6
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 7 leader 402 parent 223 1 0 2
-[223]
-[]
-
-Thread_223 start. round 6 leader 402 parent 239 1 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 402 round 6
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 402 round 5
-Thread_223 processing mType Explore Sender id: 239 maxUid: 402 round 6
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 7 leader 402 parent 239 1 0 2
-[239]
-[]
-
-Thread_239 start. round 6 leader 402 parent 261 1 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 402 round 6
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 402 round 5
-Thread_239 processing mType Explore Sender id: 261 maxUid: 402 round 6
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 7 leader 402 parent 261 1 0 2
-[261]
-[]
-
-Thread_261 start. round 6 leader 402 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 402 round 6
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 402 round 5
-Thread_261 processing mType Explore Sender id: 263 maxUid: 409 round 6
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 7 leader 409 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 6 leader 409 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 402 round 6
-Send N_ACK to 261
-Thread_263 processing mType Explore Sender id: 402 maxUid: 440 round 6
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 7 leader 440 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 6 leader 504 parent 357 2 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 504 round 5
-Thread_354 processing mType Explore Sender id: 357 maxUid: 663 round 6
-Thread_354 processing mType Explore Sender id: 402 maxUid: 440 round 6
-Send N_ACK to 402
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 7 leader 663 parent 357 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 6 leader 663 parent 381 1 1 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 504 round 6
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 663 round 5
-Thread_357 processing mType Explore Sender id: 381 maxUid: 663 round 6
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 7 leader 663 parent 381 1 1 2
-[381]
-[354]
-
-Thread_381 start. round 6 leader 663 parent 409 1 0 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 663 round 6
-Send N_ACK to 357
-Thread_381 processing mType ACK Sender id: 357 maxUid: 663 round 6
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 663 round 5
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 6
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 357
-Send explore to 409
-Send ACK to parent 409
-Thread_381 stop. round 7 leader 663 parent 409 1 1 2
-[409]
-[357]
-
-Thread_402 start. round 6 leader 440 parent 354 0 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 409 round 6
-Send N_ACK to 263
-Thread_402 processing mType N_ACK Sender id: 354 maxUid: 504 round 5
-Thread_402 processing mType Explore Sender id: 354 maxUid: 504 round 6
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 354
-Send explore to 263
-Thread_402 stop. round 7 leader 504 parent 354 1 0 2
-[354]
-[]
-
-Thread_409 start. round 6 leader 663 parent 440 1 0 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 663 round 6
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 5
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 6
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 7 leader 663 parent 440 1 0 2
-[440]
-[]
-
-Thread_440 start. round 6 leader 663 parent 504 1 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 6
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 5
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 7 leader 663 parent 504 1 0 2
-[504]
-[]
-
-Thread_504 start. round 6 leader 663 parent 663 1 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 6
-Send N_ACK to 440
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Thread_504 stop. round 7 leader 663 parent 663 1 0 2
-[663]
-[]
-
-Thread_571 start. round 6 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Thread_571 stop. round 7 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 6 leader 663 parent -1 0 1 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 7
-Thread_663 stop. round 7 leader 663 parent -1 0 1 2
-[]
-[571]
-
-Master checking its queue. Size of queue is: 19 round 7
-mType Done Sender id: 3 maxUid: 223 round 7
-mType Done Sender id: 29 maxUid: 239 round 7
-mType Done Sender id: 61 maxUid: 261 round 7
-mType Done Sender id: 65 maxUid: 263 round 7
-mType Done Sender id: 66 maxUid: 402 round 7
-mType Done Sender id: 68 maxUid: 402 round 7
-mType Done Sender id: 223 maxUid: 402 round 7
-mType Done Sender id: 239 maxUid: 402 round 7
-mType Done Sender id: 261 maxUid: 409 round 7
-mType Done Sender id: 263 maxUid: 440 round 7
-mType Done Sender id: 354 maxUid: 663 round 7
-mType Done Sender id: 357 maxUid: 663 round 7
-mType Done Sender id: 381 maxUid: 663 round 7
-mType Done Sender id: 402 maxUid: 504 round 7
-mType Done Sender id: 409 maxUid: 663 round 7
-mType Done Sender id: 440 maxUid: 663 round 7
-mType Done Sender id: 504 maxUid: 663 round 7
-mType Done Sender id: 571 maxUid: 663 round 7
-mType Done Sender id: 663 maxUid: 663 round 7
-Starting threads. 
-Thread_3 start. round 7 leader 223 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 223 round 6
-Thread_3 processing mType Explore Sender id: 29 maxUid: 239 round 7
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 29
-Thread_3 stop. round 8 leader 239 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 7 leader 239 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 223 round 7
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 239 round 6
-Thread_29 processing mType Explore Sender id: 61 maxUid: 261 round 7
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 8 leader 261 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 7 leader 261 parent 65 1 1 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 239 round 7
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 261 round 6
-Thread_61 processing mType Explore Sender id: 65 maxUid: 263 round 7
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 8 leader 263 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 7 leader 263 parent 66 1 1 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 261 round 7
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 263 round 6
-Thread_65 processing mType Explore Sender id: 66 maxUid: 402 round 7
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 8 leader 402 parent 66 1 1 2
-[66]
-[61]
-
-Thread_66 start. round 7 leader 402 parent 68 1 1 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 263 round 7
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 402 round 6
-Thread_66 processing mType Explore Sender id: 68 maxUid: 402 round 7
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 8 leader 402 parent 68 1 1 2
-[68]
-[65]
-
-Thread_68 start. round 7 leader 402 parent 223 1 0 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 402 round 7
-Send N_ACK to 66
-Thread_68 processing mType ACK Sender id: 66 maxUid: 402 round 7
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 402 round 6
-Thread_68 processing mType Explore Sender id: 223 maxUid: 402 round 7
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 66
-Send explore to 223
-Send ACK to parent 223
-Thread_68 stop. round 8 leader 402 parent 223 1 1 2
-[223]
-[66]
-
-Thread_223 start. round 7 leader 402 parent 239 1 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 402 round 7
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 402 round 6
-Thread_223 processing mType Explore Sender id: 239 maxUid: 402 round 7
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 8 leader 402 parent 239 1 0 2
-[239]
-[]
-
-Thread_239 start. round 7 leader 402 parent 261 1 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 402 round 7
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 402 round 6
-Thread_239 processing mType Explore Sender id: 261 maxUid: 409 round 7
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 8 leader 409 parent 261 1 0 2
-[261]
-[]
-
-Thread_261 start. round 7 leader 409 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 402 round 7
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 409 round 6
-Thread_261 processing mType Explore Sender id: 263 maxUid: 440 round 7
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 8 leader 440 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 7 leader 440 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 409 round 7
-Send N_ACK to 261
-Thread_263 processing mType N_ACK Sender id: 402 maxUid: 440 round 6
-Thread_263 processing mType Explore Sender id: 402 maxUid: 504 round 7
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 8 leader 504 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 7 leader 663 parent 357 2 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 663 round 6
-Thread_354 processing mType Explore Sender id: 357 maxUid: 663 round 7
-Thread_354 processing mType Explore Sender id: 402 maxUid: 504 round 7
-Send N_ACK to 402
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 8 leader 663 parent 357 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 7 leader 663 parent 381 1 1 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 663 round 7
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 663 round 6
-Thread_357 processing mType Explore Sender id: 381 maxUid: 663 round 7
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 8 leader 663 parent 381 1 1 2
-[381]
-[354]
-
-Thread_381 start. round 7 leader 663 parent 409 1 1 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 663 round 7
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 663 round 6
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 7
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 8 leader 663 parent 409 1 1 2
-[409]
-[357]
-
-Thread_402 start. round 7 leader 504 parent 354 1 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 440 round 7
-Send N_ACK to 263
-Thread_402 processing mType N_ACK Sender id: 354 maxUid: 663 round 6
-Thread_402 processing mType Explore Sender id: 354 maxUid: 663 round 7
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 354
-Send explore to 263
-Thread_402 stop. round 8 leader 663 parent 354 1 0 2
-[354]
-[]
-
-Thread_409 start. round 7 leader 663 parent 440 1 0 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 663 round 7
-Send N_ACK to 381
-Thread_409 processing mType ACK Sender id: 381 maxUid: 663 round 7
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 6
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 7
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 440
-Send explore to 381
-Send ACK to parent 440
-Thread_409 stop. round 8 leader 663 parent 440 1 1 2
-[440]
-[381]
-
-Thread_440 start. round 7 leader 663 parent 504 1 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 7
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 6
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 8 leader 663 parent 504 1 0 2
-[504]
-[]
-
-Thread_504 start. round 7 leader 663 parent 663 1 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 7
-Send N_ACK to 440
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Thread_504 stop. round 8 leader 663 parent 663 1 0 2
-[663]
-[]
-
-Thread_571 start. round 7 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Thread_571 stop. round 8 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 7 leader 663 parent -1 0 1 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 8
-Thread_663 stop. round 8 leader 663 parent -1 0 1 2
-[]
-[571]
-
-Master checking its queue. Size of queue is: 19 round 8
-mType Done Sender id: 3 maxUid: 239 round 8
-mType Done Sender id: 29 maxUid: 261 round 8
-mType Done Sender id: 61 maxUid: 263 round 8
-mType Done Sender id: 65 maxUid: 402 round 8
-mType Done Sender id: 66 maxUid: 402 round 8
-mType Done Sender id: 68 maxUid: 402 round 8
-mType Done Sender id: 223 maxUid: 402 round 8
-mType Done Sender id: 239 maxUid: 409 round 8
-mType Done Sender id: 261 maxUid: 440 round 8
-mType Done Sender id: 263 maxUid: 504 round 8
-mType Done Sender id: 354 maxUid: 663 round 8
-mType Done Sender id: 357 maxUid: 663 round 8
-mType Done Sender id: 381 maxUid: 663 round 8
-mType Done Sender id: 402 maxUid: 663 round 8
-mType Done Sender id: 409 maxUid: 663 round 8
-mType Done Sender id: 440 maxUid: 663 round 8
-mType Done Sender id: 504 maxUid: 663 round 8
-mType Done Sender id: 571 maxUid: 663 round 8
-mType Done Sender id: 663 maxUid: 663 round 8
-Starting threads. 
-Thread_3 start. round 8 leader 239 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 239 round 7
-Thread_3 processing mType Explore Sender id: 29 maxUid: 261 round 8
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 29
-Thread_3 stop. round 9 leader 261 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 8 leader 261 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 239 round 8
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 261 round 7
-Thread_29 processing mType Explore Sender id: 61 maxUid: 263 round 8
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 9 leader 263 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 8 leader 263 parent 65 1 1 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 261 round 8
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 263 round 7
-Thread_61 processing mType Explore Sender id: 65 maxUid: 402 round 8
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 9 leader 402 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 8 leader 402 parent 66 1 1 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 263 round 8
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 402 round 7
-Thread_65 processing mType Explore Sender id: 66 maxUid: 402 round 8
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 9 leader 402 parent 66 1 1 2
-[66]
-[61]
-
-Thread_66 start. round 8 leader 402 parent 68 1 1 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 402 round 8
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 402 round 7
-Thread_66 processing mType Explore Sender id: 68 maxUid: 402 round 8
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 9 leader 402 parent 68 1 1 2
-[68]
-[65]
-
-Thread_68 start. round 8 leader 402 parent 223 1 1 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 402 round 8
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 402 round 7
-Thread_68 processing mType Explore Sender id: 223 maxUid: 402 round 8
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 9 leader 402 parent 223 1 1 2
-[223]
-[66]
-
-Thread_223 start. round 8 leader 402 parent 239 1 0 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 402 round 8
-Send N_ACK to 68
-Thread_223 processing mType ACK Sender id: 68 maxUid: 402 round 8
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 402 round 7
-Thread_223 processing mType Explore Sender id: 239 maxUid: 409 round 8
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 68
-Send explore to 239
-Send ACK to parent 239
-Thread_223 stop. round 9 leader 409 parent 239 1 1 2
-[239]
-[68]
-
-Thread_239 start. round 8 leader 409 parent 261 1 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 402 round 8
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 409 round 7
-Thread_239 processing mType Explore Sender id: 261 maxUid: 440 round 8
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 9 leader 440 parent 261 1 0 2
-[261]
-[]
-
-Thread_261 start. round 8 leader 440 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 409 round 8
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 440 round 7
-Thread_261 processing mType Explore Sender id: 263 maxUid: 504 round 8
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 9 leader 504 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 8 leader 504 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 440 round 8
-Send N_ACK to 261
-Thread_263 processing mType N_ACK Sender id: 402 maxUid: 504 round 7
-Thread_263 processing mType Explore Sender id: 402 maxUid: 663 round 8
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 9 leader 663 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 8 leader 663 parent 357 2 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 663 round 7
-Thread_354 processing mType Explore Sender id: 357 maxUid: 663 round 8
-Thread_354 processing mType Explore Sender id: 402 maxUid: 663 round 8
-Send N_ACK to 357
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 9 leader 663 parent 402 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 8 leader 663 parent 381 1 1 2
-Thread_357 processing mType Explore Sender id: 354 maxUid: 663 round 8
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 663 round 7
-Thread_357 processing mType Explore Sender id: 381 maxUid: 663 round 8
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 9 leader 663 parent 381 1 1 2
-[381]
-[354]
-
-Thread_381 start. round 8 leader 663 parent 409 1 1 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 663 round 8
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 663 round 7
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 8
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 9 leader 663 parent 409 1 1 2
-[409]
-[357]
-
-Thread_402 start. round 8 leader 663 parent 354 1 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 504 round 8
-Send N_ACK to 263
-Thread_402 processing mType N_ACK Sender id: 354 maxUid: 663 round 7
-Thread_402 processing mType Explore Sender id: 354 maxUid: 663 round 8
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 354
-Send explore to 263
-Thread_402 stop. round 9 leader 663 parent 354 1 0 2
-[354]
-[]
-
-Thread_409 start. round 8 leader 663 parent 440 1 1 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 663 round 8
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 7
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 8
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 9 leader 663 parent 440 1 1 2
-[440]
-[381]
-
-Thread_440 start. round 8 leader 663 parent 504 1 0 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 8
-Send N_ACK to 409
-Thread_440 processing mType ACK Sender id: 409 maxUid: 663 round 8
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 7
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Send explore to 504
-Send explore to 409
-Send ACK to parent 504
-Thread_440 stop. round 9 leader 663 parent 504 1 1 2
-[504]
-[409]
-
-Thread_504 start. round 8 leader 663 parent 663 1 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 8
-Send N_ACK to 440
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Thread_504 stop. round 9 leader 663 parent 663 1 0 2
-[663]
-[]
-
-Thread_571 start. round 8 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Thread_571 stop. round 9 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 8 leader 663 parent -1 0 1 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 9
-Thread_663 stop. round 9 leader 663 parent -1 0 1 2
-[]
-[571]
-
-Master checking its queue. Size of queue is: 19 round 9
-mType Done Sender id: 3 maxUid: 261 round 9
-mType Done Sender id: 29 maxUid: 263 round 9
-mType Done Sender id: 61 maxUid: 402 round 9
-mType Done Sender id: 65 maxUid: 402 round 9
-mType Done Sender id: 66 maxUid: 402 round 9
-mType Done Sender id: 68 maxUid: 402 round 9
-mType Done Sender id: 223 maxUid: 409 round 9
-mType Done Sender id: 239 maxUid: 440 round 9
-mType Done Sender id: 261 maxUid: 504 round 9
-mType Done Sender id: 263 maxUid: 663 round 9
-mType Done Sender id: 354 maxUid: 663 round 9
-mType Done Sender id: 357 maxUid: 663 round 9
-mType Done Sender id: 381 maxUid: 663 round 9
-mType Done Sender id: 402 maxUid: 663 round 9
-mType Done Sender id: 409 maxUid: 663 round 9
-mType Done Sender id: 440 maxUid: 663 round 9
-mType Done Sender id: 504 maxUid: 663 round 9
-mType Done Sender id: 571 maxUid: 663 round 9
-mType Done Sender id: 663 maxUid: 663 round 9
-Starting threads. 
-Thread_3 start. round 9 leader 261 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 261 round 8
-Thread_3 processing mType Explore Sender id: 29 maxUid: 263 round 9
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 29
-Thread_3 stop. round 10 leader 263 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 9 leader 263 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 261 round 9
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 263 round 8
-Thread_29 processing mType Explore Sender id: 61 maxUid: 402 round 9
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 10 leader 402 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 9 leader 402 parent 65 1 1 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 263 round 9
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 402 round 8
-Thread_61 processing mType Explore Sender id: 65 maxUid: 402 round 9
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 10 leader 402 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 9 leader 402 parent 66 1 1 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 402 round 9
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 402 round 8
-Thread_65 processing mType Explore Sender id: 66 maxUid: 402 round 9
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 10 leader 402 parent 66 1 1 2
-[66]
-[61]
-
-Thread_66 start. round 9 leader 402 parent 68 1 1 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 402 round 9
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 402 round 8
-Thread_66 processing mType Explore Sender id: 68 maxUid: 402 round 9
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 10 leader 402 parent 68 1 1 2
-[68]
-[65]
-
-Thread_68 start. round 9 leader 402 parent 223 1 1 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 402 round 9
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 402 round 8
-Thread_68 processing mType Explore Sender id: 223 maxUid: 409 round 9
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 10 leader 409 parent 223 1 1 2
-[223]
-[66]
-
-Thread_223 start. round 9 leader 409 parent 239 1 1 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 402 round 9
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 409 round 8
-Thread_223 processing mType Explore Sender id: 239 maxUid: 440 round 9
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 10 leader 440 parent 239 1 1 2
-[239]
-[68]
-
-Thread_239 start. round 9 leader 440 parent 261 1 0 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 409 round 9
-Send N_ACK to 223
-Thread_239 processing mType ACK Sender id: 223 maxUid: 409 round 9
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 440 round 8
-Thread_239 processing mType Explore Sender id: 261 maxUid: 504 round 9
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 261
-Send explore to 223
-Send ACK to parent 261
-Thread_239 stop. round 10 leader 504 parent 261 1 1 2
-[261]
-[223]
-
-Thread_261 start. round 9 leader 504 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 440 round 9
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 504 round 8
-Thread_261 processing mType Explore Sender id: 263 maxUid: 663 round 9
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 10 leader 663 parent 263 1 0 2
-[263]
-[]
-
-Thread_263 start. round 9 leader 663 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 504 round 9
-Send N_ACK to 261
-Thread_263 processing mType N_ACK Sender id: 402 maxUid: 663 round 8
-Thread_263 processing mType Explore Sender id: 402 maxUid: 663 round 9
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 10 leader 663 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 9 leader 663 parent 402 2 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 663 round 8
-Thread_354 processing mType Explore Sender id: 357 maxUid: 663 round 9
-Send N_ACK to 357
-Thread_354 processing mType Explore Sender id: 402 maxUid: 663 round 9
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 10 leader 663 parent 402 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 9 leader 663 parent 381 1 1 2
-Thread_357 processing mType N_ACK Sender id: 354 maxUid: 663 round 8
-Thread_357 processing mType Explore Sender id: 354 maxUid: 663 round 9
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 663 round 8
-Thread_357 processing mType Explore Sender id: 381 maxUid: 663 round 9
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 10 leader 663 parent 381 1 1 2
-[381]
-[354]
-
-Thread_381 start. round 9 leader 663 parent 409 1 1 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 663 round 9
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 663 round 8
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 9
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 10 leader 663 parent 409 1 1 2
-[409]
-[357]
-
-Thread_402 start. round 9 leader 663 parent 354 1 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 663 round 9
-Send N_ACK to 263
-Thread_402 processing mType Explore Sender id: 354 maxUid: 663 round 9
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Thread_402 stop. round 10 leader 663 parent 354 1 0 2
-[354]
-[]
-
-Thread_409 start. round 9 leader 663 parent 440 1 1 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 663 round 9
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 8
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 9
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 10 leader 663 parent 440 1 1 2
-[440]
-[381]
-
-Thread_440 start. round 9 leader 663 parent 504 1 1 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 9
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 8
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 10 leader 663 parent 504 1 1 2
-[504]
-[409]
-
-Thread_504 start. round 9 leader 663 parent 663 1 0 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 9
-Send N_ACK to 440
-Thread_504 processing mType ACK Sender id: 440 maxUid: 663 round 9
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Send ACK to parent 663
-Thread_504 stop. round 10 leader 663 parent 663 1 1 2
-[663]
-[440]
-
-Thread_571 start. round 9 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Thread_571 stop. round 10 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 9 leader 663 parent -1 0 1 2
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 10
-Thread_663 stop. round 10 leader 663 parent -1 0 1 2
-[]
-[571]
-
-Master checking its queue. Size of queue is: 19 round 10
-mType Done Sender id: 3 maxUid: 263 round 10
-mType Done Sender id: 29 maxUid: 402 round 10
-mType Done Sender id: 61 maxUid: 402 round 10
-mType Done Sender id: 65 maxUid: 402 round 10
-mType Done Sender id: 66 maxUid: 402 round 10
-mType Done Sender id: 68 maxUid: 409 round 10
-mType Done Sender id: 223 maxUid: 440 round 10
-mType Done Sender id: 239 maxUid: 504 round 10
-mType Done Sender id: 261 maxUid: 663 round 10
-mType Done Sender id: 263 maxUid: 663 round 10
-mType Done Sender id: 354 maxUid: 663 round 10
-mType Done Sender id: 357 maxUid: 663 round 10
-mType Done Sender id: 381 maxUid: 663 round 10
-mType Done Sender id: 402 maxUid: 663 round 10
-mType Done Sender id: 409 maxUid: 663 round 10
-mType Done Sender id: 440 maxUid: 663 round 10
-mType Done Sender id: 504 maxUid: 663 round 10
-mType Done Sender id: 571 maxUid: 663 round 10
-mType Done Sender id: 663 maxUid: 663 round 10
-Starting threads. 
-Thread_3 start. round 10 leader 263 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 263 round 9
-Thread_3 processing mType Explore Sender id: 29 maxUid: 402 round 10
-Thread_3 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 29
----Telling the master to die. Leader is: 663 round 11
-Thread_3 stop. round 11 leader 402 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 10 leader 402 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 263 round 10
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 402 round 9
-Thread_29 processing mType Explore Sender id: 61 maxUid: 402 round 10
-Thread_29 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 11 leader 402 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 10 leader 402 parent 65 1 1 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 402 round 10
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 402 round 9
-Thread_61 processing mType Explore Sender id: 65 maxUid: 402 round 10
-Thread_61 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 11 leader 402 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 10 leader 402 parent 66 1 1 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 402 round 10
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 402 round 9
-Thread_65 processing mType Explore Sender id: 66 maxUid: 402 round 10
-Thread_65 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 11 leader 402 parent 66 1 1 2
-[66]
-[61]
-
-Thread_66 start. round 10 leader 402 parent 68 1 1 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 402 round 10
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 402 round 9
-Thread_66 processing mType Explore Sender id: 68 maxUid: 409 round 10
-Thread_66 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 11 leader 409 parent 68 1 1 2
-[68]
-[65]
-
-Thread_68 start. round 10 leader 409 parent 223 1 1 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 402 round 10
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 409 round 9
-Thread_68 processing mType Explore Sender id: 223 maxUid: 440 round 10
-Thread_68 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 11 leader 440 parent 223 1 1 2
-[223]
-[66]
-
-Thread_223 start. round 10 leader 440 parent 239 1 1 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 409 round 10
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 440 round 9
-Thread_223 processing mType Explore Sender id: 239 maxUid: 504 round 10
-Thread_223 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 11 leader 504 parent 239 1 1 2
-[239]
-[68]
-
-Thread_239 start. round 10 leader 504 parent 261 1 1 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 440 round 10
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 504 round 9
-Thread_239 processing mType Explore Sender id: 261 maxUid: 663 round 10
-Thread_239 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 11 leader 663 parent 261 1 1 2
-[261]
-[223]
-
-Thread_261 start. round 10 leader 663 parent 263 1 0 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 504 round 10
-Send N_ACK to 239
-Thread_261 processing mType ACK Sender id: 239 maxUid: 504 round 10
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 663 round 9
-Thread_261 processing mType Explore Sender id: 263 maxUid: 663 round 10
-Thread_261 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 263
-Send explore to 239
-Send ACK to parent 263
-Thread_261 stop. round 11 leader 663 parent 263 1 1 2
-[263]
-[239]
-
-Thread_263 start. round 10 leader 663 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 663 round 10
-Send N_ACK to 261
-Thread_263 processing mType N_ACK Sender id: 402 maxUid: 663 round 9
-Thread_263 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 402
-Send explore to 261
-Thread_263 stop. round 11 leader 663 parent 402 1 0 2
-[402]
-[]
-
-Thread_354 start. round 10 leader 663 parent 402 2 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 663 round 9
-Thread_354 processing mType Explore Sender id: 357 maxUid: 663 round 10
-Send N_ACK to 357
-Thread_354 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 11 leader 663 parent 402 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 10 leader 663 parent 381 1 1 2
-Thread_357 processing mType N_ACK Sender id: 354 maxUid: 663 round 9
-Thread_357 processing mType Explore Sender id: 354 maxUid: 663 round 10
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 663 round 9
-Thread_357 processing mType Explore Sender id: 381 maxUid: 663 round 10
-Thread_357 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 11 leader 663 parent 381 1 1 2
-[381]
-[354]
-
-Thread_381 start. round 10 leader 663 parent 409 1 1 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 663 round 10
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 663 round 9
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 10
-Thread_381 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 11 leader 663 parent 409 1 1 2
-[409]
-[357]
-
-Thread_402 start. round 10 leader 663 parent 354 1 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 663 round 10
-Send N_ACK to 263
-Thread_402 processing mType Explore Sender id: 354 maxUid: 663 round 10
-Thread_402 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Thread_402 stop. round 11 leader 663 parent 354 1 0 2
-[354]
-[]
-
-Thread_409 start. round 10 leader 663 parent 440 1 1 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 663 round 10
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 9
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 10
-Thread_409 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 11 leader 663 parent 440 1 1 2
-[440]
-[381]
-
-Thread_440 start. round 10 leader 663 parent 504 1 1 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 10
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 9
-Thread_440 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 11 leader 663 parent 504 1 1 2
-[504]
-[409]
-
-Thread_504 start. round 10 leader 663 parent 663 1 1 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 10
-Send N_ACK to 440
-Thread_504 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Thread_504 stop. round 11 leader 663 parent 663 1 1 2
-[663]
-[440]
-
-Thread_571 start. round 10 leader 663 parent 663 1 0 1
-Thread_571 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Thread_571 stop. round 11 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 10 leader 663 parent -1 0 1 2
-Thread_663 processing mType ACK Sender id: 504 maxUid: 663 round 10
-Thread_663 processing mType Round_Number Sender id: 0 maxUid: 0 round 11
-Send Leader to master.
-Thread_663 stop. round 11 leader 663 parent -1 0 2 2
-[]
-[504, 571]
-
-Master checking its queue. Size of queue is: 20 round 11
-mType Done Sender id: 3 maxUid: 402 round 11
-mType Done Sender id: 29 maxUid: 402 round 11
-mType Done Sender id: 61 maxUid: 402 round 11
-mType Done Sender id: 65 maxUid: 402 round 11
-mType Done Sender id: 66 maxUid: 409 round 11
-mType Done Sender id: 68 maxUid: 440 round 11
-mType Done Sender id: 223 maxUid: 504 round 11
-mType Done Sender id: 239 maxUid: 663 round 11
-mType Done Sender id: 261 maxUid: 663 round 11
-mType Done Sender id: 263 maxUid: 663 round 11
-mType Done Sender id: 354 maxUid: 663 round 11
-mType Done Sender id: 357 maxUid: 663 round 11
-mType Done Sender id: 381 maxUid: 663 round 11
-mType Done Sender id: 402 maxUid: 663 round 11
-mType Done Sender id: 409 maxUid: 663 round 11
-mType Done Sender id: 440 maxUid: 663 round 11
-mType Done Sender id: 504 maxUid: 663 round 11
-mType Done Sender id: 571 maxUid: 663 round 11
-mType Leader Sender id: 663 maxUid: 663 round 11
-Send Terminate msg to 3
-Send Terminate msg to 29
-Send Terminate msg to 61
-Send Terminate msg to 65
-Send Terminate msg to 66
-Send Terminate msg to 68
-Send Terminate msg to 223
-Send Terminate msg to 239
-Send Terminate msg to 261
-Send Terminate msg to 263
-Send Terminate msg to 354
-Send Terminate msg to 357
-Send Terminate msg to 381
-Send Terminate msg to 402
-Send Terminate msg to 409
-Send Terminate msg to 440
-Send Terminate msg to 504
-Send Terminate msg to 571
-Send Terminate msg to 663
-Starting threads. 
-Thread_3 start. round 11 leader 402 parent 29 1 0 1
-Thread_3 processing mType N_ACK Sender id: 29 maxUid: 402 round 10
-Thread_3 processing mType Explore Sender id: 29 maxUid: 402 round 11
-Thread_3 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 402
-Send explore to 29
-Thread_3 stop. round 11 leader 402 parent 29 1 0 1
-[29]
-[]
-
-Thread_29 start. round 11 leader 402 parent 61 1 1 2
-Thread_29 processing mType Explore Sender id: 3 maxUid: 402 round 11
-Send N_ACK to 3
-Thread_29 processing mType N_ACK Sender id: 61 maxUid: 402 round 10
-Thread_29 processing mType Explore Sender id: 61 maxUid: 402 round 11
-Thread_29 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 402
-Send explore to 3
-Send explore to 61
-Thread_29 stop. round 11 leader 402 parent 61 1 1 2
-[61]
-[3]
-
-Thread_61 start. round 11 leader 402 parent 65 1 1 2
-Thread_61 processing mType Explore Sender id: 29 maxUid: 402 round 11
-Send N_ACK to 29
-Thread_61 processing mType N_ACK Sender id: 65 maxUid: 402 round 10
-Thread_61 processing mType Explore Sender id: 65 maxUid: 402 round 11
-Thread_61 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 402
-Send explore to 65
-Send explore to 29
-Thread_61 stop. round 11 leader 402 parent 65 1 1 2
-[65]
-[29]
-
-Thread_65 start. round 11 leader 402 parent 66 1 1 2
-Thread_65 processing mType Explore Sender id: 61 maxUid: 402 round 11
-Send N_ACK to 61
-Thread_65 processing mType N_ACK Sender id: 66 maxUid: 402 round 10
-Thread_65 processing mType Explore Sender id: 66 maxUid: 409 round 11
-Thread_65 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 409
-Send explore to 66
-Send explore to 61
-Thread_65 stop. round 11 leader 409 parent 66 1 1 2
-[66]
-[61]
-
-Thread_66 start. round 11 leader 409 parent 68 1 1 2
-Thread_66 processing mType Explore Sender id: 65 maxUid: 402 round 11
-Send N_ACK to 65
-Thread_66 processing mType N_ACK Sender id: 68 maxUid: 409 round 10
-Thread_66 processing mType Explore Sender id: 68 maxUid: 440 round 11
-Thread_66 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 440
-Send explore to 65
-Send explore to 68
-Thread_66 stop. round 11 leader 440 parent 68 1 1 2
-[68]
-[65]
-
-Thread_68 start. round 11 leader 440 parent 223 1 1 2
-Thread_68 processing mType Explore Sender id: 66 maxUid: 409 round 11
-Send N_ACK to 66
-Thread_68 processing mType N_ACK Sender id: 223 maxUid: 440 round 10
-Thread_68 processing mType Explore Sender id: 223 maxUid: 504 round 11
-Thread_68 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 504
-Send explore to 66
-Send explore to 223
-Thread_68 stop. round 11 leader 504 parent 223 1 1 2
-[223]
-[66]
-
-Thread_223 start. round 11 leader 504 parent 239 1 1 2
-Thread_223 processing mType Explore Sender id: 68 maxUid: 440 round 11
-Send N_ACK to 68
-Thread_223 processing mType N_ACK Sender id: 239 maxUid: 504 round 10
-Thread_223 processing mType Explore Sender id: 239 maxUid: 663 round 11
-Thread_223 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 68
-Send explore to 239
-Thread_223 stop. round 11 leader 663 parent 239 1 1 2
-[239]
-[68]
-
-Thread_239 start. round 11 leader 663 parent 261 1 1 2
-Thread_239 processing mType Explore Sender id: 223 maxUid: 504 round 11
-Send N_ACK to 223
-Thread_239 processing mType N_ACK Sender id: 261 maxUid: 663 round 10
-Thread_239 processing mType Explore Sender id: 261 maxUid: 663 round 11
-Thread_239 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 261
-Send explore to 223
-Thread_239 stop. round 11 leader 663 parent 261 1 1 2
-[261]
-[223]
-
-Thread_261 start. round 11 leader 663 parent 263 1 1 2
-Thread_261 processing mType Explore Sender id: 239 maxUid: 663 round 11
-Send N_ACK to 239
-Thread_261 processing mType N_ACK Sender id: 263 maxUid: 663 round 10
-Thread_261 processing mType Explore Sender id: 263 maxUid: 663 round 11
-Thread_261 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 263
-Send explore to 239
-Thread_261 stop. round 11 leader 663 parent 263 1 1 2
-[263]
-[239]
-
-Thread_263 start. round 11 leader 663 parent 402 1 0 2
-Thread_263 processing mType Explore Sender id: 261 maxUid: 663 round 11
-Send N_ACK to 261
-Thread_263 processing mType ACK Sender id: 261 maxUid: 663 round 11
-Thread_263 processing mType N_ACK Sender id: 402 maxUid: 663 round 10
-Thread_263 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 402
-Send explore to 261
-Send ACK to parent 402
-Thread_263 stop. round 11 leader 663 parent 402 1 1 2
-[402]
-[261]
-
-Thread_354 start. round 11 leader 663 parent 402 2 0 2
-Thread_354 processing mType N_ACK Sender id: 357 maxUid: 663 round 10
-Thread_354 processing mType Explore Sender id: 357 maxUid: 663 round 11
-Send N_ACK to 357
-Thread_354 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 402
-Send explore to 357
-Thread_354 stop. round 11 leader 663 parent 402 2 0 2
-[402, 357]
-[]
-
-Thread_357 start. round 11 leader 663 parent 381 1 1 2
-Thread_357 processing mType N_ACK Sender id: 354 maxUid: 663 round 10
-Thread_357 processing mType Explore Sender id: 354 maxUid: 663 round 11
-Send N_ACK to 354
-Thread_357 processing mType N_ACK Sender id: 381 maxUid: 663 round 10
-Thread_357 processing mType Explore Sender id: 381 maxUid: 663 round 11
-Thread_357 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 354
-Send explore to 381
-Thread_357 stop. round 11 leader 663 parent 381 1 1 2
-[381]
-[354]
-
-Thread_381 start. round 11 leader 663 parent 409 1 1 2
-Thread_381 processing mType Explore Sender id: 357 maxUid: 663 round 11
-Send N_ACK to 357
-Thread_381 processing mType N_ACK Sender id: 409 maxUid: 663 round 10
-Thread_381 processing mType Explore Sender id: 409 maxUid: 663 round 11
-Thread_381 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 357
-Send explore to 409
-Thread_381 stop. round 11 leader 663 parent 409 1 1 2
-[409]
-[357]
-
-Thread_402 start. round 11 leader 663 parent 354 1 0 2
-Thread_402 processing mType Explore Sender id: 263 maxUid: 663 round 11
-Send N_ACK to 263
-Thread_402 processing mType Explore Sender id: 354 maxUid: 663 round 11
-Thread_402 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Thread_402 stop. round 11 leader 663 parent 354 1 0 2
-[354]
-[]
-
-Thread_409 start. round 11 leader 663 parent 440 1 1 2
-Thread_409 processing mType Explore Sender id: 381 maxUid: 663 round 11
-Send N_ACK to 381
-Thread_409 processing mType N_ACK Sender id: 440 maxUid: 663 round 10
-Thread_409 processing mType Explore Sender id: 440 maxUid: 663 round 11
-Thread_409 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 440
-Send explore to 381
-Thread_409 stop. round 11 leader 663 parent 440 1 1 2
-[440]
-[381]
-
-Thread_440 start. round 11 leader 663 parent 504 1 1 2
-Thread_440 processing mType Explore Sender id: 409 maxUid: 663 round 11
-Send N_ACK to 409
-Thread_440 processing mType N_ACK Sender id: 504 maxUid: 663 round 10
-Thread_440 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send explore to 504
-Send explore to 409
-Thread_440 stop. round 11 leader 663 parent 504 1 1 2
-[504]
-[409]
-
-Thread_504 start. round 11 leader 663 parent 663 1 1 2
-Thread_504 processing mType Explore Sender id: 440 maxUid: 663 round 11
-Send N_ACK to 440
-Thread_504 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Thread_504 stop. round 11 leader 663 parent 663 1 1 2
-[663]
-[440]
-
-Thread_571 start. round 11 leader 663 parent 663 1 0 1
-Thread_571 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Thread_571 stop. round 11 leader 663 parent 663 1 0 1
-[663]
-[]
-
-Thread_663 start. round 11 leader 663 parent -1 0 2 2
-Thread_663 processing mType Terminate Sender id: 0 maxUid: 0 round 11
-Thread terminated. Leader id: 663
-Send Leader to master.
-Thread_663 stop. round 11 leader 663 parent -1 0 2 2
-[]
-[504, 571]
 
 
 
 Printing the tree.
 MaxId----Parent <--- myId ---> myChildren (can overlap)
-402---  29<------3------>
-402---  61<------29------>3 
-402---  65<------61------>29 
-409---  66<------65------>61 
-440---  68<------66------>65 
-504---  223<------68------>66 
-663---  239<------223------>68 
-663---  261<------239------>223 
-663---  263<------261------>239 
-663---  402<------263------>261 
-663---  402<------354------>357 
-663---  381<------357------>354 
-663---  409<------381------>357 
-663---  354<------402------>263 
-663---  440<------409------>381 
-663---  504<------440------>409 
-663---  663<------504------>440 
-663---  663<------571------>
-663---  -1<------663------>504 571 
+592---  -1<------592------>114 379 540 13 
+977---  977<------379------>592 114 328 540 13 813 
+592---  592<------114------>379 540 13 
+592---  592<------540------>114 105 379 13 
+831---  831<------13------>592 114 344 379 540 
+971---  -1<------971------>242 
+831---  -1<------831------>13 15 
+977---  -1<------977------>535 379 
+977---  977<------535------>378 330 
+535---  535<------378------>189 
+391---  391<------189------>378 
+940---  940<------391------>376 189 
+391---  391<------376------>330 207 239 
+918---  918<------207------>435 376 
+755---  755<------435------>102 207 
+860---  860<------102------>513 435 331 
+513---  -1<------513------>102 119 
+513---  513<------119------>105 253 
+781---  781<------105------>119 540 
+781---  -1<------781------>105 585 
+781---  781<------585------>116 
+585---  585<------116------>405 
+405---  -1<------405------>116 380 
+705---  705<------380------>405 
+705---  -1<------705------>242 261 380 
+971---  971<------242------>705 940 
+444---  444<------331------>102 
+344---  -1<------344------>13 
+705---  705<------261------>
+535---  535<------330------>376 348 
+940---  -1<------940------>242 391 
+444---  -1<------444------>308 331 
+918---  -1<------918------>446 207 
+860---  -1<------860------>102 
+444---  444<------308------>
+379---  379<------328------>
+831---  831<------15------>348 
+813---  -1<------813------>379 
+348---  -1<------348------>330 15 
+981---  981<------253------>119 
+817---  817<------353------>181 
+353---  353<------181------>
+755---  -1<------755------>435 
+852---  -1<------852------>239 
+795---  795<------682------>584 
+795---  795<------664------>398 
+599---  -1<------599------>548 398 
+682---  682<------584------>471 
+918---  918<------446------>715 
+817---  -1<------817------>353 715 
+607---  -1<------607------>548 168 
+981---  981<------168------>607 
+817---  817<------715------>446 
+607---  607<------548------>599 
+664---  664<------398------>599 
+523---  -1<------523------>
+573---  -1<------573------>
+852---  852<------239------>376 
+981---  -1<------981------>168 253 
+795---  -1<------795------>664 682 
+584---  584<------471------>
 
 
 Printing the tree.
 MaxId----Parent <--- myId ---> myChildren (can overlap)
-402---  29<------3------>
-402---  61<------29------>3 
-402---  65<------61------>29 
-409---  66<------65------>61 
-440---  68<------66------>65 
-504---  223<------68------>66 
-663---  239<------223------>68 
-663---  261<------239------>223 
-663---  263<------261------>239 
-663---  402<------263------>261 
-663---  402<------354------>357 
-663---  381<------357------>354 
-663---  409<------381------>357 
-663---  354<------402------>
-663---  440<------409------>381 
-663---  504<------440------>409 
-663---  663<------504------>440 
-663---  663<------571------>
-663---  -1<------663------>504 571 
-Master will now die. MaxUid 663 round 11
+592---  -1<------592------>
+977---  977<------379------>
+592---  592<------114------>
+592---  592<------540------>
+831---  831<------13------>
+971---  -1<------971------>
+831---  -1<------831------>
+977---  -1<------977------>
+977---  977<------535------>
+535---  535<------378------>
+391---  391<------189------>
+940---  940<------391------>
+391---  391<------376------>
+918---  918<------207------>
+755---  755<------435------>
+860---  860<------102------>
+513---  -1<------513------>
+513---  513<------119------>
+781---  781<------105------>
+781---  -1<------781------>
+781---  781<------585------>
+585---  585<------116------>
+405---  -1<------405------>
+705---  705<------380------>
+705---  -1<------705------>
+971---  971<------242------>
+444---  444<------331------>
+344---  -1<------344------>
+705---  705<------261------>
+535---  535<------330------>
+940---  -1<------940------>
+444---  -1<------444------>
+918---  -1<------918------>
+860---  -1<------860------>
+444---  444<------308------>
+379---  379<------328------>
+831---  831<------15------>
+813---  -1<------813------>
+348---  -1<------348------>
+981---  981<------253------>
+817---  817<------353------>
+353---  353<------181------>
+755---  -1<------755------>
+852---  -1<------852------>
+795---  795<------682------>
+795---  795<------664------>
+599---  -1<------599------>
+682---  682<------584------>
+918---  918<------446------>
+817---  -1<------817------>
+607---  -1<------607------>
+981---  981<------168------>
+817---  817<------715------>
+607---  607<------548------>
+664---  664<------398------>
+523---  -1<------523------>
+573---  -1<------573------>
+852---  852<------239------>
+981---  -1<------981------>
+795---  -1<------795------>
+584---  584<------471------>
+Master will now die. MaxUid 523 round 1

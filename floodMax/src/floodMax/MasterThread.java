@@ -84,7 +84,7 @@ public class MasterThread extends SlaveThread {
       while (!(localMessageQueue.isEmpty())) {
         try {
           Message tempMsg = localMessageQueue.take();
-          System.out.println(tempMsg);
+          //System.out.println(tempMsg);
 
           if (tempMsg.getmType().equalsIgnoreCase("Leader")) {
             // if a node says it's Leader to master, master tells the node to terminate.
