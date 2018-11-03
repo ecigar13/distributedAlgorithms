@@ -40,7 +40,7 @@ public class MasterThread extends SlaveThread {
     this.slaveArray = slaveArray;
     this.matrix = matrix;
     this.name = "Master";
-    this.myId = 0;
+    this.id = 0;
 
     this.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
     this.localMessagesToSend = new ConcurrentHashMap<>();
@@ -49,7 +49,7 @@ public class MasterThread extends SlaveThread {
 
   @Override
   public void initLocalMessagesToSend() {
-    localMessagesToSend.put(myId, new LinkedBlockingQueue<Message>());
+    localMessagesToSend.put(id, new LinkedBlockingQueue<Message>());
     for (int i : slaveArray) {
       localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
     }
@@ -76,7 +76,7 @@ public class MasterThread extends SlaveThread {
         t.drainToGlobalQueue();
       }
 
-      globalIdAndMsgQueueMap.get(myId).drainTo(localMessageQueue);
+      globalIdAndMsgQueueMap.get(id).drainTo(localMessageQueue);
       System.out
           .println("Master checking its queue. Size of queue is: " + localMessageQueue.size() + " round " + round);
 
@@ -89,11 +89,11 @@ public class MasterThread extends SlaveThread {
             // if a node says it's Leader to master, master tells the node to terminate.
             localMessageQueue.clear();
 
-            globalIdAndMsgQueueMap.get(tempMsg.getSenderId()).put(new Message(myId, 0, round, myMaxUid, "Terminate"));
+            globalIdAndMsgQueueMap.get(tempMsg.getSenderId()).put(new Message(id, 0, round, maxUid, "Terminate"));
             System.err.println("---Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
             masterMustDie = true;
 
-            myMaxUid = tempMsg.getSenderId();
+            maxUid = tempMsg.getSenderId();
             killAll();
           } else if ((tempMsg.getmType().equals("Done"))) {
             numberOfFinishedThreads++;
@@ -118,7 +118,7 @@ public class MasterThread extends SlaveThread {
 
     printTree();
     printNackAckTree();
-    System.out.println("Master will now die. MaxUid " + myMaxUid + " round " + round);
+    System.out.println("Master will now die. MaxUid " + maxUid + " round " + round);
 
   }
 
@@ -129,7 +129,7 @@ public class MasterThread extends SlaveThread {
     System.out.println("\n\nPrinting the tree.");
     System.out.println("MaxId----Parent <--- myId ---> myChildren (can overlap)");
     for (SlaveThread t : threadList) {
-      System.out.print(t.myMaxUid + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
+      System.out.print(t.maxUid + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (Entry<Integer, Double> i : t.neighborMap.entrySet()) {
         if (i.getKey() != t.getMyParent()) {
           System.out.print(i + " ");
@@ -172,13 +172,13 @@ public class MasterThread extends SlaveThread {
     for (int i : slaveArray) {
 
       // don't send msg to itself
-      if (i == myId) {
+      if (i == id) {
         continue;
       }
 
       // System.err.println("Send Round_Number msg to " + i);
       try {
-        Message temp = new Message(myId, 0, round, myId, "Round_Number");
+        Message temp = new Message(id, 0, round, id, "Round_Number");
         globalIdAndMsgQueueMap.get(i).put(temp);
 
       } catch (Exception e) {
@@ -197,13 +197,13 @@ public class MasterThread extends SlaveThread {
     for (int i : slaveArray) {
 
       // don't send msg to itself
-      if (i == myId) {
+      if (i == id) {
         continue;
       }
 
       System.out.println("Send Terminate msg to " + i);
       try {
-        Message temp = new Message(myId, 0, round, myId, "Terminate");
+        Message temp = new Message(id, 0, round, id, "Terminate");
         globalIdAndMsgQueueMap.get(i).put(temp);
 
       } catch (Exception e) {

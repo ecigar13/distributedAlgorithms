@@ -8,6 +8,14 @@ public class Message {
   protected int round;
   protected double mwoe;
 
+  public double getMwoe() {
+    return mwoe;
+  }
+
+  public void setMwoe(double mwoe) {
+    this.mwoe = mwoe;
+  }
+
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
     stringBuffer.append("mType ").append(mType).append(" Sender id: ").append(senderId).append(" maxUid: ")
@@ -73,35 +81,4 @@ public class Message {
     this.mType = mType;
   }
 
-  public int getTo() {
-    return to;
-  }
-
-  public void setTo(int to) {
-    this.to = to;
-  }
-
-  public int getTarget() {
-    return to;
-  }
-
-  public void setTarget(int target) {
-    this.to = target;
-  }
-
-  public int getFrom() {
-    return from;
-  }
-
-  public void setFrom(int initiator) {
-    this.from = initiator;
-  }
-
-  public int getDistanceFromTo() {
-    return distanceFromTo;
-  }
-
-  public void setDistanceFromTo(int distanceFromTo) {
-    this.distanceFromTo = distanceFromTo;
-  }
 }
