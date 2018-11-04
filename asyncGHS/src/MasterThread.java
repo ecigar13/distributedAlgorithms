@@ -1,11 +1,9 @@
-package floodMax;
+
 
 import java.util.ArrayList;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
-
-import message.Message;
 
 /**
  * MasterNode is a special case of a SlaveNode.
