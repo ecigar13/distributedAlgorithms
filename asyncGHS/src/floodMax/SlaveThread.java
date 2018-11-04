@@ -4,8 +4,12 @@ import java.util.HashSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
+
+import com.sun.jmx.snmp.Timestamp;
+
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -22,6 +26,7 @@ public class SlaveThread implements Runnable {
   protected int round;
   private int myParent;
   protected double mwoe;
+  protected Message currentReportMessage;
   protected MasterThread masterNode;
 
   protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
@@ -75,20 +80,20 @@ public class SlaveThread implements Runnable {
       m = localMessageQueue.poll();
 
       if (m.getmType().equals("initiate")) {
-        // broadcast to all children branches. Ignore reject and basic.
+        processInitMessage(m);
       } else if (m.getmType().equals("report")) {
         processReportMessage(m);
       } else if (m.getmType().equals("test")) {
         processTest(m);
       } else if (m.getmType().equals("accept")) {
         basic.remove(m.getSenderId());
-        // process test message here
+        // what to do here?
       } else if (m.getmType().equals("reject")) {
         rejected.add(m.getSenderId());
       } else if (m.getmType().equals("changeRoot")) {
-
+        // what to do here?
       } else if (m.getmType().equals("connect")) {
-
+        processConnectMessage(m);
       }
     }
   }
@@ -106,7 +111,10 @@ public class SlaveThread implements Runnable {
       for (int i : basic) {
         mwoe = mwoe < neighborMap.get(i) ? mwoe : neighborMap.get(i);
       }
-      localMessagesToSend.get(myParent).put(new Message(id, mwoe, round, maxUid, "report"));
+
+      Message temp = new Message(id, mwoe, round, maxUid, "report");
+      temp.getPath().add(id);
+      localMessagesToSend.get(myParent).put(temp);
     } else {
       sendInitiateToBranch();
     }
@@ -122,22 +130,79 @@ public class SlaveThread implements Runnable {
    * @param m
    */
   public void processReportMessage(Message m) throws InterruptedException {
-    mwoe = mwoe < m.getMwoe() ? mwoe : m.getMwoe();
-    reportReceived.add(m.getSenderId());
+    if (mwoe > m.getMwoe()) {
+      mwoe = m.getMwoe();
+      reportReceived.add(m.getSenderId());
+      currentReportMessage = m;
+    }
 
+    // go through basic edges and find the mwoe. Compare it with what I get from
+    // reports.
     if (reportReceived.size() == branch.size()) {
+      int tempNeighbor = id;
       for (int i : basic) {
-        mwoe = mwoe < neighborMap.get(i) ? mwoe : neighborMap.get(i);
+        if (mwoe > neighborMap.get(i)) {
+          tempNeighbor = i;
+          mwoe = neighborMap.get(i);
+        }
       }
 
       if (isLeader) {
-        // send "connect" msg to that mwoe.
+        broadcastConnect(m, tempNeighbor);
+      } else if (tempNeighbor != id) {
+        // if basic branches have less weight than mwoe
+        Message temp = new Message(id, mwoe, round, maxUid, "report");
+        temp.getPath().add(tempNeighbor);
+        temp.getPath().add(id);
+        localMessagesToSend.get(myParent).put(temp);
       } else {
-        localMessagesToSend.get(myParent).put(new Message(id, mwoe, round, maxUid, "report"));
+        m.setSenderId(id);
+        m.getPath().add(id);
+        localMessagesToSend.get(myParent).put(m);
       }
       reportReceived.clear();
       mwoe = Double.MAX_VALUE;
     }
+
+  }
+
+  /**
+   * Implement: If I'm in another component and I get connect, decide if I want to
+   * connect.
+   * 
+   * If I receive a connect message from my component, then I'll relay it to the
+   * next children on the path.
+   * 
+   */
+  public void processConnectMessage(Message m) throws InterruptedException, NullPointerException {
+    if (maxUid != m.getMaxUid()) {
+      // I'm in another component. What do I do?
+    } else {
+      // I'm in the same component, keep sending it.
+      int temp = m.getPath().removeLast();
+      m.setSenderId(id);
+      localMessagesToSend.get(temp).put(m);
+    }
+
+  }
+
+  /**
+   * Send the message back down the path.
+   * 
+   * @param m
+   * @param id
+   * @throws InterruptedException
+   */
+  public void broadcastConnect(Message m, int id) throws InterruptedException {
+    Message temp = new Message(id, mwoe, round, maxUid, "connect");
+    if (basic.contains(id)) {
+      localMessagesToSend.get(id).put(temp);
+    }
+    m.setMwoe(mwoe);
+    m.setmType("connect");
+    m.setSenderId(id);
+
+    localMessagesToSend.get(m.getPath().removeLast()).put(m);
 
   }
 

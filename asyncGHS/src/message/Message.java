@@ -1,5 +1,7 @@
 package message;
 
+import java.util.LinkedList;
+
 public class Message {
 
   protected String mType;
@@ -7,6 +9,11 @@ public class Message {
   protected int maxUid;
   protected int round;
   protected double mwoe;
+  protected LinkedList<Integer> path;
+
+  public LinkedList<Integer> getPath() {
+    return path;
+  }
 
   public double getMwoe() {
     return mwoe;
@@ -39,6 +46,7 @@ public class Message {
     this.maxUid = maxUid;
     this.round = round;
     this.mType = mType;
+    this.path = new LinkedList<>();
   }
 
   public int getSenderId() {
