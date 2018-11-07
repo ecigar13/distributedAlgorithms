@@ -1,0 +1,137 @@
+Asynch Mst algo
+
+
+Master
+
+
+Slave
+
+Have to find the path to the node, so when a message comes back from a node to the leader,each intermediate node adds its id to the stack(LIFO) //done
+
+Reduced no_of_remainaing rounds from each message in the LocalIDandMessage Queue //done
+
+Decide if I can send MWOE_Found or initiate //done
+if(component ID = my id) //done
+		3.1 Check waiting_for_response queue	
+		3.2 if( empty )
+			3.2.1 check if mwoe_found = true
+				3.2.1.1 send "MOWE_FOUND" message to the MWOE node
+			3.2.2 else //mwoe_found != true
+				3.2.1 Leader sends "Initiate" message on the "tree edges" and send "TEST" message to 1 "basic edge.
+				3.2.2 put node ids of all nodes to whom a message is sent into waiting_for_response queue
+				3.2.3 set mwoe = infinity
+
+Round_Number: //done
+	1. Get New Round message from Master
+	
+Initiate Message: //done
+	1. Relay initiate message to all "tree edges"
+	2. Send "TEST" message to 1 basic edge
+
+Test Message: //done
+	1. Check level of incoming message
+		1.1 if(my_level >= incoming_msg_level)
+			1.1.1 IF (my_componentUID != incoming_message_Component_UID)
+				then send accept message
+			1.1.2 else
+				send reject message
+		1.2 else if (my_level < incoming_message level)
+			send "Level_Problem" message
+Accept: //done
+	1. Remove the node_id from the waiting or response message queue.
+	2. if(componentid != slaveId) Send "report" message to Leader of the component by sending message to the parent
+		else consider it as a report message
+	3. add to the Path variable, the message traverses
+	4. Stor this info into a temporary message variable(if later mwoe connect msg needs to be sent)
+
+Reject: //done
+	1. Add the edge to the rejected list(node is into rejected list) and remove from basic edge
+	2. Pick next root from the basic edge tree, send Test message to that
+
+levelMismatched //done
+	1. Choose next node in "basic tree", and sent Test message in that.
+	2. do not do anything to the previous MWOE edge		
+
+Report message
+	1.if(slave_UID != reciever_UID)
+		add slave_UID to PATh variable, send message to the parent.
+	2. Else
+		2.1 remove the node from waiting_for_Response 
+		2.2 compare mwoe component with the local mwoe variable
+			if(incoming_message_mwoe > local_mwoe)
+				do nothing
+			else(incoming_message_mwoe < local_mwoe)
+				store message in a Message variable to send message to the node later(if needed)
+
+MWOE_FOUND Message:
+	1.if(slave_UID != reciever_UID)
+		send message to the next element in the path variable.
+	2. Else if (slave_UID == reciever_UID)
+		2.1 send "connect" message to the stored node.
+		2.2 store who you send connect message to in "sent_connect_arraylist".
+
+		if u get connect message from the node who u sent connect to then merge happened
+		
+		
+Connect Message: //done
+	If size of path is 1, msg is at the leaf of the component. Relay it to the external node. Add this external node to connect_arraylist
+	If size of path is 0, (I'm the mwoe). Check connect_arraylist if I got connect from same edge before..
+
+		1.1 if node sending "connect message" is in there
+			merge() operation
+		1.2if (my_level > incoming_message_level)
+			absorb() operation
+
+
+
+
+
+
+
+
+Path variable can be implemented as a stack
+	when traveling towards the leader i.e. carrying "report" message, each node adds its UID to the sick variable
+	when traveling towards the node ie.e carrying "connect" message, each node removes its UID from the top of stack and relays to the next exposed element
+
+
+	3. Wait for reply from all neighbours
+	4. Compare all MWOE messages and find MWOE and corresponding node id
+	5. check if MWOE message waiting to be deliver to the same UID in localmessagetosend hashmap or waiting for a response from that node
+		5.1 if(true)
+			discard message
+			if rounds to be delivered is 0 in localmessagetosendhashmap
+				put message in the GlobalIDandMessageQueue
+				add uid of the node in waitingForAResponse Queue(until recieve a MWOE message from that neighbor or a non MWOE found message)
+		5.2 else
+			new MWOE found, add message to the localmessagetosend hashmap
+	6. check the localmessagetosend hashmap and if round is 0 for head of queue for any key, deliver the message and put node id in the waiting_for_response queue(to avoid sending a message again and again to same node.)
+
+
+To find MWOE
+	repeat till MWOE message returned from all neighbors to the leader 
+	1. get node from basic 
+	2. Ask the node for its level
+	3. if(level >= own level)
+		check component id
+			if(component id!= own component id)
+				send found mwoe message to leader
+			else if(component id == own component id)
+				add node on other end of edge in "REJECTED" list.
+		else
+			pick the next smallest edgewt node from basic
+
+
+For Merger/Absord
+	
+	1. when Leader found MWOE for the component
+		1.1 send Connect message to the node who found MWOE(usinf the path in the message (this will also need rounds))
+			1.1.1 the node on recieveing connect message, forwards it to the corresponding node
+			1.1.2 if level of the other node is greater than nodes own level
+				Absorb()
+			1.1.3 else if component to connect to = uid of element sending the connect request
+						accept
+					else
+						delay response, put in delay reponse hashmap
+
+1. Send find MWOE message on the tree edges 
+2. Send connection for MWOE message to basic edges.

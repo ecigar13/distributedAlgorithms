@@ -1,15 +1,46 @@
 
-
 import java.util.LinkedList;
 
 public class Message {
 
   protected String mType;
   protected int senderId; // serial number in the graph
-  protected int maxUid;
+  protected int componentId;
   protected int round;
   protected double mwoe;
   protected LinkedList<Integer> path;
+  protected int receiverId;
+  protected int level;
+
+  public int getComponentId() {
+    return componentId;
+  }
+
+  public void setComponentId(int componentId) {
+    this.componentId = componentId;
+  }
+
+  public int getLevel() {
+    return level;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
+  }
+
+  public void setPath(LinkedList<Integer> path) {
+    this.path = path;
+  }
+
+  protected boolean isLeader;
+
+  public boolean isLeader() {
+    return isLeader;
+  }
+
+  public void setLeader(boolean isLeader) {
+    this.isLeader = isLeader;
+  }
 
   public LinkedList<Integer> getPath() {
     return path;
@@ -26,7 +57,7 @@ public class Message {
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
     stringBuffer.append("mType ").append(mType).append(" Sender id: ").append(senderId).append(" maxUid: ")
-        .append(maxUid).append(" round ").append(round);
+        .append(componentId).append(" round ").append(round);
     return stringBuffer.toString();
   }
 
@@ -34,19 +65,33 @@ public class Message {
    * Constructor for floodmax messages.
    * 
    * @param senderId
+   * @param receiverId
+   *          TODO
    * @param mwoe
    *          TODO
+   * @param level
+   *          TODO
    * @param round
-   * @param maxUid
+   * @param componentId
    * @param mType
    */
-  public Message(int senderId, double mwoe, int round, int maxUid, String mType) {
+  public Message(int senderId, int receiverId, double mwoe, int level, int round, int componentId, String mType) {
     this.senderId = senderId;
+    this.receiverId = receiverId;
     this.mwoe = mwoe;
-    this.maxUid = maxUid;
+    this.componentId = componentId;
+    this.level = level;
     this.round = round;
     this.mType = mType;
     this.path = new LinkedList<>();
+  }
+
+  public int getReceiverId() {
+    return receiverId;
+  }
+
+  public void setReceiverId(int receiverId) {
+    this.receiverId = receiverId;
   }
 
   public int getSenderId() {
@@ -55,14 +100,6 @@ public class Message {
 
   public void setSenderId(int senderId) {
     this.senderId = senderId;
-  }
-
-  public int getMaxUid() {
-    return maxUid;
-  }
-
-  public void setMaxUid(int messageUid) {
-    this.maxUid = messageUid;
   }
 
   public int getUid() {
