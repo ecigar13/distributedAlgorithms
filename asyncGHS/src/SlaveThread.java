@@ -220,32 +220,37 @@ public class SlaveThread implements Runnable {
    * @param m
    */
   public void processReportMessage(Message m) throws InterruptedException {
+    // save the msg with smallest mwoe. Discard the rest.
     if (mwoe > m.getMwoe()) {
       mwoe = m.getMwoe();
       reportReceived.add(m.getSenderId());
       currentReportMessage = m;
     }
 
-    // go through basic edges and find the mwoe. Compare it with what I get from
-    // reports.
+    // If I got report from all branches, go through basic edges and find the mwoe.
+    // Compare it with what I get from reports.
     if (reportReceived.size() == branch.size()) {
       int tempNeighbor = id;
-      for (int i : basicEdge) {
-        if (mwoe > basicEdge.get(i)) {
-          tempNeighbor = i;
-          mwoe = basicEdge.get(i);
-        }
+
+      // compare mwoe with smallest of basic edge.
+      if (!basicEdge.isEmpty() && mwoe > basicEdge.first().getWeight()) {
+        tempNeighbor = basicEdge.first().getTo();
+        mwoe = basicEdge.first().getWeight();
+        currentReportMessage = null;  //if I pick a basic edge, then discard report msg.
       }
 
       if (isLeader) {
         broadcastConnect(m, tempNeighbor);
       } else if (tempNeighbor != id) {
-        // if basic branches have less weight than mwoe
+        // if I pick mwoe from basic edge, construct new msg and send up.
+        // also add the last node.
         Message temp = new Message(id, null, mwoe, null, round, componentId, "report");
         temp.getPath().add(tempNeighbor);
         temp.getPath().add(id);
         localMessagesToSend.get(myParent).put(temp);
       } else {
+
+        // If this is not the end, just add itself to msg and send it up.
         m.setSenderId(id);
         m.getPath().add(id);
         localMessagesToSend.get(myParent).put(m);

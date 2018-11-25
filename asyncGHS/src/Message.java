@@ -12,6 +12,31 @@ public class Message {
   protected int receiverId;
   protected int level;
 
+  /**
+   * Constructor for floodmax messages.
+   * 
+   * @param senderId
+   * @param receiverId
+   *          TODO
+   * @param mwoe
+   *          TODO
+   * @param level
+   *          TODO
+   * @param round
+   * @param componentId
+   * @param mType
+   */
+  public Message(int senderId, int receiverId, double mwoe, int level, int round, int componentId, String mType) {
+    this.senderId = senderId;
+    this.receiverId = receiverId;
+    this.mwoe = mwoe;
+    this.componentId = componentId;
+    this.level = level;
+    this.round = round;
+    this.mType = mType;
+    this.path = new LinkedList<>();
+  }
+
   public int getComponentId() {
     return componentId;
   }
@@ -61,30 +86,6 @@ public class Message {
     return stringBuffer.toString();
   }
 
-  /**
-   * Constructor for floodmax messages.
-   * 
-   * @param senderId
-   * @param receiverId
-   *          TODO
-   * @param mwoe
-   *          TODO
-   * @param level
-   *          TODO
-   * @param round
-   * @param componentId
-   * @param mType
-   */
-  public Message(int senderId, int receiverId, double mwoe, int level, int round, int componentId, String mType) {
-    this.senderId = senderId;
-    this.receiverId = receiverId;
-    this.mwoe = mwoe;
-    this.componentId = componentId;
-    this.level = level;
-    this.round = round;
-    this.mType = mType;
-    this.path = new LinkedList<>();
-  }
 
   public int getReceiverId() {
     return receiverId;
