@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.Stream;
 
 import com.sun.jmx.snmp.Timestamp;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
@@ -32,9 +33,11 @@ public class SlaveThread implements Runnable {
   boolean mwoeFound = false;
 
   protected Message currentReportMessage;
+  protected Message currentTestMsg;
 
   protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap;
-  protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> localMessagesToSend;
+  protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> localMsgToReduce;
+  protected ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> localMsgToSend;
   protected LinkedBlockingQueue<Message> localMessageQueue = new LinkedBlockingQueue<>();
 
   protected HashSet<Integer> connected = new HashSet<>();
@@ -48,34 +51,6 @@ public class SlaveThread implements Runnable {
 
   protected Random r = new Random();
 
-  public SlaveThread() {
-  }
-
-  /**
-   * Constructor.
-   * 
-   * @param id
-   * @param masterNode
-   */
-
-  public SlaveThread(int id, MasterThread masterNode,
-      ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap) {
-    this.id = id;
-    this.componentId = id;
-    this.myParent = -1;
-    this.mwoe = Double.MAX_VALUE;
-    this.masterNode = masterNode;
-    this.round = 0;
-    this.terminated = false;
-
-    name = "Thread_" + id;
-
-    this.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
-    this.localMessagesToSend = new ConcurrentHashMap<>();
-    // init local messages to send will be done after construction. It's messy for
-    // now.
-  }
-
   /**
    * Process messages int the queue.
    */
@@ -88,70 +63,23 @@ public class SlaveThread implements Runnable {
       if (m.getmType().equals("Round_Number")) {
         processRoundNumber(m);// done
       } else if (m.getmType().equals("initiate")) {
-        processInitMessage(m);
+        processInitMessage(m); // done
       } else if (m.getmType().equals("test")) {
-        processTestMsg(m);
+        processTestMsg(m); // done
       } else if (m.getmType().equals("report")) {
-        processReportMessage(m);// not done
+        processReportMessage(m); // done
       } else if (m.getmType().equals("accept")) {
-        processAcceptMessage(m);
+        processAcceptMessage(m); // done
       } else if (m.getmType().equals("reject")) {
-        processRejectMsg(m);
+        processRejectMsg(m); // done
       } else if (m.getmType().equals("changeRoot")) {
-        // what to do here?
+        // changeRoot is essentially connect msg
+        processConnectMessage(m); // done
       } else if (m.getmType().equals("connect")) {
-        processConnectMessage(m);
+        processConnectMessage(m); // done
       } else if (m.getmType().equals("levelMismatched")) {
         processLevelMismatchedMsg(m);
       }
-    }
-  }
-
-  /**
-   * 
-   * @param m
-   * @throws InterruptedException
-   */
-  public void processLevelMismatchedMsg(Message m) throws InterruptedException {
-    for (Link l : basicEdge) {
-      if (l.getWeight() > m.getMwoe()) {
-        sendTestToSmallestBasic();
-      }
-    }
-  }
-
-  /**
-   * Add the edge to rejected set. Remove from basic edge.Send test msg to the
-   * smallest basic edge.
-   * 
-   * @param m
-   */
-  public void processRejectMsg(Message m) throws InterruptedException {
-    for (Link l : basicEdge) {
-      if (l.getTo() == m.getSenderId()) {
-        rejected.add(l);
-        basicEdge.remove(l);
-
-      }
-    }
-    sendTestToSmallestBasic();
-  }
-
-  /**
-   * Remove the sender from waiting for response (because I got the response).
-   * Then if I'm not the leader, send a "report" msg to parent.
-   * 
-   * @param m
-   */
-  public void processAcceptMessage(Message m) {
-    waitingForResponse.remove(m.getSenderId());
-    if (componentId != id) {
-      Message temp = new Message(id, myParent, m.getMwoe(), level, r.nextInt(19) + 1, componentId, "report");
-      temp.getPath().add(m.getSenderId());
-      temp.getPath().add(id);
-    } else {
-      // I'm the leader, I store the message.
-      currentReportMessage = m;
     }
   }
 
@@ -168,7 +96,7 @@ public class SlaveThread implements Runnable {
       if (mwoeFound) {
         Message temp = new Message(id, currentReportMessage.getSenderId(), 0, level, r.nextInt(19) + 1, componentId,
             "mwoeFound");
-        localMessagesToSend.get(currentReportMessage.getSenderId()).put(temp);
+        localMsgToReduce.get(currentReportMessage.getSenderId()).put(temp);
       } else {
         sendInitiateToBranch();
         sendTestToSmallestBasic();
@@ -179,100 +107,102 @@ public class SlaveThread implements Runnable {
   }
 
   /**
-   * set my round to the round master tells me.
-   * 
-   * @param m
+   * Need to implement this. Don't use while loop.
    */
-  public void processRoundNumber(Message m) {
-    round = m.getRound();
-  }
+  public void run() {
+    try {
+      fetchFromGlobalQueue(localMessageQueue);
+      // if I'm leader, send initiate.
+      processMessageTypes();
+      decideToSendReportMsg();
+      // send msg I need to send into local queue.
+      reduceRoundInMsg();
+      drainToGlobalQueue();
+      sendRoundDoneToMaster();
 
-  /**
-   * Go through messages in my queue and reduce the round by 1. Not less than 0.
-   * Call this at every round.
-   */
-  public void reduceRoundInMsg() {
-    for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMessagesToSend.entrySet()) {
-      for (Message message : e.getValue()) {
-        int temp = message.getRound() - 1 >= 0 ? message.getRound() - 1 : 0;
-        message.setRound(temp);
-      }
-    }
-  }
-
-  /**
-   * Send initiate to all branches and send test to smallest basic edge.
-   * 
-   * @param m
-   */
-  public void processInitMessage(Message m) throws InterruptedException {
-    sendTestToSmallestBasic();
-    sendInitiateToBranch();
-  }
-
-  /**
-   * If I got all reports from all my children, it'll take minimum of
-   * Union(children's report, basic branches) and send it to my parent. Ignore
-   * reject branches. Set mwoe to infinite once done.
-   * 
-   * Leader has the ability to broadcast connect.
-   * 
-   * @param m
-   */
-  public void processReportMessage(Message m) throws InterruptedException {
-    // save the msg with smallest mwoe. Discard the rest.
-    if (mwoe > m.getMwoe()) {
-      mwoe = m.getMwoe();
-      reportReceived.add(m.getSenderId());
-      currentReportMessage = m;
+    } catch (Exception e) {
+      e.printStackTrace();
     }
 
-    // If I got report from all branches, go through basic edges and find the mwoe.
-    // Compare it with what I get from reports.
-    if (reportReceived.size() == branch.size()) {
-      int tempNeighbor = id;
+  }
 
-      // compare mwoe with smallest of basic edge.
-      if (!basicEdge.isEmpty() && mwoe > basicEdge.first().getWeight()) {
-        tempNeighbor = basicEdge.first().getTo();
-        mwoe = basicEdge.first().getWeight();
-        currentReportMessage = null;  //if I pick a basic edge, then discard report msg.
+  /**
+   * Only do this if I got all reports from all children and accept msg from
+   * basic.
+   * 
+   * @throws InterruptedException
+   */
+  public void decideToSendReportMsg() throws InterruptedException {
+    if (reportReceived.size() == branch.size() && currentReportMessage != null && currentTestMsg != null) {
+
+      // If I got report from all branches, Compare it with what I get from reports.
+      Message msgToUse;
+      if (currentReportMessage.getMwoe() > currentTestMsg.getMwoe()) {
+        msgToUse = currentTestMsg;
+      } else {
+        msgToUse = currentReportMessage;
       }
 
       if (isLeader) {
-        broadcastConnect(m, tempNeighbor);
-      } else if (tempNeighbor != id) {
+        // if leader, process the message and broadcast back.
+        // what if my mwoe is in leader's basic edges???
+        broadcastConnect(msgToUse);
+      } else {
         // if I pick mwoe from basic edge, construct new msg and send up.
         // also add the last node.
-        Message temp = new Message(id, null, mwoe, null, round, componentId, "report");
-        temp.getPath().add(tempNeighbor);
-        temp.getPath().add(id);
-        localMessagesToSend.get(myParent).put(temp);
-      } else {
 
-        // If this is not the end, just add itself to msg and send it up.
-        m.setSenderId(id);
-        m.getPath().add(id);
-        localMessagesToSend.get(myParent).put(m);
+        msgToUse.setSenderId(id);
+        msgToUse.getPath().add(id);
+        localMsgToReduce.get(myParent).put(msgToUse);
       }
+
+      // clear my set of report and set mwoe to maximum.
       reportReceived.clear();
+      currentReportMessage = null;
+      currentTestMsg = null;
       mwoe = Double.MAX_VALUE;
     }
 
   }
 
-  public void absorb() {
+  /**
+   * Only run this method if leader got report msg from all its children.
+   * 
+   * If path is 1, then I'm the leaf node. Record that I sent connect to the mwoe
+   * node and send it.
+   * 
+   * if currentReportMsg is not null then the mwoe belongs to my children. Send
+   * the changeRoot message back down the path. This is changeRoot message. Near
+   * the end of the path, this changeRoot becomes connect message.
+   * 
+   * @param m
+   *          message to be used.
+   * @param id
+   * @throws InterruptedException
+   */
+  public void broadcastConnect(Message m) throws InterruptedException {
+    // reuse the message.
+    m.setLevel(level);
+    m.setRound(r.nextInt(19) + 1);
+    m.setmType("changeRoot");
+
+    // save behavior as processConnectMessage()
+    processConnectMessage(m);
 
   }
 
   /**
-   * If I'm the mwoe node, check if I sent connect msg to the sender. Then merge
-   * or absorb. If I'm the leaf node (path size is 1), record that I'm sent
-   * connect message. Then send it. Else just send it.
+   * If I'm the mwoe node (outside the component), check if I sent connect msg to
+   * the sender. Then merge or absorb.
+   * 
+   * If I'm the leaf node (path size is 1), then this is the changeRoot message. I
+   * record that I sent connect message. Then send it. Else just relay it.
    * 
    */
   public void processConnectMessage(Message m) throws InterruptedException, NullPointerException {
     if (m.getPath().size() == 0) {
+
+      m.setmType("connect");
 
       // if I sent connect msg before. Then merge or absorb.
       if (connected.contains(m.getSenderId())) {
@@ -288,53 +218,42 @@ public class SlaveThread implements Runnable {
       // then send it.
       int temp = m.getPath().removeLast();
       m.setSenderId(id);
-      localMessagesToSend.get(temp).put(m);
+      m.setmType("connect"); // in case this is changeRoot msg.
+      localMsgToReduce.get(temp).put(m);
     } else {
       // I'm in the same component, keep sending it.
       int temp = m.getPath().removeLast();
       m.setSenderId(id);
-      localMessagesToSend.get(temp).put(m);
+      localMsgToReduce.get(temp).put(m);
     }
 
   }
 
+  public void absorb() {
+
+  }
+
   /**
-   * Send the message back down the path.
+   * Process Test messages. If my lvl is > your lvl.
    * 
-   * @param m
-   * @param id
-   * @throws InterruptedException
-   */
-  public void broadcastConnect(Message m, int id) throws InterruptedException {
-    Message temp = new Message(id, null, mwoe, null, round, componentId, "connect");
-    if (basicEdge.contains(id)) {
-      localMessagesToSend.get(id).put(temp);
-    }
-    m.setMwoe(mwoe);
-    m.setmType("connect");
-    m.setSenderId(id);
-
-    localMessagesToSend.get(m.getPath().removeLast()).put(m);
-
-  }
-
-  /**
-   * Process Test messages. If my lvl is > your lvl,
+   * "accept" message will be used to construct report msg, so always add the
+   * path.
    * 
    * @param m
    */
   public void processTestMsg(Message m) throws InterruptedException {
     if (level >= m.getLevel()) {
       if (componentId == m.getComponentId()) {
-        localMessagesToSend.get(m.getSenderId())
+        localMsgToReduce.get(m.getSenderId())
             .put(new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(19) + 1, componentId, "reject"));
 
       } else if (componentId != m.getComponentId()) {
-        localMessagesToSend.get(m.getSenderId())
-            .put(new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(19) + 1, componentId, "accept"));
+        Message temp = new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(19) + 1, componentId, "accept");
+        temp.getPath().add(id); // important step in deciding to send report message.
+        localMsgToReduce.get(m.getSenderId()).put(temp);
       }
     } else {
-      localMessagesToSend.get(m.getSenderId())
+      localMsgToReduce.get(m.getSenderId())
           .put(new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(19) + 1, componentId, "levelMismatched"));
     }
   }
@@ -365,7 +284,7 @@ public class SlaveThread implements Runnable {
       }
       if (!waitingForResponse.contains(e.getTo())) {
         System.out.println("Send initiate to " + e.getTo());
-        localMessagesToSend.get(e.getTo())
+        localMsgToReduce.get(e.getTo())
             .put(new Message(id, e.getTo(), e.getWeight(), level, r.nextInt(19) + 1, componentId, "initiate"));
         waitingForResponse.add(e.getTo());
       }
@@ -373,7 +292,8 @@ public class SlaveThread implements Runnable {
   }
 
   /**
-   * Send test message to the smallest edge in basic edges.
+   * Send test message to the smallest edge in basic edges. If I'm waiting for it
+   * then keep waiting.
    * 
    * @throws InterruptedException
    */
@@ -381,90 +301,25 @@ public class SlaveThread implements Runnable {
     Link e = basicEdge.first();
     if (!waitingForResponse.contains(e.getTo())) {
       System.out.println("Send test to " + e.getTo());
-      localMessagesToSend.get(e.getTo())
+      localMsgToReduce.get(e.getTo())
           .put(new Message(id, e.getTo(), e.getWeight(), r.nextInt(19) + 1, round, componentId, "test"));
       waitingForResponse.add(e.getTo());
+    } else {
+      System.out.println("Waiting for respond from basic.");
     }
   }
 
   /**
-   * Need to implement this. Don't use while loop.
-   */
-  public void run() {
-    processMessageTypes();
-    checkMwoeFound();
-    reduceRoundInMsg();
-    goThroughMsgQueueAndSendMsgRoundZero();
-    // System.out.println(name + " start. round " + round + " leader " + componentId
-    // + " parent " + myParent + " "
-    // + branch.size() + " " + rejected.size() + " " + basicEdge.size());
-    // try {
-    // if (!terminated) {
-    // fetchFromGlobalQueue(localMessageQueue);
-    // processMessageTypes();
-    //
-    // // after done processing incoming messages, send msg for next round
-    // sendInitiateToBranch();
-    // if (round != 0)
-    // sendRoundDoneToMaster();
-    // // then master will drain to its own queue.
-    //
-    // }
-    // } catch (Exception e) {
-    // e.printStackTrace();
-    // }
-    // System.out.println(name + " stop. round " + round + " leader " + componentId
-    // + " parent " + myParent + " "
-    // + branch.size() + " " + rejected.size() + " " + basicEdge.size());
-    // System.out.println(branch.toString());
-    // System.out.println(rejected.toString());
-    // System.out.println(basicEdge.toString());
-    // System.out.println();
-
-  }
-
-  /**
-   * Drain the local msg queue and put all in the global queue. The local queue
-   * should be empty after this. This should be done at the end of each round.
-   * e.g. each thread has a ConcurrentHashMap similar to the global one, but
-   * should be empty. At end of each round, it unloads the queues to the global
-   * ConcurrentHashMap.
-   */
-  public synchronized void drainToGlobalQueue() {
-
-    for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMessagesToSend.entrySet()) {
-      e.getValue().drainTo(globalIdAndMsgQueueMap.get(e.getKey()));
-
-      if (!e.getValue().isEmpty()) {
-        System.err.println("Queue is not empty at end of round");
-      }
-
-    }
-  }
-
-  /**
-   * Set status of terminated to stop all threads. Need to implement "print out
-   * the tree"
-   */
-  public void processTerminateMessage() {
-    System.out.println("Thread terminated. Leader id: " + componentId);
-    this.terminated = true;
-
-  }
-
-  /**
-   * Drain the global queue to this local queue. The Global queue will have zero
-   * element.
+   * Record the msg as received. Save the report msg if it has smaller mwoe than
+   * previious report msg. Otherwise, discard.
    * 
-   * @return
+   * @param m
    */
-  public void fetchFromGlobalQueue(LinkedBlockingQueue<Message> localQ) {
-    if (!globalIdAndMsgQueueMap.get(id).isEmpty()) {
-      globalIdAndMsgQueueMap.get(id).drainTo(localQ);
-    }
-
-    if (!globalIdAndMsgQueueMap.get(id).isEmpty()) {
-      System.err.println("Global queue is not empty. We have a prolem.");
+  public void processReportMessage(Message m) throws InterruptedException {
+    // save the msg with smallest mwoe. Discard the rest.
+    reportReceived.add(m.getSenderId());
+    if (currentReportMessage == null || currentReportMessage.getMwoe() > m.getMwoe()) {
+      currentReportMessage = m;
     }
   }
 
@@ -496,28 +351,6 @@ public class SlaveThread implements Runnable {
     }
   }
 
-  /**
-   * Initiate the local queue. Otherwise it will throw error.
-   */
-  public void initLocalMessagesToSend() {
-    localMessagesToSend.put(masterNode.getId(), new LinkedBlockingQueue<Message>());
-    for (Entry<Integer, Double> e : basicEdge.entrySet()) {
-      localMessagesToSend.put(e.getKey(), new LinkedBlockingQueue<Message>());
-    }
-  }
-
-  /**
-   * Put round done message to local queue.
-   */
-  public void sendRoundDoneToMaster() {
-    try {
-      localMessagesToSend.get(masterNode.getId()).put(new Message(id, null, mwoe, null, round, componentId, "Done"));
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-
   public void setName(String name) {
     this.name = name;
   }
@@ -526,8 +359,181 @@ public class SlaveThread implements Runnable {
     return myParent;
   }
 
-  public TreeMap<Integer, Double> getNeighborMap() {
+  public TreeSet<Link> getBasicLinks() {
     return basicEdge;
+  }
+
+  /**
+   * Go through messages in my queue and reduce the round by 1. Not less than 0.
+   * Move all msg that are 0 at the front to the localMsgToSend queue.
+   * 
+   * Maybe implement map reduce.
+   */
+  public void reduceRoundInMsg() throws InterruptedException {
+
+    for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMsgToReduce.entrySet()) {
+      for (Message message : e.getValue()) {
+        int temp = message.getRound() - 1 >= 0 ? message.getRound() - 1 : 0;
+        message.setRound(temp);
+      }
+
+      while (e.getValue().peek().getRound() <= 0) {
+        localMsgToSend.get(e.getKey()).put(e.getValue().remove());
+      }
+
+    }
+  }
+
+  /**
+   * Drain the local msg queue and put all in the global queue. Call this at the
+   * end of each round. The global queue's structure is similar to this.
+   */
+  public synchronized void drainToGlobalQueue() {
+
+    for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMsgToSend.entrySet()) {
+      e.getValue().drainTo(globalIdAndMsgQueueMap.get(e.getKey()));
+
+      if (!e.getValue().isEmpty()) {
+        System.err.println("Queue is not empty at end of round");
+      }
+
+    }
+  }
+
+  /**
+   * Initiate the local queues. Otherwise it will throw nullPointerException.
+   */
+  public void initLocalMessagesQueues() {
+    localMsgToReduce.put(masterNode.getId(), new LinkedBlockingQueue<Message>());
+    for (Link l : basicEdge) {
+      localMsgToReduce.put(l.getFrom(), new LinkedBlockingQueue<Message>());
+    }
+
+    localMsgToSend.put(masterNode.getId(), new LinkedBlockingQueue<Message>());
+    for (Link l : basicEdge) {
+      localMsgToSend.put(l.getFrom(), new LinkedBlockingQueue<Message>());
+    }
+    System.err.println("Done initiating SlaveThread queues.");
+  }
+
+  /**
+   * Put round done message to local queue.
+   */
+  public void sendRoundDoneToMaster() {
+    try {
+      localMsgToSend.get(masterNode.getId())
+          .put(new Message(id, masterNode.getId(), mwoe, level, round, componentId, "Done"));
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Drain the global queue to this local queue. The Global queue will have zero
+   * element.
+   * 
+   * @return
+   */
+  public void fetchFromGlobalQueue(LinkedBlockingQueue<Message> localQ) {
+    if (!globalIdAndMsgQueueMap.get(id).isEmpty()) {
+      globalIdAndMsgQueueMap.get(id).drainTo(localQ);
+    }
+
+    if (!globalIdAndMsgQueueMap.get(id).isEmpty()) {
+      System.err.println("Global queue is not empty. We have a prolem.");
+    }
+  }
+
+  /**
+   * set my round to the round master tells me. Will not confuse with delayRound
+   * in message.
+   * 
+   * @param m
+   */
+  public void processRoundNumber(Message m) {
+    round = m.getRound();
+  }
+
+  /**
+   * Send initiate to all branches and send test to smallest basic edge.
+   * 
+   * @param m
+   */
+  public void processInitMessage(Message m) throws InterruptedException {
+    sendTestToSmallestBasic();
+    sendInitiateToBranch();
+  }
+
+  /**
+   * Add the edge to rejected set. Remove from basic edge.Send test msg to the
+   * smallest basic edge.
+   * 
+   * @param m
+   */
+  public void processRejectMsg(Message m) throws InterruptedException {
+    for (Link l : basicEdge) {
+      if (l.getTo() == m.getSenderId()) {
+        rejected.add(l);
+        basicEdge.remove(l);
+
+      }
+    }
+    sendTestToSmallestBasic();
+  }
+
+  /**
+   * Remove the sender from waiting for response (because I got the response).
+   * Save the test msg.
+   * 
+   * @param m
+   */
+  public void processAcceptMessage(Message m) throws InterruptedException {
+    waitingForResponse.remove(m.getSenderId());
+    currentTestMsg = m;
+  }
+
+  /**
+   * If level is mismatched, send test to the next one.
+   * 
+   * @param m
+   * @throws InterruptedException
+   */
+  public void processLevelMismatchedMsg(Message m) throws InterruptedException {
+    for (Link l : basicEdge) {
+      if (l.getWeight() > m.getMwoe()) {
+        sendTestToSmallestBasic();
+      }
+    }
+  }
+
+  public SlaveThread() {
+  }
+
+  /**
+   * Constructor.
+   * 
+   * @param id
+   * @param masterNode
+   */
+
+  public SlaveThread(int id, MasterThread masterNode,
+      ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap) {
+    this.id = id;
+    this.componentId = id;
+    this.myParent = -1;
+    this.mwoe = Double.MAX_VALUE;
+    this.masterNode = masterNode;
+    this.round = 0;
+    this.terminated = false;
+
+    name = "Thread_" + id;
+
+    this.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
+    this.localMsgToReduce = new ConcurrentHashMap<>();
+    this.localMsgToSend = new ConcurrentHashMap<>();
+    // init local messages to send will be done after construction in MasterThread
+    // because Links are added after construction.
   }
 
 }

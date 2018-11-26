@@ -25,8 +25,8 @@ Round_Number: //done
 	1. Get New Round message from Master
 	
 Initiate Message: //done
-	1. Relay initiate message to all "tree edges"
-	2. Send "TEST" message to 1 basic edge
+	1. Relay initiate message to all branch
+	2. Send "TEST" message to smallest basic edge
 
 Test Message: //done
 	1. Check level of incoming message
@@ -52,7 +52,7 @@ levelMismatched //done
 	1. Choose next node in "basic tree", and sent Test message in that.
 	2. do not do anything to the previous MWOE edge		
 
-Report message
+Report message //done
 	1.if(slave_UID != reciever_UID)
 		add slave_UID to PATh variable, send message to the parent.
 	2. Else
@@ -63,7 +63,7 @@ Report message
 			else(incoming_message_mwoe < local_mwoe)
 				store message in a Message variable to send message to the node later(if needed)
 
-MWOE_FOUND Message:
+MWOE_FOUND Message:  
 	1.if(slave_UID != reciever_UID)
 		send message to the next element in the path variable.
 	2. Else if (slave_UID == reciever_UID)
@@ -82,10 +82,7 @@ Connect Message: //done
 		1.2if (my_level > incoming_message_level)
 			absorb() operation
 
-
-
-
-
+broadcastConnect/broadcastChangeRoot  //done
 
 
 

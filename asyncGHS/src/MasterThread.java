@@ -42,17 +42,19 @@ public class MasterThread extends SlaveThread {
     this.matrix = matrix;
     this.name = "Master";
     this.id = 0;
+    this.level = 0;
+    this.componentId = 0;
 
     this.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
-    this.localMessagesToSend = new ConcurrentHashMap<>();
+    this.localMsgToReduce = new ConcurrentHashMap<>();
     initGlobalIdAndMsgQueueMap();
   }
 
   @Override
-  public void initLocalMessagesToSend() {
-    localMessagesToSend.put(id, new LinkedBlockingQueue<Message>());
+  public void initLocalMessagesQueues() {
+    localMsgToReduce.put(id, new LinkedBlockingQueue<Message>());
     for (int i : slaveArray) {
-      localMessagesToSend.put(i, new LinkedBlockingQueue<Message>());
+      localMsgToReduce.put(i, new LinkedBlockingQueue<Message>());
     }
   }
 
@@ -132,8 +134,8 @@ public class MasterThread extends SlaveThread {
     System.out.println("MaxId----Parent <--- myId ---> myChildren (can overlap)");
     for (SlaveThread t : threadList) {
       System.out.print(t.componentId + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
-      for (Entry<Integer, Double> i : t.basicEdge.entrySet()) {
-        if (i.getKey() != t.getMyParent()) {
+      for (Link i : t.getBasicLinks()) {
+        if (i.getFrom() != t.getMyParent()) {
           System.out.print(i + " ");
         }
       }
@@ -150,7 +152,7 @@ public class MasterThread extends SlaveThread {
 
   /**
    * Create all nodes/threads, set their names, neighbors, initiate the local copy
-   * of the global queue.
+   * (two queues) of the global queue.
    */
   public void createThreads() {
     try {
@@ -159,10 +161,13 @@ public class MasterThread extends SlaveThread {
         leaderSet.add(slaveArray[row]);
         threadList.add(t);
 
-        for (int col = 0; col < size; col++)
+        for (int col = 0; col < size; col++) {
           if (matrix[row][col] != 0) {
             t.insertNeighbour(new Link(row, col, matrix[row][col]));
           }
+        }
+
+        t.initLocalMessagesQueues();
       }
 
       System.err.println("Created threads. ");
@@ -181,7 +186,7 @@ public class MasterThread extends SlaveThread {
     for (int i : slaveArray) {
       // System.err.println("Send Round_Number msg to " + i);
       try {
-        Message temp = new Message(id, i, 0, null, round, id, "Round_Number");
+        Message temp = new Message(id, i, 0, level, round, id, "Round_Number");
         globalIdAndMsgQueueMap.get(i).put(temp);
 
       } catch (Exception e) {
@@ -199,18 +204,15 @@ public class MasterThread extends SlaveThread {
     }
   }
 
+  /**
+   * Set all slaves' terminate to true;
+   */
   public void killAll() {
-    for (int i : slaveArray) {
+    for (SlaveThread s : threadList) {
 
-      // don't send msg to itself
-      if (i == id) {
-        continue;
-      }
-
-      System.out.println("Send Terminate msg to " + i);
+      System.out.println("Terminated slave " + s.getId());
       try {
-        Message temp = new Message(id, i, 0, null, round, id, "Terminate");
-        globalIdAndMsgQueueMap.get(i).put(temp);
+        s.terminated = true;
 
       } catch (Exception e) {
         e.printStackTrace();
