@@ -3,14 +3,14 @@ import java.util.LinkedList;
 
 public class Message {
 
-  protected String mType;
   protected int senderId; // serial number in the graph
+  protected int receiverId;
+  protected double mwoe;
   protected Link core;
   protected int round;
-  protected double mwoe;
-  protected LinkedList<Integer> path;
-  protected int receiverId;
   protected int level;
+  protected LinkedList<Integer> path;
+  protected String mType;
 
   /**
    * Constructor for floodmax messages.
@@ -82,7 +82,7 @@ public class Message {
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
     stringBuffer.append("mType ").append(mType).append(" Sender id: ").append(senderId).append(" core: ").append(core)
-        .append(" round ").append(round);
+        .append(" level ").append(level);
     return stringBuffer.toString();
   }
 

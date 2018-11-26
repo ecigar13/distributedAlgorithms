@@ -156,7 +156,9 @@ public class MasterThread extends SlaveThread {
 
         // add neighbors
         for (int col = 0; col < size; col++) {
-          if (matrix[row][col] != 0) {
+          if (matrix[row][col] > 0) {
+            // System.err.println(t.name + " " + slaveArray[row] + " " + slaveArray[col] + "
+            // " + matrix[row][col]);
             t.insertNeighbour(new Link(slaveArray[row], slaveArray[col], matrix[row][col]));
           }
         }
@@ -178,7 +180,7 @@ public class MasterThread extends SlaveThread {
 
   public synchronized void sendRoundStartMsg() {
     for (int i : slaveArray) {
-      System.err.println("Send Round_Number msg to " + i);
+      //System.err.println("Send Round_Number msg to " + i);
       try {
         Message temp = new Message(id, i, 0, level, round, coreLink, "Round_Number");
         globalIdAndMsgQueueMap.get(i).put(temp);

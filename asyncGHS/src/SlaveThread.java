@@ -38,7 +38,7 @@ public class SlaveThread implements Runnable {
   protected ArrayList<Integer> receivedConnect = new ArrayList<>();
 
   protected TreeSet<Integer> reportReceived = new TreeSet<>();
-  protected ArrayList<Integer> waitingForResponse = new ArrayList<>();
+  protected HashSet<Integer> waitingForResponse = new HashSet<>();
   protected TreeSet<Link> basicEdge = new TreeSet<>(new CompareLinks());
   protected TreeSet<Link> branch = new TreeSet<>(new CompareLinks());
   protected TreeSet<Link> rejected = new TreeSet<>(new CompareLinks());
@@ -46,7 +46,11 @@ public class SlaveThread implements Runnable {
   protected Random r = new Random();
 
   public void printSlave() {
-    System.out.printf("Name: %s \t isLeader %s \t level %s\n coreLink %s", name, isLeader, level, coreLink);
+    System.out.printf("Name: %s \t isLeader %s \t level %s coreLink %s\n testMsgToRespond %s\n", name, isLeader, level,
+        coreLink, testMsgToRespond.size());
+    for (Message m : testMsgToRespond) {
+      System.err.println(m);
+    }
   }
 
   /**
@@ -138,6 +142,7 @@ public class SlaveThread implements Runnable {
    * 
    */
   public void processConnectMessage(Message m) throws InterruptedException, NullPointerException {
+    System.out.printf("%s processing connect msg from %s\n", name, m.getSenderId());
     if (m.getPath().size() == 0) {
       // if I sent connect msg before. Then merge or absorb.
       receivedConnect.add(m.getSenderId());
@@ -303,25 +308,26 @@ public class SlaveThread implements Runnable {
   }
 
   /**
-   * Process Test messages. If my lvl is > your lvl.
+   * Implement initial round, when coreLink is null.
    * 
-   * "accept" message will be used to construct report msg, so always add the
-   * path.
-   * 
-   * If my lvl < your lvl, maybe I'm in the same component but I don't know yet.
+   * Process Test messages. If my lvl is > your lvl. "accept" message will be used
+   * to construct report msg, so always add the path. If my lvl < your lvl, maybe
+   * I'm in the same component but I don't know yet.
    * 
    * @param m
+   *          test msg to process
    */
   public void processTestMsg(Message m) throws InterruptedException {
     if (level >= m.getLevel()) {
-      if (coreLink.equals(m.getCore())) {
+      if (coreLink == null || coreLink != m.getCore()) {
+        Message temp = new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(19) + 1, coreLink, "accept");
+        temp.getPath().add(id); // important step in deciding to send report message.
+        System.out.println(name + " " + m.getSenderId());
+        localMsgToReduce.get(m.getSenderId()).put(temp);
+      } else if (coreLink.equals(m.getCore())) {
         localMsgToReduce.get(m.getSenderId())
             .put(new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(19) + 1, coreLink, "reject"));
 
-      } else if (coreLink != m.getCore()) {
-        Message temp = new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(19) + 1, coreLink, "accept");
-        temp.getPath().add(id); // important step in deciding to send report message.
-        localMsgToReduce.get(m.getSenderId()).put(temp);
       }
     } else { // can't decide, wait until level is high enough to respond. See wikipedia algo.
       testMsgToRespond.add(m);
@@ -368,9 +374,9 @@ public class SlaveThread implements Runnable {
   public void sendTestToSmallestBasic() throws InterruptedException {
     Link e = basicEdge.first();
     if (!waitingForResponse.contains(e.getTo())) {
-      System.out.println("Send test to " + e.getTo());
       localMsgToReduce.get(e.getTo())
-          .put(new Message(id, e.getTo(), e.getWeight(), r.nextInt(19) + 1, round, coreLink, "test"));
+          .put(new Message(id, e.getTo(), e.getWeight(), level, r.nextInt(19) + 1, coreLink, "test"));
+      System.out.println("Send test to " + e.getTo());
       waitingForResponse.add(e.getTo());
 
     } else {
@@ -442,15 +448,12 @@ public class SlaveThread implements Runnable {
 
     for (Entry<Integer, LinkedBlockingQueue<Message>> e : localMsgToReduce.entrySet()) {
       for (Message message : e.getValue()) {
-        int temp = message.getRound() - 1 >= 0 ? message.getRound() - 1 : 0;
+        int temp = message.getRound() - 1 > 0 ? message.getRound() - 1 : 0;
         message.setRound(temp);
       }
 
-      if (e.getValue().size() != 0) {
-        while (e.getValue().peek().getRound() <= 0) {
-          localMsgToSend.get(e.getKey()).put(e.getValue().remove());
-        }
-
+      while (e.getValue().size() > 0 && e.getValue().peek().getRound() <= 0) {
+        localMsgToSend.get(e.getKey()).put(e.getValue().remove());
       }
 
     }
@@ -561,6 +564,8 @@ public class SlaveThread implements Runnable {
    * @param m
    */
   public void processAcceptMessage(Message m) throws InterruptedException {
+    // System.out.println(m);
+    // System.err.println(waitingForResponse);
     waitingForResponse.remove(m.getSenderId());
     currentSmallestTestMsg = m;
   }
