@@ -6,9 +6,601 @@ Test print matrix
 1 1 0 0 
 0 1 0 0 
 Print double matrix and write to file: 
+-1.0	58.6	23.8	-1.0	
+57.9	-1.0	75.4	5.6	
+49.0	46.0	-1.0	-1.0	
+-1.0	13.6	-1.0	-1.0	
+The Master has started. Size: 4
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Created threads. 
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Master checking its queue. Size of queue is: 0 round 1
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullSend test to 20
+mType Round_Number Sender id: 0 core: null round 1
+java.lang.NullPointerException
+	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
+	at SlaveThread.run(SlaveThread.java:229)
+	at MasterThread.startAllThreads(MasterThread.java:175)
+	at MasterThread.run(MasterThread.java:113)
+	at java.lang.Thread.run(Thread.java:748)
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullSend test to 99
+mType Round_Number Sender id: 0 core: null round 1
+java.lang.NullPointerException
+	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
+	at SlaveThread.run(SlaveThread.java:229)
+	at MasterThread.startAllThreads(MasterThread.java:175)
+	at MasterThread.run(MasterThread.java:113)
+	at java.lang.Thread.run(Thread.java:748)
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullSend test to 32
+mType Round_Number Sender id: 0 core: null round 1
+java.lang.NullPointerException
+	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
+	at SlaveThread.run(SlaveThread.java:229)
+	at MasterThread.startAllThreads(MasterThread.java:175)
+	at MasterThread.run(MasterThread.java:113)
+	at java.lang.Thread.run(Thread.java:748)
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullSend test to 20
+mType Round_Number Sender id: 0 core: null round 1
+java.lang.NullPointerException
+	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
+	at SlaveThread.run(SlaveThread.java:229)
+	at MasterThread.startAllThreads(MasterThread.java:175)
+	at MasterThread.run(MasterThread.java:113)
+	at java.lang.Thread.run(Thread.java:748)
+Master checking its queue. Size of queue is: 0 round 1
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+Master checking its queue. Size of queue is: 0 round 1
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType test Sender id: 20 core: null round 0
+mType test Sender id: 67 core: null round 0
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType test Sender id: 99 core: null round 0
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType test Sender id: 32 core: null round 0
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+Master checking its queue. Size of queue is: 4 round 1
+Send Round_Number msg to 20
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 2
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 2
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 2
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 2
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Master checking its queue. Size of queue is: 4 round 2
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 3
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 3
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 3
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 3
+Master checking its queue. Size of queue is: 4 round 3
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 4
+Send Round_Number msg to 67
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 4
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 4
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 4
+Master checking its queue. Size of queue is: 4 round 4
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 5
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 5
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 5
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 5
+Master checking its queue. Size of queue is: 4 round 5
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 6
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 6
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 6
 
-Test print matrix
--1.0	66.4	65.1	-1.0	
-34.6	-1.0	19.1	2.4	
-23.9	34.9	-1.0	-1.0	
--1.0	99.1	-1.0	-1.0	
+Send Round_Number msg to 67
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 6
+Master checking its queue. Size of queue is: 4 round 6
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 7
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 7
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 7
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 7
+Master checking its queue. Size of queue is: 4 round 7
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 8
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 8
+Send Round_Number msg to 67
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 8
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 8
+Master checking its queue. Size of queue is: 4 round 8
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 9
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 9
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 9
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 9
+Master checking its queue. Size of queue is: 4 round 9
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Starting threads. 
+Send Round_Number msg to 67
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 10
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 10
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 10
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 10
+Master checking its queue. Size of queue is: 4 round 10
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 11
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 11
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 11
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 11
+Master checking its queue. Size of queue is: 4 round 11
+Starting threads. 
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 12
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 12
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 12
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 12
+Master checking its queue. Size of queue is: 4 round 12
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 13
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 13
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 13
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 13
+Master checking its queue. Size of queue is: 4 round 13
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 14
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 14
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 14
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 14
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Master checking its queue. Size of queue is: 4 round 14
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 15
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 15
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 15
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 15
+Master checking its queue. Size of queue is: 4 round 15
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 16
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 16
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 16
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 16
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Master checking its queue. Size of queue is: 4 round 16
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 17
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 17
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 17
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 17
+Master checking its queue. Size of queue is: 4 round 17
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 18
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 18
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 18
+Send Round_Number msg to 67
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 18
+Master checking its queue. Size of queue is: 4 round 18
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 19
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 19
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 19
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 19
+Master checking its queue. Size of queue is: 4 round 19
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 20
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 20
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 20
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 20
+Master checking its queue. Size of queue is: 4 round 20
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 21
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 21
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 21
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 21
+Master checking its queue. Size of queue is: 4 round 21
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 22
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 22
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 22
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 22
+Master checking its queue. Size of queue is: 4 round 22
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 23
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 23
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 23
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 23
+Master checking its queue. Size of queue is: 4 round 23
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 24
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+mType Round_Number Sender id: 0 core: null round 24
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 24
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 24
+Send Round_Number msg to 67
+Master checking its queue. Size of queue is: 4 round 24
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 25
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 25
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 25
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 25
+Master checking its queue. Size of queue is: 4 round 25
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 26
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 26
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 26
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 26
+Master checking its queue. Size of queue is: 4 round 26
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 27
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 27
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 27
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 27
+Master checking its queue. Size of queue is: 4 round 27
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 28
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 28
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 28
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 28
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Master checking its queue. Size of queue is: 4 round 28
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 29
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 29
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 29
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 29
+Send Round_Number msg to 20
+Send Round_Number msg to 99
+Send Round_Number msg to 32
+Send Round_Number msg to 67
+Master checking its queue. Size of queue is: 4 round 29
+Starting threads. 
+Name: Thread_20 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 30
+Name: Thread_99 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 99
+mType Round_Number Sender id: 0 core: null round 30
+Name: Thread_32 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 32
+mType Round_Number Sender id: 0 core: null round 30
+Name: Thread_67 	 isLeader true 	 level 0
+ coreLink nullWaiting for response from 20
+mType Round_Number Sender id: 0 core: null round 30

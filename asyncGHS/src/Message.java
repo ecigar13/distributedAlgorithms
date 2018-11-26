@@ -5,7 +5,7 @@ public class Message {
 
   protected String mType;
   protected int senderId; // serial number in the graph
-  protected int componentId;
+  protected Link core;
   protected int round;
   protected double mwoe;
   protected LinkedList<Integer> path;
@@ -23,26 +23,26 @@ public class Message {
    * @param level
    *          TODO
    * @param round
-   * @param componentId
+   * @param core
    * @param mType
    */
-  public Message(int senderId, int receiverId, double mwoe, int level, int round, int componentId, String mType) {
+  public Message(int senderId, int receiverId, double mwoe, int level, int round, Link core, String mType) {
     this.senderId = senderId;
     this.receiverId = receiverId;
     this.mwoe = mwoe;
-    this.componentId = componentId;
+    this.core = core;
     this.level = level;
     this.round = round;
     this.mType = mType;
     this.path = new LinkedList<>();
   }
 
-  public int getComponentId() {
-    return componentId;
+  public Link getCore() {
+    return core;
   }
 
-  public void setComponentId(int componentId) {
-    this.componentId = componentId;
+  public void setCore(Link core) {
+    this.core = core;
   }
 
   public int getLevel() {
@@ -81,11 +81,10 @@ public class Message {
 
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
-    stringBuffer.append("mType ").append(mType).append(" Sender id: ").append(senderId).append(" maxUid: ")
-        .append(componentId).append(" round ").append(round);
+    stringBuffer.append("mType ").append(mType).append(" Sender id: ").append(senderId).append(" core: ").append(core)
+        .append(" round ").append(round);
     return stringBuffer.toString();
   }
-
 
   public int getReceiverId() {
     return receiverId;

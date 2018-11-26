@@ -43,19 +43,10 @@ public class MasterThread extends SlaveThread {
     this.name = "Master";
     this.id = 0;
     this.level = 0;
-    this.componentId = 0;
+    this.coreLink = null;
 
     this.globalIdAndMsgQueueMap = new ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>>();
-    this.localMsgToReduce = new ConcurrentHashMap<>();
     initGlobalIdAndMsgQueueMap();
-  }
-
-  @Override
-  public void initLocalMessagesQueues() {
-    localMsgToReduce.put(id, new LinkedBlockingQueue<Message>());
-    for (int i : slaveArray) {
-      localMsgToReduce.put(i, new LinkedBlockingQueue<Message>());
-    }
   }
 
   /**
@@ -76,9 +67,10 @@ public class MasterThread extends SlaveThread {
 
     do {
 
-      if (globalIdAndMsgQueueMap.get(id).size() != slaveArray.length) {
-        continue;
-      }
+      // if (globalIdAndMsgQueueMap.get(id).size() != slaveArray.length) {
+      // System.out.println("Master waiting.");
+      // continue;
+      // }
       globalIdAndMsgQueueMap.get(id).drainTo(localMessageQueue);
       System.out
           .println("Master checking its queue. Size of queue is: " + localMessageQueue.size() + " round " + round);
@@ -93,11 +85,11 @@ public class MasterThread extends SlaveThread {
             localMessageQueue.clear();
 
             globalIdAndMsgQueueMap.get(tempMsg.getSenderId())
-                .put(new Message(id, tempMsg.getSenderId(), 0, tempMsg.componentId, round, componentId, "Terminate"));
+                .put(new Message(id, tempMsg.getSenderId(), 0, level, round, coreLink, "Terminate"));
             System.err.println("---Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
             masterMustDie = true;
 
-            componentId = tempMsg.getSenderId();
+            coreLink = tempMsg.getCore();
             killAll();
           } else if ((tempMsg.getmType().equals("Done"))) {
             processRoundDoneMsg(tempMsg);
@@ -119,10 +111,11 @@ public class MasterThread extends SlaveThread {
       }
       System.out.println("Starting threads. ");
       startAllThreads();
+      sleep();
     } while (!masterMustDie);
 
     printTree();
-    System.out.println("Master will now die. MaxUid " + componentId + " round " + round);
+    System.out.println("Master will now die. MaxUid " + coreLink + " round " + round);
 
   }
 
@@ -133,7 +126,7 @@ public class MasterThread extends SlaveThread {
     System.out.println("\n\nPrinting the tree.");
     System.out.println("MaxId----Parent <--- myId ---> myChildren (can overlap)");
     for (SlaveThread t : threadList) {
-      System.out.print(t.componentId + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
+      System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (Link i : t.getBasicLinks()) {
         if (i.getFrom() != t.getMyParent()) {
           System.out.print(i + " ");
@@ -161,9 +154,10 @@ public class MasterThread extends SlaveThread {
         leaderSet.add(slaveArray[row]);
         threadList.add(t);
 
+        // add neighbors
         for (int col = 0; col < size; col++) {
           if (matrix[row][col] != 0) {
-            t.insertNeighbour(new Link(row, col, matrix[row][col]));
+            t.insertNeighbour(new Link(slaveArray[row], slaveArray[col], matrix[row][col]));
           }
         }
 
@@ -182,11 +176,11 @@ public class MasterThread extends SlaveThread {
     }
   }
 
-  public void sendRoundStartMsg() {
+  public synchronized void sendRoundStartMsg() {
     for (int i : slaveArray) {
-      // System.err.println("Send Round_Number msg to " + i);
+      System.err.println("Send Round_Number msg to " + i);
       try {
-        Message temp = new Message(id, i, 0, level, round, id, "Round_Number");
+        Message temp = new Message(id, i, 0, level, round, coreLink, "Round_Number");
         globalIdAndMsgQueueMap.get(i).put(temp);
 
       } catch (Exception e) {

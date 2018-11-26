@@ -1,9 +1,22 @@
-
+/**
+ * 
+ * @author khoa
+ *
+ */
 public class Link {
   int from;
   int to;
   double weight;
-  
+
+  /**
+   * 
+   * @param from
+   *          link from
+   * @param to
+   *          link to
+   * @param weight
+   *          edge weight
+   */
   public Link(int from, int to, double weight) {
     this.to = to;
     this.from = from;
@@ -34,5 +47,8 @@ public class Link {
     this.weight = weight;
   }
 
+  public String toString() {
+    return from + " " + to + " " + weight;
+  }
 
 }
