@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import java.util.Collections;
@@ -41,50 +42,12 @@ public class SlaveThread implements Runnable {
 
   protected TreeSet<Integer> reportReceived = new TreeSet<>();
   protected HashSet<Integer> waitingForResponse = new HashSet<>();
-  protected TreeSet<Link> basicEdge;
-  protected TreeSet<Link> branch = new TreeSet<>(new CompareLinks());
-  protected TreeSet<Link> rejected = new TreeSet<>(new CompareLinks());
+  protected ConcurrentSkipListSet<Link> basicEdge = new ConcurrentSkipListSet<>(new CompareLinks());
+  protected ConcurrentSkipListSet<Link> branch = new ConcurrentSkipListSet<>(new CompareLinks());
+
+  protected ConcurrentSkipListSet<Link> rejected = new ConcurrentSkipListSet<>(new CompareLinks());
 
   protected Random r = new Random();
-
-  public SlaveThread() {
-  }
-
-  /**
-   * Constructor.
-   * 
-   * @param id
-   * @param masterNode
-   */
-
-  public SlaveThread(int id, MasterThread masterNode,
-      ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap) {
-    this.id = id;
-    this.coreLink = null;
-    this.myParent = -1;
-    this.mwoe = Double.MAX_VALUE;
-    this.masterNode = masterNode;
-    this.round = 0;
-    this.terminated = false;
-    TreeSet<Link> treeSet = new TreeSet<>(new CompareLinks());
-    basicEdge = treeSet;
-
-    name = "Thread_" + id;
-
-    this.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
-    this.localMsgToReduce = new ConcurrentHashMap<>();
-    this.localMsgToSend = new ConcurrentHashMap<>();
-    // init local messages to send will be done after construction in MasterThread
-    // because Links are added after construction.
-  }
-
-  public void printSlave() {
-    System.out.printf("%s \t myParent %s \t level %s coreLink %s\n testMsgToRespond %s\n\n", name, myParent, level,
-        coreLink, testMsgToRespond.size());
-    for (Message m : testMsgToRespond) {
-      System.err.println(m + "DDDDDDDD");
-    }
-  }
 
   /**
    * 
@@ -103,11 +66,8 @@ public class SlaveThread implements Runnable {
 
     // inefficient because using object.
     for (Link l : basicEdge) {
-      if (l.getTo() == m.getSenderId()) {
-        branch.add(l);
-        basicEdge.remove(l);
-
-      }
+      basicEdge.remove(l);
+      branch.add(l);
 
     }
 
@@ -147,8 +107,8 @@ public class SlaveThread implements Runnable {
     Message m;
     while (localMessageQueue.size() != 0) {
       m = localMessageQueue.poll();
-      System.out.println(name + " " + m);
-      System.out.println();
+      // System.out.println(name + " " + m);
+      // System.out.println();
 
       if (m.getmType().equals("Round_Number")) {
         processRoundNumber(m);
@@ -313,7 +273,8 @@ public class SlaveThread implements Runnable {
   }
 
   public synchronized void printEdges() {
-    System.err.printf("Print branch ");
+    System.err.print(name);
+    System.err.printf(" Print branch ");
     for (Link l : branch) {
       System.err.println(l);
     }
@@ -338,9 +299,6 @@ public class SlaveThread implements Runnable {
    */
   public void decideToSendReportMsg() throws InterruptedException {
 
-    System.err.println(name);
-    System.err.println(currentSmallestAcceptMsg);
-
     if (reportReceived.size() == branch.size() - 1 && currentSmallestAcceptMsg != null) {
 
       // If I got report from all branches, Compare it with what I get from reports.
@@ -361,7 +319,7 @@ public class SlaveThread implements Runnable {
       msgToUse.getPath().add(id);
 
       System.out.println("PPPPPPPPPP" + myParent);
-      localMsgToReduce.get(myParent).put(msgToUse);
+      localMsgToReduce.get(myParent).put(msgToUse); // null pointer exception here.
 
     } else if (myParent == -1) {
       if (reportReceived.size() == branch.size() && currentSmallestAcceptMsg != null) {
@@ -567,7 +525,7 @@ public class SlaveThread implements Runnable {
 
   public void sleep() {
     try {
-      Thread.sleep(200);
+      Thread.sleep(0);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
@@ -581,7 +539,7 @@ public class SlaveThread implements Runnable {
     return myParent;
   }
 
-  public SortedSet<Link> getBasicLinks() {
+  public ConcurrentSkipListSet<Link> getBasicLinks() {
     return basicEdge;
   }
 
@@ -620,6 +578,14 @@ public class SlaveThread implements Runnable {
       }
 
     }
+  }
+
+  public ConcurrentSkipListSet<Link> getBranch() {
+    return branch;
+  }
+
+  public void setBranch(ConcurrentSkipListSet<Link> branch) {
+    this.branch = branch;
   }
 
   /**
@@ -734,6 +700,43 @@ public class SlaveThread implements Runnable {
       // broadcast absorbed msg to all branches.
       localMsgToReduce.get(l.getTo())
           .put(new Message(id, l.getTo(), mwoe, level, r.nextInt(delay) + 1, coreLink, "absorbed"));
+    }
+  }
+
+  public SlaveThread() {
+  }
+
+  /**
+   * Constructor.
+   * 
+   * @param id
+   * @param masterNode
+   */
+
+  public SlaveThread(int id, MasterThread masterNode,
+      ConcurrentHashMap<Integer, LinkedBlockingQueue<Message>> globalIdAndMsgQueueMap) {
+    this.id = id;
+    this.coreLink = null;
+    this.myParent = -1;
+    this.mwoe = Double.MAX_VALUE;
+    this.masterNode = masterNode;
+    this.round = 0;
+    this.terminated = false;
+
+    name = "Thread_" + id;
+
+    this.globalIdAndMsgQueueMap = globalIdAndMsgQueueMap;
+    this.localMsgToReduce = new ConcurrentHashMap<>();
+    this.localMsgToSend = new ConcurrentHashMap<>();
+    // init local messages to send will be done after construction in MasterThread
+    // because Links are added after construction.
+  }
+
+  public void printSlave() {
+    System.out.printf("%s \t myParent %s \t level %s coreLink %s\n testMsgToRespond %s\n\n", name, myParent, level,
+        coreLink, testMsgToRespond.size());
+    for (Message m : testMsgToRespond) {
+      System.err.println(m + "DDDDDDDD");
     }
   }
 

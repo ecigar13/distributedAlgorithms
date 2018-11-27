@@ -1,606 +1,1602 @@
-Size is : 4
-
+Size is : 35
+ 126 	 465 	 1031 	 1086 	 1448 	 1527 	 1662 	 1720 	 2034 	 2268 	 3771 	 3862 	 4038 	 6236 	 6371 	 6514 	 6862 	 6874 	 7482 	 7543 	 7592 	 7689 	 8210 	 8272 	 8437 	 8459 	 8586 	 8770 	 9198 	 9201 	 9202 	 9385 	 9532 	 9647 	 9744 	
 Test print matrix
-0 1 1 0 
-1 0 1 1 
-1 1 0 0 
-0 1 0 0 
+-1.0	28.8	23.2	87.4	64.5	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	7.7	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+28.8	-1.0	86.7	64.3	61.3	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+23.2	86.7	-1.0	78.2	84.5	-1.0	-1.0	-1.0	-1.0	83.6	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+87.4	64.3	78.2	-1.0	76.1	-1.0	-1.0	-1.0	59.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	58.8	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+64.5	61.3	84.5	76.1	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	2.1	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	21.3	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	58.3	4.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	13.2	-1.0	-1.0	28.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	97.1	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	12.7	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	59.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	85.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	83.6	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	17.9	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	5.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	23.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	9.6	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	5.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	40.8	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	2.1	58.3	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	4.2	-1.0	-1.0	-1.0	17.9	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	27.5	25.3	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	97.1	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	27.5	-1.0	-1.0	-1.0	-1.0	-1.0	1.5	-1.0	-1.0	-1.0	82.0	-1.0	20.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	25.3	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	10.3	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	58.8	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	69.7	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	37.4	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	23.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	69.7	-1.0	-1.0	69.8	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	85.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	1.5	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	69.8	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	56.5	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	39.4	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	61.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+7.7	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	82.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	13.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	61.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	52.1	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	20.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	63.4	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	40.8	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	63.4	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	28.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	10.3	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	21.2	-1.0	
+-1.0	-1.0	-1.0	-1.0	21.3	-1.0	-1.0	12.7	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	73.8	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	73.8	-1.0	18.9	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	18.9	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	9.6	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	37.4	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	21.2	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
+-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	56.5	39.4	-1.0	-1.0	52.1	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0	
 Print double matrix and write to file: 
--1.0	58.6	23.8	-1.0	
-57.9	-1.0	75.4	5.6	
-49.0	46.0	-1.0	-1.0	
--1.0	13.6	-1.0	-1.0	
-The Master has started. Size: 4
+The Master has started. Size: 35
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
+Done initiating SlaveThread queues.
 Done initiating SlaveThread queues.
 Done initiating SlaveThread queues.
 Done initiating SlaveThread queues.
 Done initiating SlaveThread queues.
 Created threads. 
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Master checking its queue. Size of queue is: 0 round 1
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullSend test to 20
-mType Round_Number Sender id: 0 core: null round 1
-java.lang.NullPointerException
-	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
-	at SlaveThread.run(SlaveThread.java:229)
-	at MasterThread.startAllThreads(MasterThread.java:175)
-	at MasterThread.run(MasterThread.java:113)
-	at java.lang.Thread.run(Thread.java:748)
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullSend test to 99
-mType Round_Number Sender id: 0 core: null round 1
-java.lang.NullPointerException
-	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
-	at SlaveThread.run(SlaveThread.java:229)
-	at MasterThread.startAllThreads(MasterThread.java:175)
-	at MasterThread.run(MasterThread.java:113)
-	at java.lang.Thread.run(Thread.java:748)
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullSend test to 32
-mType Round_Number Sender id: 0 core: null round 1
-java.lang.NullPointerException
-	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
-	at SlaveThread.run(SlaveThread.java:229)
-	at MasterThread.startAllThreads(MasterThread.java:175)
-	at MasterThread.run(MasterThread.java:113)
-	at java.lang.Thread.run(Thread.java:748)
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullSend test to 20
-mType Round_Number Sender id: 0 core: null round 1
-java.lang.NullPointerException
-	at SlaveThread.reduceRoundInMsg(SlaveThread.java:450)
-	at SlaveThread.run(SlaveThread.java:229)
-	at MasterThread.startAllThreads(MasterThread.java:175)
-	at MasterThread.run(MasterThread.java:113)
-	at java.lang.Thread.run(Thread.java:748)
-Master checking its queue. Size of queue is: 0 round 1
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-Master checking its queue. Size of queue is: 0 round 1
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType test Sender id: 20 core: null round 0
-mType test Sender id: 67 core: null round 0
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType test Sender id: 99 core: null round 0
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType test Sender id: 32 core: null round 0
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-Master checking its queue. Size of queue is: 4 round 1
-Send Round_Number msg to 20
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 2
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 2
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 2
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 2
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Master checking its queue. Size of queue is: 4 round 2
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 3
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 3
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 3
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 3
-Master checking its queue. Size of queue is: 4 round 3
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 4
-Send Round_Number msg to 67
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 4
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 4
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 4
-Master checking its queue. Size of queue is: 4 round 4
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 5
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 5
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 5
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 5
-Master checking its queue. Size of queue is: 4 round 5
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 6
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 6
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 6
 
-Send Round_Number msg to 67
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 6
-Master checking its queue. Size of queue is: 4 round 6
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
+Master checking its queue. Size of queue is: 0 round 1 
+[8770, 4038, 1031, 7689, 8586, 8459, 6862, 8272, 9744, 465, 8210, 3862, 6874, 2268, 6236, 6371, 1448, 7592, 9385, 9198, 9647, 9201, 2034, 6514, 9202, 8437, 1527, 7543, 1720, 7482, 3771, 9532, 126, 1086, 1662]
 Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 7
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 7
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 7
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 7
-Master checking its queue. Size of queue is: 4 round 7
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
+Thread_126 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_126 send test to 8437
+Thread_126 Print branch Print basic 126-8437-7.7
+126-1031-23.2
+126-465-28.8
+126-1448-64.5
+126-1086-87.4
+Print reject Thread_465 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_465 send test to 126
+Thread_465 Print branch Print basic 465-126-28.8
+465-1448-61.3
+465-1086-64.3
+465-1031-86.7
+Print reject Thread_1031 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1031 send test to 126
+Thread_1031 Print branch Print basic 1031-126-23.2
+1031-1086-78.2
+1031-2268-83.6
+1031-1448-84.5
+1031-465-86.7
+Print reject Thread_1086 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1086 send test to 7482
+Thread_1086 Print branch Print basic 1086-7482-58.8
+1086-2034-59.0
+1086-465-64.3
+1086-1448-76.1
+1086-1031-78.2
+1086-126-87.4
+Print reject Thread_1448 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1448 send test to 4038
+Thread_1448 Print branch Print basic 1448-4038-2.1
+1448-9201-21.3
+1448-465-61.3
+1448-126-64.5
+1448-1086-76.1
+1448-1031-84.5
+Print reject Thread_1527 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1527 send test to 6236
+Thread_1527 Print branch Print basic 1527-6236-4.2
+1527-4038-58.3
+Print reject Thread_1662 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1662 send test to 8459
+Thread_1662 Print branch Print basic 1662-8459-13.2
+1662-9198-28.2
+Print reject Thread_1720 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1720 send test to 9201
+Thread_1720 Print branch Print basic 1720-9201-12.7
+1720-6514-97.1
+Print reject Thread_2034 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_2034 send test to 1086
+Thread_2034 Print branch Print basic 2034-1086-59.0
+2034-7592-85.0
+Print reject Thread_2268 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_2268 send test to 6236
+Thread_2268 Print branch Print basic 2268-6236-17.9
+2268-1031-83.6
+Print reject Thread_3771 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_3771 send test to 3862
+Thread_3771 Print branch Print basic 3771-3862-5.2
+3771-9532-9.6
+3771-7543-23.2
+Print reject Thread_3862 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_3862 send test to 3771
+Thread_3862  sending accept to 3771
+
+Thread_3862 Print branch Print basic 3862-3771-5.2
+3862-8770-40.8
+Print reject Thread_4038 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_4038 send test to 1448
+Thread_4038  sending accept to 1448
+
+Thread_4038 Print branch Print basic 4038-1448-2.1
+4038-1527-58.3
+Print reject Thread_6236 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6236 send test to 1527
+Thread_6236  sending accept to 1527
+
+Thread_6236  sending accept to 2268
+
+Thread_6236 Print branch Print basic 6236-1527-4.2
+6236-2268-17.9
+Print reject Thread_6371 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6371 send test to 6862
+Thread_6371 Print branch Print basic 6371-6862-25.3
+6371-6514-27.5
+Print reject Thread_6514 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6514 send test to 7592
+Thread_6514 Print branch Print basic 6514-7592-1.5
+6514-8586-20.0
+6514-6371-27.5
+6514-8437-82.0
+6514-1720-97.1
+Print reject Thread_6862 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6862 send test to 6371
+Thread_6862  sending accept to 6371
+
+Thread_6862 Print branch Print basic 6862-6371-25.3
+Print reject Thread_6874 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6874 send test to 9198
+Thread_6874 Print branch Print basic 6874-9198-10.3
+Print reject Thread_7482 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7482 send test to 9647
+Thread_7482  sending accept to 1086
+
+Thread_7482 Print branch Print basic 7482-9647-37.4
+7482-1086-58.8
+7482-7543-69.7
+Print reject Thread_7543 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7543 send test to 3771
+Thread_7543 Print branch Print basic 7543-3771-23.2
+7543-7482-69.7
+7543-7689-69.8
+Print reject Thread_7592 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7592 send test to 6514
+Thread_7592  sending accept to 6514
+
+Thread_7592 Print branch Print basic 7592-6514-1.5
+7592-2034-85.0
+Print reject Thread_7689 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7689 send test to 9744
+Thread_7689 Print branch Print basic 7689-9744-56.5
+7689-7543-69.8
+Print reject Thread_8210 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8210 send test to 9744
+Thread_8210 Print branch Print basic 8210-9744-39.4
+Print reject Thread_8272 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8272 send test to 8459
+Thread_8272 Print branch Print basic 8272-8459-61.0
+Print reject Thread_8437 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8437 send test to 126
+Thread_8437  sending accept to 126
+
+Thread_8437 Print branch Print basic 8437-126-7.7
+8437-6514-82.0
+Print reject Thread_8459 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8459 send test to 1662
+Thread_8459  sending accept to 1662
+
+Thread_8459  sending accept to 8272
+
+Thread_8459 Print branch Print basic 8459-1662-13.2
+8459-9744-52.1
+8459-8272-61.0
+Print reject Thread_8586 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8586 send test to 6514
+Thread_8586 Print branch Print basic 8586-6514-20.0
+8586-8770-63.4
+Print reject Thread_8770 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8770 send test to 3862
+Thread_8770 Print branch Print basic 8770-3862-40.8
+8770-8586-63.4
+Print reject Thread_9198 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9198 send test to 6874
+Thread_9198  sending accept to 6874
+
+Thread_9198 Print branch Print basic 9198-6874-10.3
+9198-9647-21.2
+9198-1662-28.2
+Print reject Thread_9201 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9201 send test to 1720
+Thread_9201  sending accept to 1720
+
+Thread_9201 Print branch Print basic 9201-1720-12.7
+9201-1448-21.3
+9201-9202-73.8
+Print reject Thread_9202 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9202 send test to 9385
+Thread_9202 Print branch Print basic 9202-9385-18.9
+9202-9201-73.8
+Print reject Thread_9385 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9385 send test to 9202
+Thread_9385  sending accept to 9202
+
+Thread_9385 Print branch Print basic 9385-9202-18.9
+Print reject Thread_9532 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9532 send test to 3771
+Thread_9532 Print branch Print basic 9532-3771-9.6
+Print reject Thread_9647 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9647 send test to 9198
+Thread_9647  sending accept to 7482
+
+Thread_9647 Print branch Print basic 9647-9198-21.2
+9647-7482-37.4
+Print reject Thread_9744 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9744 send test to 8210
+Thread_9744  sending accept to 7689
+
+Thread_9744  sending accept to 8210
+
+Thread_9744 Print branch Print basic 9744-8210-39.4
+9744-8459-52.1
+9744-7689-56.5
+Print reject 
+Master checking its queue. Size of queue is: 0 round 1 
+[8770, 4038, 1031, 7689, 8586, 8459, 6862, 8272, 9744, 465, 8210, 3862, 6874, 2268, 6236, 6371, 1448, 7592, 9385, 9198, 9647, 9201, 2034, 6514, 9202, 8437, 1527, 7543, 1720, 7482, 3771, 9532, 126, 1086, 1662]
 Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 8
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 8
-Send Round_Number msg to 67
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 8
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 8
-Master checking its queue. Size of queue is: 4 round 8
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
+Thread_126 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 8437
+Thread_126  sending accept to 465
+
+Thread_126  sending accept to 1031
+
+Thread_126  sending accept to 8437
+
+Thread_126 Print branch Print basic 126-8437-7.7
+126-1031-23.2
+126-465-28.8
+126-1448-64.5
+126-1086-87.4
+Print reject Thread_465 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 126
+Thread_465 Print branch Print basic 465-126-28.8
+465-1448-61.3
+465-1086-64.3
+465-1031-86.7
+Print reject Thread_1031 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 126
+Thread_1031 Print branch Print basic 1031-126-23.2
+1031-1086-78.2
+1031-2268-83.6
+1031-1448-84.5
+1031-465-86.7
+Print reject Thread_1086 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 7482
+Thread_1086  sending accept to 2034
+
+Thread_1086 Print branch Print basic 1086-7482-58.8
+1086-2034-59.0
+1086-465-64.3
+1086-1448-76.1
+1086-1031-78.2
+1086-126-87.4
+Print reject Thread_1448 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 4038
+Thread_1448  sending accept to 4038
+
+Thread_1448 Print branch Print basic 1448-4038-2.1
+1448-9201-21.3
+1448-465-61.3
+1448-126-64.5
+1448-1086-76.1
+1448-1031-84.5
+Print reject Thread_1527 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 6236
+Thread_1527  sending accept to 6236
+
+Thread_1527 Print branch Print basic 1527-6236-4.2
+1527-4038-58.3
+Print reject Thread_1662 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 8459
+Thread_1662  sending accept to 8459
+
+Thread_1662 Print branch Print basic 1662-8459-13.2
+1662-9198-28.2
+Print reject Thread_1720 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9201
+Thread_1720  sending accept to 9201
+
+Thread_1720 Print branch Print basic 1720-9201-12.7
+1720-6514-97.1
+Print reject Thread_2034 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 1086
+Thread_2034 Print branch Print basic 2034-1086-59.0
+2034-7592-85.0
+Print reject Thread_2268 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 6236
+Thread_2268 Print branch Print basic 2268-6236-17.9
+2268-1031-83.6
+Print reject Thread_3771 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 3862
+Thread_3771  sending accept to 3862
+
+Thread_3771  sending accept to 7543
+
+Thread_3771  sending accept to 9532
+
+Thread_3771 Print branch Print basic 3771-3862-5.2
+3771-9532-9.6
+3771-7543-23.2
+Print reject Thread_3862 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 3771
+Thread_3862  sending accept to 8770
+
+Thread_3862 Print branch Print basic 3862-3771-5.2
+3862-8770-40.8
+Print reject Thread_4038 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 1448
+Thread_4038 Print branch Print basic 4038-1448-2.1
+4038-1527-58.3
+Print reject Thread_6236 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 1527
+Thread_6236 Print branch Print basic 6236-1527-4.2
+6236-2268-17.9
+Print reject Thread_6371 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 6862
+Thread_6371  sending accept to 6862
+
+Thread_6371 Print branch Print basic 6371-6862-25.3
+6371-6514-27.5
+Print reject Thread_6514 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 7592
+Thread_6514  sending accept to 7592
+
+Thread_6514  sending accept to 8586
+
+Thread_6514 Print branch Print basic 6514-7592-1.5
+6514-8586-20.0
+6514-6371-27.5
+6514-8437-82.0
+6514-1720-97.1
+Print reject Thread_6862 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 6371
+Thread_6862 Print branch Print basic 6862-6371-25.3
+Print reject Thread_6874 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9198
+Thread_6874  sending accept to 9198
+
+Thread_6874 Print branch Print basic 6874-9198-10.3
+Print reject Thread_7482 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9647
+Thread_7482 Print branch Print basic 7482-9647-37.4
+7482-1086-58.8
+7482-7543-69.7
+Print reject Thread_7543 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 3771
+Thread_7543 Print branch Print basic 7543-3771-23.2
+7543-7482-69.7
+7543-7689-69.8
+Print reject Thread_7592 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 6514
+Thread_7592 Print branch Print basic 7592-6514-1.5
+7592-2034-85.0
+Print reject Thread_7689 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9744
+Thread_7689 Print branch Print basic 7689-9744-56.5
+7689-7543-69.8
+Print reject Thread_8210 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9744
+Thread_8210  sending accept to 9744
+
+Thread_8210 Print branch Print basic 8210-9744-39.4
+Print reject Thread_8272 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 8459
+Thread_8272 Print branch Print basic 8272-8459-61.0
+Print reject Thread_8437 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 126
+Thread_8437 Print branch Print basic 8437-126-7.7
+8437-6514-82.0
+Print reject Thread_8459 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 1662
+Thread_8459 Print branch Print basic 8459-1662-13.2
+8459-9744-52.1
+8459-8272-61.0
+Print reject Thread_8586 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 6514
+Thread_8586 Print branch Print basic 8586-6514-20.0
+8586-8770-63.4
+Print reject Thread_8770 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 3862
+Thread_8770 Print branch Print basic 8770-3862-40.8
+8770-8586-63.4
+Print reject Thread_9198 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 6874
+Thread_9198  sending accept to 9647
+
+Thread_9198 Print branch Print basic 9198-6874-10.3
+9198-9647-21.2
+9198-1662-28.2
+Print reject Thread_9201 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 1720
+Thread_9201 Print branch Print basic 9201-1720-12.7
+9201-1448-21.3
+9201-9202-73.8
+Print reject Thread_9202 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9385
+Thread_9202  sending accept to 9385
+
+Thread_9202 Print branch Print basic 9202-9385-18.9
+9202-9201-73.8
+Print reject Thread_9385 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9202
+Thread_9385 Print branch Print basic 9385-9202-18.9
+Print reject Thread_9532 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 3771
+Thread_9532 Print branch Print basic 9532-3771-9.6
+Print reject Thread_9647 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 9198
+Thread_9647 Print branch Print basic 9647-9198-21.2
+9647-7482-37.4
+Print reject Thread_9744 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Waiting for response from 8210
+Thread_9744 Print branch Print basic 9744-8210-39.4
+9744-8459-52.1
+9744-7689-56.5
+Print reject 
+Master checking its queue. Size of queue is: 35 round 1 
+[8770, 4038, 1031, 7689, 8586, 8459, 6862, 8272, 9744, 465, 8210, 3862, 6874, 2268, 6236, 6371, 1448, 7592, 9385, 9198, 9647, 9201, 2034, 6514, 9202, 8437, 1527, 7543, 1720, 7482, 3771, 9532, 126, 1086, 1662]
 Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 9
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 9
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 9
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 9
-Master checking its queue. Size of queue is: 4 round 9
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
+Thread_126 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_126 send test to 8437
+Thread_126 processing connect msg from 126
+Thread_126 Print branch Print basic 126-8437-7.7
+126-1031-23.2
+126-465-28.8
+126-1448-64.5
+126-1086-87.4
+Print reject Thread_465 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_465 send test to 126
+Thread_465 processing connect msg from 465
+Thread_465 Print branch Print basic 465-126-28.8
+465-1448-61.3
+465-1086-64.3
+465-1031-86.7
+Print reject Thread_1031 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1031 send test to 126
+Thread_1031 processing connect msg from 1031
+Thread_1031 Print branch Print basic 1031-126-23.2
+1031-1086-78.2
+1031-2268-83.6
+1031-1448-84.5
+1031-465-86.7
+Print reject Thread_1086 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1086 send test to 7482
+Thread_1086 processing connect msg from 1086
+Thread_1086 Print branch Print basic 1086-7482-58.8
+1086-2034-59.0
+1086-465-64.3
+1086-1448-76.1
+1086-1031-78.2
+1086-126-87.4
+Print reject Thread_1448 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1448 send test to 4038
+Thread_1448 processing connect msg from 1448
+Thread_1448 Print branch Print basic 1448-4038-2.1
+1448-9201-21.3
+1448-465-61.3
+1448-126-64.5
+1448-1086-76.1
+1448-1031-84.5
+Print reject Thread_1527 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1527 send test to 6236
+Thread_1527 processing connect msg from 1527
+Thread_1527 Print branch Print basic 1527-6236-4.2
+1527-4038-58.3
+Print reject Thread_1662 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1662 send test to 8459
+Thread_1662 processing connect msg from 1662
+Thread_1662 Print branch Print basic 1662-8459-13.2
+1662-9198-28.2
+Print reject Thread_1720 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_1720 send test to 9201
+Thread_1720 processing connect msg from 1720
+Thread_1720 Print branch Print basic 1720-9201-12.7
+1720-6514-97.1
+Print reject Thread_2034 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_2034 send test to 1086
+Thread_2034 processing connect msg from 2034
+Thread_2034 Print branch Print basic 2034-1086-59.0
+2034-7592-85.0
+Print reject Thread_2268 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_2268 send test to 6236
+Thread_2268 processing connect msg from 2268
+Thread_2268 Print branch Print basic 2268-6236-17.9
+2268-1031-83.6
+Print reject Thread_3771 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_3771 send test to 3862
+Thread_3771 processing connect msg from 3771
+Thread_3771 Print branch Print basic 3771-3862-5.2
+3771-9532-9.6
+3771-7543-23.2
+Print reject Thread_3862 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_3862 send test to 3771
+Thread_3862 processing connect msg from 3862
+Thread_3862  sending accept to 3771
+
+Thread_3862 processing connect msg from 3771
+Merging 3862 and 3771
+Thread_3862 Print branch 3862-3771-5.2
+3862-8770-40.8
+Print basic Print reject Thread_4038 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_4038 send test to 1448
+Thread_4038 processing connect msg from 4038
+Thread_4038  sending accept to 1448
+
+Thread_4038 processing connect msg from 1448
+Merging 4038 and 1448
+Thread_4038 Print branch 4038-1448-2.1
+4038-1527-58.3
+Print basic Print reject Thread_6236 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6236 send test to 1527
+Thread_6236 processing connect msg from 6236
+Thread_6236  sending accept to 1527
+
+Thread_6236 processing connect msg from 1527
+Merging 6236 and 1527
+Thread_6236  sending accept to 2268
+
+Thread_6236 processing connect msg from 2268
+Thread_6236 Print branch 6236-1527-4.2
+6236-2268-17.9
+Print basic Print reject Thread_6371 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6371 send test to 6862
+Thread_6371 processing connect msg from 6371
+Thread_6371 Print branch Print basic 6371-6862-25.3
+6371-6514-27.5
+Print reject Thread_6514 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6514 send test to 7592
+Thread_6514 processing connect msg from 6514
+Thread_6514 Print branch Print basic 6514-7592-1.5
+6514-8586-20.0
+6514-6371-27.5
+6514-8437-82.0
+6514-1720-97.1
+Print reject Thread_6862 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6862 send test to 6371
+Thread_6862 processing connect msg from 6862
+Thread_6862  sending accept to 6371
+
+Thread_6862 processing connect msg from 6371
+Merging 6862 and 6371
+Thread_6862 Print branch 6862-6371-25.3
+Print basic Print reject Thread_6874 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_6874 send test to 9198
+Thread_6874 processing connect msg from 6874
+Thread_6874 Print branch Print basic 6874-9198-10.3
+Print reject Thread_7482 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7482 send test to 9647
+Thread_7482 processing connect msg from 7482
+Thread_7482  sending accept to 1086
+
+Thread_7482 processing connect msg from 1086
+Thread_7482 Print branch Print basic 7482-9647-37.4
+7482-1086-58.8
+7482-7543-69.7
+Print reject Thread_7543 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7543 send test to 3771
+Thread_7543 processing connect msg from 7543
+Thread_7543 Print branch Print basic 7543-3771-23.2
+7543-7482-69.7
+7543-7689-69.8
+Print reject Thread_7592 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7592 send test to 6514
+Thread_7592 processing connect msg from 7592
+Thread_7592  sending accept to 6514
+
+Thread_7592 processing connect msg from 6514
+Merging 7592 and 6514
+Thread_7592 Print branch 7592-6514-1.5
+7592-2034-85.0
+Print basic Print reject Thread_7689 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_7689 send test to 9744
+Thread_7689 processing connect msg from 7689
+Thread_7689 Print branch Print basic 7689-9744-56.5
+7689-7543-69.8
+Print reject Thread_8210 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8210 send test to 9744
+Thread_8210 processing connect msg from 8210
+Thread_8210 Print branch Print basic 8210-9744-39.4
+Print reject Thread_8272 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8272 send test to 8459
+Thread_8272 processing connect msg from 8272
+Thread_8272 Print branch Print basic 8272-8459-61.0
+Print reject Thread_8437 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8437 send test to 126
+Thread_8437 processing connect msg from 8437
+Thread_8437  sending accept to 126
+
+Thread_8437 processing connect msg from 126
+Merging 8437 and 126
+Thread_8437 Print branch 8437-126-7.7
+8437-6514-82.0
+Print basic Print reject Thread_8459 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8459 send test to 1662
+Thread_8459 processing connect msg from 8459
+Thread_8459  sending accept to 1662
+
+Thread_8459 processing connect msg from 1662
+Merging 8459 and 1662
+Thread_8459  sending accept to 8272
+
+Thread_8459 processing connect msg from 8272
+Thread_8459 Print branch 8459-1662-13.2
+8459-9744-52.1
+8459-8272-61.0
+Print basic Print reject Thread_8586 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8586 send test to 6514
+Thread_8586 processing connect msg from 8586
+Thread_8586 Print branch Print basic 8586-6514-20.0
+8586-8770-63.4
+Print reject Thread_8770 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_8770 send test to 3862
+Thread_8770 processing connect msg from 8770
+Thread_8770 Print branch Print basic 8770-3862-40.8
+8770-8586-63.4
+Print reject Thread_9198 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9198 send test to 6874
+Thread_9198 processing connect msg from 9198
+Thread_9198  sending accept to 6874
+
+Thread_9198 processing connect msg from 6874
+Merging 9198 and 6874
+Thread_9198 Print branch 9198-6874-10.3
+9198-9647-21.2
+9198-1662-28.2
+Print basic Print reject Thread_9201 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9201 send test to 1720
+Thread_9201 processing connect msg from 9201
+Thread_9201  sending accept to 1720
+
+Thread_9201 processing connect msg from 1720
+Merging 9201 and 1720
+Thread_9201 Print branch 9201-1720-12.7
+9201-1448-21.3
+9201-9202-73.8
+Print basic Print reject Thread_9202 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9202 send test to 9385
+Thread_9202 processing connect msg from 9202
+Thread_9202 Print branch Print basic 9202-9385-18.9
+9202-9201-73.8
+Print reject Thread_9385 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9385 send test to 9202
+Thread_9385 processing connect msg from 9385
+Thread_9385  sending accept to 9202
+
+Thread_9385 processing connect msg from 9202
+Merging 9385 and 9202
+Thread_9385 Print branch 9385-9202-18.9
+Print basic Print reject Thread_9532 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9532 send test to 3771
+Thread_9532 processing connect msg from 9532
+Thread_9532 Print branch Print basic 9532-3771-9.6
+Print reject Thread_9647 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9647 send test to 9198
+Thread_9647 processing connect msg from 9647
+Thread_9647  sending accept to 7482
+
+Thread_9647 processing connect msg from 7482
+Thread_9647 Print branch Print basic 9647-9198-21.2
+9647-7482-37.4
+Print reject Thread_9744 	 myParent -1 	 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_9744 send test to 8210
+Thread_9744 processing connect msg from 9744
+Thread_9744  sending accept to 7689
+
+Thread_9744 processing connect msg from 7689
+Thread_9744  sending accept to 8210
+
+Thread_9744 processing connect msg from 8210
+Merging 9744 and 8210
+Thread_9744 Print branch 9744-8210-39.4
+9744-8459-52.1
+9744-7689-56.5
+Print basic Print reject 
+Master checking its queue. Size of queue is: 35 round 2 
+[8770, 4038, 1031, 7689, 8586, 8459, 6862, 8272, 9744, 465, 8210, 3862, 6874, 2268, 6236, 6371, 1448, 7592, 9385, 9198, 9647, 9201, 2034, 6514, 9202, 8437, 1527, 7543, 1720, 7482, 3771, 9532, 126, 1086, 1662]
 Starting threads. 
-Send Round_Number msg to 67
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 10
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 10
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 10
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 10
-Master checking its queue. Size of queue is: 4 round 10
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
+Thread_126 	 myParent -1 	 level 0 coreLink 126-8437-7.7
+ testMsgToRespond 0
+
+Thread_126  sending accept to 465
+
+Thread_126 processing connect msg from 465
+Thread_126  sending accept to 1031
+
+Thread_126 processing connect msg from 1031
+Thread_126  sending accept to 8437
+
+Thread_126 processing connect msg from 8437
+Merging 126 and 8437
+Thread_126 Print branch 126-8437-7.7
+126-1031-23.2
+126-465-28.8
+126-1448-64.5
+126-1086-87.4
+Print basic Print reject Thread_465 	 myParent -1 	 level 0 coreLink 465-126-28.8
+ testMsgToRespond 0
+
+Thread_465 Print branch Print basic 465-126-28.8
+465-1448-61.3
+465-1086-64.3
+465-1031-86.7
+Print reject Thread_1031 	 myParent -1 	 level 0 coreLink 1031-126-23.2
+ testMsgToRespond 0
+
+Thread_1031 Print branch Print basic 1031-126-23.2
+1031-1086-78.2
+1031-2268-83.6
+1031-1448-84.5
+1031-465-86.7
+Print reject Thread_1086 	 myParent -1 	 level 0 coreLink 1086-7482-58.8
+ testMsgToRespond 0
+
+Thread_1086  sending accept to 2034
+
+Thread_1086 processing connect msg from 2034
+Thread_1086 Print branch Print basic 1086-7482-58.8
+1086-2034-59.0
+1086-465-64.3
+1086-1448-76.1
+1086-1031-78.2
+1086-126-87.4
+Print reject Thread_1448 	 myParent -1 	 level 0 coreLink 1448-4038-2.1
+ testMsgToRespond 0
+
+Thread_1448  sending accept to 4038
+
+Thread_1448 processing connect msg from 4038
+Merging 1448 and 4038
+Thread_1448 Print branch 1448-4038-2.1
+1448-9201-21.3
+1448-465-61.3
+1448-126-64.5
+1448-1086-76.1
+1448-1031-84.5
+Print basic Print reject Thread_1527 	 myParent -1 	 level 0 coreLink 1527-6236-4.2
+ testMsgToRespond 0
+
+Thread_1527  sending accept to 6236
+
+Thread_1527 processing connect msg from 6236
+PPPPPPPPPP6236
+Thread_1527 Print branch 1527-6236-4.2
+Print basic 1527-4038-58.3
+Print reject Thread_1662 	 myParent -1 	 level 0 coreLink 1662-8459-13.2
+ testMsgToRespond 0
+
+Thread_1662  sending accept to 8459
+
+Thread_1662 processing connect msg from 8459
+Merging 1662 and 8459
+Thread_1662 Print branch 1662-8459-13.2
+1662-9198-28.2
+Print basic Print reject Thread_1720 	 myParent -1 	 level 0 coreLink 1720-9201-12.7
+ testMsgToRespond 0
+
+Thread_1720  sending accept to 9201
+
+Thread_1720 processing connect msg from 9201
+Merging 1720 and 9201
+Thread_1720 Print branch 1720-9201-12.7
+1720-6514-97.1
+Print basic Print reject Thread_2034 	 myParent -1 	 level 0 coreLink 2034-1086-59.0
+ testMsgToRespond 0
+
+Thread_2034 Print branch Print basic 2034-1086-59.0
+2034-7592-85.0
+Print reject Thread_2268 	 myParent -1 	 level 0 coreLink 2268-6236-17.9
+ testMsgToRespond 0
+
+Thread_2268 Print branch Print basic 2268-6236-17.9
+2268-1031-83.6
+Print reject Thread_3771 	 myParent -1 	 level 0 coreLink 3771-3862-5.2
+ testMsgToRespond 0
+
+Thread_3771  sending accept to 3862
+
+Thread_3771 processing connect msg from 3862
+Merging 3771 and 3862
+Thread_3771  sending accept to 7543
+
+Thread_3771 processing connect msg from 7543
+Thread_3771  sending accept to 9532
+
+Thread_3771 processing connect msg from 9532
+Thread_3771 Print branch 3771-3862-5.2
+3771-9532-9.6
+3771-7543-23.2
+Print basic Print reject Thread_3862 	 myParent -1 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_3862  sending accept to 8770
+
+Thread_3862 processing connect msg from 8770
+Thread_3862 Print branch 3862-3771-5.2
+3862-8770-40.8
+Print basic Print reject Thread_4038 	 myParent -1 	 level 1 coreLink 4038-1448-2.1
+ testMsgToRespond 0
+
+Thread_4038 Print branch 4038-1448-2.1
+4038-1527-58.3
+Print basic Print reject Thread_6236 	 myParent -1 	 level 1 coreLink 6236-1527-4.2
+ testMsgToRespond 0
+
+Thread_6236 Print branch 6236-1527-4.2
+6236-2268-17.9
+Print basic Print reject Thread_6371 	 myParent -1 	 level 0 coreLink 6371-6862-25.3
+ testMsgToRespond 0
+
+Thread_6371  sending accept to 6862
+
+Thread_6371 processing connect msg from 6862
+Merging 6371 and 6862
+Thread_6371 Print branch 6371-6862-25.3
+6371-6514-27.5
+Print basic Print reject Thread_6514 	 myParent -1 	 level 0 coreLink 6514-7592-1.5
+ testMsgToRespond 0
+
+Thread_6514  sending accept to 7592
+
+Thread_6514 processing connect msg from 7592
+Merging 6514 and 7592
+Thread_6514  sending accept to 8586
+
+Thread_6514 processing connect msg from 8586
+Thread_6514 Print branch 6514-7592-1.5
+6514-8586-20.0
+6514-6371-27.5
+6514-8437-82.0
+6514-1720-97.1
+Print basic Print reject Thread_6862 	 myParent -1 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+PPPPPPPPPP6371
+Thread_6862 Print branch 6862-6371-25.3
+Print basic Print reject Thread_6874 	 myParent -1 	 level 0 coreLink 6874-9198-10.3
+ testMsgToRespond 0
+
+Thread_6874  sending accept to 9198
+
+Thread_6874 processing connect msg from 9198
+Merging 6874 and 9198
+PPPPPPPPPP9198
+Thread_7482 	 myParent -1 	 level 0 coreLink 7482-9647-37.4
+ testMsgToRespond 0
+
+Thread_6874 Print branch 6874-9198-10.3
+Print basic Print reject Thread_7482 Print branch Print basic 7482-9647-37.4
+7482-1086-58.8
+7482-7543-69.7
+Print reject Thread_7543 	 myParent -1 	 level 0 coreLink 7543-3771-23.2
+ testMsgToRespond 0
+
+Thread_7543 Print branch Print basic 7543-3771-23.2
+7543-7482-69.7
+7543-7689-69.8
+Print reject Thread_7592 	 myParent -1 	 level 1 coreLink 7592-6514-1.5
+ testMsgToRespond 0
+
+Thread_7592 Print branch 7592-6514-1.5
+7592-2034-85.0
+Print basic Print reject Thread_7689 	 myParent -1 	 level 0 coreLink 7689-9744-56.5
+ testMsgToRespond 0
+
+Thread_7689 Print branch Print basic 7689-9744-56.5
+7689-7543-69.8
+Print reject Thread_8210 	 myParent -1 	 level 0 coreLink 8210-9744-39.4
+ testMsgToRespond 0
+
+Thread_8210  sending accept to 9744
+
+Thread_8210 processing connect msg from 9744
+Merging 8210 and 9744
+PPPPPPPPPP9744
+Thread_8210 Print branch 8210-9744-39.4
+Print basic Print reject Thread_8272 	 myParent -1 	 level 0 coreLink 8272-8459-61.0
+ testMsgToRespond 0
+
+Thread_8272 Print branch Print basic 8272-8459-61.0
+Print reject Thread_8437 	 myParent -1 	 level 1 coreLink 8437-126-7.7
+ testMsgToRespond 0
+
+Thread_8437 Print branch 8437-126-7.7
+8437-6514-82.0
+Print basic Print reject Thread_8459 	 myParent -1 	 level 1 coreLink 8459-1662-13.2
+ testMsgToRespond 0
+
+Thread_8459 Print branch 8459-1662-13.2
+8459-9744-52.1
+8459-8272-61.0
+Print basic Print reject Thread_8586 	 myParent -1 	 level 0 coreLink 8586-6514-20.0
+ testMsgToRespond 0
+
+Thread_8586 Print branch Print basic 8586-6514-20.0
+8586-8770-63.4
+Print reject Thread_8770 	 myParent 3862 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_8770 Print branch Print basic 8770-3862-40.8
+8770-8586-63.4
+Print reject Thread_9198 	 myParent -1 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_9198 processing connect msg from 9647
+Thread_9198  sending accept to 9647
+
+Thread_9198 Print branch 9198-6874-10.3
+9198-9647-21.2
+9198-1662-28.2
+Print basic Print reject Thread_9201 	 myParent -1 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_9201 Print branch 9201-1720-12.7
+9201-1448-21.3
+9201-9202-73.8
+Print basic Print reject Thread_9202 	 myParent 9201 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_9202 processing connect msg from 9385
+PPPPPPPPPP9201
+Thread_9385 	 myParent -1 	 level 1 coreLink 9385-9202-18.9
+ testMsgToRespond 0
+
+Thread_9532 	 myParent -1 	 level 0 coreLink 9532-3771-9.6
+ testMsgToRespond 0
+
+Thread_9647 	 myParent 9198 	 level 1 coreLink Thread_9202  sending accept to 9385
+
+Thread_9202 Print branch 9202-9385-18.9
+Print basic 9202-9201-73.8
+Print reject Thread_9385 Print branch 9385-9202-18.9
+Print basic Print reject Thread_9532 Print branch Print basic 9532-3771-9.6
+Print reject 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_9647 Print branch Print basic 9647-9198-21.2
+9647-7482-37.4
+Print reject Thread_9744 	 myParent 8459 	 level 1 coreLink 8459-1662-13.2
+ testMsgToRespond 0
+
+Thread_9744 Print branch 9744-8210-39.4
+9744-8459-52.1
+9744-7689-56.5
+Print basic Print reject 
+Master checking its queue. Size of queue is: 35 round 3 
+[4038, 1031, 7689, 8586, 8459, 6862, 8272, 465, 8210, 3862, 6874, 2268, 6236, 6371, 1448, 7592, 9385, 9198, 9201, 2034, 6514, 8437, 1527, 7543, 1720, 7482, 3771, 9532, 126, 1086, 1662]
 Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 11
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 11
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 11
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 11
-Master checking its queue. Size of queue is: 4 round 11
+Thread_126 	 myParent 8437 	 level 1 coreLink 8437-126-7.7
+ testMsgToRespond 0
+
+Thread_126 Print branch 126-8437-7.7
+126-1031-23.2
+126-465-28.8
+126-1448-64.5
+126-1086-87.4
+Print basic Print reject Thread_465 	 myParent 126 	 level 1 coreLink 8437-126-7.7
+ testMsgToRespond 0
+
+Thread_465 Print branch Print basic 465-126-28.8
+465-1448-61.3
+465-1086-64.3
+465-1031-86.7
+Print reject Thread_1031 	 myParent 126 	 level 1 coreLink 8437-126-7.7
+ testMsgToRespond 0
+
+Thread_1031 Print branch Print basic 1031-126-23.2
+1031-1086-78.2
+1031-2268-83.6
+1031-1448-84.5
+1031-465-86.7
+Print reject Thread_1086 	 myParent 126 	 level 1 coreLink 8437-126-7.7
+ testMsgToRespond 0
+
+Thread_1086 Print branch Print basic 1086-7482-58.8
+1086-2034-59.0
+1086-465-64.3
+1086-1448-76.1
+1086-1031-78.2
+1086-126-87.4
+Print reject Thread_1448 	 myParent 126 	 level 1 coreLink 8437-126-7.7
+ testMsgToRespond 0
+
+Thread_1448 Print branch 1448-4038-2.1
+1448-9201-21.3
+1448-465-61.3
+1448-126-64.5
+1448-1086-76.1
+1448-1031-84.5
+Print basic Print reject Thread_1527 	 myParent 6236 	 level 1 coreLink 6236-1527-4.2
+ testMsgToRespond 0
+
+PPPPPPPPPP6236
+Thread_1527 Print branch 1527-6236-4.2
+Print basic 1527-4038-58.3
+Print reject Thread_1662 	 myParent 9198 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_1662 Print branch 1662-8459-13.2
+1662-9198-28.2
+Print basic Print reject Thread_1720 	 myParent 9201 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_1720 Print branch 1720-9201-12.7
+1720-6514-97.1
+Print basic Print reject Thread_2034 	 myParent 7592 	 level 1 coreLink 7592-6514-1.5
+ testMsgToRespond 0
+
+Thread_2034 Print branch Print basic 2034-1086-59.0
+2034-7592-85.0
+Print reject Thread_2268 	 myParent 6236 	 level 1 coreLink 6236-1527-4.2
+ testMsgToRespond 0
+
+Thread_2268 Print branch 2268-6236-17.9
+Print basic 2268-1031-83.6
+Print reject Thread_3771 	 myParent 3862 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_3771 Print branch 3771-3862-5.2
+3771-9532-9.6
+3771-7543-23.2
+Print basic Print reject Thread_3862 	 myParent 3771 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_3862 Print branch 3862-3771-5.2
+3862-8770-40.8
+Print basic Print reject Thread_4038 	 myParent 1448 	 level 1 coreLink 8437-126-7.7
+ testMsgToRespond 0
+
+Thread_4038 Print branch 4038-1448-2.1
+4038-1527-58.3
+Print basic Print reject Thread_6236 	 myParent 1527 	 level 1 coreLink 6236-1527-4.2
+ testMsgToRespond 0
+
+Thread_6236 Print branch 6236-1527-4.2
+6236-2268-17.9
+Print basic Print reject Thread_6371 	 myParent 6862 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+PPPPPPPPPP6862
+Thread_6371 Print branch 6371-6862-25.3
+6371-6514-27.5
+Print basic Print reject Thread_6514 	 myParent 6371 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_6514 Print branch 6514-7592-1.5
+6514-8586-20.0
+6514-6371-27.5
+6514-8437-82.0
+6514-1720-97.1
+Print basic Print reject Thread_6862 	 myParent 6371 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_6862 Print branch 6862-6371-25.3
+Print basic Print reject Thread_6874 	 myParent 9198 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+PPPPPPPPPP9198
+Thread_6874 Print branch 6874-9198-10.3
+Print basic Print reject Thread_7482 	 myParent -1 	 level 0 coreLink 7482-9647-37.4
+ testMsgToRespond 0
+
+Thread_7482 processing connect msg from 7482
+Thread_7482 Print branch Print basic 7482-9647-37.4
+7482-1086-58.8
+7482-7543-69.7
+Print reject Thread_7543 	 myParent 3771 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_7543 Print branch Print basic 7543-3771-23.2
+7543-7482-69.7
+7543-7689-69.8
+Print reject Thread_7592 	 myParent 6514 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_7592 Print branch 7592-6514-1.5
+7592-2034-85.0
+Print basic Print reject Thread_7689 	 myParent 9744 	 level 1 coreLink 8459-1662-13.2
+ testMsgToRespond 0
+
+Thread_7689 Print branch Print basic 7689-9744-56.5
+7689-7543-69.8
+Print reject Thread_8210 	 myParent 9744 	 level 1 coreLink 8459-1662-13.2
+ testMsgToRespond 0
+
+PPPPPPPPPP9744
+Thread_8210 Print branch 8210-9744-39.4
+Print basic Print reject Thread_8272 	 myParent 8459 	 level 1 coreLink 8459-1662-13.2
+ testMsgToRespond 0
+
+Thread_8272 Print branch Print basic 8272-8459-61.0
+Print reject Thread_8437 	 myParent 6514 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_8437 Print branch 8437-126-7.7
+8437-6514-82.0
+Print basic Print reject Thread_8459 	 myParent 1662 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_8459 Print branch 8459-1662-13.2
+8459-9744-52.1
+8459-8272-61.0
+Print basic Print reject Thread_8586 	 myParent 6514 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_8586 Print branch Print basic 8586-6514-20.0
+8586-8770-63.4
+Print reject Thread_8770 	 myParent 3862 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_8770 Print branch Print basic 8770-3862-40.8
+8770-8586-63.4
+Print reject Thread_9198 	 myParent 6874 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_9198 Print branch 9198-6874-10.3
+9198-9647-21.2
+9198-1662-28.2
+Print basic Print reject Thread_9201 	 myParent 1720 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_9201 Print branch 9201-1720-12.7
+9201-1448-21.3
+9201-9202-73.8
+Print basic Print reject Thread_9202 	 myParent 9201 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+PPPPPPPPPP9201
+Thread_9202 Print branch 9202-9385-18.9
+Print basic 9202-9201-73.8
+Print reject Thread_9385 	 myParent 9202 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_9385 Print branch 9385-9202-18.9
+Print basic Print reject Thread_9532 	 myParent 3771 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_9532 Print branch Print basic 9532-3771-9.6
+Print reject Thread_9647 	 myParent 9198 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_9647 Print branch Print basic 9647-9198-21.2
+9647-7482-37.4
+Print reject Thread_9744 	 myParent 8459 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_9744 Print branch 9744-8210-39.4
+9744-8459-52.1
+9744-7689-56.5
+Print basic Print reject 
+Master checking its queue. Size of queue is: 35 round 4 
+---Telling the master to die. Leader is: 9647 round 4
+Terminated slave 126
+Terminated slave 465
+Terminated slave 1031
+Terminated slave 1086
+Terminated slave 1448
+Terminated slave 1527
+Terminated slave 1662
+Terminated slave 1720
+Terminated slave 2034
+Terminated slave 2268
+Terminated slave 3771
+Terminated slave 3862
+Terminated slave 4038
+Terminated slave 6236
+Terminated slave 6371
+Terminated slave 6514
+Terminated slave 6862
+Terminated slave 6874
+Terminated slave 7482
+Terminated slave 7543
+Terminated slave 7592
+Terminated slave 7689
+Terminated slave 8210
+Terminated slave 8272
+Terminated slave 8437
+Terminated slave 8459
+Terminated slave 8586
+Terminated slave 8770
+Terminated slave 9198
+Terminated slave 9201
+Terminated slave 9202
+Terminated slave 9385
+Terminated slave 9532
+Terminated slave 9647
+Terminated slave 9744
+[7482]
 Starting threads. 
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 12
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 12
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 12
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 12
-Master checking its queue. Size of queue is: 4 round 12
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 13
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 13
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 13
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 13
-Master checking its queue. Size of queue is: 4 round 13
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 14
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 14
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 14
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 14
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Master checking its queue. Size of queue is: 4 round 14
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 15
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 15
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 15
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 15
-Master checking its queue. Size of queue is: 4 round 15
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 16
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 16
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 16
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 16
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Master checking its queue. Size of queue is: 4 round 16
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 17
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 17
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 17
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 17
-Master checking its queue. Size of queue is: 4 round 17
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 18
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 18
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 18
-Send Round_Number msg to 67
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 18
-Master checking its queue. Size of queue is: 4 round 18
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 19
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 19
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 19
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 19
-Master checking its queue. Size of queue is: 4 round 19
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 20
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 20
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 20
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 20
-Master checking its queue. Size of queue is: 4 round 20
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 21
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 21
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 21
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 21
-Master checking its queue. Size of queue is: 4 round 21
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 22
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 22
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 22
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 22
-Master checking its queue. Size of queue is: 4 round 22
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 23
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 23
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 23
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 23
-Master checking its queue. Size of queue is: 4 round 23
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 24
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-mType Round_Number Sender id: 0 core: null round 24
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 24
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 24
-Send Round_Number msg to 67
-Master checking its queue. Size of queue is: 4 round 24
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 25
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 25
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 25
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 25
-Master checking its queue. Size of queue is: 4 round 25
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 26
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 26
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 26
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 26
-Master checking its queue. Size of queue is: 4 round 26
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 27
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 27
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 27
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 27
-Master checking its queue. Size of queue is: 4 round 27
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 28
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 28
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 28
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 28
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Master checking its queue. Size of queue is: 4 round 28
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 29
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 29
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 29
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 29
-Send Round_Number msg to 20
-Send Round_Number msg to 99
-Send Round_Number msg to 32
-Send Round_Number msg to 67
-Master checking its queue. Size of queue is: 4 round 29
-Starting threads. 
-Name: Thread_20 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 30
-Name: Thread_99 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 99
-mType Round_Number Sender id: 0 core: null round 30
-Name: Thread_32 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 32
-mType Round_Number Sender id: 0 core: null round 30
-Name: Thread_67 	 isLeader true 	 level 0
- coreLink nullWaiting for response from 20
-mType Round_Number Sender id: 0 core: null round 30
+Thread_126 	 myParent 8437 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_465 	 myParent 126 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_1031 	 myParent 126 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_1086 	 myParent 126 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_1448 	 myParent 126 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_1527 	 myParent 6236 	 level 1 coreLink 6236-1527-4.2
+ testMsgToRespond 0
+
+Thread_1662 	 myParent 9198 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_1720 	 myParent 9201 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_2034 	 myParent 7592 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_2268 	 myParent 6236 	 level 1 coreLink 6236-1527-4.2
+ testMsgToRespond 0
+
+Thread_3771 	 myParent 3862 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_3862 	 myParent 3771 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_4038 	 myParent 1448 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_6236 	 myParent 2268 	 level 1 coreLink 6236-1527-4.2
+ testMsgToRespond 0
+
+Thread_6371 	 myParent 6862 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_6514 	 myParent 6371 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_6862 	 myParent 6371 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_6874 	 myParent 9198 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_7482 	 myParent -1 	 level 0 coreLink 7482-9647-37.4
+ testMsgToRespond 0
+
+Thread_7543 	 myParent 3771 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_7592 	 myParent 6514 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_7689 	 myParent 9744 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_8210 	 myParent 9744 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_8272 	 myParent 8459 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_8437 	 myParent 6514 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_8459 	 myParent 1662 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_8586 	 myParent 6514 	 level 1 coreLink 6862-6371-25.3
+ testMsgToRespond 0
+
+Thread_8770 	 myParent 3862 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_9198 	 myParent 6874 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_9201 	 myParent 1720 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_9202 	 myParent 9201 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_9385 	 myParent 9202 	 level 1 coreLink 9201-1720-12.7
+ testMsgToRespond 0
+
+Thread_9532 	 myParent 3771 	 level 1 coreLink 3862-3771-5.2
+ testMsgToRespond 0
+
+Thread_9647 	 myParent 9198 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+Thread_9744 	 myParent 8459 	 level 1 coreLink 9198-6874-10.3
+ testMsgToRespond 0
+
+
+
+Printing the tree.
+MaxId--------Parent <--- myId ---> myChildren (can overlap)
+6862-6371-25.3---  8437<------126------>8437 1031 465 1448 1086 
+6862-6371-25.3---  126<------465------>
+6862-6371-25.3---  126<------1031------>
+6862-6371-25.3---  126<------1086------>
+6862-6371-25.3---  126<------1448------>4038 9201 465 126 1086 1031 
+6236-1527-4.2---  6236<------1527------>6236 
+9198-6874-10.3---  9198<------1662------>8459 9198 
+9201-1720-12.7---  9201<------1720------>9201 6514 
+6862-6371-25.3---  7592<------2034------>
+6236-1527-4.2---  6236<------2268------>6236 
+3862-3771-5.2---  3862<------3771------>3862 9532 7543 
+3862-3771-5.2---  3771<------3862------>3771 8770 
+6862-6371-25.3---  1448<------4038------>1448 1527 
+6236-1527-4.2---  2268<------6236------>1527 2268 
+6862-6371-25.3---  6862<------6371------>6862 6514 
+6862-6371-25.3---  6371<------6514------>7592 8586 6371 8437 1720 
+6862-6371-25.3---  6371<------6862------>6371 
+9198-6874-10.3---  9198<------6874------>9198 
+7482-9647-37.4---  -1<------7482------>
+3862-3771-5.2---  3771<------7543------>
+6862-6371-25.3---  6514<------7592------>6514 2034 
+9198-6874-10.3---  9744<------7689------>
+9198-6874-10.3---  9744<------8210------>9744 
+9198-6874-10.3---  8459<------8272------>
+6862-6371-25.3---  6514<------8437------>126 6514 
+9198-6874-10.3---  1662<------8459------>1662 9744 8272 
+6862-6371-25.3---  6514<------8586------>
+3862-3771-5.2---  3862<------8770------>
+9198-6874-10.3---  6874<------9198------>6874 9647 1662 
+9201-1720-12.7---  1720<------9201------>1720 1448 9202 
+9201-1720-12.7---  9201<------9202------>9385 
+9201-1720-12.7---  9202<------9385------>9202 
+3862-3771-5.2---  3771<------9532------>
+9198-6874-10.3---  9198<------9647------>
+9198-6874-10.3---  8459<------9744------>8210 8459 7689 
+Master will now die. MaxUid 9198-6874-10.3 round 4

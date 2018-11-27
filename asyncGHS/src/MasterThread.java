@@ -113,7 +113,8 @@ public class MasterThread extends SlaveThread {
       System.out.println(leaderSet.toString());
       System.out.println("Starting threads. ");
       startAllThreads(); // bug
-      sleep();
+      // sleep();
+      System.gc();
     } while (!masterMustDie);
 
     printTree();
@@ -126,12 +127,12 @@ public class MasterThread extends SlaveThread {
    */
   public void printTree() {
     System.out.println("\n\nPrinting the tree.");
-    System.out.println("MaxId----Parent <--- myId ---> myChildren (can overlap)");
+    System.out.println("MaxId--------Parent <--- myId ---> myChildren (can overlap)");
     for (SlaveThread t : threadList) {
       System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
-      for (Link i : t.getBasicLinks()) {
+      for (Link i : t.getBranch()) {
         if (i.getFrom() != t.getMyParent()) {
-          System.out.print(i + " ");
+          System.out.print(i.getTo() + " ");
         }
       }
       System.out.println();
