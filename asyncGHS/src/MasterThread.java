@@ -64,6 +64,9 @@ public class MasterThread extends SlaveThread {
     System.out.println("The Master has started. Size: " + size);
     createThreads();
     sendRoundStartMsg();
+    for (int i : slaveArray) {
+      leaderSet.add(i);
+    }
 
     do {
 
@@ -72,20 +75,18 @@ public class MasterThread extends SlaveThread {
       // continue;
       // }
       globalIdAndMsgQueueMap.get(id).drainTo(localMessageQueue);
-      System.out
-          .println("Master checking its queue. Size of queue is: " + localMessageQueue.size() + " round " + round);
+      System.out.printf("\nMaster checking its queue. Size of queue is: %d round %d \n", localMessageQueue.size(),
+          round);
 
       while (!(localMessageQueue.isEmpty())) {
         try {
           Message tempMsg = localMessageQueue.take();
           // System.out.println(tempMsg);
 
-          if (tempMsg.getmType().equalsIgnoreCase("Leader")) {
-            // if a node says it's Leader to master, master tells the node to terminate.
+          if (leaderSet.size() == 1) {
+            // if there is only one leader, then algorithm is complete. call killAll()
             localMessageQueue.clear();
 
-            globalIdAndMsgQueueMap.get(tempMsg.getSenderId())
-                .put(new Message(id, tempMsg.getSenderId(), 0, level, round, coreLink, "Terminate"));
             System.err.println("---Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
             masterMustDie = true;
 
@@ -109,8 +110,9 @@ public class MasterThread extends SlaveThread {
         }
 
       }
+      System.out.println(leaderSet.toString());
       System.out.println("Starting threads. ");
-      startAllThreads();
+      startAllThreads(); // bug
       sleep();
     } while (!masterMustDie);
 
@@ -137,10 +139,9 @@ public class MasterThread extends SlaveThread {
   }
 
   public void processRoundDoneMsg(Message m) {
-    if (m.isLeader()) {
-      leaderSet.add(m.senderId);
-    } else
+    if (m.getParent() != -1) {
       leaderSet.remove(m.getSenderId());
+    }
   }
 
   /**
@@ -180,7 +181,7 @@ public class MasterThread extends SlaveThread {
 
   public synchronized void sendRoundStartMsg() {
     for (int i : slaveArray) {
-      //System.err.println("Send Round_Number msg to " + i);
+      // System.err.println("Send Round_Number msg to " + i);
       try {
         Message temp = new Message(id, i, 0, level, round, coreLink, "Round_Number");
         globalIdAndMsgQueueMap.get(i).put(temp);

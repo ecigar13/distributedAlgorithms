@@ -11,6 +11,7 @@ public class Message {
   protected int level;
   protected LinkedList<Integer> path;
   protected String mType;
+  protected int myParent;
 
   /**
    * Constructor for floodmax messages.
@@ -57,14 +58,12 @@ public class Message {
     this.path = path;
   }
 
-  protected boolean isLeader;
-
-  public boolean isLeader() {
-    return isLeader;
+  public int getParent() {
+    return myParent;
   }
 
-  public void setLeader(boolean isLeader) {
-    this.isLeader = isLeader;
+  public void setParent(int myParent) {
+    this.myParent = myParent;
   }
 
   public LinkedList<Integer> getPath() {
