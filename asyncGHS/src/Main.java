@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
   public static void main(String args[]) throws IOException {
     // read from file
-    String fileName = "graph2";
+    String fileName = "graph";
     Scanner in = new Scanner(new FileReader(fileName + "-ghs.txt"));
 
     // first entry of the graph.txt provides the number of slave nodes

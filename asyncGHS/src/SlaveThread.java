@@ -145,6 +145,7 @@ public class SlaveThread implements Runnable {
    */
   public void parentAbsorb(Message m) throws InterruptedException {
     // clear all report because the core has changed.
+    System.err.printf("%s parentAbsorb %s\n", name, m.getSenderId());
     reportReceived.clear();
     currentSmallestReportMessage = null;
     currentSmallestAcceptMsg = null;
@@ -169,6 +170,7 @@ public class SlaveThread implements Runnable {
    */
   public void childAbsorb(Message m) throws InterruptedException {
     // clear all report because the core has changed.
+    System.err.printf("%s childAbsorb %s\n", name, m.getSenderId());
     myParent = m.getSenderId();
     reportReceived.clear();
     currentSmallestReportMessage = null;
@@ -239,7 +241,7 @@ public class SlaveThread implements Runnable {
       m.setSenderId(id);
       m.setReceiverId(temp);
 
-      System.out.printf("DDDDDDD %s %s", name, temp);
+      // System.out.printf("DDDDDDD %s %s", name, temp);
       localMsgToReduce.get(temp).put(m);
     }
 
@@ -274,17 +276,17 @@ public class SlaveThread implements Runnable {
 
   public synchronized void printEdges() {
     System.err.print(name);
-    System.err.printf(" Print branch ");
+    System.err.printf(" Print branch \n");
     for (Link l : branch) {
       System.err.println(l);
     }
 
-    System.err.printf("Print basic ");
+    System.err.printf("Print basic \n");
     for (Link l : basicEdge) {
       System.err.println(l);
     }
 
-    System.err.printf("Print reject ");
+    System.err.printf("Print reject \n");
     for (Link l : rejected) {
       System.err.println(l);
     }
