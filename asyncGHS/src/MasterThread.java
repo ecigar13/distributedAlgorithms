@@ -127,13 +127,31 @@ public class MasterThread extends SlaveThread {
    */
   public void printTree() {
     System.out.println("\n\nPrinting the tree.");
-    System.out.println("MaxId--------Parent <--- myId ---> myChildren (can overlap)");
+    System.out.println("MaxId--------Parent <----- myId ---> branch edges (can overlap)");
     for (SlaveThread t : threadList) {
       System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (Link i : t.getBranch()) {
-        if (i.getFrom() != t.getMyParent()) {
-          System.out.print(i.getTo() + " ");
-        }
+        System.out.print(i.getTo() + " ");
+      }
+      System.out.println();
+    }
+
+    System.out.println("\n\nPrinting rejected.");
+    System.out.println("MaxId--------Parent <----- myId ---> rejected edges (can overlap)");
+    for (SlaveThread t : threadList) {
+      System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
+      for (Link i : t.getRejected()) {
+        System.out.print(i.getTo() + " ");
+      }
+      System.out.println();
+    }
+
+    System.out.println("\n\nPrinting basic edges.");
+    System.out.println("MaxId--------Parent <----- myId ---> basic edges (can overlap)");
+    for (SlaveThread t : threadList) {
+      System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
+      for (Link i : t.getBasicLinks()) {
+        System.out.print(i.getTo() + " ");
       }
       System.out.println();
     }
@@ -168,7 +186,7 @@ public class MasterThread extends SlaveThread {
         t.initLocalMessagesQueues();
       }
 
-      System.err.println("Created threads. ");
+      // System.err.println("Created threads. ");
     } catch (Exception err) {
       err.printStackTrace();
     }

@@ -7,256 +7,1395 @@ Test print matrix
 -1.0	33.6	-1.0	-1.0	
 Print double matrix and write to file: 
 The Master has started. Size: 4
-Done initiating SlaveThread queues.
-Done initiating SlaveThread queues.
-Done initiating SlaveThread queues.
-Done initiating SlaveThread queues.
-Created threads. 
 
 Master checking its queue. Size of queue is: 0 round 1 
 [32, 99, 67, 20]
 Starting threads. 
-Thread_20 	 myParent -1 	 level 0 coreLink null
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Thread_20 send test to 99
+Thread_20 send test to 99Thread_20 wwww []
+
+[20-99-0.4, 20-32-4.8]
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge [20-99-0.4, 20-32-4.8]
 Thread_20 Print branch 
 Print basic 
 20-99-0.4
 20-32-4.8
 Print reject 
-Thread_99 	 myParent -1 	 level 0 coreLink null
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 wwww []
+[99-20-0.4, 99-32-9.7, 99-67-33.6]
 Thread_99 send test to 20
-Thread_99  sending accept to 20
-
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-20-0.4, 99-32-9.7, 99-67-33.6]
 Thread_99 Print branch 
 Print basic 
 99-20-0.4
 99-32-9.7
 99-67-33.6
 Print reject 
-Thread_32 	 myParent -1 	 level 0 coreLink null
+Thread_99 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww []
+[32-20-4.8, 32-99-9.7]
 Thread_32 send test to 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
 Thread_32 Print branch 
 Print basic 
 32-20-4.8
 32-99-9.7
-Thread_67 	 myParent -1 	 level 0 coreLink null
+Print reject 
+Thread_32 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[67-99-33.6]
 Thread_67 send test to 99
-Print reject 
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
 Thread_67 Print branch 
 Print basic 
 67-99-33.6
 Print reject 
-
-Master checking its queue. Size of queue is: 0 round 1 
-[32, 99, 67, 20]
-Starting threads. 
-Thread_20 	 myParent -1 	 level 0 coreLink null
+Thread_67 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Waiting for response from 99
-Thread_20  sending accept to 99
-
-Thread_20  sending accept to 32
-
-Thread_20 Print branch 
-Print basic 
-20-99-0.4
-20-32-4.8
-Print reject 
-Thread_99 	 myParent -1 	 level 0 coreLink null
- testMsgToRespond 0
-
-Waiting for response from 20
-Thread_99  sending accept to 67
-
-Thread_99 Print branch 
-Print basic 
-99-20-0.4
-99-32-9.7
-99-67-33.6
-Print reject 
-Thread_32 	 myParent -1 	 level 0 coreLink null
- testMsgToRespond 0
-
-Waiting for response from 20
-Thread_32 Print branch 
-Print basic 
-32-20-4.8
-32-99-9.7
-Print reject 
-Thread_67 	 myParent -1 	 level 0 coreLink null
- testMsgToRespond 0
-
-Waiting for response from 99
-Thread_67 Print branch 
-Print basic 
-67-99-33.6
-Print reject 
 
 Master checking its queue. Size of queue is: 4 round 1 
 [32, 99, 67, 20]
 Starting threads. 
-Thread_20 	 myParent -1 	 level 0 coreLink null
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Thread_20 send test to 99
-Thread_20 processing connect msg from 20
+Thread_20 wwww [99]
+[20-99-0.4, 20-32-4.8]
+Thread_20 waiting for response from 99
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge [20-99-0.4, 20-32-4.8]
 Thread_20 Print branch 
 Print basic 
 20-99-0.4
 20-32-4.8
 Print reject 
-Thread_99 	 myParent -1 	 level 0 coreLink null
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Thread_99 send test to 20
-Thread_99 processing connect msg from 99
-Thread_99  sending accept to 20
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
 
-Thread_99 processing connect msg from 20
-Merging 99 and 20
+Thread_99 wwww [20]
+[99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 waiting for response from 20
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 processing message mType test Sender id: 20 core: null level 0
+Thread_99 processing test from 20
+Thread_99 sending accept to 20
+
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-20-0.4, 99-32-9.7, 99-67-33.6]
 Thread_99 Print branch 
+Print basic 
 99-20-0.4
 99-32-9.7
 99-67-33.6
-Print basic 
 Print reject 
-Thread_32 	 myParent -1 	 level 0 coreLink null
+Thread_99 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Thread_32 send test to 20
-Thread_32 processing connect msg from 32
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww [20]
+[32-20-4.8, 32-99-9.7]
+Thread_32 waiting for response from 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
 Thread_32 Print branch 
 Print basic 
 32-20-4.8
 32-99-9.7
 Print reject 
-Thread_67 	 myParent -1 	 level 0 coreLink null
+Thread_32 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Thread_67 send test to 99
-Thread_67 processing connect msg from 67
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww [99]
+[67-99-33.6]
+Thread_67 waiting for response from 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
 Thread_67 Print branch 
 Print basic 
 67-99-33.6
 Print reject 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
 
 Master checking its queue. Size of queue is: 4 round 2 
 [32, 99, 67, 20]
 Starting threads. 
-Thread_20 	 myParent -1 	 level 0 coreLink 20-99-0.4
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Thread_20  sending accept to 99
+Thread_20 wwww [99]
+[20-99-0.4, 20-32-4.8]
+Thread_20 waiting for response from 99
+Thread_20 processing message mType test Sender id: 99 core: null level 0
+Thread_20 processing test from 99
+Thread_20 sending accept to 99
 
-Thread_20 processing connect msg from 99
-Merging 20 and 99
-Thread_20  sending accept to 32
+Thread_20 processing message mType test Sender id: 32 core: null level 0
+Thread_20 processing test from 32
+Thread_20 sending accept to 32
 
-Thread_20 processing connect msg from 32
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge [20-99-0.4, 20-32-4.8]
 Thread_20 Print branch 
+Print basic 
 20-99-0.4
 20-32-4.8
-Print basic 
 Print reject 
-Thread_99 	 myParent -1 	 level 1 coreLink 99-20-0.4
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
-Thread_99  sending accept to 67
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
 
-Thread_99 processing connect msg from 67
+Thread_99 wwww [20]
+[99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 waiting for response from 20
+Thread_99 processing message mType test Sender id: 67 core: null level 0
+Thread_99 processing test from 67
+Thread_99 sending accept to 67
+
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-20-0.4, 99-32-9.7, 99-67-33.6]
 Thread_99 Print branch 
+Print basic 
 99-20-0.4
 99-32-9.7
 99-67-33.6
-Print basic 
 Print reject 
-Thread_32 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_99 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww [20]
+[32-20-4.8, 32-99-9.7]
+Thread_32 waiting for response from 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
 Thread_32 Print branch 
 Print basic 
 32-20-4.8
 32-99-9.7
 Print reject 
-Thread_67 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_32 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww [99]
+[67-99-33.6]
+Thread_67 waiting for response from 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
 Thread_67 Print branch 
 Print basic 
 67-99-33.6
 Print reject 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
 
 Master checking its queue. Size of queue is: 4 round 3 
-[99, 20]
+[32, 99, 67, 20]
 Starting threads. 
-Thread_20 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_20 wwww [99]
+[20-99-0.4, 20-32-4.8]
+Thread_20 waiting for response from 99
+Thread_20 processing message mType accept Sender id: 99 core: null level 0
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 sent connect to 99
+Thread_20 reducing msg round.
+Thread_20 basic edge [20-99-0.4, 20-32-4.8]
 Thread_20 Print branch 
+Print basic 
 20-99-0.4
 20-32-4.8
-Print basic 
 Print reject 
-Thread_99 	 myParent 20 	 level 1 coreLink 99-20-0.4
+Thread_20 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 wwww [20]
+[99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 waiting for response from 20
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 processing message mType accept Sender id: 20 core: null level 0
+Thread_99 sent connect to 20
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-20-0.4, 99-32-9.7, 99-67-33.6]
 Thread_99 Print branch 
+Print basic 
 99-20-0.4
 99-32-9.7
 99-67-33.6
-Print basic 
 Print reject 
-Thread_32 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_99 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww [20]
+[32-20-4.8, 32-99-9.7]
+Thread_32 waiting for response from 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 processing message mType accept Sender id: 20 core: null level 0
+Thread_32 sent connect to 20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
 Thread_32 Print branch 
 Print basic 
 32-20-4.8
 32-99-9.7
 Print reject 
-Thread_67 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_32 printing myParent -1 level 0 coreLink null
  testMsgToRespond 0
 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww [99]
+[67-99-33.6]
+Thread_67 waiting for response from 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 processing message mType accept Sender id: 99 core: null level 0
+Thread_67 sent connect to 99
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
 Thread_67 Print branch 
 Print basic 
 67-99-33.6
 Print reject 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
 
-Master checking its queue. Size of queue is: 4 round ---Telling the master to die. Leader is: 99 round 4
-4 
+
+Master checking its queue. Size of queue is: 4 round 4 
+[32, 99, 67, 20]
+Starting threads. 
+Thread_20 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[20-99-0.4, 20-32-4.8]
+Thread_20 send test to 99
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge [20-99-0.4, 20-32-4.8]
+Thread_20 Print branch 
+Print basic 
+20-99-0.4
+20-32-4.8
+Print reject 
+Thread_20 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 wwww []
+[99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 send test to 20
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 Print branch 
+Print basic 
+99-20-0.4
+99-32-9.7
+99-67-33.6
+Print reject 
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww []
+[32-20-4.8, 32-99-9.7]
+Thread_32 send test to 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
+Thread_32 Print branch 
+Print basic 
+32-20-4.8
+32-99-9.7
+Print reject 
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[67-99-33.6]
+Thread_67 send test to 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
+Thread_67 Print branch 
+Print basic 
+67-99-33.6
+Print reject 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 5 
+[32, 99, 67, 20]
+Starting threads. 
+Thread_20 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_20 wwww [99]
+[20-99-0.4, 20-32-4.8]
+Thread_20 waiting for response from 99
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge [20-99-0.4, 20-32-4.8]
+Thread_20 Print branch 
+Print basic 
+20-99-0.4
+20-32-4.8
+Print reject 
+Thread_20 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 wwww [20]
+[99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 waiting for response from 20
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 Print branch 
+Print basic 
+99-20-0.4
+99-32-9.7
+99-67-33.6
+Print reject 
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww [20]
+[32-20-4.8, 32-99-9.7]
+Thread_32 waiting for response from 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
+Thread_32 Print branch 
+Print basic 
+32-20-4.8
+32-99-9.7
+Print reject 
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww [99]
+[67-99-33.6]
+Thread_67 waiting for response from 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
+Thread_67 Print branch 
+Print basic 
+67-99-33.6
+Print reject 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 6 
+[32, 99, 67, 20]
+Starting threads. 
+Thread_20 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_20 wwww [99]
+[20-99-0.4, 20-32-4.8]
+Thread_20 waiting for response from 99
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge [20-99-0.4, 20-32-4.8]
+Thread_20 Print branch 
+Print basic 
+20-99-0.4
+20-32-4.8
+Print reject 
+Thread_20 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_99 wwww [20]
+[99-20-0.4, 99-32-9.7, 99-67-33.6]
+Thread_99 waiting for response from 20
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 processing message mType connect Sender id: 20 core: null level 0
+Thread_99 processing connect msg from 20 level 0
+Merging 99 receiving msg and 20
+Thread_99 processing message mType test Sender id: 20 core: null level 0
+Thread_99 processing test from 20
+Thread_99 sending accept to 20
+
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7, 99-67-33.6]
+Thread_99 Print branch 
+99-20-0.4
+Print basic 
+99-32-9.7
+99-67-33.6
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww [20]
+[32-20-4.8, 32-99-9.7]
+Thread_32 waiting for response from 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
+Thread_32 Print branch 
+Print basic 
+32-20-4.8
+32-99-9.7
+Print reject 
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww [99]
+[67-99-33.6]
+Thread_67 waiting for response from 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
+Thread_67 Print branch 
+Print basic 
+67-99-33.6
+Print reject 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 7 
+[32, 99, 67, 20]
+Starting threads. 
+Thread_20 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_20 wwww [99]
+[20-99-0.4, 20-32-4.8]
+Thread_20 waiting for response from 99
+Thread_20 processing message mType connect Sender id: 99 core: null level 0
+Thread_20 processing connect msg from 99 level 0
+Merging 20 receiving msg and 99
+Thread_20 processing message mType test Sender id: 99 core: null level 0
+Thread_20 processing test from 99
+Thread_20 sending accept to 99
+
+Thread_20 processing message mType connect Sender id: 32 core: null level 0
+Thread_20 processing connect msg from 32 level 0
+Thread_20 parentAbsorb 32
+Thread_20 send absorb to 32Parent Core link for absorb null
+Thread_20 processing message mType test Sender id: 32 core: null level 0
+Thread_20 processing test from 32
+Thread_20 sending accept to 32
+
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 20 level 1 coreLink null
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww [20]
+[99-32-9.7, 99-67-33.6]
+Thread_99 send test to 32
+Thread_99 processing message mType connect Sender id: 67 core: null level 0
+Thread_99 processing connect msg from 67 level 0
+Thread_99 parentAbsorb 67
+Thread_99 send absorb to 67Parent Core link for absorb 99-20-0.4
+Thread_99 processing message mType test Sender id: 67 core: null level 0
+Thread_99 processing test from 67
+Thread_99 sending accept to 67
+
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7]
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+99-32-9.7
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww [20]
+[32-20-4.8, 32-99-9.7]
+Thread_32 waiting for response from 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-20-4.8, 32-99-9.7]
+Thread_32 Print branch 
+Print basic 
+32-20-4.8
+32-99-9.7
+Print reject 
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww [99]
+[67-99-33.6]
+Thread_67 waiting for response from 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 reducing msg round.
+Thread_67 basic edge [67-99-33.6]
+Thread_67 Print branch 
+Print basic 
+67-99-33.6
+Print reject 
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 8 
+[32, 99, 67]
+Starting threads. 
+Thread_20 printing myParent 20 level 1 coreLink null
+ testMsgToRespond 0
+
+Thread_20 wwww [99]
+[]
+Thread_20 processing message mType levelUp Sender id: 99 core: 99-20-0.4 level 1
+Thread_20 processing message mType accept Sender id: 99 core: 99-20-0.4 level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww [32, 20]
+[99-32-9.7]
+Thread_99 waiting for response from 32
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 processing message mType accept Sender id: 20 core: null level 1
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7]
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+99-32-9.7
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww [20]
+[32-20-4.8, 32-99-9.7]
+Thread_32 waiting for response from 20
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 processing message mType absorbed Sender id: 20 core: null level 1
+Thread_32 childAbsorb 20
+Thread_32 processing message mType accept Sender id: 20 core: null level 1
+Thread_32 processing message mType test Sender id: 99 core: 99-20-0.4 level 1
+Thread_32 processing test from 99
+Thread_32 sending accept to 99
+
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink null
+ testMsgToRespond 0
+
+Thread_67 printing myParent -1 level 0 coreLink null
+ testMsgToRespond 0
+
+Thread_67 wwww [99]
+[67-99-33.6]
+Thread_67 waiting for response from 99
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_67 processing message mType absorbed Sender id: 99 core: 99-20-0.4 level 1
+Thread_67 childAbsorb 99
+Thread_67 processing message mType accept Sender id: 99 core: 99-20-0.4 level 1
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 9 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 32 core: null level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww [32]
+[99-32-9.7]
+Thread_99 waiting for response from 32
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 processing message mType report Sender id: 20 core: 99-20-0.4 level 1
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7]
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+99-32-9.7
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink null
+ testMsgToRespond 0
+
+Thread_32 wwww []
+[32-99-9.7]
+Thread_32 send test to 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 processing message mType levelUp Sender id: 20 core: 99-20-0.4 level 1
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 10 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 32 core: null level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww [32]
+[99-32-9.7]
+Thread_99 waiting for response from 32
+Thread_99 processing message mType accept Sender id: 32 core: null level 1
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 processing message mType report Sender id: 20 core: 99-20-0.4 level 1
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7]
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+99-32-9.7
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 wwww [99]
+[32-99-9.7]
+Thread_32 waiting for response from 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 11 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 32 core: null level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww []
+[99-32-9.7]
+Thread_99 send test to 32
+Thread_99 processing message mType test Sender id: 32 core: null level 1
+Thread_99 processing test from 32
+Thread_99 sending accept to 32
+
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 processing message mType report Sender id: 20 core: 99-20-0.4 level 1
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7]
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+99-32-9.7
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 wwww [99]
+[32-99-9.7]
+Thread_32 waiting for response from 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 12 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 20 core: 99-20-0.4 level 1
+Thread_20 processing message mType report Sender id: 32 core: null level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww [32]
+[99-32-9.7]
+Thread_99 waiting for response from 32
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7]
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+99-32-9.7
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 wwww [99]
+[32-99-9.7]
+Thread_32 waiting for response from 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 processing message mType test Sender id: 99 core: 99-20-0.4 level 1
+Thread_32 processing test from 99
+Thread_32 sending reject to 99
+
+Thread_32 processing message mType accept Sender id: 99 core: 99-20-0.4 level 1
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 13 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 32 core: 99-20-0.4 level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww [32]
+[99-32-9.7]
+Thread_99 waiting for response from 32
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge [99-32-9.7]
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+99-32-9.7
+Print reject 
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 wwww []
+[32-99-9.7]
+Thread_32 send test to 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 14 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 32 core: 99-20-0.4 level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww [32]
+[99-32-9.7]
+Thread_99 waiting for response from 32
+Thread_99 processing message mType reject Sender id: 32 core: 99-20-0.4 level 1
+Link 99-32-9.7 message mType reject Sender id: 32 core: 99-20-0.4 level 1Thread_99 wwww []
+[]
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge []
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+Print reject 
+99-32-9.7
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 wwww [99]
+[32-99-9.7]
+Thread_32 waiting for response from 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 15 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 32 core: 99-20-0.4 level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww []
+[]
+Thread_99 processing message mType test Sender id: 32 core: 99-20-0.4 level 1
+Thread_99 processing test from 32
+Thread_99 sending reject to 32
+
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge []
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+Print reject 
+99-32-9.7
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 wwww [99]
+[32-99-9.7]
+Thread_32 waiting for response from 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge [32-99-9.7]
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+32-99-9.7
+Print reject 
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 16 
+[32, 99]
+Starting threads. 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_20 wwww []
+[]
+Thread_20 processing message mType report Sender id: 32 core: 99-20-0.4 level 1
+Thread_20 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_20 reducing msg round.
+Thread_20 basic edge []
+Thread_20 Print branch 
+20-99-0.4
+20-32-4.8
+Print basic 
+Print reject 
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_99 wwww []
+[]
+Thread_99 processing message mType report Sender id: 67 core: 99-20-0.4 level 1
+Thread_99 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_99 reducing msg round.
+Thread_99 basic edge []
+Thread_99 Print branch 
+99-20-0.4
+99-67-33.6
+Print basic 
+Print reject 
+99-32-9.7
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 wwww [99]
+[32-99-9.7]
+Thread_32 waiting for response from 99
+Thread_32 processing message mType Round_Number Sender id: 0 core: null level 0
+Thread_32 processing message mType reject Sender id: 99 core: 99-20-0.4 level 1
+Link 32-99-9.7 message mType reject Sender id: 99 core: 99-20-0.4 level 1Thread_32 wwww []
+[]
+PPPPPPPPPP20
+Thread_32 reducing msg round.
+Thread_32 basic edge []
+Thread_32 Print branch 
+32-20-4.8
+Print basic 
+Print reject 
+32-99-9.7
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 wwww []
+[]
+Thread_67 processing message mType Round_Number Sender id: 0 core: null level 0
+PPPPPPPPPP99
+Thread_67 reducing msg round.
+Thread_67 basic edge []
+Thread_67 Print branch 
+67-99-33.6
+Print basic 
+Print reject 
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+
+Master checking its queue. Size of queue is: 4 round 17 
+---Telling the master to die. Leader is: 67 round 17
 Terminated slave 20
 Terminated slave 99
 Terminated slave 32
 Terminated slave 67
 [99]
 Starting threads. 
-Thread_20 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
  testMsgToRespond 0
 
-Thread_99 	 myParent 20 	 level 1 coreLink 99-20-0.4
+Thread_20 printing myParent 99 level 1 coreLink 99-20-0.4
  testMsgToRespond 0
 
-Thread_32 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
  testMsgToRespond 0
 
-Thread_67 	 myParent 99 	 level 1 coreLink 99-20-0.4
+Thread_99 printing myParent -1 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_32 printing myParent 20 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
+ testMsgToRespond 0
+
+Thread_67 printing myParent 99 level 1 coreLink 99-20-0.4
  testMsgToRespond 0
 
 
 
 Printing the tree.
-MaxId--------Parent <--- myId ---> myChildren (can overlap)
+MaxId--------Parent <----- myId ---> branch edges (can overlap)
 99-20-0.4---  99<------20------>99 32 
-99-20-0.4---  20<------99------>20 32 67 
-99-20-0.4---  99<------32------>
+99-20-0.4---  -1<------99------>20 67 
+99-20-0.4---  20<------32------>20 
+99-20-0.4---  99<------67------>99 
+
+
+Printing rejected.
+MaxId--------Parent <----- myId ---> rejected edges (can overlap)
+99-20-0.4---  99<------20------>
+99-20-0.4---  -1<------99------>32 
+99-20-0.4---  20<------32------>99 
 99-20-0.4---  99<------67------>
-Master will now die. MaxUid 99-20-0.4 round 4
+
+
+Printing basic edges.
+MaxId--------Parent <----- myId ---> basic edges (can overlap)
+99-20-0.4---  99<------20------>
+99-20-0.4---  -1<------99------>
+99-20-0.4---  20<------32------>
+99-20-0.4---  99<------67------>
+Master will now die. MaxUid 99-20-0.4 round 17
