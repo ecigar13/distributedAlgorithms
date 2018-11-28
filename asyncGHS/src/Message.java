@@ -80,8 +80,8 @@ public class Message {
 
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
-    stringBuffer.append("mType ").append(mType).append(" Sender id: ").append(senderId).append(" core: ").append(core)
-        .append(" level ").append(level);
+    stringBuffer.append("mType ").append(mType).append(" SenderId ").append(senderId).append(" core ").append(core)
+        .append(" lvl ").append(level);
     return stringBuffer.toString();
   }
 

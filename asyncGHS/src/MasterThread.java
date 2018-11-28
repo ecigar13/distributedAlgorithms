@@ -113,9 +113,9 @@ public class MasterThread extends SlaveThread {
       System.out.println(leaderSet.toString());
       System.out.println("Starting threads. ");
       startAllThreads(); // bug
-      // sleep();
       System.gc();
-    } while (!masterMustDie);
+      printTree();
+    } while (!masterMustDie && round < (slaveArray.length * slaveArray.length));
 
     printTree();
     System.out.println("Master will now die. MaxUid " + coreLink + " round " + round);
@@ -126,6 +126,7 @@ public class MasterThread extends SlaveThread {
    * Print the nackAck set after the algorithm is done.
    */
   public void printTree() {
+    sleep(10);
     System.out.println("\n\nPrinting the tree.");
     System.out.println("MaxId--------Parent <----- myId ---> branch edges (can overlap)");
     for (SlaveThread t : threadList) {
@@ -155,6 +156,7 @@ public class MasterThread extends SlaveThread {
       }
       System.out.println();
     }
+    sleep(10);
   }
 
   public void processRoundDoneMsg(Message m) {
