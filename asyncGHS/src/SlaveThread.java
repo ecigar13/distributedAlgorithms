@@ -355,18 +355,25 @@ public class SlaveThread implements Runnable {
   }
 
   /**
-   * Only do this if I got all reports from all children and accept msg from
-   * basic.
+   * If I am the lead -> parent = -1. If I'm on a straight line, I won't have
+   * smallest accept msg. Otherwise, I have smallest accept msg.
+   * 
+   * If I'm not the lead -> parent != -1. If I'm on a straight line, I won't have
+   * smallest accept msg. Otherwise, I have smallest accept msg.
    * 
    * @throws InterruptedException
    */
   public void decideToSendReportMsg() throws InterruptedException {
-    if (myParent != -1 && reportReceived.size() == branch.size() - 1 && currentSmallestAcceptMsg != null) {
-      // If I got report from all branches, Compare it with what I get from reports.
+    if (myParent != -1 && reportReceived.size() == branch.size() - 1) {
+      // If I'm not the leader
       sentInitiate = false;
 
       Message msgToUse;
-      if (currentSmallestReportMessage == null) {
+      if (basicEdge.size() + branch.size() + rejected.size() == 2) {
+        // if I'm on a straight line, no need to check for smallestTestMsg
+        msgToUse = currentSmallestReportMessage; // pick smallest report msg.
+        // otherwise I'm not on a straight line.
+      } else if (currentSmallestAcceptMsg != null && currentSmallestReportMessage == null) {
         msgToUse = currentSmallestAcceptMsg;
       } else if (currentSmallestReportMessage.getMwoe() > currentSmallestAcceptMsg.getMwoe()) {
         msgToUse = currentSmallestAcceptMsg;
@@ -378,10 +385,11 @@ public class SlaveThread implements Runnable {
       // also add the last node.
       msgToUse.setmType("report");
       msgToUse.setSenderId(id);
+      msgToUse.setReceiverId(myParent);
       msgToUse.getPath().add(id);
 
       System.out.printf("%s sending report to parent %s", name, myParent);
-      localMsgToReduce.get(myParent).put(msgToUse); // null pointer exception here.
+      localMsgToReduce.get(myParent).put(msgToUse); 
 
       // clear my set of report and set mwoe to maximum.
       reportReceived.clear();
@@ -389,35 +397,39 @@ public class SlaveThread implements Runnable {
       currentSmallestAcceptMsg = null;
       mwoe = Double.MAX_VALUE;
 
-    } else if (myParent == -1 && reportReceived.size() == branch.size() && currentSmallestAcceptMsg != null) {
-      // if I'm the leader and I heard report and accept from everyone// If I got
-      // report from all branches, Compare it with what I get from reports.
+    } else if (myParent == -1 && reportReceived.size() == branch.size()) {
+      // if I'm the leader and I heard report and accept from everyone
       sentInitiate = false;
-      Message tempMsg;
+      Message msgToUse;
+      
+      if (basicEdge.size() + branch.size() + rejected.size() == 2) {
+        // if I'm on a straight line
+        msgToUse = currentSmallestReportMessage; // pick smallest report msg.
+        // otherwise I'm not on a straight line.
 
-      if (currentSmallestReportMessage == null) {
-        tempMsg = currentSmallestAcceptMsg;
+      } else if (currentSmallestReportMessage == null) {
+        msgToUse = currentSmallestAcceptMsg;
       } else if (currentSmallestReportMessage.getMwoe() > currentSmallestAcceptMsg.getMwoe()) {
-        tempMsg = currentSmallestAcceptMsg;
+        msgToUse = currentSmallestAcceptMsg;
       } else {
-        tempMsg = currentSmallestReportMessage;
+        msgToUse = currentSmallestReportMessage;
       }
 
-      if (tempMsg.getmType().equals("report")) {
+      if (msgToUse.getmType().equals("report")) {
         // if leader, process the message and broadcast back.
-        sendChangeRootDown(tempMsg);
+        sendChangeRootDown(msgToUse);
 
-      } else if (tempMsg.getmType().equals("accept")) {
+      } else if (msgToUse.getmType().equals("accept")) {
         // what if my mwoe is in leader's basic edges???
         // send connect to itself
-        System.out.printf("%s sent connect to %s\n", name, tempMsg.getSenderId());
-        Message temp = new Message(id, tempMsg.getSenderId(), mwoe, level, round, coreLink, "connect");
-        sentConnect.add(tempMsg.getSenderId());
-        if (sentConnect.contains(tempMsg.getSenderId()) && receivedConnect.contains(tempMsg.getSenderId())) {
-          merge(tempMsg);
+        System.out.printf("%s sent connect to %s\n", name, msgToUse.getSenderId());
+        Message temp = new Message(id, msgToUse.getSenderId(), mwoe, level, round, coreLink, "connect");
+        sentConnect.add(msgToUse.getSenderId());
+        if (sentConnect.contains(msgToUse.getSenderId()) && receivedConnect.contains(msgToUse.getSenderId())) {
+          merge(msgToUse);
         }
 
-        localMsgToReduce.get(tempMsg.getSenderId()).put(temp);
+        localMsgToReduce.get(msgToUse.getSenderId()).put(temp);
 
       }
 
