@@ -18,14 +18,11 @@ public class Message {
    * 
    * @param senderId
    * @param receiverId
-   *          TODO
    * @param mwoe
-   *          TODO
-   * @param level
-   *          TODO
-   * @param round
-   * @param core
-   * @param mType
+   * @param level level of component.
+   * @param round delay rounds. For round start msg, this is the current round.
+   * @param core coreLink of component
+   * @param mType message type. Used in message process factory.
    */
   public Message(int senderId, int receiverId, double mwoe, int level, int round, Link core, String mType) {
     this.senderId = senderId;
@@ -42,28 +39,32 @@ public class Message {
     return core;
   }
 
-  public void setCore(Link core) {
+  public Message setCore(Link core) {
     this.core = core;
+    return this;
   }
 
   public int getLevel() {
     return level;
   }
 
-  public void setLevel(int level) {
+  public Message setLevel(int level) {
     this.level = level;
+    return this;
   }
 
-  public void setPath(LinkedList<Integer> path) {
+  public Message setPath(LinkedList<Integer> path) {
     this.path = path;
+    return this;
   }
 
   public int getParent() {
     return myParent;
   }
 
-  public void setParent(int myParent) {
+  public Message setParent(int myParent) {
     this.myParent = myParent;
+    return this;
   }
 
   public LinkedList<Integer> getPath() {
@@ -74,8 +75,9 @@ public class Message {
     return mwoe;
   }
 
-  public void setMwoe(double mwoe) {
+  public Message setMwoe(double mwoe) {
     this.mwoe = mwoe;
+    return this;
   }
 
   public String toString() {
@@ -89,40 +91,45 @@ public class Message {
     return receiverId;
   }
 
-  public void setReceiverId(int receiverId) {
+  public Message setReceiverId(int receiverId) {
     this.receiverId = receiverId;
+    return this;
   }
 
   public int getSenderId() {
     return senderId;
   }
 
-  public void setSenderId(int senderId) {
+  public Message setSenderId(int senderId) {
     this.senderId = senderId;
+    return this;
   }
 
   public int getUid() {
     return senderId;
   }
 
-  public void setUid(int uid) {
+  public Message setUid(int uid) {
     this.senderId = uid;
+    return this;
   }
 
   public int getRound() {
     return round;
   }
 
-  public void setRound(int round) {
+  public Message setRound(int round) {
     this.round = round;
+    return this;
   }
 
   public String getmType() {
     return mType;
   }
 
-  public void setmType(String mType) {
+  public Message setmType(String mType) {
     this.mType = mType;
+    return this;
   }
 
 }

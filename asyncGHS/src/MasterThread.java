@@ -69,11 +69,6 @@ public class MasterThread extends SlaveThread {
     }
 
     do {
-
-      // if (globalIdAndMsgQueueMap.get(id).size() != slaveArray.length) {
-      // System.out.println("Master waiting.");
-      // continue;
-      // }
       globalIdAndMsgQueueMap.get(id).drainTo(localMessageQueue);
       System.out.printf("\nMaster checking its queue. Size of queue is: %d round %d \n", localMessageQueue.size(),
           round);
@@ -81,15 +76,17 @@ public class MasterThread extends SlaveThread {
       while (!(localMessageQueue.isEmpty())) {
         try {
           Message tempMsg = localMessageQueue.take();
-          // System.out.println(tempMsg);
-
-          if (leaderSet.size() == 1) {
+          boolean hasBasicEdge = false;
+          for (SlaveThread t : threadList) {
+            if (t.basicEdge.size() != 0)
+              hasBasicEdge = true;
+          }
+          if (leaderSet.size() == 1 && !hasBasicEdge) {
             // if there is only one leader, then algorithm is complete. call killAll()
             localMessageQueue.clear();
 
             System.err.println("---Telling the master to die. Leader is: " + tempMsg.getSenderId() + " round " + round);
             masterMustDie = true;
-
             coreLink = tempMsg.getCore();
             killAll();
           } else if ((tempMsg.getmType().equals("Done"))) {
