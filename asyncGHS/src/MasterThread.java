@@ -115,7 +115,7 @@ public class MasterThread extends SlaveThread {
       startAllThreads(); // bug
       System.gc();
       printTree();
-    } while (!masterMustDie && round < (slaveArray.length * slaveArray.length));
+    } while (!masterMustDie);
 
     printTree();
     System.out.println("Master will now die. MaxUid " + coreLink + " round " + round);

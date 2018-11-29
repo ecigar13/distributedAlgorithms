@@ -7,6 +7,7 @@ import java.util.SortedSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 import com.sun.swing.internal.plaf.basic.resources.basic;
 
@@ -59,6 +60,8 @@ public class SlaveThread implements Runnable {
    * nodes that it changed level and core.
    */
   public void merge(Message m) throws InterruptedException {
+    waitingForResponse.remove(m.getSenderId());
+
     if (m.getSenderId() == id) {
       // it's an outgoing connect msg merger.
       System.out.printf("Merging %s outgoing msg and %s\n", id, m.getSenderId());
@@ -75,7 +78,8 @@ public class SlaveThread implements Runnable {
         myParent = -1;
         for (Link l : basicEdge) {
           if (l.getTo() == m.getReceiverId()) {
-            coreLink = l; // I have the link, so I can set it as core.
+            // coreLink = l; // I have the link, so I can set it as core.
+            coreLink = new Link(id, m.getReceiverId(), l.getWeight()); // I have the link, so I can set it as core.
             basicEdge.remove(l);
             branch.add(l);
           }
@@ -99,7 +103,8 @@ public class SlaveThread implements Runnable {
         myParent = -1;
         for (Link l : basicEdge) {
           if (l.getTo() == m.getSenderId()) {
-            coreLink = l; // I have the link, so I can set it as core.
+            // coreLink = l; // I have the link, so I can set it as core.
+            coreLink = new Link(id, m.getSenderId(), l.getWeight());
             basicEdge.remove(l);
             branch.add(l);
           }
@@ -108,10 +113,11 @@ public class SlaveThread implements Runnable {
 
     }
 
-    level++;
+    // level++;
     if (myParent == -1) {
       // broadcastchange component to the rest of the tree, change their core to this
       // core.
+      level++;
       broadcastLevelUp();
     }
   }
@@ -261,15 +267,14 @@ public class SlaveThread implements Runnable {
       // mType should be changeRoot from parent
 
       level = m.getLevel();
-      coreLink = m.getCore();
-
       int temp = m.getPath().removeLast();
-
       sentConnect.add(temp);
 
       m.setSenderId(id);
       m.setReceiverId(temp);
       m.setmType("connect"); // in case this is changeRoot msg.
+
+      waitingForResponse.add(temp);
       localMsgToReduce.get(temp).put(m);
       sentConnect.add(temp);
 
@@ -311,7 +316,9 @@ public class SlaveThread implements Runnable {
         // if I'm leader, send initiate.
         processMessageTypes();
         processWaitingTestMessage();
-        decideToSendReportMsg();
+        if (currentSmallestAcceptMsg != null || currentSmallestReportMessage != null) {
+          decideToSendReportMsg();
+        }
         reduceRoundInMsg();
         sendRoundDoneToMaster();
         drainToGlobalQueue();
@@ -334,6 +341,10 @@ public class SlaveThread implements Runnable {
       receivedConnect.remove(l.getTo());
       sentConnect.remove(l.getTo());
     }
+
+    if (waitingForResponse.contains(id))
+      waitingForResponse.remove(id);
+
   }
 
   public synchronized void printEdges() {
@@ -364,22 +375,24 @@ public class SlaveThread implements Runnable {
    * @throws InterruptedException
    */
   public void decideToSendReportMsg() throws InterruptedException {
+
     if (myParent != -1 && reportReceived.size() == branch.size() - 1) {
       // If I'm not the leader
       sentInitiate = false;
-
+      System.err.println("AAAAAAAA" + currentSmallestAcceptMsg);
+      System.err.println("RRRRRRRR" + currentSmallestReportMessage);
       Message msgToUse;
-      if (basicEdge.size() + branch.size() + rejected.size() == 2) {
-        // if I'm on a straight line, no need to check for smallestTestMsg
-        msgToUse = currentSmallestReportMessage; // pick smallest report msg.
-        // otherwise I'm not on a straight line.
-      } else if (currentSmallestAcceptMsg != null && currentSmallestReportMessage == null) {
+
+      if (currentSmallestAcceptMsg != null && currentSmallestReportMessage == null) {
         msgToUse = currentSmallestAcceptMsg;
+      } else if (currentSmallestAcceptMsg == null && currentSmallestReportMessage != null) {
+        msgToUse = currentSmallestReportMessage;
       } else if (currentSmallestReportMessage.getMwoe() > currentSmallestAcceptMsg.getMwoe()) {
         msgToUse = currentSmallestAcceptMsg;
       } else {
         msgToUse = currentSmallestReportMessage;
       }
+      System.err.printf("MMMMM %s", msgToUse);
 
       // if I pick mwoe from basic edge, construct new msg and send up.
       // also add the last node.
@@ -389,7 +402,7 @@ public class SlaveThread implements Runnable {
       msgToUse.getPath().add(id);
 
       System.out.printf("%s sending report to parent %s", name, myParent);
-      localMsgToReduce.get(myParent).put(msgToUse); 
+      localMsgToReduce.get(myParent).put(msgToUse);
 
       // clear my set of report and set mwoe to maximum.
       reportReceived.clear();
@@ -398,22 +411,25 @@ public class SlaveThread implements Runnable {
       mwoe = Double.MAX_VALUE;
 
     } else if (myParent == -1 && reportReceived.size() == branch.size()) {
+
+      System.err.println("AAAAA" + currentSmallestAcceptMsg);
+      System.err.println("RRRRR" + currentSmallestReportMessage);
       // if I'm the leader and I heard report and accept from everyone
       sentInitiate = false;
       Message msgToUse;
-      
-      if (basicEdge.size() + branch.size() + rejected.size() == 2) {
-        // if I'm on a straight line
-        msgToUse = currentSmallestReportMessage; // pick smallest report msg.
-        // otherwise I'm not on a straight line.
 
-      } else if (currentSmallestReportMessage == null) {
+      if (currentSmallestReportMessage == null && currentSmallestAcceptMsg != null) {
+        System.err.printf("For frst run");
         msgToUse = currentSmallestAcceptMsg;
+      } else if (currentSmallestAcceptMsg == null && currentSmallestReportMessage != null) {
+        msgToUse = currentSmallestReportMessage;
       } else if (currentSmallestReportMessage.getMwoe() > currentSmallestAcceptMsg.getMwoe()) {
         msgToUse = currentSmallestAcceptMsg;
       } else {
         msgToUse = currentSmallestReportMessage;
       }
+      System.err.printf("MMMMM %s\n", msgToUse);
+      System.out.printf("%s leader decides mwoe is %s\n", name, msgToUse);
 
       if (msgToUse.getmType().equals("report")) {
         // if leader, process the message and broadcast back.
@@ -421,10 +437,13 @@ public class SlaveThread implements Runnable {
 
       } else if (msgToUse.getmType().equals("accept")) {
         // what if my mwoe is in leader's basic edges???
-        // send connect to itself
-        System.out.printf("%s sent connect to %s\n", name, msgToUse.getSenderId());
+        System.out.printf("%s send connect to %s", name, msgToUse.getSenderId());
+
         Message temp = new Message(id, msgToUse.getSenderId(), mwoe, level, round, coreLink, "connect");
+        System.out.printf("\n %s sent connect to %s message: %s \n", name, msgToUse.getSenderId(), temp);
+        // System.out.println("temp gunjan is: "+temp);
         sentConnect.add(msgToUse.getSenderId());
+        waitingForResponse.add(temp.getSenderId());
         if (sentConnect.contains(msgToUse.getSenderId()) && receivedConnect.contains(msgToUse.getSenderId())) {
           merge(msgToUse);
         }
@@ -445,17 +464,26 @@ public class SlaveThread implements Runnable {
 
   /**
    * Remove the sender from waiting for response (because I got the response).
-   * Save the test msg.
+   * Save the test msg. Set the current mwoe.
    * 
    * @param m
    */
   public void processAcceptMessage(Message m) throws InterruptedException {
-    // System.err.println("AAAAAAAAAAAAAAAAAAAAAAA");
-    // System.out.println(m);
-    // System.err.println(waitingForResponse);
     waitingForResponse.remove(m.getSenderId());
     currentSmallestAcceptMsg = m;
+    for (Link l : basicEdge) {
+      if (l.getTo() == m.getSenderId()) {
+        mwoe = l.getWeight();
+      }
+    }
 
+    // if (level < m.getLevel()) {
+    // m.setmType("absorbed");
+    // childAbsorb(m); // perform child absorb operation.
+    // localMsgToReduce.get(m.getSenderId())
+    // .put(new Message(id, m.getSenderId(), mwoe, level, r.nextInt(delay) + 2,
+    // m.getCore(), "connect"));
+    // }
   }
 
   /**
@@ -474,14 +502,15 @@ public class SlaveThread implements Runnable {
    * @throws InterruptedException
    */
   public void sendChangeRootDown(Message m) throws InterruptedException {
-    // reuse the message.
+    System.out.printf("%s send changeRoot down", name);
+    System.out.println(coreLink);
     m.setLevel(level);
     m.setRound(r.nextInt(delay) + 2);
     m.setmType("changeRoot");
 
+    // reuse the message.
     // save behavior as processConnectMessage()
     processConnectMessage(m);
-
   }
 
   /**
@@ -495,16 +524,14 @@ public class SlaveThread implements Runnable {
    *          test msg to process
    */
   public void processTestMsg(Message m) throws InterruptedException {
-    System.err.printf("%s processing test from %s\n", name, m.getSenderId());
+    System.err.printf("%s processing test from %s %s\n", name, m.getSenderId(), m.getCore());
     if (coreLink != null && m.getCore() != null && coreLink.getWeight() == m.getCore().getWeight()) {
       System.err.printf("%s sending reject to %s\n\n", name, m.getSenderId());
       localMsgToReduce.get(m.getSenderId())
           .put(new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(delay) + 2, coreLink, "reject"));
 
-      return;
-    }
-    // dont send an accept message if waitingforResonse queue is not zero
-    if (coreLink == null || coreLink != m.getCore()) {
+    } else if (coreLink == null || coreLink != m.getCore()) {
+      // dont send an accept message if waitingforResonse queue is not zero
       if (level >= m.getLevel()) {
         System.err.printf("%s sending accept to %d\n", name, m.getSenderId());
 
@@ -514,11 +541,6 @@ public class SlaveThread implements Runnable {
 
       } else {// can't decide, wait until level is high enough to respond. See wikipedia algo.
         testMsgToRespond.add(m); // not complete.
-
-        // System.err.printf("%s sending levelMismatched to %s", name, m.getSenderId());
-        // localMsgToReduce.get(m.getSenderId())
-        // .put(new Message(id, m.getSenderId(), mwoe, level, r.nextInt(delay) + 2,
-        // coreLink, "levelMismatched"));
       }
     }
   }
@@ -563,7 +585,9 @@ public class SlaveThread implements Runnable {
   public void sendTestToSmallestBasic() throws InterruptedException {
     System.err.println(name + " wwww " + waitingForResponse);
     if (basicEdge.size() > 0) {
+      // gunjan
       Link e = basicEdge.first();
+
       if (!waitingForResponse.contains(e.getTo())) {
         System.out.println(name + " send test to " + e.getTo());
         localMsgToReduce.get(e.getTo())
@@ -578,7 +602,7 @@ public class SlaveThread implements Runnable {
 
   /**
    * Record the msg as received. Save the report msg if it has smaller mwoe than
-   * previious report msg. Otherwise, discard.
+   * previous report msg. Otherwise, discard.
    * 
    * @param m
    */
@@ -755,10 +779,12 @@ public class SlaveThread implements Runnable {
         rejected.add(l);
       }
     }
+    // gunjan
+    sendTestToSmallestBasic();
   }
 
   /**
-   * If level is mismatched, send test to the next one.
+   * If level is mismatched, send test to the next one. This causes bug.
    * 
    * @param m
    * @throws InterruptedException
