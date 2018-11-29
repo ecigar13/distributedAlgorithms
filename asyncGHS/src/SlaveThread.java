@@ -383,6 +383,11 @@ public class SlaveThread implements Runnable {
       System.err.println("RRRRRRRR" + currentSmallestReportMessage);
       Message msgToUse;
 
+      if (basicEdge.size() != 0 && currentSmallestAcceptMsg == null) {
+        System.out.printf("%s haven't heard from neighbors, skip", name);  //error here.
+        return;
+      }
+
       if (currentSmallestAcceptMsg != null && currentSmallestReportMessage == null) {
         msgToUse = currentSmallestAcceptMsg;
       } else if (currentSmallestAcceptMsg == null && currentSmallestReportMessage != null) {
@@ -392,7 +397,7 @@ public class SlaveThread implements Runnable {
       } else {
         msgToUse = currentSmallestReportMessage;
       }
-      System.err.printf("MMMMM %s", msgToUse);
+      System.out.printf("%s node decides mwoe is %s\n", name, msgToUse);
 
       // if I pick mwoe from basic edge, construct new msg and send up.
       // also add the last node.
@@ -419,7 +424,7 @@ public class SlaveThread implements Runnable {
       Message msgToUse;
 
       if (currentSmallestReportMessage == null && currentSmallestAcceptMsg != null) {
-        System.err.printf("For frst run");
+        System.err.printf("For first run");
         msgToUse = currentSmallestAcceptMsg;
       } else if (currentSmallestAcceptMsg == null && currentSmallestReportMessage != null) {
         msgToUse = currentSmallestReportMessage;
@@ -428,7 +433,6 @@ public class SlaveThread implements Runnable {
       } else {
         msgToUse = currentSmallestReportMessage;
       }
-      System.err.printf("MMMMM %s\n", msgToUse);
       System.out.printf("%s leader decides mwoe is %s\n", name, msgToUse);
 
       if (msgToUse.getmType().equals("report")) {

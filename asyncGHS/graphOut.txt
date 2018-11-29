@@ -17,8 +17,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent -1 level 0 coreLink null testMsgToRespond 0
 
-Thread_20 send test to 14
 Thread_20 wwww []
+Thread_20 send test to 14
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 reducing msg round.
 Thread_20 send round done.
@@ -536,8 +536,7 @@ Thread_20 processing message mType accept from 14 to 20 core null lvl 0[14]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 AAAAAmType accept from 14 to 20 core null lvl 0[14]
 RRRRRnull
-For frst runMMMMM mType accept from 14 to 20 core null lvl 0[14]
-Thread_20 leader decides mwoe is mType accept from 14 to 20 core null lvl 0[14]
+For first runThread_20 leader decides mwoe is mType accept from 14 to 20 core null lvl 0[14]
 Thread_20 send connect to 14
  Thread_20 sent connect to 14 message: mType connect from 20 to 14 core null lvl 0[] 
 Thread_20 reducing msg round.
@@ -562,8 +561,7 @@ Thread_10 processing message mType accept from 28 to 10 core null lvl 0[28]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAmType accept from 28 to 10 core null lvl 0[28]
 RRRRRnull
-For frst runMMMMM mType accept from 28 to 10 core null lvl 0[28]
-Thread_10 leader decides mwoe is mType accept from 28 to 10 core null lvl 0[28]
+For first runThread_10 leader decides mwoe is mType accept from 28 to 10 core null lvl 0[28]
 Thread_10 send connect to 28
  Thread_10 sent connect to 28 message: mType connect from 10 to 28 core null lvl 0[] 
 Thread_10 reducing msg round.
@@ -588,8 +586,7 @@ Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing message mType accept from 20 to 15 core null lvl 0[20]
 AAAAAmType accept from 20 to 15 core null lvl 0[20]
 RRRRRnull
-For frst runMMMMM mType accept from 20 to 15 core null lvl 0[20]
-Thread_15 leader decides mwoe is mType accept from 20 to 15 core null lvl 0[20]
+For first runThread_15 leader decides mwoe is mType accept from 20 to 15 core null lvl 0[20]
 Thread_15 send connect to 20
  Thread_15 sent connect to 20 message: mType connect from 15 to 20 core null lvl 0[] 
 Thread_15 reducing msg round.
@@ -613,8 +610,7 @@ Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 processing message mType accept from 20 to 17 core null lvl 0[20]
 AAAAAmType accept from 20 to 17 core null lvl 0[20]
 RRRRRnull
-For frst runMMMMM mType accept from 20 to 17 core null lvl 0[20]
-Thread_17 leader decides mwoe is mType accept from 20 to 17 core null lvl 0[20]
+For first runThread_17 leader decides mwoe is mType accept from 20 to 17 core null lvl 0[20]
 Thread_17 send connect to 20
  Thread_17 sent connect to 20 message: mType connect from 17 to 20 core null lvl 0[] 
 Thread_17 reducing msg round.
@@ -637,20 +633,19 @@ Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType accept from 20 to 14 core null lvl 0[20]
 AAAAAmType accept from 20 to 14 core null lvl 0[20]
 RRRRRnull
-For frst runMMMMM mType accept from 20 to 14 core null lvl 0[20]
-Thread_14 leader decides mwoe is mType accept from 20 to 14 core null lvl 0[20]
+For first runThread_14 leader decides mwoe is mType accept from 20 to 14 core null lvl 0[20]
 Thread_14 send connect to 20
  Thread_14 sent connect to 20 message: mType connect from 14 to 20 core null lvl 0[] 
 Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
-Print branch 
+Thread_14 myParent -1 level 0 coreLink null testMsgToRespond Print branch 
 Print reject 
 Print basic 
 14-20-5.2
 14-10-78.5
 14-15-90.2
-Thread_14 myParent -1 level 0 coreLink null testMsgToRespond 0
+0
 
 Thread_14 stops
 Thread_90 start
@@ -662,8 +657,7 @@ Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 processing message mType accept from 17 to 90 core null lvl 0[17]
 AAAAAmType accept from 17 to 90 core null lvl 0[17]
 RRRRRnull
-For frst runMMMMM mType accept from 17 to 90 core null lvl 0[17]
-Thread_90 leader decides mwoe is mType accept from 17 to 90 core null lvl 0[17]
+For first runThread_90 leader decides mwoe is mType accept from 17 to 90 core null lvl 0[17]
 Thread_90 send connect to 17
  Thread_90 sent connect to 17 message: mType connect from 90 to 17 core null lvl 0[] 
 Thread_90 reducing msg round.
@@ -687,8 +681,7 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 10 to 28 core null lvl 0[10]
 AAAAAmType accept from 10 to 28 core null lvl 0[10]
 RRRRRnull
-For frst runMMMMM mType accept from 10 to 28 core null lvl 0[10]
-Thread_28 leader decides mwoe is mType accept from 10 to 28 core null lvl 0[10]
+For first runThread_28 leader decides mwoe is mType accept from 10 to 28 core null lvl 0[10]
 Thread_28 send connect to 10
  Thread_28 sent connect to 10 message: mType connect from 28 to 10 core null lvl 0[] 
 Thread_28 reducing msg round.
@@ -1069,9 +1062,9 @@ Master checking its queue. Size of queue is: 7 round 6
 [17, 20, 10, 90, 28, 14, 15]
 Starting threads. 
 Thread_20 start
+Thread_20 wwww [14]
 Thread_20 myParent -1 level 0 coreLink null testMsgToRespond 0
 
-Thread_20 wwww [14]
 Thread_20 waiting for test response from 14
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 reducing msg round.
@@ -1472,7 +1465,8 @@ Thread_10 processing message mType accept from 28 to 10 core 28-10-13.6 lvl 1[28
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 28 to 10 core 28-10-13.6 lvl 1[28]
 RRRRRRRRnull
-MMMMM mType accept from 28 to 10 core 28-10-13.6 lvl 1[28]Thread_10 sending report to parent 28Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 28 to 10 core 28-10-13.6 lvl 1[28]
+Thread_10 sending report to parent 28Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -1494,8 +1488,7 @@ Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing message mType accept from 20 to 15 core null lvl 0[20]
 AAAAAmType accept from 20 to 15 core null lvl 0[20]
 RRRRRnull
-For frst runMMMMM mType accept from 20 to 15 core null lvl 0[20]
-Thread_15 leader decides mwoe is mType accept from 20 to 15 core null lvl 0[20]
+For first runThread_15 leader decides mwoe is mType accept from 20 to 15 core null lvl 0[20]
 Thread_15 send connect to 20
  Thread_15 sent connect to 20 message: mType connect from 15 to 20 core null lvl 0[] 
 Thread_15 reducing msg round.
@@ -1519,8 +1512,7 @@ Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 processing message mType accept from 20 to 17 core null lvl 0[20]
 AAAAAmType accept from 20 to 17 core null lvl 0[20]
 RRRRRnull
-For frst runMMMMM mType accept from 20 to 17 core null lvl 0[20]
-Thread_17 leader decides mwoe is mType accept from 20 to 17 core null lvl 0[20]
+For first runThread_17 leader decides mwoe is mType accept from 20 to 17 core null lvl 0[20]
 Thread_17 send connect to 20
  Thread_17 sent connect to 20 message: mType connect from 17 to 20 core null lvl 0[] 
 Thread_17 reducing msg round.
@@ -1544,15 +1536,16 @@ Thread_14 processing message mType levelUp from 20 to 14 core 20-14-5.2 lvl 1[]
 Thread_14 processing message mType accept from 20 to 14 core 20-14-5.2 lvl 1[20]
 AAAAAAAAmType accept from 20 to 14 core 20-14-5.2 lvl 1[20]
 RRRRRRRRnull
-MMMMM mType accept from 20 to 14 core 20-14-5.2 lvl 1[20]Thread_14 sending report to parent 20Thread_14 reducing msg round.
-Thread_14 send round done.
-Thread_14
+Thread_14 node decides mwoe is mType accept from 20 to 14 core 20-14-5.2 lvl 1[20]
+Thread_14 sending report to parent 20Thread_14
 Print branch 
 14-20-5.2
 Print reject 
 Print basic 
 14-10-78.5
 14-15-90.2
+Thread_14 reducing msg round.
+Thread_14 send round done.
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
 Thread_14 stops
@@ -1565,8 +1558,7 @@ Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 processing message mType accept from 17 to 90 core null lvl 0[17]
 AAAAAmType accept from 17 to 90 core null lvl 0[17]
 RRRRRnull
-For frst runMMMMM mType accept from 17 to 90 core null lvl 0[17]
-Thread_90 leader decides mwoe is mType accept from 17 to 90 core null lvl 0[17]
+For first runThread_90 leader decides mwoe is mType accept from 17 to 90 core null lvl 0[17]
 Thread_90 send connect to 17
  Thread_90 sent connect to 17 message: mType connect from 90 to 17 core null lvl 0[] 
 Thread_90 reducing msg round.
@@ -1591,7 +1583,6 @@ Thread_28 processing message mType accept from 10 to 28 core 28-10-13.6 lvl 0[10
 Thread_28 processing message mType report from 10 to 28 core 28-10-13.6 lvl 1[28, 10]
 AAAAAmType accept from 10 to 28 core 28-10-13.6 lvl 0[10]
 RRRRRmType report from 10 to 28 core 28-10-13.6 lvl 1[28, 10]
-MMMMM mType report from 10 to 28 core 28-10-13.6 lvl 1[28, 10]
 Thread_28 leader decides mwoe is mType report from 10 to 28 core 28-10-13.6 lvl 1[28, 10]
 Thread_28 send changeRoot down28-10-13.6
 Thread_28 reducing msg round.
@@ -1646,16 +1637,15 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent -1 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
-Thread_20 waiting for test response from 15
 Thread_20 wwww [15]
+Thread_20 waiting for test response from 15
 Thread_20 processing message mType report from 14 to 20 core 20-14-5.2 lvl 1[20, 14]
-Thread_20 processing test from 28 Thread_20 processing message mType test from 28 to 20 core 28-10-13.6 lvl 1[]
-28-10-13.6
+Thread_20 processing message mType test from 28 to 20 core 28-10-13.6 lvl 1[]
+Thread_20 processing test from 28 28-10-13.6
 Thread_20 sending accept to 28
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 AAAAAmType accept from 14 to 20 core 20-14-5.2 lvl 0[14]
 RRRRRmType report from 14 to 20 core 20-14-5.2 lvl 1[20, 14]
-MMMMM mType report from 14 to 20 core 20-14-5.2 lvl 1[20, 14]
 Thread_20 leader decides mwoe is mType report from 14 to 20 core 20-14-5.2 lvl 1[20, 14]
 Thread_20 send changeRoot down20-14-5.2
 Thread_20 reducing msg round.
@@ -1912,7 +1902,8 @@ Thread_14 processing changeRoot msg from 20 level 1
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -2013,7 +2004,6 @@ Thread_20 processing message mType report from 14 to 20 core 28-10-13.6 lvl 1[10
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 AAAAAnull
 RRRRRmType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
-MMMMM mType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
 Thread_20 leader decides mwoe is mType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
 Thread_20 send changeRoot down20-14-5.2
 Thread_20 reducing msg round.
@@ -2034,15 +2024,16 @@ Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_10 wwww [90]
 Thread_10 waiting for test response from 90
+Thread_10 wwww []
 Thread_10 processing message mType accept from 90 to 10 core null lvl 0[90]
 Thread_10 processing message mType initiate from 28 to 10 core 28-10-13.6 lvl 1[]
-Thread_10 wwww []
 Thread_10 send test to 90
 Thread_10 send initiate to 28
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core null lvl 0[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 10 core null lvl 0[90]Thread_10 sending report to parent 28Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core null lvl 0[90]
+Thread_10 sending report to parent 28Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -2306,15 +2297,14 @@ Thread_28 wwww [20]
 Thread_28 waiting for test response from 20
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType initiate from 10 to 28 core 28-10-13.6 lvl 1[]
-Thread_28 wwww [20]
 Thread_28 waiting for test response from 20
 Thread_28 processing message mType report from 10 to 28 core null lvl 0[90, 10]
-AAAAAmType accept from 20 to 28 core 20-14-5.2 lvl 1[20]
-RRRRRmType report from 10 to 28 core null lvl 0[90, 10]
-MMMMM mType accept from 20 to 28 core 20-14-5.2 lvl 1[20]
 Thread_28 leader decides mwoe is mType accept from 20 to 28 core 20-14-5.2 lvl 1[20]
 Thread_28 send connect to 20
  Thread_28 sent connect to 20 message: mType connect from 28 to 20 core 28-10-13.6 lvl 1[] 
+Thread_28 wwww [20]
+AAAAAmType accept from 20 to 28 core 20-14-5.2 lvl 1[20]
+RRRRRmType report from 10 to 28 core null lvl 0[90, 10]
 Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
@@ -2561,17 +2551,7 @@ Print basic
 20-15-19.8
 20-17-37.9
 20-28-49.0
-Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_20 stops
-Thread_10 start
-Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
 Thread_10 wwww [90]
-Thread_10 waiting for test response from 90
-Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
-Thread_10 reducing msg round.
-Thread_10 send round done.
 Thread_10
 Print branch 
 10-28-13.6
@@ -2580,17 +2560,7 @@ Print basic
 10-90-56.0
 10-14-78.5
 10-15-84.9
-Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_10 stops
-Thread_15 start
-Thread_15 myParent -1 level 0 coreLink null testMsgToRespond 1
-
 Thread_15 wwww [20]
-Thread_15 waiting for test response from 20
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
-Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15
 Print branch 
 Print reject 
@@ -2598,37 +2568,16 @@ Print basic
 15-20-19.8
 15-10-84.9
 15-14-90.2
-Thread_15 myParent -1 level 0 coreLink null testMsgToRespond 1
-
-Thread_15 stops
-Thread_17 start
-Thread_17 myParent -1 level 0 coreLink null testMsgToRespond 0
-
 Thread_17 wwww [20]
-Thread_17 waiting for test response from 20
-Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
-Thread_17 reducing msg round.
-Thread_17 send round done.
 Thread_17
 Print branch 
 Print reject 
 Print basic 
 17-20-37.9
 17-90-38.8
-Thread_17 myParent -1 level 0 coreLink null testMsgToRespond 0
-
-Thread_17 stops
-Thread_14 start
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
 Thread_14 wwww [10]
-Thread_14 waiting for test response from 10
-Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -2636,15 +2585,57 @@ Print reject
 Print basic 
 14-10-78.5
 14-15-90.2
+Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_20 stops
+Thread_10 start
+Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_10 waiting for test response from 90
+Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 reducing msg round.
+Thread_10 send round done.
+Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_10 stops
+Thread_15 start
+Thread_15 myParent -1 level 0 coreLink null testMsgToRespond 1
+
+Thread_15 waiting for test response from 20
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 reducing msg round.
+Thread_15 send round done.
+Thread_15 myParent -1 level 0 coreLink null testMsgToRespond 1
+
+Thread_15 stops
+Thread_17 start
+Thread_17 myParent -1 level 0 coreLink null testMsgToRespond 0
+
+Thread_17 waiting for test response from 20
+Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
+Thread_17 reducing msg round.
+Thread_17 send round done.
+Thread_17 myParent -1 level 0 coreLink null testMsgToRespond 0
+
+Thread_17 stops
+Thread_14 start
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 waiting for test response from 10
+Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 send round done.
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
 Thread_14 stops
 Thread_90 start
 Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 1
 
-Thread_90 wwww [17]
 Thread_90 waiting for test response from 17
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww [17]
 Thread_90 reducing msg round.
 Thread_90 send round done.
 Thread_90
@@ -2660,10 +2651,10 @@ Thread_90 stops
 Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_28 wwww [20]
 Thread_28 waiting for test response from 20
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType reject from 20 to 28 core 28-10-13.6 lvl 1[]
+Thread_28 wwww [20]
 Link 28-20-49.0 message mType reject from 20 to 28 core 28-10-13.6 lvl 1[]Link 28-90-81.8 message mType reject from 20 to 28 core 28-10-13.6 lvl 1[]Thread_28 wwww []
 Thread_28 send test to 90
 Thread_28 reducing msg round.
@@ -2724,7 +2715,6 @@ Thread_20 processing message mType report from 14 to 20 core 28-10-13.6 lvl 1[10
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 AAAAAnull
 RRRRRmType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
-MMMMM mType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
 Thread_20 leader decides mwoe is mType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
 Thread_20 send changeRoot down28-10-13.6
 Thread_20 reducing msg round.
@@ -2801,8 +2791,8 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
-Thread_14 wwww []
 Thread_14 send test to 10
+Thread_14 wwww []
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 reducing msg round.
 Thread_14 send round done.
@@ -3260,8 +3250,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_20 send test to 28
 Thread_20 wwww []
+Thread_20 send test to 28
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 reducing msg round.
 Thread_20 send round done.
@@ -3279,8 +3269,8 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_10 wwww [90]
 Thread_10 waiting for test response from 90
+Thread_10 wwww [90]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 reducing msg round.
 Thread_10 send round done.
@@ -3298,8 +3288,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent -1 level 0 coreLink null testMsgToRespond 1
 
-Thread_15 waiting for test response from 20
 Thread_15 wwww [20]
+Thread_15 waiting for test response from 20
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing message mType absorbed from 20 to 15 core 28-10-13.6 lvl 1[]
 Thread_15 childAbsorb 20
@@ -3308,7 +3298,8 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 20 to 15 core 28-10-13.6 lvl 1[20]
 RRRRRRRRnull
-MMMMM mType accept from 20 to 15 core 28-10-13.6 lvl 1[20]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 20 to 15 core 28-10-13.6 lvl 1[20]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -3331,16 +3322,17 @@ Thread_17 childAbsorb 20
 Thread_17 processing message mType accept from 20 to 17 core 28-10-13.6 lvl 1[20]
 AAAAAAAAmType accept from 20 to 17 core 28-10-13.6 lvl 1[20]
 RRRRRRRRnull
-MMMMM mType accept from 20 to 17 core 28-10-13.6 lvl 1[20]Thread_17 sending report to parent 20Thread_17 reducing msg round.
+Thread_17 node decides mwoe is mType accept from 20 to 17 core 28-10-13.6 lvl 1[20]
+Thread_17 sending report to parent 20Thread_17 reducing msg round.
 Thread_17 send round done.
 Thread_17
 Print branch 
 17-20-37.9
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
 Print reject 
 Print basic 
 17-90-38.8
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
 Thread_17 stops
 Thread_14 start
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
@@ -3351,7 +3343,8 @@ Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -3372,8 +3365,7 @@ Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 processing message mType accept from 17 to 90 core null lvl 0[17]
 AAAAAmType accept from 17 to 90 core null lvl 0[17]
 RRRRRnull
-For frst runMMMMM mType accept from 17 to 90 core null lvl 0[17]
-Thread_90 leader decides mwoe is mType accept from 17 to 90 core null lvl 0[17]
+For first runThread_90 leader decides mwoe is mType accept from 17 to 90 core null lvl 0[17]
 Thread_90 send connect to 17
  Thread_90 sent connect to 17 message: mType connect from 90 to 17 core null lvl 0[] 
 Thread_90 reducing msg round.
@@ -3439,69 +3431,6 @@ MaxId--------Parent <----- myId ---> basic edges (can overlap)
 20-14-5.2---  20<------14------>10 15 
 null---  -1<------90------>17 10 28 
 28-10-13.6---  -1<------28------>90 
-Thread_20 wwww [28]
-Thread_20 wwww [28]
-Thread_20
-Print branch 
-20-14-5.2
-20-15-19.8
-20-17-37.9
-Print reject 
-Print basic 
-20-28-49.0
-Thread_10 wwww [90]
-Thread_10
-Print branch 
-10-28-13.6
-Print reject 
-Print basic 
-10-90-56.0
-10-14-78.5
-10-15-84.9
-Thread_15 wwww []
-Thread_15 processing test from 20 20-14-5.2
-Thread_15 sending accept to 20
-Thread_15
-Print branch 
-15-20-19.8
-Print reject 
-Print basic 
-15-10-84.9
-15-14-90.2
-Thread_17 wwww []
-Thread_17
-Print branch 
-17-20-37.9
-Print reject 
-Print basic 
-17-90-38.8
-Thread_14 wwww []
-Thread_14
-Print branch 
-14-20-5.2
-Print reject 
-Print basic 
-14-10-78.5
-14-15-90.2
-Thread_90 wwww []
-Thread_90
-Print branch 
-Print reject 
-Print basic 
-90-17-38.8
-90-10-56.0
-90-28-81.8
-Thread_28 wwww [90]
-Thread_28 processing test from 20 28-10-13.6
-Thread_28 sending reject to 20
-
-Thread_28
-Print branch 
-28-10-13.6
-Print reject 
-28-20-49.0
-Print basic 
-28-90-81.8
 
 Master checking its queue. Size of queue is: 7 round 19 
 [17, 20, 10, 90, 28, 14, 15]
@@ -3509,115 +3438,16 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_20 wwww [28]
 Thread_20 waiting for test response from 28
 Thread_20 processing message mType report from 17 to 20 core 28-10-13.6 lvl 1[20, 17]
 Thread_20 processing message mType initiate from 14 to 20 core 20-14-5.2 lvl 1[]
+Thread_20 wwww [28]
 Thread_20 waiting for test response from 28
 Thread_20 processing message mType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
-Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_20 stops
-Thread_10 start
-Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_10 waiting for test response from 90
-Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
-Thread_10 reducing msg round.
-Thread_10 send round done.
-Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_10 stops
-Thread_15 start
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
-
-Thread_15 send test to 10
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
-Thread_15 reducing msg round.
-Thread_15 send round done.
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
-
-Thread_15 stops
-Thread_17 start
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_17 send test to 90
-Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
-Thread_17 reducing msg round.
-Thread_17 send round done.
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_17 stops
-Thread_14 start
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
-Thread_14 send test to 10
-Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 reducing msg round.
-Thread_14 send round done.
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
-Thread_14 stops
-Thread_90 start
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 2
-
-Thread_90 send test to 17
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
-Thread_90 reducing msg round.
-Thread_90 send round done.
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 2
-
-Thread_90 stops
-Thread_28 start
-Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_28 waiting for test response from 90
-Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 processing message mType test from 20 to 28 core 28-10-13.6 lvl 1[]
-Thread_28 reducing msg round.
-Thread_28 send round done.
-Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_28 stops
-
-
-Printing the tree.
-MaxId--------Parent <----- myId ---> branch edges (can overlap)
-28-10-13.6---  -1<------20------>14 15 17 
-28-10-13.6---  28<------10------>28 
-28-10-13.6---  20<------15------>20 
-28-10-13.6---  20<------17------>20 
-20-14-5.2---  20<------14------>20 
-null---  -1<------90------>
-28-10-13.6---  -1<------28------>10 
-
-
-Printing rejected.
-MaxId--------Parent <----- myId ---> rejected edges (can overlap)
-28-10-13.6---  -1<------20------>
-28-10-13.6---  28<------10------>
-28-10-13.6---  20<------15------>
-28-10-13.6---  20<------17------>
-20-14-5.2---  20<------14------>
-null---  -1<------90------>
-28-10-13.6---  -1<------28------>20 
-
-
-Printing basic edges.
-MaxId--------Parent <----- myId ---> basic edges (can overlap)
-28-10-13.6---  -1<------20------>28 
-28-10-13.6---  28<------10------>90 14 15 
-28-10-13.6---  20<------15------>10 14 
-28-10-13.6---  20<------17------>90 
-20-14-5.2---  20<------14------>10 15 
-null---  -1<------90------>17 10 28 
-28-10-13.6---  -1<------28------>90 
-Thread_20 wwww [28]
-AAAAAmType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
-RRRRRmType report from 15 to 20 core 28-10-13.6 lvl 1[20, 15]
-MMMMM mType report from 15 to 20 core 28-10-13.6 lvl 1[20, 15]
 Thread_20
 Print branch 
 20-14-5.2
@@ -3626,7 +3456,17 @@ Print branch
 Print reject 
 Print basic 
 20-28-49.0
+Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_20 stops
+Thread_10 start
+Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
 Thread_10 wwww [90]
+Thread_10 waiting for test response from 90
+Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 reducing msg round.
+Thread_10 send round done.
 Thread_10
 Print branch 
 10-28-13.6
@@ -3635,9 +3475,19 @@ Print basic
 10-90-56.0
 10-14-78.5
 10-15-84.9
-Thread_15 wwww [10]
+Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_10 stops
+Thread_15 start
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
+Thread_15 wwww []
+Thread_15 send test to 10
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
+Thread_15 reducing msg round.
+Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
@@ -3645,14 +3495,34 @@ Print reject
 Print basic 
 15-10-84.9
 15-14-90.2
-Thread_17 wwww [90]
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
+Thread_15 stops
+Thread_17 start
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_17 wwww []
+Thread_17 send test to 90
+Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
+Thread_17 reducing msg round.
+Thread_17 send round done.
 Thread_17
 Print branch 
 17-20-37.9
 Print reject 
 Print basic 
 17-90-38.8
-Thread_14 wwww [10]
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_17 stops
+Thread_14 start
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 wwww []
+Thread_14 send test to 10
+Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 reducing msg round.
+Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -3660,8 +3530,17 @@ Print reject
 Print basic 
 14-10-78.5
 14-15-90.2
-Thread_90 wwww [17]
-Thread_90 processing test from 17 28-10-13.6
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 stops
+Thread_90 start
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 2
+
+Thread_90 wwww []
+Thread_90 send test to 17
+Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 reducing msg round.
+Thread_90 send round done.
 Thread_90
 Print branch 
 Print reject 
@@ -3669,7 +3548,21 @@ Print basic
 90-17-38.8
 90-10-56.0
 90-28-81.8
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 2
+
+Thread_90 stops
+Thread_28 start
+Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
 Thread_28 wwww [90]
+Thread_28 waiting for test response from 90
+Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
+Thread_28 processing message mType test from 20 to 28 core 28-10-13.6 lvl 1[]
+Thread_28 processing test from 20 28-10-13.6
+Thread_28 sending reject to 20
+
+Thread_28 reducing msg round.
+Thread_28 send round done.
 Thread_28
 Print branch 
 28-10-13.6
@@ -3677,82 +3570,6 @@ Print reject
 28-20-49.0
 Print basic 
 28-90-81.8
-
-Master checking its queue. Size of queue is: 7 round 20 
-[17, 20, 10, 90, 28, 14, 15]
-Starting threads. 
-Thread_20 start
-Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_20 waiting for test response from 28
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
-Thread_20 processing message mType report from 15 to 20 core 28-10-13.6 lvl 1[20, 15]
-Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
-Thread_20 leader decides mwoe is mType report from 15 to 20 core 28-10-13.6 lvl 1[20, 15]
-Thread_20 send changeRoot down28-10-13.6
-Thread_20 reducing msg round.
-Thread_20 send round done.
-Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_20 stops
-Thread_10 start
-Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_10 waiting for test response from 90
-Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
-Thread_10 reducing msg round.
-Thread_10 send round done.
-Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_10 stops
-Thread_15 start
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
-
-Thread_15 waiting for test response from 10
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
-Thread_15 reducing msg round.
-Thread_15 send round done.
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
-
-Thread_15 stops
-Thread_17 start
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_17 waiting for test response from 90
-Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
-Thread_17 reducing msg round.
-Thread_17 send round done.
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_17 stops
-Thread_14 start
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
-Thread_14 waiting for test response from 10
-Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 reducing msg round.
-Thread_14 send round done.
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
-Thread_14 stops
-Thread_90 start
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 2
-
-Thread_90 waiting for test response from 17
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
-Thread_90 processing message mType test from 17 to 90 core 28-10-13.6 lvl 1[]
-Thread_90 reducing msg round.
-Thread_90 send round done.
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
-
-Thread_90 stops
-Thread_28 start
-Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_28 waiting for test response from 90
-Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 reducing msg round.
-Thread_28 send round done.
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_28 stops
@@ -3790,8 +3607,181 @@ MaxId--------Parent <----- myId ---> basic edges (can overlap)
 null---  -1<------90------>17 10 28 
 28-10-13.6---  -1<------28------>90 
 
-Master checking its queue. Size of queue is: Thread_20 wwww [28]
-7 round 21 
+Master checking its queue. Size of queue is: 7 round 20 
+[17, 20, 10, 90, 28, 14, 15]
+Starting threads. 
+Thread_20 start
+Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_20 wwww [28]
+Thread_20 waiting for test response from 28
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 processing message mType report from 15 to 20 core 28-10-13.6 lvl 1[20, 15]
+AAAAAmType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
+RRRRRmType report from 15 to 20 core 28-10-13.6 lvl 1[20, 15]
+Thread_20 leader decides mwoe is mType report from 15 to 20 core 28-10-13.6 lvl 1[20, 15]
+Thread_20 send changeRoot down28-10-13.6
+Thread_20 reducing msg round.
+Thread_20 send round done.
+Thread_20
+Print branch 
+20-14-5.2
+20-15-19.8
+20-17-37.9
+Print reject 
+Print basic 
+20-28-49.0
+Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_20 stops
+Thread_10 start
+Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_10 wwww [90]
+Thread_10 waiting for test response from 90
+Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 reducing msg round.
+Thread_10 send round done.
+Thread_10
+Print branch 
+10-28-13.6
+Print reject 
+Print basic 
+10-90-56.0
+10-14-78.5
+10-15-84.9
+Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_10 stops
+Thread_15 start
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
+Thread_15 wwww [10]
+Thread_15 waiting for test response from 10
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 processing test from 20 20-14-5.2
+Thread_15 sending accept to 20
+Thread_15 reducing msg round.
+Thread_15 send round done.
+Thread_15
+Print branch 
+15-20-19.8
+Print reject 
+Print basic 
+15-10-84.9
+15-14-90.2
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
+Thread_15 stops
+Thread_17 start
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_17 wwww [90]
+Thread_17 waiting for test response from 90
+Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
+Thread_17 reducing msg round.
+Thread_17 send round done.
+Thread_17
+Print branch 
+17-20-37.9
+Print reject 
+Print basic 
+17-90-38.8
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_17 stops
+Thread_14 start
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 wwww [10]
+Thread_14 waiting for test response from 10
+Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 reducing msg round.
+Thread_14 send round done.
+Thread_14
+Print branch 
+14-20-5.2
+Print reject 
+Print basic 
+14-10-78.5
+14-15-90.2
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 stops
+Thread_90 start
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 2
+
+Thread_90 wwww [17]
+Thread_90 waiting for test response from 17
+Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 processing message mType test from 17 to 90 core 28-10-13.6 lvl 1[]
+Thread_90 processing test from 17 28-10-13.6
+Thread_90 reducing msg round.
+Thread_90 send round done.
+Thread_90
+Print branch 
+Print reject 
+Print basic 
+90-17-38.8
+90-10-56.0
+90-28-81.8
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
+
+Thread_90 stops
+Thread_28 start
+Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_28 wwww [90]
+Thread_28 waiting for test response from 90
+Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
+Thread_28 reducing msg round.
+Thread_28 send round done.
+Thread_28
+Print branch 
+28-10-13.6
+Print reject 
+28-20-49.0
+Print basic 
+28-90-81.8
+Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_28 stops
+
+
+Printing the tree.
+MaxId--------Parent <----- myId ---> branch edges (can overlap)
+28-10-13.6---  -1<------20------>14 15 17 
+28-10-13.6---  28<------10------>28 
+28-10-13.6---  20<------15------>20 
+28-10-13.6---  20<------17------>20 
+20-14-5.2---  20<------14------>20 
+null---  -1<------90------>
+28-10-13.6---  -1<------28------>10 
+
+
+Printing rejected.
+MaxId--------Parent <----- myId ---> rejected edges (can overlap)
+28-10-13.6---  -1<------20------>
+28-10-13.6---  28<------10------>
+28-10-13.6---  20<------15------>
+28-10-13.6---  20<------17------>
+20-14-5.2---  20<------14------>
+null---  -1<------90------>
+28-10-13.6---  -1<------28------>20 
+
+
+Printing basic edges.
+MaxId--------Parent <----- myId ---> basic edges (can overlap)
+28-10-13.6---  -1<------20------>28 
+28-10-13.6---  28<------10------>90 14 15 
+28-10-13.6---  20<------15------>10 14 
+28-10-13.6---  20<------17------>90 
+20-14-5.2---  20<------14------>10 15 
+null---  -1<------90------>17 10 28 
+28-10-13.6---  -1<------28------>90 
+
+Master checking its queue. Size of queue is: 7 round 21 
 [17, 20, 10, 90, 28, 14, 15]
 Starting threads. 
 Thread_20 start
@@ -3800,6 +3790,7 @@ Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_20 send initiate to 14
 Thread_20 send initiate to 15
 Thread_20 send initiate to 17
+Thread_20 wwww [28]
 Thread_20 waiting for test response from 28
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
@@ -3811,6 +3802,12 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_10 waiting for test response from 90
+Thread_10 processing message mType test from 15 to 10 core 28-10-13.6 lvl 1[]
+Thread_10 processing message mType test from 14 to 10 core 20-14-5.2 lvl 1[]
+Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 reducing msg round.
+Thread_10 send round done.
 Thread_20
 Print branch 
 20-14-5.2
@@ -3820,17 +3817,11 @@ Print reject
 Print basic 
 20-28-49.0
 Thread_10 wwww [90]
-Thread_10 waiting for test response from 90
-Thread_10 processing message mType test from 15 to 10 core 28-10-13.6 lvl 1[]
 Thread_10 processing test from 15 28-10-13.6
 Thread_10 sending reject to 15
 
-Thread_10 processing message mType test from 14 to 10 core 20-14-5.2 lvl 1[]
 Thread_10 processing test from 14 20-14-5.2
-Thread_10 sending accept to Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
-14
-Thread_10 reducing msg round.
-Thread_10 send round done.
+Thread_10 sending accept to 14
 Thread_10
 Print branch 
 10-28-13.6
@@ -3843,9 +3834,17 @@ Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_10 stops
 Thread_15 start
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
 Thread_15 wwww [10]
+Thread_15 waiting for test response from 10
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 processing message mType changeRoot from 20 to 15 core 28-10-13.6 lvl 1[20]
+Thread_15 processing changeRoot msg from 20 level 1
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
+Thread_15 reducing msg round.
+Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
@@ -3853,32 +3852,23 @@ Print reject
 Print basic 
 15-10-84.9
 15-14-90.2
-Thread_17 wwww [90]
-Thread_17
-Print branch 
-17-20-37.9
-Print reject 
-Print basic 
-17-90-38.8
-Thread_14 wwww [10]
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
-
-Thread_15 waiting for test response from 10
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
-Thread_15 processing message mType changeRoot from 20 to 15 core 28-10-13.6 lvl 1[20]
-Thread_15 processing changeRoot msg from 20 level 1
-Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
 Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_17 wwww [90]
 Thread_17 waiting for test response from 90
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 reducing msg round.
 Thread_17 send round done.
+Thread_17
+Print branch 
+17-20-37.9
+Print reject 
+Print basic 
+17-90-38.8
 Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_17 stops
@@ -3886,6 +3876,7 @@ Thread_14 start
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
 Thread_14 waiting for test response from 10
+Thread_14 wwww [10]
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 reducing msg round.
 Thread_14 send round done.
@@ -3896,13 +3887,13 @@ Print reject
 Print basic 
 14-10-78.5
 14-15-90.2
-Thread_90 wwww [17]
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
 Thread_14 stops
 Thread_90 start
 Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
 
+Thread_90 wwww [17]
 Thread_90 waiting for test response from 17
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 reducing msg round.
@@ -3918,7 +3909,13 @@ Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
 
 Thread_90 stops
 Thread_28 start
+Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
 Thread_28 wwww [90]
+Thread_28 waiting for test response from 90
+Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
+Thread_28 reducing msg round.
+Thread_28 send round done.
 Thread_28
 Print branch 
 28-10-13.6
@@ -3926,12 +3923,6 @@ Print reject
 28-20-49.0
 Print basic 
 28-90-81.8
-Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_28 waiting for test response from 90
-Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 reducing msg round.
-Thread_28 send round done.
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_28 stops
@@ -4075,7 +4066,8 @@ Thread_14 send initiate to 20
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -4108,10 +4100,10 @@ Thread_90 stops
 Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_28 wwww [90]
 Thread_28 waiting for test response from 90
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 reducing msg round.
-Thread_28 wwww [90]
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -4186,10 +4178,10 @@ Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_10 wwww [90]
 Thread_10 waiting for test response from 90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
-Thread_10
-Print branch 
 Thread_10 reducing msg round.
 Thread_10 send round done.
+Thread_10
+Print branch 
 10-28-13.6
 Print reject 
 Print basic 
@@ -4203,12 +4195,8 @@ Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
 Thread_15 wwww [14]
-Thread_15 waiting for test response from 14
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
-Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
@@ -4216,37 +4204,16 @@ Print reject
 15-10-84.9
 Print basic 
 15-14-90.2
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
-
-Thread_15 stops
-Thread_17 start
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
 Thread_17 wwww [90]
-Thread_17 waiting for test response from 90
-Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
-Thread_17 reducing msg round.
-Thread_17 send round done.
 Thread_17
 Print branch 
 17-20-37.9
 Print reject 
 Print basic 
 17-90-38.8
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_17 stops
-Thread_14 start
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
 Thread_14 wwww []
-Thread_14 send test to 10
-Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 processing message mType test from 15 to 14 core 28-10-13.6 lvl 1[]
 Thread_14 processing test from 15 28-10-13.6
 Thread_14 sending accept to 15
-Thread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -4254,17 +4221,7 @@ Print reject
 Print basic 
 14-10-78.5
 14-15-90.2
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
-Thread_14 stops
-Thread_90 start
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
-
 Thread_90 wwww [17]
-Thread_90 waiting for test response from 17
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
-Thread_90 reducing msg round.
-Thread_90 send round done.
 Thread_90
 Print branch 
 Print reject 
@@ -4272,17 +4229,7 @@ Print basic
 90-17-38.8
 90-10-56.0
 90-28-81.8
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
-
-Thread_90 stops
-Thread_28 start
-Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
 Thread_28 wwww [90]
-Thread_28 waiting for test response from 90
-Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 reducing msg round.
-Thread_28 send round done.
 Thread_28
 Print branch 
 28-10-13.6
@@ -4290,6 +4237,51 @@ Print reject
 28-20-49.0
 Print basic 
 28-90-81.8
+Thread_15 waiting for test response from 14
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 reducing msg round.
+Thread_15 send round done.
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
+Thread_15 stops
+Thread_17 start
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_17 waiting for test response from 90
+Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
+Thread_17 reducing msg round.
+Thread_17 send round done.
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_17 stops
+Thread_14 start
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 send test to 10
+Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 processing message mType test from 15 to 14 core 28-10-13.6 lvl 1[]
+Thread_14 reducing msg round.
+Thread_14 send round done.
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 stops
+Thread_90 start
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
+
+Thread_90 waiting for test response from 17
+Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 reducing msg round.
+Thread_90 send round done.
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
+
+Thread_90 stops
+Thread_28 start
+Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_28 waiting for test response from 90
+Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
+Thread_28 reducing msg round.
+Thread_28 send round done.
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_28 stops
@@ -4331,9 +4323,9 @@ Master checking its queue. Size of queue is: 7 round 24
 [17, 20, 10, 90, 28, 14, 15]
 Starting threads. 
 Thread_20 start
-Thread_20 wwww [28]
 Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_20 wwww [28]
 Thread_20 waiting for test response from 28
 Thread_20 processing message mType initiate from 15 to 20 core 28-10-13.6 lvl 1[]
 Thread_20 wwww [28]
@@ -4383,10 +4375,10 @@ Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
 Thread_15 wwww [14]
-Thread_15 waiting for test response from 14
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
-Thread_15 sending accept to 20
+Thread_15 sending accept to Thread_15 waiting for test response from 14
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+20
 Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
@@ -4565,7 +4557,8 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -4620,21 +4613,21 @@ Thread_90 waiting for test response from 17
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 reducing msg round.
 Thread_90 send round done.
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
-
-Thread_90 stops
 Thread_90
 Print branch 
-Thread_28 start
 Print reject 
 Print basic 
 90-17-38.8
 90-10-56.0
 90-28-81.8
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
+
+Thread_90 stops
+Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_28 wwww [90]Thread_28 waiting for test response from 90
-
+Thread_28 wwww [90]
+Thread_28 waiting for test response from 90
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 reducing msg round.
 Thread_28 send round done.
@@ -4769,7 +4762,8 @@ Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -4973,11 +4967,11 @@ Thread_90 stops
 Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_28 wwww [90]
 Thread_28 waiting for test response from 90
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 reducing msg round.
 Thread_28 send round done.
+Thread_28 wwww [90]
 Thread_28
 Print branch 
 28-10-13.6
@@ -5213,12 +5207,12 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_10 wwww [90]
 Thread_10 waiting for test response from 90
+Thread_10 wwww [90]
 Thread_10 processing message mType test from 14 to 10 core 20-14-5.2 lvl 1[]
 Thread_10 processing test from 14 20-14-5.2
-Thread_10 sending accept to 14
-Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 sending accept to Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+14
 Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
@@ -5243,43 +5237,54 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
 Print reject 
-15-10-84.9
-Print basic 
-15-14-90.2
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
 Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_17 wwww [90]
 Thread_17 waiting for test response from 90
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 reducing msg round.
 Thread_17 send round done.
-Thread_17
-Print branch 
-17-20-37.9
-Print reject 
-Print basic 
-17-90-38.8
 Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_17 stops
 Thread_14 start
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
-Thread_14 wwww [10]
 Thread_14 waiting for test response from 10
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 reducing msg round.
 Thread_14 send round done.
+Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
+
+Thread_14 stops
+Thread_90 start
+Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
+
+Thread_90 waiting for test response from 17
+Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 reducing msg round.
+Thread_90 send round done.
+15-10-84.9
+Print basic 
+15-14-90.2
+Thread_17 wwww [90]
+Thread_17
+Print branch 
+17-20-37.9
+Print reject 
+Print basic 
+17-90-38.8
+Thread_14 wwww [10]
 Thread_14
 Print branch 
 14-20-5.2
@@ -5287,17 +5292,7 @@ Print reject
 Print basic 
 14-10-78.5
 14-15-90.2
-Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
-
-Thread_14 stops
-Thread_90 start
-Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
-
 Thread_90 wwww [17]
-Thread_90 waiting for test response from 17
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
-Thread_90 reducing msg round.
-Thread_90 send round done.
 Thread_90
 Print branch 
 Print reject 
@@ -5307,11 +5302,11 @@ Print basic
 90-28-81.8
 Thread_90 myParent -1 level 0 coreLink null testMsgToRespond 3
 
+Thread_28 wwww [90]
 Thread_90 stops
 Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_28 wwww [90]
 Thread_28 waiting for test response from 90
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 reducing msg round.
@@ -5447,7 +5442,8 @@ Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -5921,7 +5917,8 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -6123,9 +6120,10 @@ Thread_14 wwww [10]
 Thread_14 waiting for test response from 10
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
-AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 node decides mwoe is AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -6599,7 +6597,8 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -6675,8 +6674,8 @@ Thread_90 stops
 Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_28 wwww [90]
 Thread_28 waiting for test response from 90
+Thread_28 wwww [90]
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 reducing msg round.
 Thread_28 send round done.
@@ -6730,8 +6729,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 wwww []
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -6749,9 +6748,9 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_10 wwww [90]
 Thread_10 waiting for test response from 90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 wwww [90]
 Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
@@ -6768,8 +6767,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
-Thread_15 wwww []
 Thread_15 send test to 14
+Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
@@ -6788,9 +6787,9 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_17 wwww []
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 reducing msg round.
+Thread_17 wwww []
 Thread_17 send round done.
 Thread_17
 Print branch 
@@ -6810,7 +6809,8 @@ Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -6842,7 +6842,8 @@ Thread_90 sending reject to 28
 
 AAAAAAAAmType accept from 17 to 90 core 28-10-13.6 lvl 1[17]
 RRRRRRRRnull
-MMMMM mType accept from 17 to 90 core 28-10-13.6 lvl 1[17]Thread_90 sending report to parent 17Thread_90 reducing msg round.
+Thread_90 node decides mwoe is mType accept from 17 to 90 core 28-10-13.6 lvl 1[17]
+Thread_90 sending report to parent 17Thread_90 reducing msg round.
 Thread_90 send round done.
 Thread_90
 Print branch 
@@ -6933,11 +6934,11 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_10 wwww [90]
 Thread_10 waiting for test response from 90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 reducing msg round.
 Thread_10 send round done.
-Thread_10 wwww [90]
 Thread_10
 Print branch 
 10-28-13.6
@@ -6954,28 +6955,28 @@ Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
 Thread_15 waiting for test response from 14
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 reducing msg round.
+Thread_15 send round done.
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
+Thread_15 stops
+Thread_17 start
+Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
+Thread_17 reducing msg round.
+Thread_17 send round done.
 Thread_15 wwww [14]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
-Thread_15 reducing msg round.
-Thread_15 send round done.
-Thread_15 myParent 20 level 1 coreLink Thread_15
+Thread_15
 Print branch 
 15-20-19.8
 Print reject 
 15-10-84.9
 Print basic 
 15-14-90.2
-28-10-13.6 testMsgToRespond 1
-
-Thread_15 stops
-Thread_17 start
-Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
-
 Thread_17 wwww []
-Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
-Thread_17 reducing msg round.
-Thread_17 send round done.
 Thread_17
 Print branch 
 17-20-37.9
@@ -6989,13 +6990,9 @@ Thread_14 start
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
 Thread_14 send test to 10
-Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 wwww []
-Thread_14 processing message mType test from 15 to 14 core 28-10-13.6 lvl 1[]
 Thread_14 processing test from 15 28-10-13.6
 Thread_14 sending accept to 15
-Thread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -7003,13 +7000,17 @@ Print reject
 Print basic 
 14-10-78.5
 14-15-90.2
+Thread_90 wwww []
+Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 processing message mType test from 15 to 14 core 28-10-13.6 lvl 1[]
+Thread_14 reducing msg round.
+Thread_14 send round done.
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
 Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_90 wwww []
 Thread_90 send test to 10
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 processing test from 17 28-10-13.6
@@ -7018,11 +7019,13 @@ Thread_90 sending reject to 17
 Thread_90 processing test from 10 28-10-13.6
 Thread_90 sending reject to 10
 
+Thread_90 reducing msg round.
+Thread_90 send round done.
+Thread_90 myParent 17 level 1 coreLink 28-10-13.6 testMsgToRespond 3
+
 Thread_90 processing test from 28 28-10-13.6
 Thread_90 sending reject to 28
 
-Thread_90 reducing msg round.
-Thread_90 send round done.
 Thread_90
 Print branch 
 90-17-38.8
@@ -7030,8 +7033,6 @@ Print reject
 Print basic 
 90-10-56.0
 90-28-81.8
-Thread_90 myParent 17 level 1 coreLink 28-10-13.6 testMsgToRespond 3
-
 Thread_90 stops
 Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
@@ -7041,10 +7042,10 @@ Thread_28 waiting for test response from 90
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType reject from 90 to 28 core 28-10-13.6 lvl 1[]
 Link 28-90-81.8 message mType reject from 90 to 28 core 28-10-13.6 lvl 1[]Thread_28 wwww []
-Thread_28 reducing msg round.
-Thread_28 send round done.
 Thread_28
 Print branch 
+Thread_28 reducing msg round.
+Thread_28 send round done.
 28-10-13.6
 Print reject 
 28-20-49.0
@@ -7093,8 +7094,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 wwww []
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -7161,7 +7162,8 @@ Thread_17 processing message mType report from 90 to 17 core 28-10-13.6 lvl 1[17
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 AAAAAAAAnull
 RRRRRRRRmType report from 90 to 17 core 28-10-13.6 lvl 1[17, 90]
-MMMMM mType report from 90 to 17 core 28-10-13.6 lvl 1[17, 90]Thread_17 sending report to parent 20Thread_17 reducing msg round.
+Thread_17 node decides mwoe is mType report from 90 to 17 core 28-10-13.6 lvl 1[17, 90]
+Thread_17 sending report to parent 20Thread_17 reducing msg round.
 Thread_17 send round done.
 Thread_17
 Print branch 
@@ -7195,8 +7197,8 @@ Thread_90 myParent 17 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
 Thread_90 wwww [10]
 Thread_90 waiting for test response from 10
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
-Thread_90 processing test from 17 28-10-13.6
+Thread_90 processing test from 17 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+28-10-13.6
 Thread_90 sending reject to 17
 
 Thread_90 processing test from 10 28-10-13.6
@@ -7277,12 +7279,11 @@ Thread_20 start
 Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
-Thread_20 processing message mType report from 17 to 20 core 28-10-13.6 lvl 1[17, 90, 17]
 Thread_20 wwww []
+Thread_20 processing message mType report from 17 to 20 core 28-10-13.6 lvl 1[17, 90, 17]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 AAAAAmType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 RRRRRmType report from 17 to 20 core 28-10-13.6 lvl 1[17, 90, 17]
-MMMMM mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 leader decides mwoe is mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 send connect to 15
  Thread_20 sent connect to 15 message: mType connect from 20 to 15 core 28-10-13.6 lvl 1[] 
@@ -7302,12 +7303,12 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_10 wwww [14]
 Thread_10 waiting for test response from 14
 Thread_10 processing message mType test from 14 to 10 core 20-14-5.2 lvl 1[]
-Thread_10 wwww [14]
 Thread_10 processing test from 14 20-14-5.2
-Thread_10 sending accept to Thread_10 processing message mType test from 90 to 10 core 28-10-13.6 lvl 1[]
-14
+Thread_10 sending accept to 14
+Thread_10 processing message mType test from 90 to 10 core 28-10-13.6 lvl 1[]
 Thread_10 processing test from 90 28-10-13.6
 Thread_10 sending reject to 90
 
@@ -7332,14 +7333,15 @@ Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
 Thread_15 wwww [14]
-Thread_15 processing test from 20 Thread_15 waiting for test response from 14
+Thread_15 waiting for test response from 14
 Thread_15 processing message mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
-20-14-5.2
+Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -7355,8 +7357,8 @@ Thread_17 start
 Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_17 wwww []
-Thread_17 wwww []
 Thread_17 processing message mType reject from 90 to 17 core 28-10-13.6 lvl 1[]
+Thread_17 wwww []
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 reducing msg round.
 Thread_17 send round done.
@@ -7420,9 +7422,9 @@ Thread_90 stops
 Thread_28 start
 Thread_28 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType reject from 90 to 28 core 28-10-13.6 lvl 1[]
+Thread_28 wwww []
 Thread_28 wwww []
 Thread_28 reducing msg round.
 Thread_28 send round done.
@@ -7479,8 +7481,8 @@ Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_20 send initiate to 14
 Thread_20 send initiate to 15
 Thread_20 send initiate to 17
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 wwww []
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -7498,8 +7500,8 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_10 wwww [14]
 Thread_10 waiting for test response from 14
+Thread_10 wwww [14]
 Thread_10 processing message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]
 Link 10-14-78.5 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Link 10-15-84.9 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Thread_10 wwww [14]
 Thread_10 waiting for test response from 14
@@ -7520,9 +7522,9 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
-Thread_15 wwww []
 Thread_15 send test to 14
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -7558,13 +7560,14 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
-Thread_14 wwww [10]
 Thread_14 waiting for test response from 10
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 wwww [10]
 Thread_14 processing message mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 AAAAAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRRRRnull
-MMMMM mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]Thread_14 sending report to parent 20Thread_14 reducing msg round.
+Thread_14 node decides mwoe is mType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
+Thread_14 sending report to parent 20Thread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -7695,7 +7698,8 @@ Thread_10 send test to 14
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 14 to 10 core 20-14-5.2 lvl 1[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 10 core 20-14-5.2 lvl 1[14]Thread_10 sending report to parent 28Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 14 to 10 core 20-14-5.2 lvl 1[14]
+Thread_10 sending report to parent 28Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -7753,8 +7757,8 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent 20 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
-Thread_14 wwww []
 Thread_14 send test to 10
+Thread_14 wwww []
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType initiate from 20 to 14 core 28-10-13.6 lvl 1[]
 Thread_14 wwww [10]
@@ -7816,7 +7820,6 @@ Thread_28 processing message mType reject from 90 to 28 core 28-10-13.6 lvl 1[]
 Thread_28 wwww []
 AAAAAnull
 RRRRRmType report from 10 to 28 core 20-14-5.2 lvl 1[14, 10]
-MMMMM mType report from 10 to 28 core 20-14-5.2 lvl 1[14, 10]
 Thread_28 leader decides mwoe is mType report from 10 to 28 core 20-14-5.2 lvl 1[14, 10]
 Thread_28 send changeRoot down28-10-13.6
 Thread_28 reducing msg round.
@@ -7888,9 +7891,9 @@ Thread_20 myParent -1 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_20 stops
 Thread_10 start
-Thread_10 wwww [14]
 Thread_10 myParent 28 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_10 wwww [14]
 Thread_10 waiting for test response from 14
 Thread_10 processing message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]
 Link 10-14-78.5 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Link 10-15-84.9 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Thread_10 wwww [14]
@@ -8118,7 +8121,8 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 20-14-5.2 lvl 1[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -8155,9 +8159,9 @@ Thread_14 wwww [10]
 Thread_14 waiting for test response from 10
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14
 Print branch 
+Thread_14 send round done.
 14-20-5.2
 Print reject 
 Print basic 
@@ -8173,8 +8177,8 @@ Thread_90 wwww [28]
 Thread_90 waiting for test response from 28
 Thread_90 processing message mType reject from 28 to 90 core 28-10-13.6 lvl 1[]
 Link 90-28-81.8 message mType reject from 28 to 90 core 28-10-13.6 lvl 1[]Thread_90 wwww []
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
-Thread_90 processing test from 17 28-10-13.6
+Thread_90 processing test from 17 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+28-10-13.6
 Thread_90 sending reject to 17
 
 Thread_90 processing test from 10 28-10-13.6
@@ -8299,9 +8303,9 @@ Thread_10 myParent 14 level 1 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_10 stops
 Thread_15 start
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+Thread_15 myParent 20 level 1 coreLink Thread_15 wwww []
+28-10-13.6 testMsgToRespond 1
 
-Thread_15 wwww []
 Thread_15 send test to 14
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
@@ -8350,7 +8354,6 @@ Thread_14 processing connect msg from 10 level 1 path length0
 [10][10]
 Merging 10 incoming msg and 14
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -8358,6 +8361,7 @@ Print branch
 Print reject 
 Print basic 
 14-15-90.2
+Thread_14 send round done.
 Thread_14 myParent -1 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_14 stops
@@ -8392,8 +8396,8 @@ Thread_28 myParent -1 level 1 coreLink 20-14-5.2 testMsgToRespond 0
 
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 wwww []
 Thread_28 processing message mType reject from 90 to 28 core 28-10-13.6 lvl 1[]
+Thread_28 wwww []
 Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
@@ -8469,8 +8473,8 @@ Thread_10 myParent 14 level 1 coreLink 14-10-78.5 testMsgToRespond 0
 Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]
-Link 10-15-84.9 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Thread_10 waiting for test response from 15
-Thread_10 wwww [15]
+Link 10-15-84.9 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Thread_10 wwww [15]
+Thread_10 waiting for test response from 15
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 not enough to send report/acceptThread_10 reducing msg round.
 Thread_10 send round done.
@@ -8531,9 +8535,9 @@ Thread_14 myParent -1 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_14 wwww []
 Thread_14 send test to 15
+Thread_14 wwww [15]
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 1[]
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType test from 15 to 14 core 28-10-13.6 lvl 1[]
 Thread_14 processing test from 15 28-10-13.6
@@ -8584,8 +8588,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 1[]
 Thread_28 wwww []
 Thread_28 processing message mType reject from 90 to 28 core 28-10-13.6 lvl 1[]
-Thread_28 wwww []
 Thread_28 reducing msg round.
+Thread_28 wwww []
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -8641,6 +8645,7 @@ Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType levelUp from 14 to 20 core 14-10-78.5 lvl 2[]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
+Thread_20 node decides mwoe is mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 sending report to parent 14Thread_20 reducing msg round.
 Thread_20 send round done.
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
@@ -8656,19 +8661,9 @@ Thread_10 waiting for test response from 15
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 not enough to send report/acceptThread_10 reducing msg round.
 Thread_10 send round done.
-Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
-
-Thread_10 stops
-Thread_15 start
-Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
-
-Thread_15 waiting for test response from 14
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
-Thread_15 reducing msg round.
-Thread_15 send round done.
-AAAAAAAAmType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_10 myParent 14 level 2 coreLink AAAAAAAAmType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 RRRRRRRRmType report from 14 to 20 core 28-10-13.6 lvl 1[10, 14]
-MMMMM mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]Thread_20
+Thread_20
 Print branch 
 20-14-5.2
 20-15-19.8
@@ -8686,9 +8681,19 @@ Print reject
 10-90-56.0
 Print basic 
 10-15-84.9
+14-10-78.5 testMsgToRespond 0
+
+Thread_10 stops
+Thread_15 start
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
+
 Thread_15 wwww [14]
+Thread_15 waiting for test response from 14
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
+Thread_15 reducing msg round.
+Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
@@ -8844,8 +8849,8 @@ Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 15 to 10 core 28-10-13.6 lvl 1[15]
 Thread_10 processing message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]
-Thread_10 send test to 15
 Link 10-15-84.9 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Thread_10 wwww []
+Thread_10 send test to 15
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 not enough to send report/acceptThread_10 reducing msg round.
 Thread_10 send round done.
@@ -8863,9 +8868,9 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 1
 
+Thread_15 wwww [14]
 Thread_15 waiting for test response from 14
 Thread_15 processing message mType test from 14 to 15 core 14-10-78.5 lvl 2[]
-Thread_15 wwww [14]
 Thread_15 processing test from 14 14-10-78.5
 Thread_15 processing message mType accept from 14 to 15 core 14-10-78.5 lvl 2[14]
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
@@ -8873,7 +8878,8 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 14-10-78.5 lvl 2[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 14-10-78.5 lvl 2[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 14-10-78.5 lvl 2[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -8889,8 +8895,8 @@ Thread_17 start
 Thread_17 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_17 wwww []
-Thread_17 wwww []
 Thread_17 processing message mType reject from 90 to 17 core 28-10-13.6 lvl 1[]
+Thread_17 wwww []
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 processing message mType levelUp from 20 to 17 core 14-10-78.5 lvl 2[]
 Thread_17 reducing msg round.
@@ -8925,8 +8931,8 @@ Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 wwww []
+Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending reject to 17
 
@@ -9027,9 +9033,9 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
+Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]
-Thread_10 wwww [15]
 Link 10-15-84.9 message mType reject from 90 to 10 core 28-10-13.6 lvl 1[]Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
@@ -9249,8 +9255,8 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_17 wwww []
 Thread_17 processing message mType reject from 90 to 17 core 28-10-13.6 lvl 1[]
+Thread_17 wwww []
 Thread_17 wwww []
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 reducing msg round.
@@ -9316,7 +9322,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -9394,7 +9401,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -9410,8 +9418,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww [14]
 Thread_15 waiting for test response from 14
+Thread_15 wwww [14]
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
@@ -9453,8 +9461,7 @@ Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
 AAAAAmType accept from 10 to 14 core 28-10-13.6 lvl 1[10]
 RRRRRmType report from 20 to 14 core 28-10-13.6 lvl 1[15, 20]
-Thread_14 leader decides mwoe is MMMMM mType report from 20 to 14 core 28-10-13.6 lvl 1[15, 20]
-mType report from 20 to 14 core 28-10-13.6 lvl 1[15, 20]
+Thread_14 leader decides mwoe is mType report from 20 to 14 core 28-10-13.6 lvl 1[15, 20]
 Thread_14 send changeRoot down14-10-78.5
 Thread_14 reducing msg round.
 Thread_14 send round done.
@@ -9499,7 +9506,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -9551,8 +9559,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 wwww []
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -9577,7 +9585,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -9601,7 +9610,8 @@ Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 AAAAAAAAmType accept from 14 to 15 core 14-10-78.5 lvl 2[14]
 RRRRRRRRnull
-MMMMM mType accept from 14 to 15 core 14-10-78.5 lvl 2[14]Thread_15 sending report to parent 20Thread_15 reducing msg round.
+Thread_15 node decides mwoe is mType accept from 14 to 15 core 14-10-78.5 lvl 2[14]
+Thread_15 sending report to parent 20Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -9680,9 +9690,10 @@ Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
-AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 node decides mwoe is AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-Thread_28 sending report to parent 10MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 reducing msg round.
+mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -9734,8 +9745,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 wwww []
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType changeRoot from 14 to 20 core 28-10-13.6 lvl 2[15]
 Thread_20 processing changeRoot msg from 14 level 2
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
@@ -9755,14 +9766,15 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 waiting for test response from 15
 Thread_10 wwww [15]
+Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -9778,9 +9790,9 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
+Thread_15 wwww []
 Thread_15 send test to 14
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
-Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -9798,10 +9810,10 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
+Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
-Thread_17 not enough to send report/acceptThread_17 wwww []
-Thread_17 reducing msg round.
+Thread_17 not enough to send report/acceptThread_17 reducing msg round.
 Thread_17 send round done.
 Thread_17
 Print branch 
@@ -9857,12 +9869,13 @@ Thread_90 stops
 Thread_28 start
 Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 wwww []
+Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -9918,8 +9931,8 @@ Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType report from 15 to 20 core 14-10-78.5 lvl 2[14, 15]
 Thread_20 processing message mType initiate from 14 to 20 core 28-10-13.6 lvl 2[]
-Thread_20 send initiate to 14
 Thread_20 wwww []
+Thread_20 send initiate to 14
 Thread_20 send initiate to 15
 Thread_20 send initiate to 17
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
@@ -9939,10 +9952,10 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
+Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 wwww [15]
 Thread_10 processing message mType initiate from 14 to 10 core 28-10-13.6 lvl 2[]
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 send initiate to 28
 Thread_10 send initiate to 14
@@ -9951,7 +9964,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -9977,11 +9991,11 @@ Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
-Thread_15 myParent 20 level 1 coreLink Print reject 
+Print reject 
 15-10-84.9
 Print basic 
 15-14-90.2
-28-10-13.6 testMsgToRespond 3
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
 Thread_15 stops
 Thread_17 start
@@ -10054,7 +10068,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -10106,8 +10121,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 wwww []
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -10132,9 +10147,10 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
-Thread_10 send round done.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10
+Thread_10 send round done.
 Print branch 
 10-28-13.6
 10-14-78.5
@@ -10146,15 +10162,13 @@ Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_10 stops
 Thread_15 start
-Thread_15 myParent 20 level 1 coreLink Thread_15 wwww [14]
-28-10-13.6 testMsgToRespond 3
+Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
+Thread_15 wwww [14]
 Thread_15 waiting for test response from 14
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
-Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
@@ -10162,6 +10176,8 @@ Print reject
 15-10-84.9
 Print basic 
 15-14-90.2
+Thread_15 reducing msg round.
+Thread_15 send round done.
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
 Thread_15 stops
@@ -10190,8 +10206,8 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 processing message mType initiate from 20 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 wwww [15]
+Thread_14 processing message mType initiate from 20 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 wwww [15]
@@ -10244,7 +10260,8 @@ Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -10420,7 +10437,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -10489,13 +10507,13 @@ Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_20 stops
 Thread_10 start
+Thread_10 wwww [15]
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
-Thread_10 wwww [15]
 Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
+Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 send initiate to 28
 Thread_10 send initiate to 14
@@ -10504,7 +10522,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -10602,7 +10621,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -10680,7 +10700,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -10701,9 +10722,9 @@ Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15
 Print branch 
+Thread_15 send round done.
 15-20-19.8
 Print reject 
 15-10-84.9
@@ -10786,7 +10807,8 @@ Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -10875,9 +10897,9 @@ Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_10 stops
 Thread_15 start
+Thread_15 wwww []
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
@@ -10959,7 +10981,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -11028,11 +11051,11 @@ Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_20 stops
 Thread_10 start
-Thread_10 wwww [15]
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 wwww [15]
 Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
 Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
@@ -11043,7 +11066,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -11059,14 +11083,14 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
-Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15
 Print branch 
+Thread_15 reducing msg round.
+Thread_15 send round done.
 15-20-19.8
 Print reject 
 15-10-84.9
@@ -11078,10 +11102,10 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
+Thread_17 wwww []
 Thread_17 send round done.
 Thread_17
 Print branch 
@@ -11095,10 +11119,10 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
+Thread_14 wwww [15]
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -11141,7 +11165,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -11193,8 +11218,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 wwww []
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -11214,12 +11239,13 @@ Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
-Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 wwww [15]
-Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -11238,8 +11264,8 @@ Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
-Thread_15 sending accept to Thread_15 reducing msg round.
-20
+Thread_15 sending accept to 20
+Thread_15 reducing msg round.
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -11271,10 +11297,10 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
+Thread_14 wwww [15]
 Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
@@ -11319,13 +11345,14 @@ Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
 Thread_28 wwww []
+Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
 Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -11416,8 +11443,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -11435,9 +11462,9 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
+Thread_17 wwww []
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
 Thread_17 send round done.
 Thread_17
@@ -11491,14 +11518,15 @@ Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
 Thread_90 stops
 Thread_28 start
+Thread_28 wwww []
 Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -11550,13 +11578,13 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 wwww []
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
-Thread_20 not enough to send report/acceptThread_20 reducing msg round.
-Thread_20 send round done.
 Thread_20
 Print branch 
+Thread_20 not enough to send report/acceptThread_20 reducing msg round.
+Thread_20 send round done.
 20-14-5.2
 20-15-19.8
 20-17-37.9
@@ -11569,20 +11597,21 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
-Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
 Thread_10 wwww [15]
+Thread_10 wwww [15]
+Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
 Thread_10 waiting for test response from 15
 Thread_10 send initiate to 28
 Thread_10 send initiate to 14
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -11598,11 +11627,11 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
-Thread_15 sending accept to 20
-Thread_15 reducing msg round.
+Thread_15 sending accept to Thread_15 reducing msg round.
+20
 Thread_15 send round done.
 Thread_15
 Print branch 
@@ -11617,28 +11646,27 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
+Thread_17 wwww []
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
-Thread_17 send round done.
 Thread_17
 Print branch 
 17-20-37.9
 17-90-38.8
 Print reject 
 Print basic 
+Thread_17 send round done.
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
+Thread_14 wwww [15]
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -11646,14 +11674,15 @@ Print branch
 Print reject 
 Print basic 
 14-15-90.2
+Thread_14 send round done.
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
-Thread_90 wwww []
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww []
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
@@ -11680,7 +11709,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -11736,13 +11766,13 @@ Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
-Thread_20 send round done.
 Thread_20
 Print branch 
 20-14-5.2
 20-15-19.8
 20-17-37.9
 Print reject 
+Thread_20 send round done.
 20-28-49.0
 Print basic 
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
@@ -11758,7 +11788,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -11812,9 +11843,9 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
+Thread_14 wwww [15]
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
@@ -11858,13 +11889,14 @@ Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 wwww []
 Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
+Thread_28 wwww []
 Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -12009,8 +12041,8 @@ Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
-Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 wwww []
+Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
@@ -12034,10 +12066,11 @@ Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -12108,8 +12141,8 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
+Thread_10 wwww [15]
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
 Thread_10 wwww [15]
@@ -12121,7 +12154,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -12131,15 +12165,15 @@ Print reject
 10-90-56.0
 Print basic 
 10-15-84.9
-Thread_15 wwww []
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 processing test from 20 20-14-5.2
+Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
 Thread_15 send round done.
@@ -12173,8 +12207,8 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
+Thread_14 wwww [15]
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
 Thread_14 send round done.
@@ -12191,8 +12225,8 @@ Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
-Thread_90 wwww []
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww []
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
@@ -12215,11 +12249,12 @@ Thread_28 start
 Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 wwww []
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 wwww []
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -12297,7 +12332,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -12336,8 +12372,8 @@ Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
-Thread_17
 Thread_17 send round done.
+Thread_17
 Print branch 
 17-20-37.9
 17-90-38.8
@@ -12352,8 +12388,8 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 wwww [15]
 Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
+Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
@@ -12403,7 +12439,8 @@ Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -12494,8 +12531,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -12530,9 +12567,9 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 wwww [15]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
@@ -12548,8 +12585,8 @@ Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
-Thread_90 wwww []
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww []
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
@@ -12569,14 +12606,15 @@ Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
 Thread_90 stops
 Thread_28 start
+Thread_28 wwww []
 Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -12628,13 +12666,13 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 wwww []
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
-Thread_20 send round done.
 Thread_20
 Print branch 
+Thread_20 send round done.
 20-14-5.2
 20-15-19.8
 20-17-37.9
@@ -12647,20 +12685,21 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
-Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 wwww [15]
+Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
+Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 send initiate to 28
 Thread_10 send initiate to 14
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -12676,8 +12715,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -12695,8 +12734,8 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
+Thread_17 wwww []
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
 Thread_17 send round done.
@@ -12712,11 +12751,10 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 wwww [15]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -12724,24 +12762,25 @@ Print branch
 Print reject 
 Print basic 
 14-15-90.2
+Thread_14 send round done.
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
-Thread_90 wwww []
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww []
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
 Thread_90 sending accept to 10
 Thread_90 processing test from 28 28-10-13.6
 Thread_90 sending accept to 28
-Thread_90 reducing msg round.
-Thread_90 send round done.
 Thread_90
 Print branch 
+Thread_90 reducing msg round.
+Thread_90 send round done.
 90-17-38.8
 Print reject 
 90-10-56.0
@@ -12758,7 +12797,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -12810,8 +12850,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 wwww []
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -12836,7 +12876,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -12856,8 +12897,6 @@ Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
-Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
@@ -12865,6 +12904,8 @@ Print reject
 15-10-84.9
 15-14-90.2
 Print basic 
+Thread_15 reducing msg round.
+Thread_15 send round done.
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
 Thread_15 stops
@@ -12891,8 +12932,8 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 wwww [15]
+Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
@@ -12942,7 +12983,8 @@ Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -13013,9 +13055,9 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
+Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
-Thread_10 wwww [15]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 not enough to send report/acceptThread_10 reducing msg round.
 Thread_10 send round done.
@@ -13033,8 +13075,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 wwww []
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -13049,10 +13091,10 @@ Print basic
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
 Thread_15 stops
-Thread_17 wwww []
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
+Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
@@ -13069,10 +13111,10 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
+Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
-Thread_14 wwww [15]
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -13115,7 +13157,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -13186,12 +13229,12 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
+Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
-Thread_10 wwww [15]
 Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
-Thread_10 waiting for test response from 15
 Thread_10 wwww [15]
+Thread_10 waiting for test response from 15
 Thread_10 send initiate to 28
 Thread_10 send initiate to 14
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
@@ -13199,11 +13242,12 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 send round done.
 Thread_10
 Print branch 
 10-28-13.6
-Thread_10 send round done.
 10-14-78.5
 Print reject 
 10-90-56.0
@@ -13215,8 +13259,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 wwww []
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -13234,8 +13278,8 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 wwww []
+Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
 Thread_17 send round done.
@@ -13269,8 +13313,8 @@ Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
-Thread_90 wwww []
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww []
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
@@ -13278,9 +13322,9 @@ Thread_90 sending accept to 10
 Thread_90 processing test from 28 28-10-13.6
 Thread_90 sending accept to 28
 Thread_90 reducing msg round.
+Thread_90 send round done.
 Thread_90
 Print branch 
-Thread_90 send round done.
 90-17-38.8
 Print reject 
 90-10-56.0
@@ -13297,7 +13341,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -13349,8 +13394,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 wwww []
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -13375,7 +13420,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -13396,9 +13442,9 @@ Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
+Thread_15 send round done.
 Thread_15
 Print branch 
-Thread_15 send round done.
 15-20-19.8
 Print reject 
 15-10-84.9
@@ -13458,10 +13504,10 @@ Thread_90 processing test from 10 28-10-13.6
 Thread_90 sending accept to 10
 Thread_90 processing test from 28 28-10-13.6
 Thread_90 sending accept to 28
-Thread_90
-Print branch 
 Thread_90 reducing msg round.
 Thread_90 send round done.
+Thread_90
+Print branch 
 90-17-38.8
 Print reject 
 90-10-56.0
@@ -13475,13 +13521,14 @@ Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
 Thread_28 wwww []
+Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
 Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -13552,8 +13599,8 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 waiting for test response from 15
 Thread_10 wwww [15]
+Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 not enough to send report/acceptThread_10 reducing msg round.
@@ -13572,8 +13619,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 wwww []
+Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -13654,7 +13701,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -13706,8 +13754,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 wwww []
+Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -13725,8 +13773,8 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 waiting for test response from 15
 Thread_10 wwww [15]
+Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
 Thread_10 wwww [15]
@@ -13738,7 +13786,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -13790,8 +13839,8 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 waiting for test response from 15
 Thread_14 wwww [15]
+Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
 Thread_14 send round done.
@@ -13836,7 +13885,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -13903,6 +13953,7 @@ Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
@@ -13924,11 +13975,7 @@ Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
 Thread_17 send round done.
-Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
-
-Thread_17 stops
-Thread_14 start
-Thread_14 myParent -1 level Thread_20
+Thread_17 myParent 20 level 2 coreLink Thread_20
 Print branch 
 20-14-5.2
 20-15-19.8
@@ -13939,7 +13986,7 @@ Print basic
 Thread_10 wwww [15]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10
+Thread_10
 Print branch 
 10-28-13.6
 10-14-78.5
@@ -13964,8 +14011,22 @@ Print branch
 17-90-38.8
 Print reject 
 Print basic 
+14-10-78.5 testMsgToRespond 0
+
+Thread_17 stops
+Thread_14 start
+Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
+
+Thread_14 waiting for test response from 15
 Thread_14 wwww [15]
+Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
+Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 wwww [15]
+Thread_14 waiting for test response from 15
+Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
+Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
+Thread_14 not enough to send report/acceptThread_14 reducing msg round.
+Thread_14 send round done.
 Thread_14
 Print branch 
 14-20-5.2
@@ -13973,19 +14034,6 @@ Print branch
 Print reject 
 Print basic 
 14-15-90.2
-Thread_90 wwww []
-Thread_90 processing test from 17 28-10-13.6
-Thread_90 sending accept to 17
-2 coreLink 28-10-13.6 testMsgToRespond 0
-
-Thread_14 waiting for test response from 15
-Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
-Thread_14 waiting for test response from 15
-Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
-Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
-Thread_14 not enough to send report/acceptThread_14 reducing msg round.
-Thread_14 send round done.
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_14 stops
@@ -13993,6 +14041,9 @@ Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww []
+Thread_90 processing test from 17 28-10-13.6
+Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
 Thread_90 sending accept to 10
 Thread_90 processing test from 28 28-10-13.6
@@ -14014,13 +14065,14 @@ Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 wwww []
 Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
+Thread_28 wwww []
 Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -14072,11 +14124,11 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
+Thread_20 wwww []
 Thread_20
 Print branch 
 20-14-5.2
@@ -14091,8 +14143,8 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
+Thread_10 wwww [15]
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 not enough to send report/acceptThread_10 reducing msg round.
@@ -14147,10 +14199,10 @@ Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
+Thread_14 wwww [15]
 Thread_14 send round done.
 Thread_14
 Print branch 
@@ -14165,8 +14217,8 @@ Thread_14 stops
 Thread_90 start
 Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
-Thread_90 wwww []
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
+Thread_90 wwww []
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
 Thread_90 processing test from 10 28-10-13.6
@@ -14193,7 +14245,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -14245,8 +14298,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 wwww []
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -14264,11 +14317,11 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
-Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
-Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
 Thread_10 wwww [15]
+Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 wwww [15]
+Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
 Thread_10 waiting for test response from 15
 Thread_10 send initiate to 28
 Thread_10 send initiate to 14
@@ -14277,7 +14330,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -14293,8 +14347,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -14375,7 +14429,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -14427,8 +14482,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 28-10-13.6 lvl 1[15]
+Thread_20 wwww []
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
 Thread_20 not enough to send report/acceptThread_20 reducing msg round.
 Thread_20 send round done.
@@ -14446,15 +14501,15 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 waiting for test response from 15
 Thread_10 wwww [15]
+Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
-Thread_10 send round done.
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10
 Print branch 
 10-28-13.6
@@ -14463,6 +14518,7 @@ Print reject
 10-90-56.0
 Print basic 
 10-15-84.9
+Thread_10 send round done.
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_10 stops
@@ -14508,8 +14564,8 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 wwww [15]
+Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
@@ -14553,13 +14609,14 @@ Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 wwww []
 Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
+Thread_28 wwww []
 Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -14630,9 +14687,9 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 wwww [15]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 Thread_10 not enough to send report/acceptThread_10 reducing msg round.
 Thread_10 send round done.
@@ -14650,8 +14707,8 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
+Thread_15 wwww []
 Thread_15 processing test from 20 20-14-5.2
 Thread_15 sending accept to 20
 Thread_15 reducing msg round.
@@ -14669,28 +14726,28 @@ Thread_15 stops
 Thread_17 start
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_17 wwww []
 Thread_17 processing message mType accept from 90 to 17 core 14-10-78.5 lvl 2[90]
+Thread_17 wwww []
 Thread_17 processing message mType Round_Number from 0 to 17 core null lvl 0[]
 Thread_17 not enough to send report/acceptThread_17 reducing msg round.
-Thread_17 send round done.
 Thread_17
 Print branch 
 17-20-37.9
 17-90-38.8
 Print reject 
 Print basic 
+Thread_17 send round done.
 Thread_17 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
 Thread_17 stops
 Thread_14 start
 Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
-Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
 Thread_14 send round done.
+Thread_14 wwww [15]
 Thread_14
 Print branch 
 14-20-5.2
@@ -14713,9 +14770,9 @@ Thread_90 sending accept to 10
 Thread_90 processing test from 28 28-10-13.6
 Thread_90 sending accept to 28
 Thread_90 reducing msg round.
-Thread_90 send round done.
 Thread_90
 Print branch 
+Thread_90 send round done.
 90-17-38.8
 Print reject 
 90-10-56.0
@@ -14732,7 +14789,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -14803,10 +14861,10 @@ Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 Thread_10 processing message mType initiate from 28 to 10 core 14-10-78.5 lvl 2[]
+Thread_10 wwww [15]
 Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 send initiate to 28
@@ -14816,7 +14874,8 @@ Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -14832,14 +14891,14 @@ Thread_10 stops
 Thread_15 start
 Thread_15 myParent 20 level 1 coreLink 28-10-13.6 testMsgToRespond 3
 
-Thread_15 wwww []
 Thread_15 processing message mType Round_Number from 0 to 15 core null lvl 0[]
 Thread_15 processing message mType connect from 20 to 15 core 28-10-13.6 lvl 1[]
+Thread_15 wwww []
 Thread_15 processing connect msg from 20 level 1 path length0
 [20][]
 Thread_15 processing message mType initiate from 20 to 15 core 28-10-13.6 lvl 1[]
-Thread_15 wwww []
 Thread_15 send initiate to 20
+Thread_15 wwww []
 Thread_15 processing message mType levelUp from 20 to 15 core 14-10-78.5 lvl 2[]
 Thread_15 processing message mType connect from 20 to 15 core 28-10-13.6 lvl 2[]
 Thread_15 processing connect msg from 20 level 2 path length0
@@ -14932,7 +14991,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -14993,24 +15053,25 @@ Thread_20
 Print branch 
 20-14-5.2
 20-15-19.8
-20-17-37.9
+Thread_20 myParent 14 level 2 coreLink 20-17-37.9
 Print reject 
 20-28-49.0
 Print basic 
-Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
+14-10-78.5 testMsgToRespond 0
 
 Thread_20 stops
 Thread_10 start
 Thread_10 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_10 wwww [15]
 Thread_10 waiting for test response from 15
 Thread_10 processing message mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 wwww [15]
 Thread_10 processing message mType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
 Thread_10 processing message mType Round_Number from 0 to 10 core null lvl 0[]
 AAAAAAAAmType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
 RRRRRRRRmType report from 28 to 10 core 14-10-78.5 lvl 2[90, 28]
-MMMMM mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]Thread_10 sending report to parent 14Thread_10 reducing msg round.
+Thread_10 node decides mwoe is mType accept from 90 to 10 core 14-10-78.5 lvl 2[90]
+Thread_10 sending report to parent 14Thread_10 reducing msg round.
 Thread_10 send round done.
 Thread_10
 Print branch 
@@ -15036,6 +15097,8 @@ Thread_15 sending reject to 10
 Thread_15 processing test from 14 14-10-78.5
 Thread_15 sending reject to 14
 
+Thread_15 reducing msg round.
+Thread_15 send round done.
 Thread_15
 Print branch 
 15-20-19.8
@@ -15043,8 +15106,6 @@ Print reject
 15-10-84.9
 15-14-90.2
 Print basic 
-Thread_15 reducing msg round.
-Thread_15 send round done.
 Thread_15 myParent 20 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
 Thread_15 stops
@@ -15071,9 +15132,9 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 Thread_14 wwww [15]
 Thread_14 waiting for test response from 15
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 wwww [15]
 Thread_14 processing message mType initiate from 10 to 14 core 14-10-78.5 lvl 2[]
 Thread_14 waiting for test response from 15
+Thread_14 wwww [15]
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
 Thread_14 processing message mType report from 10 to 14 core 14-10-78.5 lvl 2[90, 10]
 Thread_14 processing message mType reject from 15 to 14 core 14-10-78.5 lvl 2[]
@@ -15114,17 +15175,18 @@ Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
 Thread_90 stops
 Thread_28 start
+Thread_28 wwww []
 Thread_28 myParent 10 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_28 wwww []
 Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
-Thread_28 wwww []
 Thread_28 processing message mType initiate from 10 to 28 core 14-10-78.5 lvl 2[]
+Thread_28 wwww []
 Thread_28 send initiate to 10
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
@@ -15176,8 +15238,8 @@ Starting threads.
 Thread_20 start
 Thread_20 myParent 14 level 2 coreLink 14-10-78.5 testMsgToRespond 0
 
-Thread_20 wwww []
 Thread_20 processing message mType initiate from 15 to 20 core 28-10-13.6 lvl 1[]
+Thread_20 wwww []
 Thread_20 wwww []
 Thread_20 processing message mType accept from 15 to 20 core 14-10-78.5 lvl 2[15]
 Thread_20 processing message mType Round_Number from 0 to 20 core null lvl 0[]
@@ -15263,8 +15325,8 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_14 wwww []
 Thread_14 processing message mType Round_Number from 0 to 14 core null lvl 0[]
-Thread_14 wwww []
 Thread_14 processing message mType reject from 15 to 14 core 14-10-78.5 lvl 2[]
+Thread_14 wwww []
 Thread_14 not enough to send report/acceptThread_14 reducing msg round.
 Thread_14 send round done.
 Thread_14
@@ -15278,9 +15340,9 @@ Thread_14 myParent -1 level 2 coreLink 28-10-13.6 testMsgToRespond 0
 
 Thread_14 stops
 Thread_90 start
-Thread_90 myParent 17 level 2 coreLink Thread_90 wwww []
-14-10-78.5 testMsgToRespond 3
+Thread_90 myParent 17 level 2 coreLink 14-10-78.5 testMsgToRespond 3
 
+Thread_90 wwww []
 Thread_90 processing message mType Round_Number from 0 to 90 core null lvl 0[]
 Thread_90 processing test from 17 28-10-13.6
 Thread_90 sending accept to 17
@@ -15308,7 +15370,8 @@ Thread_28 processing message mType Round_Number from 0 to 28 core null lvl 0[]
 Thread_28 processing message mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 AAAAAAAAmType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
 RRRRRRRRnull
-MMMMM mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]Thread_28 sending report to parent 10Thread_28 reducing msg round.
+Thread_28 node decides mwoe is mType accept from 90 to 28 core 14-10-78.5 lvl 2[90]
+Thread_28 sending report to parent 10Thread_28 reducing msg round.
 Thread_28 send round done.
 Thread_28
 Print branch 
