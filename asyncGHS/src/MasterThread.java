@@ -81,7 +81,7 @@ public class MasterThread extends SlaveThread {
             if (t.basicEdge.size() != 0)
               hasBasicEdge = true;
           }
-          if (leaderSet.size() == 1 && !hasBasicEdge) {
+          if (!hasBasicEdge) {
             // if there is only one leader, then algorithm is complete. call killAll()
             localMessageQueue.clear();
 
@@ -124,8 +124,8 @@ public class MasterThread extends SlaveThread {
    */
   public void printTree() {
     sleep(10);
-    System.out.println("\n\nPrinting the tree.");
-    System.out.println("MaxId--------Parent <----- myId ---> branch edges (can overlap)");
+    System.out.println("\nPrinting the tree.");
+    System.out.println("Core--------Parent <----- myId ---> branch edges (can overlap)");
     for (SlaveThread t : threadList) {
       System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (Link i : t.getBranch()) {
@@ -134,8 +134,8 @@ public class MasterThread extends SlaveThread {
       System.out.println();
     }
 
-    System.out.println("\n\nPrinting rejected.");
-    System.out.println("MaxId--------Parent <----- myId ---> rejected edges (can overlap)");
+    System.out.println("\nPrinting rejected.");
+    System.out.println("Core--------Parent <----- myId ---> rejected edges (can overlap)");
     for (SlaveThread t : threadList) {
       System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (Link i : t.getRejected()) {
@@ -144,8 +144,8 @@ public class MasterThread extends SlaveThread {
       System.out.println();
     }
 
-    System.out.println("\n\nPrinting basic edges.");
-    System.out.println("MaxId--------Parent <----- myId ---> basic edges (can overlap)");
+    System.out.println("\nPrinting basic edges.");
+    System.out.println("Core--------Parent <----- myId ---> basic edges (can overlap)");
     for (SlaveThread t : threadList) {
       System.out.print(t.coreLink + "---  " + t.getMyParent() + "<------" + t.getId() + "------>");
       for (Link i : t.getBasicLinks()) {

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class SlaveThread implements Runnable {
-  protected int delay = 1;
+  protected int delay = 19;
 
   protected String name;
   protected boolean terminated;
@@ -194,7 +194,7 @@ public class SlaveThread implements Runnable {
    */
   public void parentAbsorb(Message m) throws InterruptedException {
     // clear all report because the core has changed.
-    System.err.printf("%s parentAbsorb %s\n", name, m.getSenderId());
+    System.out.printf("%s parentAbsorb %s\n", name, m.getSenderId());
     currentSmallestReportMessage = currentSmallestAcceptMsg = null;
     reportReceived.clear();
     sentInitiate = false;
@@ -208,7 +208,7 @@ public class SlaveThread implements Runnable {
     }
     Message temp = new Message(id, m.getSenderId(), mwoe, level, r.nextInt(delay) + 2, coreLink, "absorbed");
     localMsgToReduce.get(m.getSenderId()).put(temp);
-    System.err.printf("%s send %s", name, temp);
+    System.out.printf("%s send %s", name, temp);
     System.out.println("Parent Core link for absorb " + coreLink);
   }
 
@@ -222,7 +222,7 @@ public class SlaveThread implements Runnable {
   public void childAbsorb(Message m) throws InterruptedException {
 
     // clear all report because the core has changed.
-    System.err.printf("%s childAbsorb %s\n", name, m.getSenderId());
+    System.out.printf("%s childAbsorb %s\n", name, m.getSenderId());
     myParent = m.getSenderId();
     currentSmallestReportMessage = currentSmallestAcceptMsg = null;
     reportReceived.clear();
@@ -356,7 +356,7 @@ public class SlaveThread implements Runnable {
   }
 
   public synchronized void printEdges() {
-    System.out.println(name + "Received/sent connect: " + receivedConnect + "" + sentConnect);
+    System.err.println(name + "Received/sent connect: " + receivedConnect + "" + sentConnect);
     System.err.printf("Print branch \n");
     for (Link l : branch) {
       System.err.println(l);
@@ -436,7 +436,7 @@ public class SlaveThread implements Runnable {
       Message msgToUse;
 
       if (currentSmallestReportMessage == null && currentSmallestAcceptMsg != null) {
-        System.err.printf("For first run");
+        System.out.printf("For first run");
         msgToUse = currentSmallestAcceptMsg;
       } else if (currentSmallestAcceptMsg == null && currentSmallestReportMessage != null) {
         msgToUse = currentSmallestReportMessage;
@@ -533,7 +533,7 @@ public class SlaveThread implements Runnable {
    *          test msg to process
    */
   public void processTestMsg(Message m) throws InterruptedException {
-    System.err.printf("%s processing test %s\n", name, m);
+    System.out.printf("%s processing test %s\n", name, m);
     if (coreLink != null && m.getCore() != null && coreLink.getWeight() == m.getCore().getWeight()) {
 
       for (Link l : basicEdge) {
@@ -543,7 +543,7 @@ public class SlaveThread implements Runnable {
         }
       }
       Message temp = new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(delay) + 2, coreLink, "reject");
-      System.err.printf("%s sending %s", name, temp);
+      System.out.printf("%s sending %s", name, temp);
       localMsgToReduce.get(m.getSenderId()).put(temp);
 
     } else if (coreLink == null || coreLink != m.getCore()) {
@@ -552,7 +552,7 @@ public class SlaveThread implements Runnable {
 
         Message temp = new Message(id, m.getSenderId(), m.getMwoe(), level, r.nextInt(delay) + 2, coreLink, "accept");
         temp.getPath().add(id); // important step in deciding to send report message.
-        System.err.printf("%s sending accept %s\n", name, temp);
+        System.out.printf("%s sending accept %s\n", name, temp);
         localMsgToReduce.get(m.getSenderId()).put(temp);
 
       } else {// can't decide, wait until level is high enough to respond. See wikipedia algo.
@@ -783,7 +783,7 @@ public class SlaveThread implements Runnable {
    */
   public void processRejectMsg(Message m) throws InterruptedException {
     waitingForResponse.remove(m.getSenderId());
-    System.err.printf("%s process %s", name, m);
+    System.out.printf("%s process %s", name, m);
     for (Link l : basicEdge) {
       if (l.getTo() == m.getSenderId()) {
         basicEdge.remove(l);
